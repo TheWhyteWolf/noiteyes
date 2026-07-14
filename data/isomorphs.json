@@ -1,0 +1,293 @@
+{
+ "finder": "pi_solver.find_isomorph_pairs (L0=12, min_rep=3, maximal)",
+ "pairs": [
+  {
+   "a": {
+    "msg": "east-5",
+    "start": 33,
+    "end": 66
+   },
+   "b": {
+    "msg": "west-4",
+    "start": 34,
+    "end": 67
+   },
+   "length": 33,
+   "evidence_positions": 12,
+   "ascii_a": ";,V%QPVWT^he*Y6ZPcU'B@>?3:(BN'>gW",
+   "ascii_b": "2;G1jqG.n 9aKb`Fq78RY>gk:dVYXRgi."
+  },
+  {
+   "a": {
+    "msg": "east-2",
+    "start": 34,
+    "end": 62
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 29,
+    "end": 57
+   },
+   "length": 28,
+   "evidence_positions": 13,
+   "ascii_a": "YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m",
+   "ascii_b": "q53 9:V4.5fOLPJ3P-O3QL:[m`Ko"
+  },
+  {
+   "a": {
+    "msg": "east-2",
+    "start": 37,
+    "end": 65
+   },
+   "b": {
+    "msg": "east-2",
+    "start": 72,
+    "end": 100
+   },
+   "length": 28,
+   "evidence_positions": 12,
+   "ascii_a": "n#0X3OHp&-`=Q`_&Q?-0*M8:m*\\q",
+   "ascii_b": "bmJE>6 +IhY47YaI72hJ%#:n(%VM"
+  },
+  {
+   "a": {
+    "msg": "east-2",
+    "start": 70,
+    "end": 97
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 60,
+    "end": 87
+   },
+   "length": 27,
+   "evidence_positions": 10,
+   "ascii_a": "/$bmJE>6 +IhY47YaI72hJ%#:n(",
+   "ascii_b": "!>i7c&A9`qdN1D-15d-)NcYB^r/"
+  },
+  {
+   "a": {
+    "msg": "west-1",
+    "start": 32,
+    "end": 58
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 62,
+    "end": 88
+   },
+   "length": 26,
+   "evidence_positions": 10,
+   "ascii_a": " 9:V4.5fOLPJ3P-O3QL:[m`Ko<",
+   "ascii_b": "i7c&A9`qdN1D-15d-)NcYB^r/*"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 33,
+    "end": 59
+   },
+   "b": {
+    "msg": "east-1",
+    "start": 61,
+    "end": 87
+   },
+   "length": 26,
+   "evidence_positions": 6,
+   "ascii_a": "HSa:.5fOLPJ3P-O3Qh?%8#K[cA",
+   "ascii_b": "\\5:>%94g+jX$j3g$SIKphV_oq/"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 53,
+    "end": 78
+   },
+   "b": {
+    "msg": "east-2",
+    "start": 65,
+    "end": 90
+   },
+   "length": 25,
+   "evidence_positions": 6,
+   "ascii_a": "8#K[cAQI\\5:>%94g+jX$j3g$S",
+   "ascii_b": "]BVf5/$bmJE>6 +IhY47YaI72"
+  },
+  {
+   "a": {
+    "msg": "east-2",
+    "start": 72,
+    "end": 97
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 32,
+    "end": 57
+   },
+   "length": 25,
+   "evidence_positions": 10,
+   "ascii_a": "bmJE>6 +IhY47YaI72hJ%#:n(",
+   "ascii_b": " 9:V4.5fOLPJ3P-O3QL:[m`Ko"
+  },
+  {
+   "a": {
+    "msg": "east-2",
+    "start": 37,
+    "end": 62
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 62,
+    "end": 87
+   },
+   "length": 25,
+   "evidence_positions": 10,
+   "ascii_a": "n#0X3OHp&-`=Q`_&Q?-0*M8:m",
+   "ascii_b": "i7c&A9`qdN1D-15d-)NcYB^r/"
+  },
+  {
+   "a": {
+    "msg": "east-4",
+    "start": 46,
+    "end": 68
+   },
+   "b": {
+    "msg": "east-5",
+    "start": 47,
+    "end": 69
+   },
+   "length": 22,
+   "evidence_positions": 7,
+   "ascii_a": "Sfk%+OMZdeo9FMiOdRBMn:",
+   "ascii_b": "6ZPcU'B@>?3:(BN'>gWBkV"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 29,
+    "end": 50
+   },
+   "b": {
+    "msg": "east-2",
+    "start": 34,
+    "end": 55
+   },
+   "length": 21,
+   "evidence_positions": 9,
+   "ascii_a": "q53 HSa:.5fOLPJ3P-O3Q",
+   "ascii_b": "YHQn#0X3OHp&-`=Q`_&Q?"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 58,
+    "end": 78
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 60,
+    "end": 80
+   },
+   "length": 20,
+   "evidence_positions": 6,
+   "ascii_a": "AQI\\5:>%94g+jX$j3g$S",
+   "ascii_b": "!>i7c&A9`qdN1D-15d-)"
+  },
+  {
+   "a": {
+    "msg": "east-4",
+    "start": 46,
+    "end": 65
+   },
+   "b": {
+    "msg": "west-4",
+    "start": 48,
+    "end": 67
+   },
+   "length": 19,
+   "evidence_positions": 6,
+   "ascii_a": "Sfk%+OMZdeo9FMiOdRB",
+   "ascii_b": "`Fq78RY>gk:dVYXRgi."
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 60,
+    "end": 78
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 32,
+    "end": 50
+   },
+   "length": 18,
+   "evidence_positions": 6,
+   "ascii_a": "I\\5:>%94g+jX$j3g$S",
+   "ascii_b": " 9:V4.5fOLPJ3P-O3Q"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 32,
+    "end": 50
+   },
+   "b": {
+    "msg": "west-1",
+    "start": 62,
+    "end": 80
+   },
+   "length": 18,
+   "evidence_positions": 6,
+   "ascii_a": " HSa:.5fOLPJ3P-O3Q",
+   "ascii_b": "i7c&A9`qdN1D-15d-)"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 32,
+    "end": 50
+   },
+   "b": {
+    "msg": "east-2",
+    "start": 72,
+    "end": 90
+   },
+   "length": 18,
+   "evidence_positions": 6,
+   "ascii_a": " HSa:.5fOLPJ3P-O3Q",
+   "ascii_b": "bmJE>6 +IhY47YaI72"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 32,
+    "end": 50
+   },
+   "b": {
+    "msg": "east-1",
+    "start": 60,
+    "end": 78
+   },
+   "length": 18,
+   "evidence_positions": 6,
+   "ascii_a": " HSa:.5fOLPJ3P-O3Q",
+   "ascii_b": "I\\5:>%94g+jX$j3g$S"
+  },
+  {
+   "a": {
+    "msg": "east-1",
+    "start": 60,
+    "end": 78
+   },
+   "b": {
+    "msg": "east-2",
+    "start": 37,
+    "end": 55
+   },
+   "length": 18,
+   "evidence_positions": 6,
+   "ascii_a": "I\\5:>%94g+jX$j3g$S",
+   "ascii_b": "n#0X3OHp&-`=Q`_&Q?"
+  }
+ ]
+}
