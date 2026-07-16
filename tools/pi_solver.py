@@ -41,13 +41,14 @@ def mapping_ok(w1, w2):
     return True
 
 
-def find_isomorph_pairs(S, L0=12, min_rep=3):
+def find_isomorph_pairs(S, L0=12, min_rep=3, names=None):
+    names = N9 if names is None else names
     def repeat_sig(w):
         first = {}; cnt = defaultdict(int)
         for v in w: cnt[v] += 1
         return tuple(first.setdefault(v, i) if cnt[v] >= 2 else -1 for i, v in enumerate(w))
     seeds = defaultdict(list)
-    for n in N9:
+    for n in names:
         s = S[n]
         for i in range(len(s) - L0 + 1):
             w = s[i:i+L0]

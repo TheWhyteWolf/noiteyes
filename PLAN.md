@@ -1,5 +1,12 @@
 # Noita Eye Messages — session handoff & next-phase plan (2026-07-14)
 
+> **SUPERSEDED (2026-07-16): see `GUIDE.md`.** Everything below was executed:
+> items 1–3 became `tools/sigma_web.py` / `tools/rowphase.py` /
+> `tools/phase4.py` / `tools/resync.py` / `tools/tournament.py` /
+> `tools/rotorfit.py`, item 5 became `tools/wak_unpack.py` (Step E), and
+> item 6 is done. Item 4 (community-doc intake) was executed 2026-07-16.
+> Kept for provenance only.
+
 NOTE: written as a handoff document — the session is being transferred to
 another machine. The portable project state lives in /home/voyd/git/noiteyes;
 this file should be copied into that directory (e.g. as PLAN.md) so it

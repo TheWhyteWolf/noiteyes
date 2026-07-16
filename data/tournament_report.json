@@ -1,0 +1,98 @@
+{
+ "additive walk": {
+  "sig": {
+   "maxL": 34,
+   "walk_dim": 2,
+   "commute": 1.0,
+   "same_web": 1.0,
+   "doubles": 0,
+   "d4_ratio": 0.38,
+   "resync": 0.0,
+   "ioc": 0.01293
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": true,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": false,
+   "IoC .011-.015": true
+  },
+  "n_match": 3,
+  "agree_real": 3
+ },
+ "single-rotor enigma": {
+  "sig": {
+   "maxL": 0,
+   "walk_dim": null,
+   "commute": null,
+   "same_web": null,
+   "doubles": 15,
+   "d4_ratio": 0.82,
+   "resync": 0.4907,
+   "ioc": 0.01535
+  },
+  "score": {
+   "iso L>=25": false,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": false,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": false,
+   "IoC .011-.015": false
+  },
+  "n_match": 0,
+  "agree_real": 0
+ },
+ "4-rotor progressive": {
+  "sig": {
+   "maxL": 0,
+   "walk_dim": null,
+   "commute": null,
+   "same_web": null,
+   "doubles": 12,
+   "d4_ratio": 1.3,
+   "resync": 0.119,
+   "ioc": 0.0156
+  },
+  "score": {
+   "iso L>=25": false,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": false,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": true,
+   "IoC .011-.015": false
+  },
+  "n_match": 1,
+  "agree_real": 1
+ },
+ "REAL": {
+  "sig": {
+   "maxL": 33,
+   "walk_dim": 1,
+   "commute": 0.38,
+   "same_web": 0.43,
+   "doubles": 0,
+   "d4_ratio": 2.6,
+   "resync": 0.0645,
+   "ioc": 0.01284
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": true,
+   "noncommute<.6": true,
+   "zero doubles": true,
+   "period4 (d4>1.5)": true,
+   "resync .03-.12": true,
+   "IoC .011-.015": true
+  },
+  "n_match": 7
+ },
+ "conclusion": {
+  "best": "additive walk",
+  "best_score": 3,
+  "tension": "abundant cross-offset exact isomorphs vs non-additive/non-commuting vs moderate resync"
+ }
+}

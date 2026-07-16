@@ -1,0 +1,2087 @@
+{
+ "strict": {
+  "label": "control: strict walk",
+  "pairs": 17,
+  "webs": [
+   3,
+   5,
+   2
+  ],
+  "gauge_violations": 0,
+  "fixed_points": 0,
+  "closed_cycles": 0,
+  "commut": [
+   74,
+   74
+  ],
+  "closure": {
+   "cells": 123,
+   "clean": 106,
+   "viol": 17
+  },
+  "zones": 9,
+  "zones_evidence": 9,
+  "zone_detail": [
+   {
+    "occ_a": 0,
+    "occ_b": 9,
+    "frame": [
+     38,
+     58
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-2",
+    "pos_a": [
+     38,
+     58
+    ],
+    "msg_b": "sim-2",
+    "pos_b": [
+     73,
+     93
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 3,
+    "frame": [
+     60,
+     73
+    ],
+    "n_viol": 2,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     60,
+     73
+    ],
+    "msg_b": "sim-1",
+    "pos_b": [
+     71,
+     84
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 5,
+    "frame": [
+     61,
+     92
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     61,
+     92
+    ],
+    "msg_b": "sim-0",
+    "pos_b": [
+     30,
+     61
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 6,
+    "frame": [
+     61,
+     73
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     61,
+     73
+    ],
+    "msg_b": "sim-5",
+    "pos_b": [
+     30,
+     42
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 4,
+    "frame": [
+     60,
+     73
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     71,
+     84
+    ],
+    "msg_b": "sim-1",
+    "pos_b": [
+     34,
+     47
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 5,
+    "frame": [
+     61,
+     92
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     72,
+     103
+    ],
+    "msg_b": "sim-0",
+    "pos_b": [
+     30,
+     61
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 6,
+    "frame": [
+     61,
+     75
+    ],
+    "n_viol": 4,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     72,
+     86
+    ],
+    "msg_b": "sim-5",
+    "pos_b": [
+     30,
+     44
+    ]
+   },
+   {
+    "occ_a": 4,
+    "occ_b": 5,
+    "frame": [
+     61,
+     92
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     35,
+     66
+    ],
+    "msg_b": "sim-0",
+    "pos_b": [
+     30,
+     61
+    ]
+   },
+   {
+    "occ_a": 4,
+    "occ_b": 6,
+    "frame": [
+     61,
+     73
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     35,
+     47
+    ],
+    "msg_b": "sim-5",
+    "pos_b": [
+     30,
+     42
+    ]
+   }
+  ],
+  "occurrences": [
+   {
+    "msg": "sim-2",
+    "span": [
+     40,
+     68
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-6",
+    "span": [
+     33,
+     61
+    ],
+    "pot": -7
+   },
+   {
+    "msg": "sim-0",
+    "span": [
+     59,
+     87
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-1",
+    "span": [
+     73,
+     98
+    ],
+    "pot": 11
+   },
+   {
+    "msg": "sim-1",
+    "span": [
+     33,
+     61
+    ],
+    "pot": -26
+   },
+   {
+    "msg": "sim-0",
+    "span": [
+     29,
+     62
+    ],
+    "pot": -31
+   },
+   {
+    "msg": "sim-5",
+    "span": [
+     29,
+     62
+    ],
+    "pot": -31
+   },
+   {
+    "msg": "sim-4",
+    "span": [
+     35,
+     63
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-8",
+    "span": [
+     36,
+     64
+    ],
+    "pot": 1
+   },
+   {
+    "msg": "sim-2",
+    "span": [
+     75,
+     103
+    ],
+    "pot": 35
+   }
+  ],
+  "witness_cover": 0.771,
+  "n_cores": 17,
+  "full": {
+   "dim": 1,
+   "distinct": 1,
+   "nlet": 82,
+   "neqs": 401
+  },
+  "core": {
+   "dim": 2,
+   "distinct": 78,
+   "nlet": 78,
+   "neqs": 286
+  },
+  "pinned": {
+   "n_pinned": 78,
+   "nlet": 78,
+   "distinct": 78,
+   "ioc": [
+    0.07096,
+    963
+   ]
+  },
+  "commut_split": {
+   "mixed": [
+    74,
+    74
+   ]
+  },
+  "pairwise_consistent": [
+   136,
+   136
+  ],
+  "consensus": {
+   "verdict": "CONSISTENT",
+   "n_kept": 17,
+   "n_dropped": 0,
+   "dropped": [],
+   "history": [
+    [
+     17,
+     2,
+     78
+    ]
+   ],
+   "n_pinned": 78,
+   "distinct": 78,
+   "ioc": [
+    0.07096,
+    963
+   ]
+  },
+  "consensus_pi": {
+   "0": 0,
+   "1": 1,
+   "2": 56,
+   "3": 47,
+   "4": 80,
+   "5": 57,
+   "6": 64,
+   "7": 17,
+   "8": 10,
+   "9": 66,
+   "10": 41,
+   "11": 76,
+   "12": 23,
+   "13": 48,
+   "14": 74,
+   "15": 34,
+   "16": 6,
+   "17": 69,
+   "18": 16,
+   "19": 55,
+   "20": 72,
+   "21": 42,
+   "22": 51,
+   "23": 29,
+   "24": 73,
+   "25": 30,
+   "26": 11,
+   "27": 26,
+   "28": 3,
+   "30": 65,
+   "32": 22,
+   "33": 62,
+   "34": 24,
+   "35": 27,
+   "36": 32,
+   "37": 33,
+   "38": 5,
+   "39": 45,
+   "40": 44,
+   "42": 77,
+   "43": 2,
+   "44": 52,
+   "46": 38,
+   "47": 39,
+   "48": 82,
+   "49": 59,
+   "50": 53,
+   "51": 31,
+   "52": 18,
+   "53": 63,
+   "54": 67,
+   "55": 71,
+   "56": 54,
+   "57": 58,
+   "58": 50,
+   "59": 25,
+   "60": 70,
+   "61": 78,
+   "62": 35,
+   "63": 46,
+   "64": 4,
+   "65": 49,
+   "66": 60,
+   "67": 61,
+   "69": 28,
+   "70": 20,
+   "71": 75,
+   "72": 81,
+   "73": 40,
+   "74": 68,
+   "75": 13,
+   "76": 12,
+   "77": 14,
+   "78": 19,
+   "79": 7,
+   "80": 9,
+   "81": 43,
+   "82": 21
+  },
+  "pi_truth_match": 1.0,
+  "jump_recall": "0/0 detectable (of 0 total)"
+ },
+ "sparse": {
+  "label": "control: sparse walk",
+  "pairs": 17,
+  "webs": [
+   5,
+   2,
+   3
+  ],
+  "gauge_violations": 0,
+  "fixed_points": 0,
+  "closed_cycles": 0,
+  "commut": [
+   74,
+   74
+  ],
+  "closure": {
+   "cells": 112,
+   "clean": 96,
+   "viol": 16
+  },
+  "zones": 8,
+  "zones_evidence": 8,
+  "zone_detail": [
+   {
+    "occ_a": 0,
+    "occ_b": 1,
+    "frame": [
+     60,
+     73
+    ],
+    "n_viol": 2,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     60,
+     73
+    ],
+    "msg_b": "sim-1",
+    "pos_b": [
+     71,
+     84
+    ]
+   },
+   {
+    "occ_a": 0,
+    "occ_b": 3,
+    "frame": [
+     61,
+     92
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     61,
+     92
+    ],
+    "msg_b": "sim-0",
+    "pos_b": [
+     30,
+     61
+    ]
+   },
+   {
+    "occ_a": 0,
+    "occ_b": 4,
+    "frame": [
+     61,
+     73
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     61,
+     73
+    ],
+    "msg_b": "sim-5",
+    "pos_b": [
+     30,
+     42
+    ]
+   },
+   {
+    "occ_a": 1,
+    "occ_b": 2,
+    "frame": [
+     60,
+     73
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     71,
+     84
+    ],
+    "msg_b": "sim-1",
+    "pos_b": [
+     34,
+     47
+    ]
+   },
+   {
+    "occ_a": 1,
+    "occ_b": 3,
+    "frame": [
+     61,
+     92
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     72,
+     103
+    ],
+    "msg_b": "sim-0",
+    "pos_b": [
+     30,
+     61
+    ]
+   },
+   {
+    "occ_a": 1,
+    "occ_b": 4,
+    "frame": [
+     61,
+     75
+    ],
+    "n_viol": 4,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     72,
+     86
+    ],
+    "msg_b": "sim-5",
+    "pos_b": [
+     30,
+     44
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 3,
+    "frame": [
+     61,
+     92
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     35,
+     66
+    ],
+    "msg_b": "sim-0",
+    "pos_b": [
+     30,
+     61
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 4,
+    "frame": [
+     61,
+     73
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "sim-1",
+    "pos_a": [
+     35,
+     47
+    ],
+    "msg_b": "sim-5",
+    "pos_b": [
+     30,
+     42
+    ]
+   }
+  ],
+  "occurrences": [
+   {
+    "msg": "sim-0",
+    "span": [
+     59,
+     87
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-1",
+    "span": [
+     73,
+     98
+    ],
+    "pot": 11
+   },
+   {
+    "msg": "sim-1",
+    "span": [
+     33,
+     61
+    ],
+    "pot": -26
+   },
+   {
+    "msg": "sim-0",
+    "span": [
+     29,
+     62
+    ],
+    "pot": -31
+   },
+   {
+    "msg": "sim-5",
+    "span": [
+     29,
+     62
+    ],
+    "pot": -31
+   },
+   {
+    "msg": "sim-4",
+    "span": [
+     35,
+     63
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-8",
+    "span": [
+     36,
+     64
+    ],
+    "pot": 1
+   },
+   {
+    "msg": "sim-2",
+    "span": [
+     75,
+     103
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-6",
+    "span": [
+     33,
+     61
+    ],
+    "pot": -42
+   },
+   {
+    "msg": "sim-2",
+    "span": [
+     46,
+     57
+    ],
+    "pot": -35
+   }
+  ],
+  "witness_cover": 0.775,
+  "n_cores": 17,
+  "full": {
+   "dim": 2,
+   "distinct": 2,
+   "nlet": 80,
+   "neqs": 378
+  },
+  "core": {
+   "dim": 3,
+   "distinct": 76,
+   "nlet": 77,
+   "neqs": 272
+  },
+  "pinned": {
+   "n_pinned": 2,
+   "nlet": 77,
+   "distinct": 2,
+   "ioc": [
+    0.0,
+    0
+   ]
+  },
+  "commut_split": {
+   "mixed": [
+    74,
+    74
+   ]
+  },
+  "pairwise_consistent": [
+   136,
+   136
+  ],
+  "consensus": {
+   "verdict": "CONSISTENT",
+   "n_kept": 17,
+   "n_dropped": 0,
+   "dropped": [],
+   "history": [
+    [
+     17,
+     3,
+     75
+    ]
+   ],
+   "n_pinned": 75,
+   "distinct": 75,
+   "ioc": [
+    0.06904,
+    915
+   ]
+  },
+  "consensus_pi": {
+   "1": 0,
+   "2": 1,
+   "3": 28,
+   "4": 12,
+   "5": 81,
+   "6": 60,
+   "8": 56,
+   "9": 54,
+   "10": 46,
+   "11": 24,
+   "12": 17,
+   "13": 25,
+   "14": 30,
+   "15": 67,
+   "16": 68,
+   "18": 38,
+   "19": 4,
+   "20": 36,
+   "21": 43,
+   "22": 16,
+   "23": 82,
+   "24": 33,
+   "25": 79,
+   "26": 53,
+   "27": 8,
+   "28": 77,
+   "29": 61,
+   "30": 57,
+   "32": 20,
+   "33": 66,
+   "34": 14,
+   "35": 5,
+   "36": 73,
+   "37": 70,
+   "38": 71,
+   "39": 34,
+   "40": 37,
+   "41": 58,
+   "42": 21,
+   "43": 80,
+   "44": 13,
+   "46": 55,
+   "48": 6,
+   "49": 75,
+   "50": 10,
+   "51": 76,
+   "52": 32,
+   "53": 63,
+   "55": 39,
+   "56": 7,
+   "57": 78,
+   "58": 19,
+   "59": 11,
+   "60": 42,
+   "61": 18,
+   "62": 64,
+   "63": 31,
+   "64": 74,
+   "65": 22,
+   "66": 72,
+   "67": 69,
+   "69": 2,
+   "70": 26,
+   "71": 27,
+   "72": 9,
+   "73": 49,
+   "74": 48,
+   "75": 47,
+   "76": 50,
+   "77": 44,
+   "78": 29,
+   "79": 65,
+   "80": 59,
+   "81": 40,
+   "82": 23
+  },
+  "pi_truth_match": 1.0,
+  "jump_recall": "0/1 detectable (of 10 total)"
+ },
+ "rowkey": {
+  "label": "control: rowkey walk",
+  "pairs": 18,
+  "webs": [
+   3,
+   3,
+   3
+  ],
+  "gauge_violations": 12,
+  "fixed_points": 0,
+  "closed_cycles": 0,
+  "commut": [
+   49,
+   49
+  ],
+  "closure": {
+   "cells": 70,
+   "clean": 66,
+   "viol": 4
+  },
+  "zones": 3,
+  "zones_evidence": 3,
+  "zone_detail": [
+   {
+    "occ_a": 0,
+    "occ_b": 1,
+    "frame": [
+     29,
+     70
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     29,
+     70
+    ],
+    "msg_b": "sim-1",
+    "pos_b": [
+     42,
+     83
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 3,
+    "frame": [
+     29,
+     54
+    ],
+    "n_viol": 2,
+    "evidence": true,
+    "msg_a": "sim-4",
+    "pos_a": [
+     29,
+     54
+    ],
+    "msg_b": "sim-8",
+    "pos_b": [
+     42,
+     67
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 8,
+    "frame": [
+     29,
+     54
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-8",
+    "pos_a": [
+     42,
+     67
+    ],
+    "msg_b": "sim-3",
+    "pos_b": [
+     55,
+     80
+    ]
+   }
+  ],
+  "occurrences": [
+   {
+    "msg": "sim-0",
+    "span": [
+     32,
+     87
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-1",
+    "span": [
+     45,
+     100
+    ],
+    "pot": 13
+   },
+   {
+    "msg": "sim-4",
+    "span": [
+     30,
+     65
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-8",
+    "span": [
+     43,
+     78
+    ],
+    "pot": 13
+   },
+   {
+    "msg": "sim-5",
+    "span": [
+     37,
+     60
+    ],
+    "pot": -26
+   },
+   {
+    "msg": "sim-2",
+    "span": [
+     73,
+     99
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-6",
+    "span": [
+     47,
+     73
+    ],
+    "pot": -26
+   },
+   {
+    "msg": "sim-2",
+    "span": [
+     34,
+     59
+    ],
+    "pot": -39
+   },
+   {
+    "msg": "sim-3",
+    "span": [
+     56,
+     77
+    ],
+    "pot": 26
+   }
+  ],
+  "witness_cover": 0.629,
+  "n_cores": 22,
+  "full": {
+   "dim": 1,
+   "distinct": 1,
+   "nlet": 82,
+   "neqs": 509
+  },
+  "core": {
+   "dim": 2,
+   "distinct": 81,
+   "nlet": 81,
+   "neqs": 284
+  },
+  "pinned": {
+   "n_pinned": 81,
+   "nlet": 81,
+   "distinct": 81,
+   "ioc": [
+    0.07038,
+    1030
+   ]
+  },
+  "commut_split": {
+   "mixed": [
+    49,
+    49
+   ]
+  },
+  "pairwise_consistent": [
+   231,
+   231
+  ],
+  "consensus": {
+   "verdict": "CONSISTENT",
+   "n_kept": 22,
+   "n_dropped": 0,
+   "dropped": [],
+   "history": [
+    [
+     22,
+     2,
+     81
+    ]
+   ],
+   "n_pinned": 81,
+   "distinct": 81,
+   "ioc": [
+    0.07038,
+    1030
+   ]
+  },
+  "consensus_pi": {
+   "0": 0,
+   "1": 1,
+   "2": 56,
+   "3": 47,
+   "4": 80,
+   "5": 57,
+   "6": 64,
+   "7": 17,
+   "8": 10,
+   "9": 66,
+   "10": 41,
+   "11": 76,
+   "12": 23,
+   "13": 48,
+   "14": 74,
+   "15": 34,
+   "16": 6,
+   "17": 69,
+   "18": 16,
+   "19": 55,
+   "20": 72,
+   "21": 42,
+   "22": 51,
+   "23": 29,
+   "24": 73,
+   "25": 30,
+   "26": 11,
+   "27": 26,
+   "28": 3,
+   "29": 36,
+   "30": 65,
+   "31": 15,
+   "32": 22,
+   "33": 62,
+   "34": 24,
+   "35": 27,
+   "36": 32,
+   "37": 33,
+   "38": 5,
+   "39": 45,
+   "40": 44,
+   "41": 37,
+   "42": 77,
+   "43": 2,
+   "45": 8,
+   "46": 38,
+   "47": 39,
+   "48": 82,
+   "49": 59,
+   "50": 53,
+   "51": 31,
+   "52": 18,
+   "53": 63,
+   "54": 67,
+   "55": 71,
+   "56": 54,
+   "58": 50,
+   "59": 25,
+   "60": 70,
+   "61": 78,
+   "62": 35,
+   "63": 46,
+   "64": 4,
+   "65": 49,
+   "66": 60,
+   "67": 61,
+   "68": 79,
+   "69": 28,
+   "70": 20,
+   "71": 75,
+   "72": 81,
+   "73": 40,
+   "74": 68,
+   "75": 13,
+   "76": 12,
+   "77": 14,
+   "78": 19,
+   "79": 7,
+   "80": 9,
+   "81": 43,
+   "82": 21
+  },
+  "pi_truth_match": 1.0,
+  "jump_recall": "12/27 detectable (of 78 total)",
+  "rowdist_window_ends": {
+   "n": 72,
+   "obs_mean": 3.64,
+   "null_mean": 3.74,
+   "z": -0.32
+  },
+  "rowdist_zones": {
+   "n": 12,
+   "obs_mean": 3.0,
+   "null_mean": 3.72,
+   "z": -0.97
+  }
+ },
+ "dense": {
+  "label": "control: dense walk",
+  "pairs": 2,
+  "webs": [
+   2
+  ],
+  "gauge_violations": 0,
+  "fixed_points": 0,
+  "closed_cycles": 0,
+  "commut": [
+   1,
+   1
+  ],
+  "closure": {
+   "cells": 4,
+   "clean": 3,
+   "viol": 1
+  },
+  "zones": 1,
+  "zones_evidence": 1,
+  "zone_detail": [
+   {
+    "occ_a": 0,
+    "occ_b": 1,
+    "frame": [
+     29,
+     42
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "sim-0",
+    "pos_a": [
+     29,
+     42
+    ],
+    "msg_b": "sim-1",
+    "pos_b": [
+     34,
+     47
+    ]
+   }
+  ],
+  "occurrences": [
+   {
+    "msg": "sim-0",
+    "span": [
+     33,
+     42
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "sim-1",
+    "span": [
+     38,
+     47
+    ],
+    "pot": 5
+   }
+  ],
+  "witness_cover": 0.581,
+  "n_cores": 2,
+  "full": {
+   "dim": 11,
+   "distinct": 24,
+   "nlet": 25,
+   "neqs": 25
+  },
+  "core": {
+   "dim": 6,
+   "distinct": 11,
+   "nlet": 11,
+   "neqs": 12
+  },
+  "pinned": {
+   "n_pinned": 3,
+   "nlet": 11,
+   "distinct": 3,
+   "ioc": [
+    0.0,
+    1
+   ]
+  },
+  "commut_split": {
+   "mixed": [
+    1,
+    1
+   ]
+  },
+  "pairwise_consistent": [
+   1,
+   1
+  ],
+  "consensus": {
+   "verdict": "EXHAUSTED",
+   "n_kept": 2,
+   "n_dropped": 0,
+   "dropped": [],
+   "history": []
+  },
+  "subsystems": {
+   "cross-msg": {
+    "segs": 2,
+    "dim": 6,
+    "merges": 0,
+    "pinned": 3,
+    "distinct": 3,
+    "ioc": [
+     0.0,
+     1
+    ]
+   },
+   "web0": {
+    "segs": 2,
+    "dim": 6,
+    "merges": 0,
+    "pinned": 3,
+    "distinct": 3,
+    "ioc": [
+     0.0,
+     1
+    ]
+   }
+  },
+  "modulus_sweep": {
+   "59": 6,
+   "61": 6,
+   "67": 6,
+   "71": 6,
+   "73": 6,
+   "79": 6,
+   "83": 6,
+   "89": 6,
+   "97": 6,
+   "101": 6,
+   "103": 6,
+   "107": 6,
+   "109": 6,
+   "113": 6,
+   "127": 6
+  },
+  "pi_truth_match": 1.0,
+  "jump_recall": "3/3 detectable (of 163 total)"
+ },
+ "affine": {
+  "label": "control: affine walk",
+  "pairs": 0
+ },
+ "shuffle": {
+  "pairs": 0
+ },
+ "real": {
+  "label": "REAL CORPUS",
+  "pairs": 18,
+  "webs": [
+   3,
+   6
+  ],
+  "gauge_violations": 0,
+  "fixed_points": 0,
+  "closed_cycles": 0,
+  "commut": [
+   6,
+   16
+  ],
+  "closure": {
+   "cells": 139,
+   "clean": 81,
+   "viol": 58
+  },
+  "zones": 25,
+  "zones_evidence": 14,
+  "zone_detail": [
+   {
+    "occ_a": 2,
+    "occ_b": 3,
+    "frame": [
+     37,
+     43
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     37,
+     43
+    ],
+    "msg_b": "east-2",
+    "pos_b": [
+     72,
+     78
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 4,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     58,
+     62
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     53,
+     57
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 5,
+    "frame": [
+     37,
+     43
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     37,
+     43
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     62,
+     68
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 5,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     58,
+     62
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     83,
+     87
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 6,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 2,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     47,
+     55
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     42,
+     50
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 6,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     58,
+     62
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     53,
+     57
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 7,
+    "frame": [
+     40,
+     43
+    ],
+    "n_viol": 5,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     40,
+     43
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     63,
+     66
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 7,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     47,
+     55
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     70,
+     78
+    ]
+   },
+   {
+    "occ_a": 2,
+    "occ_b": 7,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     58,
+     62
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     81,
+     85
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 4,
+    "frame": [
+     37,
+     43
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     72,
+     78
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     32,
+     38
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 4,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     93,
+     97
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     53,
+     57
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 5,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     93,
+     97
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     83,
+     87
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 6,
+    "frame": [
+     40,
+     43
+    ],
+    "n_viol": 4,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     75,
+     78
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     35,
+     38
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 6,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     82,
+     90
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     42,
+     50
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 6,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     93,
+     97
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     53,
+     57
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 7,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 5,
+    "evidence": true,
+    "msg_a": "east-2",
+    "pos_a": [
+     82,
+     90
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     70,
+     78
+    ]
+   },
+   {
+    "occ_a": 3,
+    "occ_b": 7,
+    "frame": [
+     58,
+     62
+    ],
+    "n_viol": 1,
+    "evidence": false,
+    "msg_a": "east-2",
+    "pos_a": [
+     93,
+     97
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     81,
+     85
+    ]
+   },
+   {
+    "occ_a": 4,
+    "occ_b": 5,
+    "frame": [
+     37,
+     43
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "west-1",
+    "pos_a": [
+     32,
+     38
+    ],
+    "msg_b": "west-1",
+    "pos_b": [
+     62,
+     68
+    ]
+   },
+   {
+    "occ_a": 4,
+    "occ_b": 6,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 2,
+    "evidence": true,
+    "msg_a": "west-1",
+    "pos_a": [
+     42,
+     50
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     42,
+     50
+    ]
+   },
+   {
+    "occ_a": 4,
+    "occ_b": 7,
+    "frame": [
+     40,
+     43
+    ],
+    "n_viol": 5,
+    "evidence": false,
+    "msg_a": "west-1",
+    "pos_a": [
+     35,
+     38
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     63,
+     66
+    ]
+   },
+   {
+    "occ_a": 4,
+    "occ_b": 7,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "west-1",
+    "pos_a": [
+     42,
+     50
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     70,
+     78
+    ]
+   },
+   {
+    "occ_a": 5,
+    "occ_b": 6,
+    "frame": [
+     40,
+     43
+    ],
+    "n_viol": 4,
+    "evidence": true,
+    "msg_a": "west-1",
+    "pos_a": [
+     65,
+     68
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     35,
+     38
+    ]
+   },
+   {
+    "occ_a": 5,
+    "occ_b": 6,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 1,
+    "evidence": true,
+    "msg_a": "west-1",
+    "pos_a": [
+     72,
+     80
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     42,
+     50
+    ]
+   },
+   {
+    "occ_a": 5,
+    "occ_b": 7,
+    "frame": [
+     47,
+     55
+    ],
+    "n_viol": 3,
+    "evidence": true,
+    "msg_a": "west-1",
+    "pos_a": [
+     72,
+     80
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     70,
+     78
+    ]
+   },
+   {
+    "occ_a": 6,
+    "occ_b": 7,
+    "frame": [
+     38,
+     43
+    ],
+    "n_viol": 4,
+    "evidence": false,
+    "msg_a": "east-1",
+    "pos_a": [
+     33,
+     38
+    ],
+    "msg_b": "east-1",
+    "pos_b": [
+     61,
+     66
+    ]
+   }
+  ],
+  "occurrences": [
+   {
+    "msg": "east-5",
+    "span": [
+     35,
+     67
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "west-4",
+    "span": [
+     36,
+     67
+    ],
+    "pot": 1
+   },
+   {
+    "msg": "east-2",
+    "span": [
+     35,
+     63
+    ],
+    "pot": 0
+   },
+   {
+    "msg": "east-2",
+    "span": [
+     74,
+     98
+    ],
+    "pot": 35
+   },
+   {
+    "msg": "west-1",
+    "span": [
+     30,
+     52
+    ],
+    "pot": -5
+   },
+   {
+    "msg": "west-1",
+    "span": [
+     64,
+     82
+    ],
+    "pot": 25
+   },
+   {
+    "msg": "east-1",
+    "span": [
+     30,
+     49
+    ],
+    "pot": -5
+   },
+   {
+    "msg": "east-1",
+    "span": [
+     68,
+     77
+    ],
+    "pot": 23
+   },
+   {
+    "msg": "east-4",
+    "span": [
+     51,
+     66
+    ],
+    "pot": -1
+   }
+  ],
+  "witness_cover": 0.643,
+  "n_cores": 19,
+  "full": {
+   "dim": 1,
+   "distinct": 1,
+   "nlet": 80,
+   "neqs": 340
+  },
+  "core": {
+   "dim": 1,
+   "distinct": 1,
+   "nlet": 71,
+   "neqs": 192
+  },
+  "commut_split": {
+   "mixed": [
+    0,
+    2
+   ],
+   "pure-49": [
+    0,
+    2
+   ],
+   "pure-48": [
+    6,
+    12
+   ]
+  },
+  "pairwise_consistent": [
+   148,
+   171
+  ],
+  "consensus": {
+   "verdict": "UNDERDETERMINED",
+   "n_kept": 14,
+   "n_dropped": 5,
+   "dropped": [
+    [
+     "east-1",
+     "30",
+     "east-2",
+     "35",
+     "19"
+    ],
+    [
+     "east-2",
+     "35",
+     "west-1",
+     "30",
+     "22"
+    ],
+    [
+     "east-4",
+     "51",
+     "west-4",
+     "53",
+     "12"
+    ],
+    [
+     "east-2",
+     "39",
+     "west-1",
+     "64",
+     "18"
+    ],
+    [
+     "east-5",
+     "35",
+     "west-4",
+     "36",
+     "31"
+    ]
+   ],
+   "history": [
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     17,
+     2,
+     70
+    ],
+    [
+     16,
+     2,
+     70
+    ],
+    [
+     15,
+     2,
+     70
+    ],
+    [
+     14,
+     8,
+     20
+    ]
+   ],
+   "n_pinned": 20,
+   "distinct": 16,
+   "ioc": [
+    0.0526,
+    56
+   ]
+  },
+  "consensus_pi": {
+   "6": 0,
+   "11": 1,
+   "14": 40,
+   "16": 22,
+   "18": 65,
+   "19": 64,
+   "20": 1,
+   "22": 61,
+   "23": 2,
+   "26": 42,
+   "29": 43,
+   "30": 22,
+   "31": 24,
+   "41": 41,
+   "42": 63,
+   "47": 20,
+   "49": 44,
+   "50": 18,
+   "70": 63,
+   "80": 43
+  },
+  "subsystems": {
+   "within-msg": {
+    "segs": 5,
+    "dim": 20,
+    "merges": 0,
+    "pinned": 2,
+    "distinct": 2,
+    "ioc": [
+     0.0,
+     0
+    ]
+   },
+   "cross-msg": {
+    "segs": 14,
+    "dim": 3,
+    "merges": 67,
+    "pinned": 68,
+    "distinct": 2,
+    "ioc": [
+     0.89954,
+     747
+    ]
+   },
+   "web0": {
+    "segs": 3,
+    "dim": 14,
+    "merges": 7,
+    "pinned": 7,
+    "distinct": 4,
+    "ioc": [
+     0.6,
+     5
+    ]
+   },
+   "web1": {
+    "segs": 16,
+    "dim": 3,
+    "merges": 51,
+    "pinned": 52,
+    "distinct": 2,
+    "ioc": [
+     0.81002,
+     467
+    ]
+   }
+  },
+  "modulus_sweep": {
+   "59": 1,
+   "61": 1,
+   "67": 1,
+   "71": 1,
+   "73": 1,
+   "79": 1,
+   "83": 1,
+   "89": 1,
+   "97": 1,
+   "101": 1,
+   "103": 1,
+   "107": 1,
+   "109": 1,
+   "113": 1,
+   "127": 1
+  },
+  "rowdist_window_ends": {
+   "n": 72,
+   "obs_mean": 6.67,
+   "null_mean": 8.75,
+   "z": -2.9
+  },
+  "rowdist_zones": {
+   "n": 100,
+   "obs_mean": 7.0,
+   "null_mean": 8.85,
+   "z": -3.01
+  }
+ }
+}

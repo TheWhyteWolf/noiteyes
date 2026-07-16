@@ -1,0 +1,36 @@
+{
+ "single": {
+  "overall": 1.0
+ },
+ "mono": {
+  "overall": 0.167
+ },
+ "real": {
+  "overall": 0.0,
+  "fits": [
+   {
+    "web": [
+     0,
+     1,
+     8
+    ],
+    "unit": true,
+    "agree": 0,
+    "tot": 4,
+    "frac": 0.0
+   },
+   {
+    "web": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "unit": false
+   }
+  ]
+ },
+ "verdict_ok_rotor": false
+}
