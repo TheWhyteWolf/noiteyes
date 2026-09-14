@@ -1,0 +1,127 @@
+﻿Eye Message Alignments and Gap Patterns
+
+
+Messages are written out in ASCII+32 for compactness; to get the trigram value (between 0 and 82), take the ASCII value and subtract 32. The order of the messages is E1, W1, E2, W2, E3, W3, E4, W4, E5. The letters used in ciphertext patterns are like abc... and just represent variable trigrams, and similarly the letters used in plaintext patterns are like xyz and are similarly just variable letters.
+This shows all the aligned trigrams between messages. Color coding is between the three groups of messages. The first three messages have a lot of similarities, as do the last three, with the middle three not sharing as much with the other two groups of three. Red for alignments within messages 123, yellow between 123 and 456, green within 456, cyan between 456 and 789, blue within 789, magenta between 123 and 789, and gray between all messages.
+
+
+Alignments
+Rb%P^-k=8]Jfb^@.q(/n"=-Q!prH_q53 HSa:.5fOLPJ3P-O3Qh?%8#K[cAQI\5:>%94g+jX$j3g$SIKphV_oq/0L?>,AY<-`KP
+pb%P^-k=8]Jfb^@.q(/n"=-Q!=+>Tq53 9:V4.5fOLPJ3P-O3QL:[m`Ko<h`!>i7c&A9`qdN1D-15d-)NcYB^r/*i^"+ahEL*Kd^)B2
+Db%P^-k=8]Jfb^@.q(/n"=-Q!elT)Pbp6`YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m*\q]BVf5/$bmJE>6 +IhY47YaI72hJ%#:n(%VMm9`]0LVS4_9+:MU\FB
+lb%QkVeN@!J\:PRp@8W]O,5,QVB9D/XW4)(^-r)L=\UrJp%Kg#pmOnB9^2*Q^`Tq+b^-O1Tf:7@?`7C@R&!9(EOK:ladp1'M_.U_\0
+_b%QkV"\=HnO\kcg\"a'O.Mj[Ip-\-q6CRHG"[P?l"pk!Xc+5(HaMkWG\J-#6Y"&Z)f!ZX_d9o'43`"bi>g0,>aE4-6_2N`[Iqr6nDO1$&1%Do_!`e/K$ZX?.`Z2Lne! N4gi9C(8
+Bb%QkV7j+-<:3PcYE\B<j*1@+23K3qJ$^)NQ@SlZ$KO1co5@L0>E:<IdYBS*ef(&NK2GOK/-A>C^E E%FWE-H9)5+`%oJd+g+P#c]H6.CR]G+"bQSU1iDkjV8>Vf
+;b%QkV"\=H"W)/[2d#D%OmLF!2<l$B\_Zp1VokPVW3^`.OSfk%+OMZdeo9FMiOdRBMn:oY$X6\2kK\[c_JQAHaom'#:^?n:YeH$7:-cJFh+Ga\9&pbdm[n3
+mb%QkV"\=H"W)/[2d#D%O\5p!hW0rCY3!b2;G1jqG.n 9aKb`Fq78RY>gk:dVYXRgi.5(@:_%E3KbOUBb7i?VFmc+_o&65Sej5%1cE=5\.rL>$4JC!?VN4H>
+Ab%QkV"\=H"W)/[2d#D%OA5[L2<l[B\_o;,V%QPVWT^he*Y6ZPcU'B@>?3:(BN'>gWBkV)&\%79MJp9,6l4S^5H)I*Li(Afi&?5h%H]SJb`j]9_J8I
+Notably, b% near the beginning is shared between all messages, P^-k=8]Jfb^@.q(/n"=-Q! is shared in messages 123, q53  (including space) and .5fOLPJ3P-O3Q in messages 12, QkV in messages 456789,"\=H in messages 5789, "W)/[2d#D%O in messages 789, and 2<l, B\_ and PVW in messages 79. Then there are also some individual letters that are shared more randomly.
+
+
+This shows the gaps between repeated trigrams, up to a gap size of 16. Larger gaps being highlighted overrides the smaller gaps, though this makes it pretty messy and hard to read, sorry. I could probably pick better color coding, but I did this in word earlier for some reason, and the colors for highlighting are weirdly limited there.
+Gaps
+Rb%P^-k=8]Jfb^@.q(/n"=-Q!prH_q53 HSa:.5fOLPJ3P-O3Qh?%8#K[cAQI\5:>%94g+jX$j3g$SIKphV_oq/0L?>,AY<-`KP
+pb%P^-k=8]Jfb^@.q(/n"=-Q!=+>Tq53 9:V4.5fOLPJ3P-O3QL:[m`Ko<h`!>i7c&A9`qdN1D-15d-)NcYB^r/*i^"+ahEL*Kd^)B2
+Db%P^-k=8]Jfb^@.q(/n"=-Q!elT)Pbp6`YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m*\q]BVf5/$bmJE>6 +IhY47YaI72hJ%#:n(%VMm9`]0LVS4_9+:MU\FB
+lb%QkVeN@!J\:PRp@8W]O,5,QVB9D/XW4)(^-r)L=\UrJp%Kg#pmOnB9^2*Q^`Tq+b^-O1Tf:7@?`7C@R&!9(EOK:ladp1'M_.U_\0
+_b%QkV"\=HnO\kcg\"a'O.Mj[Ip-\-q6CRHG"[P?l"pk!Xc+5(HaMkWG\J-#6Y"&Z)f!ZX_d9o'43`"bi>g0,>aE4-6_2N`[Iqr6nDO1$&1%Do_!`e/K$ZX?.`Z2Lne! N4gi9C(8
+Bb%QkV7j+-<:3PcYE\B<j*1@+23K3qJ$^)NQ@SlZ$KO1co5@L0>E:<IdYBS*ef(&NK2GOK/-A>C^E E%FWE-H9)5+`%oJd+g+P#c]H6.CR]G+"bQSU1iDkjV8>Vf
+;b%QkV"\=H"W)/[2d#D%OmLF!2<l$B\_Zp1VokPVW3^`.OSfk%+OMZdeo9FMiOdRBMn:oY$X6\2kK\[c_JQAHaom'#:^?n:YeH$7:-cJFh+Ga\9&pbdm[n3
+mb%QkV"\=H"W)/[2d#D%O\5p!hW0rCY3!b2;G1jqG.n 9aKb`Fq78RY>gk:dVYXRgi.5(@:_%E3KbOUBb7i?VFmc+_o&65Sej5%1cE=5\.rL>$4JC!?VN4H>
+Ab%QkV"\=H"W)/[2d#D%OA5[L2<l[B\_o;,V%QPVWT^he*Y6ZPcU'B@>?3:(BN'>gWBkV)&\%79MJp9,6l4S^5H)I*Li(Afi&?5h%H]SJb`j]9_J8I
+ 
+Size  0 1 2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+Count 0 5 9 26 11 12 12 11 18 10  7 19 12  4 10 18 13
+
+
+Notably, no trigram ever occurs twice in a row, and the number of gaps of size 3 is unusually high. There are several complex patterns that occur far more often than one would expect, so I highlighted those alone to make it easier to read.
+
+
+In messages 123, there is a pattern that repeats 6 times (in    ), twice in each message, with pattern a-b-cb-ac.
+A larger version of this pattern occurs in messages 23, 4 times (in      ), twice in each message, with pattern a-----bcd-ed-be-ca. 
+Also, there is a small pattern that occurs before the first time this pattern happens in each message (in  ), and a small pattern that occurs after in messages 2 and 3, but offset in message 2 (in  ), but these may not be as important. 
+
+
+Rb%P^-k=8]Jfb^@.q(/n"=-Q!prH_q53 HSa:.5fOLPJ3P-O3Qh?%8#K[cAQI\5:>%94g+jX$j3g$SIKphV_oq/0L?>,AY<-`KP
+pb%P^-k=8]Jfb^@.q(/n"=-Q!=+>Tq53 9:V4.5fOLPJ3P-O3QL:[m`Ko<h`!>i7c&A9`qdN1D-15d-)NcYB^r/*i^"+ahEL*Kd^)B2
+Db%P^-k=8]Jfb^@.q(/n"=-Q!elT)Pbp6`YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m*\q]BVf5/$bmJE>6 +IhY47YaI72hJ%#:n(%VMm9`]0LVS4_9+:MU\FB
+
+
+
+
+In messages 789, there is a pattern that happens 3 times (in    ), once in each message, with pattern ab-c----b-ac.
+There is another pattern that happens 3 times (in   ), once in each message, with pattern a-----b---b--a.
+There are also some small patterns that occur before (in  ) and between (in  ) these larger patterns, but these may not be as important.
+
+
+;b%QkV"\=H"W)/[2d#D%OmLF!2<l$B\_Zp1VokPVW3^`.OSfk%+OMZdeo9FMiOdRBMn:oY$X6\2kK\[c_JQAHaom'#:^?n:YeH$7:-cJFh+Ga\9&pbdm[n3
+mb%QkV"\=H"W)/[2d#D%O\5p!hW0rCY3!b2;G1jqG.n 9aKb`Fq78RY>gk:dVYXRgi.5(@:_%E3KbOUBb7i?VFmc+_o&65Sej5%1cE=5\.rL>$4JC!?VN4H>
+Ab%QkV"\=H"W)/[2d#D%OA5[L2<l[B\_o;,V%QPVWT^he*Y6ZPcU'B@>?3:(BN'>gWBkV)&\%79MJp9,6l4S^5H)I*Li(Afi&?5h%H]SJb`j]9_J8I
+Note that these are patterns in the ciphertext, so an ASCII character here being the same does not necessarily mean that they correspond to the same character in the plaintext. The repeated trigrams are likely different plaintext characters each time, but the repetition pattern being the same and happening in multiple messages is unlikely to happen by chance. Because of this, I am making an assumption that these patterns in messages 123 and 789 may represent the same plaintext word or phrase. 
+
+
+I am also making an assumption that if two trigrams appear at the same positional index in different messages, then they represent the same plaintext character in the two messages (so the b% at the beginning is the same two plaintext characters in all messages, for example).
+Note: This assumption is incorrect. Disregard the following conclusions. This was an exploration of an idea that turned out to be a dead end.
+Putting these patterns together with the alignments, we can make a few inferences about several trigrams representing the same plaintext character in particular places. 
+Look at this section of messages 123 (some highlighting removed):
+OLPJ3P-O3Qh?%8#K
+OLPJ3P-O3QL:[m`K
+X3OHp&-`=Q`_&Q?-
+All three messages are aligned at - and Q. Because of the offset of the third message, the alignment at - lands on the first green part of the pattern. If we are assuming that the pattern a-b-cb-ac represents the same word/phrase in all three messages, this alignment implies that the first L in messages 1 and 2, the - in messages 1 and 2, the first - in message 3, and the _ in message 3 all represent the same plaintext character. Similarly, the alignment at Q lands on the first blue part of the pattern. The Q in the first two messages is just after the pattern, but since it lands in the middle of the third message, we can probably assume the pattern extends to this Q and the full shared pattern is like a-b-cb-ac-. This alignment implies that the first 3 in messages 1 and 2, the Q in messages 1 and 2, the first Q in message 3, and the ? in message 3 all represent the same plaintext character.
+To summarize, these alignments imply the plaintext pattern (aligned with messages 1 and 2, and message 3 below)
+ x--y-x--y
+OLPJ3P-O3Qh?%8#K
+OLPJ3P-O3QL:[m`K
+X3OHp&-`=Q`_&Q?-
+      X--y-x--y
+Next, look at this section of messages 789:
+OMZdeo9FMiOdRBM
+78RY>gk:dVYXRgi
+U'B@>?3:(BN'>gW
+These messages are aligned in pairs at > (in 89), : (in 89), R (in 78), and g (in 89). The offsets land these in the middle or just after the pattern in the other message, just as before. Again, we are assuming that the pattern ab-c----b-ac- here represents the same word or phrase in the plaintext. The alignment of > implies that the third and fourth letter of this pattern are the same in the plaintext, and the alignment of : implies that the sixth and seventh letter of the pattern are also the same in the plaintext. The alignments of R and g imply a pattern like x-x and -yy at the end of this pattern, respectively, but for both of these to happen, it must be that x = y, so this implies that the last three letters of the pattern are the same in the plaintext.
+To summarize, these alignments imply the plaintext pattern (aligned with message 7 below, just shift it for message 8 or 9):
+  xx-yy---zzz
+OMZdeo9FMiOdRBM
+78RY>gk:dVYXRgi
+U'B@>?3:(BN'>gW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Putting these together, we can highlight the letters which are implied to be the same plaintext character across messages. Only the ones determined to be the same from these patterns and alignments are highlighted to keep it from being too messy, but the pattern areas are also underlined (hopefully the underscore character is still slightly visible). This actually led to a couple of extra implications, like the o in message 2, the h in message 1, the a in message 5, and the 3 in message 8.
+
+
+Rb%P^-k=8]Jfb^@.q(/n"=-Q!prH_q53 HSa:.5fOLPJ3P-O3Qh?%8#K[cAQI\5:>%94g+jX$j3g$SIKphV_oq/0L?>,AY<-`KP
+pb%P^-k=8]Jfb^@.q(/n"=-Q!=+>Tq53 9:V4.5fOLPJ3P-O3QL:[m`Ko<h`!>i7c&A9`qdN1D-15d-)NcYB^r/*i^"+ahEL*Kd^)B2
+Db%P^-k=8]Jfb^@.q(/n"=-Q!elT)Pbp6`YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m*\q]BVf5/$bmJE>6 +IhY47YaI72hJ%#:n(%VMm9`]0LVS4_9+:MU\FB
+lb%QkVeN@!J\:PRp@8W]O,5,QVB9D/XW4)(^-r)L=\UrJp%Kg#pmOnB9^2*Q^`Tq+b^-O1Tf:7@?`7C@R&!9(EOK:ladp1'M_.U_\0
+_b%QkV"\=HnO\kcg\"a'O.Mj[Ip-\-q6CRHG"[P?l"pk!Xc+5(HaMkWG\J-#6Y"&Z)f!ZX_d9o'43`"bi>g0,>aE4-6_2N`[Iqr6nDO1$&1%Do_!`e/K$ZX?.`Z2Lne! N4gi9C(8
+Bb%QkV7j+-<:3PcYE\B<j*1@+23K3qJ$^)NQ@SlZ$KO1co5@L0>E:<IdYBS*ef(&NK2GOK/-A>C^E E%FWE-H9)5+`%oJd+g+P#c]H6.CR]G+"bQSU1iDkjV8>Vf 
+;b%QkV"\=H"W)/[2d#D%OmLF!2<l$B\_Zp1VokPVW3^`.OSfk%+OMZdeo9FMiOdRBMn:oY$X6\2kK\[c_JQAHaom'#:^?n:YeH$7:-cJFh+Ga\9&pbdm[n3
+mb%QkV"\=H"W)/[2d#D%O\5p!hW0rCY3!b2;G1jqG.n 9aKb`Fq78RY>gk:dVYXRgi.5(@:_%E3KbOUBb7i?VFmc+_o&65Sej5%1cE=5\.rL>$4JC!?VN4H>
+Ab%QkV"\=H"W)/[2d#D%OA5[L2<l[B\_o;,V%QPVWT^he*Y6ZPcU'B@>?3:(BN'>gWBkV)&\%79MJp9,6l4S^5H)I*Li(Afi&?5h%H]SJb`j]9_J8I
+
+
+One notable observation here is that there seem to be some places where more than one trigram represent the same plaintext character. d and @ in messages 7 and 9, 9 and 3 in messages 7 and 9, d and ' in messages 7 and 9, and R and > in messages 8 and 9 are the only examples here that can be seen so far.
+It is unknown what these characters (in      ) are in plaintext. They could all even be the same letter, potentially. One way to approach this would be to look at what English words/phrases match the plaintext patterns of x--y-x--y and xx-yy---zzz that were found. Three letters in a row like this could only be possible in a few specific instances. Either it is a Roman numeral (III, VIII, etc.), a number/year (1000, 1777, etc), punctuation like “...”, or spaces are not present in the messages. I personally think spaces being missing is the most likely explanation. 
+I decided to search the Gutenberg corpus to see how often these patterns occurred. Ignoring spaces, there are several possible letters this could be. Excluding Roman numerals, numbers, and punctuation, the most frequently occurring triple letters in English (crossing word boundaries) are L, S, F, and E.
+x--y-x--y was very common, and could be many different possible words/phrases. “immediate”, “character”, “agreeable”, “perhaps th”, “face of the” “epresente”, “hich they h”, “and that it” “e between t”, “ecause you”, “ence betwe”, “elieve the”, etc...
+xx-yy---zzz only occurred once in the whole corpus, in “success of all lotteries”, which is probably not correct, but not all possible phrases are in the corpus, of course. Something like “off all three eggs” or something else could be more reasonable. Narrowing the search to yy---zzz yielded many possible options. Not sure whether this narrows it down much.
+For x--y-x--y, x = y = e is the most common occurrence in English, and the x here seems to apply to other places, so maybe it is a common letter like e. I don’t even know if assuming these are e would help much, though.
+Let me know if you find anything else related to this that is interesting, and I’ll add it in here. @Lymm on the Discord server
+Apologies to anyone reading this who is colorblind :(
+
+
+
+
+Gonna add this in here because the other one has too much going on to easily see the small patterns:

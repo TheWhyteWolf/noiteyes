@@ -56,21 +56,81 @@ tools/transcribe.py (full pipeline + PASS/FAIL battery), tools/pi_solver.py.
    pure positional keystreams are disfavored (no structural no-doubles, no
    isomorph formation).
 
-## Next-phase plan (for the main PC)
+## Session update (2026-09-14): sigma-diagnostics + community docs
+
+Ran priority-1 experiment (`tools/sigma_diagnostics.py`): collapsed the 18
+maximal isomorph pairs into 34 directional (msgA,msgB,delta) relations (17
+unordered), covering a complete K6 graph on Group A's six occurrences and
+a full triangle on Group B's three. Composed every reachable A->B->C triple
+against the direct A->C relation: **100+ triples agree exactly**; the only
+6 disagreements all trace to a single already-flagged non-well-defined
+relation (east-1's own delta=+/-28 self-map disagrees across its two
+merged windows by 1 position each direction) — the known
+maximal-extension-overrun artifact (isomorphs.py docstring), not a new
+inconsistency. Composition of the raw sigma_AB value-maps holds cleanly
+wherever a real structural connection exists.
+
+However: composition-holds is a **weak** test — true for any
+history-independent state-difference mechanism, abelian or not — so it
+does not by itself validate the additive/Z83 model pi_solver.py refutes.
+
+Per user decision, pulled in the four community docs named in the prior
+plan (now saved under `community-docs/`, see its README for details and
+caveats). Headline finding: **the community independently reached the
+same refutation we did, by a different method.** codewarrior0's
+Analytical Overview initially favored offset-1 ciphertext-autokey (CTAK)
+to explain the zero-doubles / elevated-distance-4 structure; a later
+group-theory argument in Toboter's Progress doc (Lymm, Simplesmiler) rules
+CTAK out — CTAK is equivalent to the cyclic group C83, and C83 cannot
+produce the alphabet-chaining contradictions actually observed when
+chaining the isomorphs. They also rule out the dihedral group D166 and
+tentatively the affine group C83:C82, leaving **A83 or S83** (arbitrary,
+generally non-commuting permutations of an 83-element "deck") as the
+surviving candidate family — a Group Autokey (GAK) cipher: each plaintext
+character selects a shuffle/permutation, composed onto a running state;
+ciphertext is a fixed function of that state (e.g. "top card").
+
+This exactly matches our own result: our additive-walk model IS the C83
+special case, and IS what pi_solver.py's GF(83) solve refutes (47 forced
+merges). Two independent methods, ours from the raw transcription, theirs
+from manual alphabet-chaining, land on the same rejection. Neither their
+D166/C83:C82 eliminations nor the A83/S83 candidate itself have been
+independently re-derived here — that re-derivation, not the skip-corrupted
+walk idea from the last session (superseded: skip-corruption is one
+special case of "non-additive state update," and the community's argument
+is more general and already reached by clean elimination), is the load-
+bearing next step.
+
+## Next-phase plan (updated 2026-09-14)
 
 Priority-ordered experiments:
 
-1. Model-free sigma-algebra diagnostics (cheap, decisive):
-   extract the pairwise letter-mappings sigma_AB between all isomorph
-   occurrences; test composition consistency (sigma_AC = sigma_BC∘sigma_AB);
-   characterize the sigmas' cycle structure. Output: what algebraic family
-   the state translations belong to (cyclic? conjugate? arbitrary?).
-2. Skip-tolerant walk fitting: refit the additive-walk system allowing a
-   small number of skip events — RANSAC at the EQUATION level, or DP
-   alignment permitting +1 step insertions inside segments. Success metric
-   (gauge-invariant): IoC of the recovered difference stream over the whole
-   corpus; ~0.012 = fail, >0.05 = layer 1 broken (plaintext-frequency signal).
-3. Mechanism-enumeration harness (tools/harness/): plugin interface for
+1. DONE: model-free sigma-algebra diagnostics (`tools/sigma_diagnostics.py`)
+   — see session update above. Composition holds cleanly but doesn't
+   distinguish abelian from non-abelian; superseded as the decisive test
+   by (2).
+2. DONE: community-doc intake — see session update above and
+   `community-docs/`.
+3. GAK / non-abelian group-action test (new top priority, motivated by (2)):
+   independently re-derive the community's alphabet-chaining argument from
+   our own catalog rather than trusting it secondhand. Concretely: pick two
+   isomorph relations sharing a common message and domain overlap but
+   arising from *different* underlying plaintext segments (not just
+   different windows of the same delta), and test whether the induced
+   value-permutations commute — non-commutation is direct, independent
+   confirmation of a non-abelian (A83/S83-style) mechanism and would settle
+   what the community reached only by manual chaining. If it holds, the
+   real work starts: model state as a permutation of Z83, plaintext
+   characters as (possibly a small alphabet of) permutations composed onto
+   it, ciphertext as a fixed readout function; attempt alphabet-chaining
+   ourselves on the full corpus (not just messages 1-3 as the community
+   did) to see if it resolves further under the larger K6/triangle
+   structure our sigma_diagnostics.py already extracted.
+4. Skip-tolerant walk fitting: DEPROIRITIZED — skip-corruption is a special
+   case of "non-additive state update" and the community's group-theory
+   argument already supersedes it with a cleaner elimination. Revisit only
+   if (3) fails to find a working non-abelian model.
+5. Mechanism-enumeration harness (tools/harness/): plugin interface for
    candidate mechanisms; template-plaintext generator (numbered lists,
    shared boilerplate, per-entry fill-ins incl. transposed variants; EN+FI);
    constraint battery with effect-size tolerances (0 doubles; dist-2 ~0.4x;
@@ -79,20 +139,12 @@ Priority-ordered experiments:
    attempt key recovery on the real ciphertext (hill-climb with the
    numbered-list cribs). Decisive success = self-confirming readable
    plaintext (EN/FI) consistent across all 9 messages.
-4. Community-doc intake (USER DECISION PENDING): the saved wiki HTML contains
-   links to Lymm's alignments doc, Toboter's progress doc, and CodeWarrior0's
-   "Analytical Overview" / "Isomorphism in Classical Ciphers". Options:
-   fetch now (avoid re-treading years of failed attempts; verify-on-adopt) /
-   after experiment round 1 / not at all. Also pending: exact statement of
-   the community's deck-cipher model (the video transcript is a paraphrase).
-5. Game-install verification (Noita was being installed): locate the eye
+6. Game-install verification (Noita was being installed): locate the eye
    renderer/data in the install (transcript claims the engine draws the
    glyphs; images absent from data files); re-derive the 9 sequences from
    the game itself -> hardens provenance chain to primary.
-6. Housekeeping: git init the project; copy this plan into the repo; append
-   findings (1)-(5) above to README.md; record the isomorph catalog as
-   data/isomorphs.json; decide sequential-vs-orchestrated scale for the
-   harness (second USER DECISION).
+7. Housekeeping: decide sequential-vs-orchestrated scale for the harness
+   (USER DECISION, still pending).
 
 ## Verification approach
 

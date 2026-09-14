@@ -1,0 +1,1368 @@
+{
+ "relations": [
+  {
+   "msgA": "east-5",
+   "msgB": "west-4",
+   "delta": 1,
+   "domain_size": 27
+  },
+  {
+   "msgA": "west-4",
+   "msgB": "east-5",
+   "delta": -1,
+   "domain_size": 27
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "west-1",
+   "delta": -5,
+   "domain_size": 21
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-2",
+   "delta": 5,
+   "domain_size": 21
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "east-2",
+   "delta": 35,
+   "domain_size": 22
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "east-2",
+   "delta": -35,
+   "domain_size": 22
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "west-1",
+   "delta": -10,
+   "domain_size": 22
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-2",
+   "delta": 10,
+   "domain_size": 22
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "west-1",
+   "delta": 30,
+   "domain_size": 21
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "west-1",
+   "delta": -30,
+   "domain_size": 21
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "east-1",
+   "delta": 28,
+   "domain_size": 24
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "east-1",
+   "delta": -28,
+   "domain_size": 23
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "east-2",
+   "delta": 12,
+   "domain_size": 22
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "east-1",
+   "delta": -12,
+   "domain_size": 22
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "west-1",
+   "delta": -40,
+   "domain_size": 20
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-2",
+   "delta": 40,
+   "domain_size": 20
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "west-1",
+   "delta": 25,
+   "domain_size": 20
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-2",
+   "delta": -25,
+   "domain_size": 20
+  },
+  {
+   "msgA": "east-4",
+   "msgB": "east-5",
+   "delta": 1,
+   "domain_size": 18
+  },
+  {
+   "msgA": "east-5",
+   "msgB": "east-4",
+   "delta": -1,
+   "domain_size": 18
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "east-2",
+   "delta": 5,
+   "domain_size": 16
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "east-1",
+   "delta": -5,
+   "domain_size": 16
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "west-1",
+   "delta": 2,
+   "domain_size": 17
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-1",
+   "delta": -2,
+   "domain_size": 17
+  },
+  {
+   "msgA": "east-4",
+   "msgB": "west-4",
+   "delta": 2,
+   "domain_size": 16
+  },
+  {
+   "msgA": "west-4",
+   "msgB": "east-4",
+   "delta": -2,
+   "domain_size": 16
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "east-2",
+   "delta": 40,
+   "domain_size": 15
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "east-1",
+   "delta": -40,
+   "domain_size": 15
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "east-2",
+   "delta": -23,
+   "domain_size": 15
+  },
+  {
+   "msgA": "east-2",
+   "msgB": "east-1",
+   "delta": 23,
+   "domain_size": 15
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "west-1",
+   "delta": 30,
+   "domain_size": 15
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-1",
+   "delta": -30,
+   "domain_size": 15
+  },
+  {
+   "msgA": "east-1",
+   "msgB": "west-1",
+   "delta": -28,
+   "domain_size": 15
+  },
+  {
+   "msgA": "west-1",
+   "msgB": "east-1",
+   "delta": 28,
+   "domain_size": 15
+  }
+ ],
+ "composition_tests": [
+  {
+   "A": "east-5",
+   "B": "west-4",
+   "C": "east-4",
+   "dAB": 1,
+   "dBC": -2,
+   "dAC": -1,
+   "agree": 16,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-4",
+   "B": "east-5",
+   "C": "east-4",
+   "dAB": -1,
+   "dBC": -1,
+   "dAC": -2,
+   "agree": 16,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "west-1",
+   "dAB": -5,
+   "dBC": 30,
+   "dAC": 25,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -5,
+   "dBC": 40,
+   "dAC": 35,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": -5,
+   "dBC": 28,
+   "dAC": 23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": 5,
+   "dBC": 35,
+   "dAC": 40,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 5,
+   "dBC": 25,
+   "dAC": 30,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 5,
+   "dBC": 23,
+   "dAC": 28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 35,
+   "dBC": -10,
+   "dAC": 25,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 35,
+   "dBC": -12,
+   "dAC": 23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 35,
+   "dBC": -40,
+   "dAC": -5,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 35,
+   "dBC": -40,
+   "dAC": -5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": -35,
+   "dBC": -5,
+   "dAC": -40,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": -35,
+   "dBC": 25,
+   "dAC": -10,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": -35,
+   "dBC": -5,
+   "dAC": -40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": -35,
+   "dBC": 23,
+   "dAC": -12,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "west-1",
+   "dAB": -10,
+   "dBC": -30,
+   "dAC": -40,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -10,
+   "dBC": -25,
+   "dAC": -35,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": -10,
+   "dBC": -2,
+   "dAC": -12,
+   "agree": 17,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": -10,
+   "dBC": -30,
+   "dAC": -40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": 10,
+   "dBC": -35,
+   "dAC": -25,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 10,
+   "dBC": -12,
+   "dAC": -2,
+   "agree": 17,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 10,
+   "dBC": -40,
+   "dAC": -30,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 10,
+   "dBC": -40,
+   "dAC": -30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 30,
+   "dBC": 10,
+   "dAC": 40,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 30,
+   "dBC": -25,
+   "dAC": 5,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": 30,
+   "dBC": -2,
+   "dAC": 28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -30,
+   "dBC": 5,
+   "dAC": -25,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -30,
+   "dBC": 40,
+   "dAC": 10,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": -30,
+   "dBC": 28,
+   "dAC": -2,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": 28,
+   "dBC": 12,
+   "dAC": 40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": 28,
+   "dBC": 2,
+   "dAC": 30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": 28,
+   "dBC": -23,
+   "dAC": 5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -28,
+   "dBC": 5,
+   "dAC": -23,
+   "agree": 14,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -28,
+   "dBC": 40,
+   "dAC": 12,
+   "agree": 14,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": -28,
+   "dBC": 30,
+   "dAC": 2,
+   "agree": 14,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": 12,
+   "dBC": -35,
+   "dAC": -23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 12,
+   "dBC": -10,
+   "dAC": 2,
+   "agree": 17,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 12,
+   "dBC": -40,
+   "dAC": -28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 12,
+   "dBC": -40,
+   "dAC": -28,
+   "agree": 14,
+   "disagree": 1,
+   "examples": [
+    [
+     41,
+     72,
+     0
+    ]
+   ]
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-1",
+   "dAB": -12,
+   "dBC": -28,
+   "dAC": -40,
+   "agree": 14,
+   "disagree": 1,
+   "examples": [
+    [
+     66,
+     0,
+     72
+    ]
+   ]
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": -12,
+   "dBC": 2,
+   "dAC": -10,
+   "agree": 17,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -12,
+   "dBC": -23,
+   "dAC": -35,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": -12,
+   "dBC": -28,
+   "dAC": -40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -40,
+   "dBC": 5,
+   "dAC": -35,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "west-1",
+   "dAB": -40,
+   "dBC": 30,
+   "dAC": -10,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": -40,
+   "dBC": 28,
+   "dAC": -12,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": 40,
+   "dBC": -35,
+   "dAC": 5,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 40,
+   "dBC": -10,
+   "dAC": 30,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 40,
+   "dBC": -12,
+   "dAC": 28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 25,
+   "dBC": 10,
+   "dAC": 35,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "west-1",
+   "dAB": 25,
+   "dBC": -30,
+   "dAC": -5,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": 25,
+   "dBC": -2,
+   "dAC": 23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": 25,
+   "dBC": -30,
+   "dAC": -5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": -25,
+   "dBC": -5,
+   "dAC": -30,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": -25,
+   "dBC": 35,
+   "dAC": 10,
+   "agree": 20,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": -25,
+   "dBC": -5,
+   "dAC": -30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": -25,
+   "dBC": 23,
+   "dAC": -2,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-4",
+   "B": "east-5",
+   "C": "west-4",
+   "dAB": 1,
+   "dBC": 1,
+   "dAC": 2,
+   "agree": 16,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-5",
+   "B": "east-4",
+   "C": "west-4",
+   "dAB": -1,
+   "dBC": 2,
+   "dAC": 1,
+   "agree": 16,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": 5,
+   "dBC": 35,
+   "dAC": 40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 5,
+   "dBC": 25,
+   "dAC": 30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 5,
+   "dBC": 23,
+   "dAC": 28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-1",
+   "dAB": -5,
+   "dBC": 28,
+   "dAC": 23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -5,
+   "dBC": 40,
+   "dAC": 35,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": -5,
+   "dBC": 30,
+   "dAC": 25,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 2,
+   "dBC": 10,
+   "dAC": 12,
+   "agree": 17,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "west-1",
+   "dAB": 2,
+   "dBC": -30,
+   "dAC": -28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 2,
+   "dBC": -25,
+   "dAC": -23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": 2,
+   "dBC": -30,
+   "dAC": -28,
+   "agree": 14,
+   "disagree": 1,
+   "examples": [
+    [
+     41,
+     72,
+     0
+    ]
+   ]
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-1",
+   "dAB": -2,
+   "dBC": -28,
+   "dAC": -30,
+   "agree": 14,
+   "disagree": 1,
+   "examples": [
+    [
+     73,
+     0,
+     72
+    ]
+   ]
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -2,
+   "dBC": 12,
+   "dAC": 10,
+   "agree": 17,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -2,
+   "dBC": -23,
+   "dAC": -25,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": -2,
+   "dBC": -28,
+   "dAC": -30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-4",
+   "B": "west-4",
+   "C": "east-5",
+   "dAB": 2,
+   "dBC": -1,
+   "dAC": 1,
+   "agree": 16,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-4",
+   "B": "east-4",
+   "C": "east-5",
+   "dAB": -2,
+   "dBC": 1,
+   "dAC": -1,
+   "agree": 16,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": 40,
+   "dBC": -35,
+   "dAC": 5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": 40,
+   "dBC": -10,
+   "dAC": 30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": 40,
+   "dBC": -12,
+   "dAC": 28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-1",
+   "dAB": -40,
+   "dBC": 28,
+   "dAC": -12,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -40,
+   "dBC": 5,
+   "dAC": -35,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": -40,
+   "dBC": 30,
+   "dAC": -10,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": -23,
+   "dBC": -5,
+   "dAC": -28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-2",
+   "dAB": -23,
+   "dBC": 35,
+   "dAC": 12,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "west-1",
+   "dAB": -23,
+   "dBC": 25,
+   "dAC": 2,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "east-2",
+   "C": "east-1",
+   "dAB": -23,
+   "dBC": -5,
+   "dAC": -28,
+   "agree": 14,
+   "disagree": 1,
+   "examples": [
+    [
+     41,
+     72,
+     0
+    ]
+   ]
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-1",
+   "dAB": 23,
+   "dBC": -28,
+   "dAC": -5,
+   "agree": 14,
+   "disagree": 1,
+   "examples": [
+    [
+     78,
+     0,
+     72
+    ]
+   ]
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": 23,
+   "dBC": 12,
+   "dAC": 35,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": 23,
+   "dBC": 2,
+   "dAC": 25,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-2",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": 23,
+   "dBC": -28,
+   "dAC": -5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 30,
+   "dBC": 10,
+   "dAC": 40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": 30,
+   "dBC": -25,
+   "dAC": 5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-1",
+   "dAB": 30,
+   "dBC": -2,
+   "dAC": 28,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-1",
+   "dAB": -30,
+   "dBC": 28,
+   "dAC": -2,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -30,
+   "dBC": 5,
+   "dAC": -25,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": -30,
+   "dBC": 40,
+   "dAC": 10,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -28,
+   "dBC": 5,
+   "dAC": -23,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "west-1",
+   "dAB": -28,
+   "dBC": 30,
+   "dAC": 2,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "east-1",
+   "B": "west-1",
+   "C": "east-2",
+   "dAB": -28,
+   "dBC": 40,
+   "dAC": 12,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": 28,
+   "dBC": 12,
+   "dAC": 40,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "west-1",
+   "dAB": 28,
+   "dBC": 2,
+   "dAC": 30,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  },
+  {
+   "A": "west-1",
+   "B": "east-1",
+   "C": "east-2",
+   "dAB": 28,
+   "dBC": -23,
+   "dAC": 5,
+   "agree": 15,
+   "disagree": 0,
+   "examples": []
+  }
+ ]
+}

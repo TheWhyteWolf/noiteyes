@@ -90,21 +90,37 @@ ASCII rendering (community convention): `chr(32 + letter)`.
    identical in all 9 ("b%"); the two message families split at position 3 on
    ADJACENT letter values (48 vs 49). Consistent with numbered-list
    plaintexts whose header letter sits outside the chained state.
-5. **Leading hypothesis — additive walk + collision-skip**: "if the output
-   would repeat the previous letter, step again." Structurally explains the
-   zero doubles, predicts near-isomorphs ("slightly differing composition",
-   as the community reports), and a few skip-corrupted equations propagating
-   through exact Gaussian elimination would produce exactly the mass-merge
-   failure in (2). Next-phase experiments (σ-composition diagnostics,
-   skip-tolerant refitting, mechanism-enumeration harness) are specified in
-   `PLAN.md`.
+5. **Sigma-composition diagnostics** (`tools/sigma_diagnostics.py`):
+   collapsed the 18 isomorph pairs into 34 directional (msgA,msgB,delta)
+   letter-mappings, covering a complete graph on Group A's six occurrences
+   and a full triangle on Group B's three. Composing every reachable
+   A→B→C triple against the direct A→C mapping agrees exactly in 100+
+   cases; the only 6 disagreements trace to one already-flagged
+   non-well-defined merge (isomorphs.py's documented maximal-extension-
+   overrun artifact), not a new inconsistency. This is necessary but not
+   sufficient evidence for a group-action mechanism, and does not
+   distinguish an abelian model from a non-abelian one.
+6. **Community context** (`community-docs/`, fetched 2026-09-14): the
+   Noita Discord community independently reached the same refutation as
+   (2), by a different method. Their alphabet-chaining/group-theory
+   argument (Lymm, Simplesmiler, in `toboter-progress.txt`) shows the
+   additive/cyclic model (C83, equivalent to our offset-1 ciphertext-
+   autokey walk) cannot produce the observed chaining contradictions, and
+   narrows the surviving candidates to the non-abelian permutation groups
+   A83/S83 — a "shuffled 83-card deck" Group-Autokey (GAK) cipher. Not yet
+   independently re-derived from our own catalog; see `PLAN.md` for the
+   planned commutativity test. `community-docs/README.md` indexes what
+   each document claims and what remains unverified.
 
 ## Files
 
 - `tools/transcribe.py` — reproducible pipeline + verification report
 - `tools/pi_solver.py` — isomorph finder + GF(83) walk-model solver
 - `tools/isomorphs.py` — dumps the isomorph catalog to data/
+- `tools/sigma_diagnostics.py` — sigma-composition + cycle-structure diagnostics
 - `data/messages.json` — full dataset (eye grids + letter sequences + conventions)
 - `data/messages.txt` — the 9 letter sequences in ASCII+32
 - `data/isomorphs.json` — maximal isomorph pairs with evidence counts
+- `data/sigma_diagnostics.json` — pairwise letter-mappings + composition test results
+- `community-docs/` — fetched Discord-community documents (secondary, unverified)
 - `PLAN.md` — session handoff: full findings + prioritized next-phase plan
