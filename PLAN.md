@@ -1,5 +1,12 @@
 # Noita Eye Messages — session handoff & next-phase plan (2026-07-14)
 
+> **SUPERSEDED (2026-07-16): see `GUIDE.md`.** Everything below was executed:
+> items 1–3 became `tools/sigma_web.py` / `tools/rowphase.py` /
+> `tools/phase4.py` / `tools/resync.py` / `tools/tournament.py` /
+> `tools/rotorfit.py`, item 5 became `tools/wak_unpack.py` (Step E), and
+> item 6 is done. Item 4 (community-doc intake) was executed 2026-07-16.
+> Kept for provenance only.
+
 NOTE: written as a handoff document — the session is being transferred to
 another machine. The portable project state lives in /home/voyd/git/noiteyes;
 this file should be copied into that directory (e.g. as PLAN.md) so it
@@ -56,95 +63,24 @@ tools/transcribe.py (full pipeline + PASS/FAIL battery), tools/pi_solver.py.
    pure positional keystreams are disfavored (no structural no-doubles, no
    isomorph formation).
 
-## Session update (2026-09-14): sigma-diagnostics + community docs
+## Session note (2026-09-14): reconciled with the 2026-07-16 work
 
-Ran priority-1 experiment (`tools/sigma_diagnostics.py`): collapsed the 18
-maximal isomorph pairs into 34 directional (msgA,msgB,delta) relations (17
-unordered), covering a complete K6 graph on Group A's six occurrences and
-a full triangle on Group B's three. Composed every reachable A->B->C triple
-against the direct A->C relation: **100+ triples agree exactly**; the only
-6 disagreements all trace to a single already-flagged non-well-defined
-relation (east-1's own delta=+/-28 self-map disagrees across its two
-merged windows by 1 position each direction) — the known
-maximal-extension-overrun artifact (isomorphs.py docstring), not a new
-inconsistency. Composition of the raw sigma_AB value-maps holds cleanly
-wherever a real structural connection exists.
-
-However: composition-holds is a **weak** test — true for any
-history-independent state-difference mechanism, abelian or not — so it
-does not by itself validate the additive/Z83 model pi_solver.py refutes.
-
-Per user decision, pulled in the four community docs named in the prior
-plan (now saved under `community-docs/`, see its README for details and
-caveats). Headline finding: **the community independently reached the
-same refutation we did, by a different method.** codewarrior0's
-Analytical Overview initially favored offset-1 ciphertext-autokey (CTAK)
-to explain the zero-doubles / elevated-distance-4 structure; a later
-group-theory argument in Toboter's Progress doc (Lymm, Simplesmiler) rules
-CTAK out — CTAK is equivalent to the cyclic group C83, and C83 cannot
-produce the alphabet-chaining contradictions actually observed when
-chaining the isomorphs. They also rule out the dihedral group D166 and
-tentatively the affine group C83:C82, leaving **A83 or S83** (arbitrary,
-generally non-commuting permutations of an 83-element "deck") as the
-surviving candidate family — a Group Autokey (GAK) cipher: each plaintext
-character selects a shuffle/permutation, composed onto a running state;
-ciphertext is a fixed function of that state (e.g. "top card").
-
-This exactly matches our own result: our additive-walk model IS the C83
-special case, and IS what pi_solver.py's GF(83) solve refutes (47 forced
-merges). Two independent methods, ours from the raw transcription, theirs
-from manual alphabet-chaining, land on the same rejection. Neither their
-D166/C83:C82 eliminations nor the A83/S83 candidate itself have been
-independently re-derived here — that re-derivation, not the skip-corrupted
-walk idea from the last session (superseded: skip-corruption is one
-special case of "non-additive state update," and the community's argument
-is more general and already reached by clean elimination), is the load-
-bearing next step.
-
-## Next-phase plan (updated 2026-09-14)
-
-Priority-ordered experiments:
-
-1. DONE: model-free sigma-algebra diagnostics (`tools/sigma_diagnostics.py`)
-   — see session update above. Composition holds cleanly but doesn't
-   distinguish abelian from non-abelian; superseded as the decisive test
-   by (2).
-2. DONE: community-doc intake — see session update above and
-   `community-docs/`.
-3. GAK / non-abelian group-action test (new top priority, motivated by (2)):
-   independently re-derive the community's alphabet-chaining argument from
-   our own catalog rather than trusting it secondhand. Concretely: pick two
-   isomorph relations sharing a common message and domain overlap but
-   arising from *different* underlying plaintext segments (not just
-   different windows of the same delta), and test whether the induced
-   value-permutations commute — non-commutation is direct, independent
-   confirmation of a non-abelian (A83/S83-style) mechanism and would settle
-   what the community reached only by manual chaining. If it holds, the
-   real work starts: model state as a permutation of Z83, plaintext
-   characters as (possibly a small alphabet of) permutations composed onto
-   it, ciphertext as a fixed readout function; attempt alphabet-chaining
-   ourselves on the full corpus (not just messages 1-3 as the community
-   did) to see if it resolves further under the larger K6/triangle
-   structure our sigma_diagnostics.py already extracted.
-4. Skip-tolerant walk fitting: DEPROIRITIZED — skip-corruption is a special
-   case of "non-additive state update" and the community's group-theory
-   argument already supersedes it with a cleaner elimination. Revisit only
-   if (3) fails to find a working non-abelian model.
-5. Mechanism-enumeration harness (tools/harness/): plugin interface for
-   candidate mechanisms; template-plaintext generator (numbered lists,
-   shared boilerplate, per-entry fill-ins incl. transposed variants; EN+FI);
-   constraint battery with effect-size tolerances (0 doubles; dist-2 ~0.4x;
-   dist-4 ~2.2x; isomorph & near-isomorph rates; resync behavior; flat IoC;
-   no off-alignment 3-gram repeats). Keep/kill each mechanism; for survivors,
-   attempt key recovery on the real ciphertext (hill-climb with the
-   numbered-list cribs). Decisive success = self-confirming readable
-   plaintext (EN/FI) consistent across all 9 messages.
-6. Game-install verification (Noita was being installed): locate the eye
-   renderer/data in the install (transcript claims the engine draws the
-   glyphs; images absent from data files); re-derive the 9 sequences from
-   the game itself -> hardens provenance chain to primary.
-7. Housekeeping: decide sequential-vs-orchestrated scale for the harness
-   (USER DECISION, still pending).
+This session started from a stale local clone (last known commit: the
+2026-07-14 findings above) and, not yet aware of the 2026-07-16 work now
+merged into this file and `README.md`, redundantly re-ran a same-day
+predecessor of `tools/sigma_web.py` (kept as `tools/sigma_diagnostics.py`
+for provenance) and separately fetched the four community documents named
+in item 4 below — Lymm's alignments doc, Toboter's progress log, and
+codewarrior0's two write-ups, now saved verbatim under `community-docs/`
+(see its README). That fetch is still net-new: this project had previously
+only seen the community's group-theory argument via video-transcript
+paraphrase (see README's "Community cross-check" addendum). It adds detail
+— the specific elimination chain (C83 ruled out by chaining contradictions,
+then D166, then tentatively C83:C82, leaving A83/S83) — but no mechanism
+this project hadn't already gone on to independently refute in the
+2026-07-16 phases (`GUIDE.md` Step C refutes the large-state S83
+group-autokey directly from our own data). **`GUIDE.md` is the current
+authoritative plan; treat everything below this note as historical.**
 
 ## Verification approach
 
