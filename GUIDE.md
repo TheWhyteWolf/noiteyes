@@ -202,6 +202,80 @@ makes abundant cross-offset EXACT isomorphs (additive-like) yet is
 non-additive, non-commuting, and realigns at ~0.065. Use it as the scaffold
 for testing new candidate generators — add a `make_*` encryptor and re-run.
 
+**Three more candidates (eleventh phase)**, targeting that exact tension:
+`make_deck_rebuild` ("deck rebuilt, not shifted" — a bank of `M=15`
+independently-random tables, switched by a plaintext-notch autokey, applied
+UNCHANGED across a whole stretch instead of progressively rotated);
+`make_period4_position` (candidate 1 plus an outer period-4 layer keyed by
+ABSOLUTE character position); `make_period4_content` (candidate 1 plus a
+period-4 layer keyed by a second, faster plaintext notch instead of raw
+position). A new diagnostic, `delta_mod4_spectrum`, histograms each raw
+isomorph pair's relative offset mod 4 — the same statistic Step D ran on the
+real corpus (offsets at every residue: 0:6,1:2,2:5,3:5).
+
+Result: `make_deck_rebuild` is the **first tested mechanism to produce
+abundant, offset-independent exact isomorphs at all** (maxL 39, spectrum
+spanning residues 0/1/2/3) — the rotor-cycle made zero. But it fails zero-
+doubles (a bare table-swap has no collision-avoidance, so plaintext doubles
+still produce ciphertext doubles) and period-4 (no elevation; it has no
+period-4 component at all). Composing a period-4 layer on top exposes a
+sharp, *predicted-and-confirmed* split: `make_period4_position` collapses
+the isomorph yield from dozens of pairs to 2, both at delta≡0 mod 4 — a
+position-locked period-4 layer destroys almost all cross-offset isomorphs,
+exactly as Step D's real spectrum (spread across every residue) says a real
+mechanism must NOT do. `make_period4_content` (the same period-4 idea but
+keyed to plaintext-letter identity instead of raw position) keeps isomorphs
+at every residue (0/1/2/3, matching real) — but its d4-ratio comes back
+~1.0 (not elevated): a content-triggered state change is an irregular
+renewal process, too loose to produce the real corpus's crisp lag-4 excess.
+**This sharpens the binding tension from two-way to three-way**: abundant
+offset-independent isomorphs, non-additive/non-commuting structure, and a
+crisp period-4 recurrence cannot yet be reproduced simultaneously by any
+tested construction — a mechanism satisfying any two of the three, in every
+candidate tried so far, loses the third. (Caveat: `walk_dim`/`commute` for
+the new table-swap candidates read as suspiciously high — likely a small-n
+artifact of this harness's few seeded repeat-phrases landing in the same
+one or two states, not evidence the tables themselves commute; the
+isomorph-count and delta-spectrum results rest on more direct, less
+model-dependent counts and are the ones to trust.)
+
+### 1.8b `tools/wak_sweep.py` / `tools/eye_mural_scan.py` — Step E, non-bounded sweep
+
+```
+python3 tools/wak_sweep.py
+python3 tools/eye_mural_scan.py
+```
+
+Two companion instruments that remove the "bounded" caveat from the original
+Step E (§3, `tools/wak_unpack.py`). `wak_sweep.py` byte-scans **every one**
+of `data.wak`'s 14,745 entries (not just filename matches) for an English +
+Finnish cipher/eye keyword list; gate: a planted marker string must be found
+and attributed to the right file. `eye_mural_scan.py` pixel-scans **every**
+PNG/BMP/PSD in the archive (9,046 raster files total) for the literal
+eye-glyph outline template from `transcribe.py` (11×7, ≥18/20 outline pixels
+lit), looking for a GRID of matches (not a lone eye sprite, of which the
+game has several unrelated ones). Three gates: the known source sheets must
+recover a huge regular grid (proves the detector works); seeded random noise
+must not (calibrates the raw threshold); and the catalogued lone-eye Easter
+eggs must never register as a grid — this last gate initially FAILED on
+`eyespot.png` (a solid-filled icon trivially satisfies an outline-only
+template at every interior pixel) until the detector was strengthened to
+also require the eye's always-background corner pixels stay clear, which a
+solid fill can't satisfy. Both write reports to `data/`.
+
+Result (all gates pass): still **no shipped decoder** — the keyword sweep's
+only hits are unrelated engine/asset strings (a Twitch-integration
+`decode`, a trailer PSD layer named "glyph", `Runestone` wand items, a boss
+`pupil` sprite, the ubiquitous XML attribute `orientation`); the pixel scan
+finds **zero** PNG/BMP/PSD in the whole archive containing an eye-outline
+grid anywhere, at native resolution, other than confirming the two already-
+catalogued non-mural Easter eggs correctly score zero. `strings` on both
+`noita.exe` and `noita_dev.exe` (never searched before) turns up nothing
+beyond generic engine text (`Message_*` event names, a PNG codec error, the
+`ThreeEyesAreWatchingYou` perk). This makes Step E's "authored/externally-
+keyed, not derivable from shipped data" conclusion exhaustive rather than
+bounded.
+
 ### 1.9 `tools/rotorfit.py` — non-abelian-σ test (general rotor?)
 
 ```
@@ -257,7 +331,22 @@ characterization: σ is a fixed PER-OCCURRENCE substitution difference
 (rotor/progressive) organization — and 18 isomorphs under-constrain the Pᵢ. The
 ciphertext alone appears to under-determine the schedule; further progress
 likely needs an external constraint (a crib on the family-48 web, or the game's
-generation code).
+generation code) — and the eleventh-phase game-data sweep below found neither.
+
+The eleventh-phase tournament additions turned that qualitative
+characterization into a **three-way quantitative tension**: (1) abundant,
+OFFSET-INDEPENDENT exact isomorphs (real spans all 4 residues mod 4 —
+0:6,1:2,2:5,3:5), (2) non-additive/non-commuting structure, (3) a crisp
+period-4 recurrence excess (d4-ratio 2.6). A plaintext-notched autokey that
+REBUILDS (not shifts) its substitution table gets (1)+(2) for the first
+time in this project (a prior naive rotor-cycle got neither) but has no
+period-4 component at all, so it misses (3) outright and also fails
+zero-doubles (no collision-avoidance). Composing a period-4 layer on top
+gets (3) only by keying it to absolute POSITION, which then destroys (1)
+(isomorphs collapse to delta≡0 mod 4 only, contradicting the real spectrum);
+keying it to plaintext CONTENT instead preserves (1) but is too irregular
+to reproduce (3)'s crisp lag-4 statistic. No tested construction gets all
+three at once. See §1.8 for the full readout.
 
 ---
 
@@ -288,6 +377,12 @@ reframes Step B — the target is a SMALL-state generator, not a large shuffle.
 No simple small-state generator reproduces the full fingerprint; the naive
 rotor-cycle is rejected (no isomorphs). The tournament isolated the crux (see
 below) and remains the scaffold for testing new candidate `make_*` encryptors.
+**Eleventh phase: three more candidates tried, tension sharpened from two-way
+to three-way (see §1.8/§2)** — a plaintext-notched table-swap autokey
+("deck rebuilt, not shifted") is the first mechanism to get abundant
+offset-independent isomorphs, but composing a period-4 layer on top gets the
+confirmed d4 statistic only by breaking those isomorphs (position-locked) or
+keeps the isomorphs but loses the d4 statistic (content-locked). Still open.
 
 **Non-abelian-σ step — general rotor? DONE (`tools/rotorfit.py`): NOT
 SUPPORTED.** σ ≠ T^δ (fits 0/4 on real vs 1.0 for a true rotor); σ is a
@@ -317,18 +412,26 @@ speculation, which our discipline forbids. Two byproducts worth keeping:
   gives identical c[3] iff p[3] identical — but c[3] differs). The nine messages
   are genuinely different texts sharing only a short common opening.
 
-**Step E — Game-install / source verification. DONE: no shipped decoder.**
-Noita *is* installed here; `tools/wak_unpack.py` (pure-Python, format decoded
-and validated: 14745 files) reads `data.wak` without launching the game. A
-thorough bounded search found **no decoder, plaintext table, or eye-message
-mural** in the shipped data. The eye-adjacent assets are unrelated Easter eggs:
-`caves/eye_0*.png` are grayscale "watching eye" cave-decoration frames, and the
-five `eyespot_a..e` + `book_s_a..e` are the *tripping* books — readable English
-"Notes on Grand Alchemy" flavor text, not our cipher. This bounds the project:
-the shipped game does not contain the answer, so the eye-message cipher is
-authored/externally-keyed and the ciphertext really is all we have to work from.
-(Caveat: bounded, not an exhaustive read of all 14745 files — a full text
-extraction + eye-mural pixel search remains available if wanted.)
+**Step E — Game-install / source verification. DONE, and now EXHAUSTIVE: no
+shipped decoder.** Noita *is* installed here; `tools/wak_unpack.py`
+(pure-Python, format decoded and validated: 14,745 files) reads `data.wak`
+without launching the game. The original pass was a bounded filename search;
+the eleventh phase removed that bound (`tools/wak_sweep.py` +
+`tools/eye_mural_scan.py`, §1.8b): every one of the 14,745 files' raw bytes
+keyword-scanned, every one of the 9,046 raster images (PNG/BMP/PSD)
+pixel-scanned for the literal eye-outline template, and both `noita.exe` /
+`noita_dev.exe` (never searched before) `strings`-scanned. **No decoder,
+plaintext table, or eye-message mural anywhere in the shipped game or its
+executables.** The eye-adjacent assets remain the same two unrelated Easter
+eggs already catalogued: `caves/eye_0*.png` (grayscale "watching eye" cave
+decoration) and `eyespot_a..e`/`book_s_a..e` (the *tripping* books, readable
+English "Notes on Grand Alchemy" flavor text). This bounds the project for
+good: the shipped game does not contain the answer, so the eye-message
+cipher is authored/externally-keyed and the ciphertext really is all we
+have to work from. (What's still technically unsearched: the executables'
+non-string binary logic itself — e.g. a decoder implemented as code with no
+giveaway string — which would need disassembly, a much larger undertaking
+not attempted here.)
 
 **Parked / opportunistic:**
 - **More ciphertext.** West-5 is absent; if a mechanism narrows to a small key

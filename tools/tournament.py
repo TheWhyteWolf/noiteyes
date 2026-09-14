@@ -60,6 +60,19 @@ def commute_pair(s1, s2):
     return a, t
 
 
+def delta_mod4_spectrum(S, names):
+    """Histogram of (posB - posA) % 4 over the raw isomorph pairs -- the
+    same diagnostic Step D ran on the real corpus (README: offsets
+    0:6,1:2,2:5,3:5, i.e. isomorphs at EVERY residue, non-identity sigma).
+    Used here to directly test position-locked vs content-locked period-4
+    candidates: a position-locked outer layer predicts isomorphs pile up
+    at delta%4==0 (or vanish elsewhere); content-locked predicts they
+    don't care about delta%4 at all, like the real corpus."""
+    raw = [p for p in find_isomorph_pairs(S, names=names) if p[2] - p[1] >= MINLEN]
+    hist = Counter((p[4] - p[1]) % 4 for p in raw)
+    return {'n_pairs': len(raw), 'hist': dict(sorted(hist.items()))}
+
+
 def signatures(S, names, rng):
     raw = [p for p in find_isomorph_pairs(S, names=names) if p[2] - p[1] >= MINLEN]
     maxL = max((p[2] - p[1] for p in raw), default=0)
@@ -166,6 +179,137 @@ def make_rotorcycle(seed):
     return enc
 
 
+# ---------------------- new candidates (twelfth-phase: "deck rebuilt, not
+# shifted" + period-4-composed-with-autokey; see GUIDE.md's Step B writeup)
+#
+# The tournament's binding tension: reproducing the real corpus needs a
+# mechanism that (i) makes MANY cross-offset EXACT isomorphs (needs sigma
+# CONSTANT over a whole 18-33 letter stretch), (ii) is non-additive /
+# non-commuting across stretches, and (iii) realigns at a moderate rate
+# (~0.065). make_rotorcycle satisfies (ii) via 4 unrelated rotors but fails
+# (i) because within a stretch it applies T^m (m = letters since last
+# notch) -- a PROGRESSIVE key, so sigma is NOT constant even inside one
+# stretch. The fix tested here: apply a table with NO exponent at all (the
+# SAME single fixed permutation for every letter in the stretch -- "deck
+# REBUILT, not shifted", GUIDE.md's third-phase idea, here tried with a
+# plaintext-driven notch instead of the already-refuted row-lock timing).
+#
+# Content-driven (not position-driven) notch is essential: it must be a
+# deterministic function of the plaintext LETTER identity (matching
+# make_rotorcycle's own convention), so that two independent occurrences of
+# the identical phrase see an IDENTICAL notch pattern and can stay
+# state-synchronized -- a notch keyed to absolute character position would
+# make constant-sigma isomorphs impossible except at one fixed relative
+# offset, which is the position-locked failure mode candidate 2 below is
+# built to demonstrate directly.
+#
+# Chosen so mean spacing lands in the observed 18-33 isomorph-length range:
+# total PA weight is 118.3; {q,z,j,x,k,v,b,p} sums to 5.8 -> mean spacing
+# 118.3/5.8 ~ 20.4 letters.
+_SLOW_NOTCH_LETTERS = set('qzjxkvbp')
+M_SLOW = 15  # ~ Step C's S_eff~15 upper bound on the effective state
+
+
+def make_deck_rebuild(seed):
+    """'Deck rebuilt, not shifted': state indexes a bank of M_SLOW
+    INDEPENDENTLY random permutations (no group relation between them --
+    composing any two is an arbitrary map, so different states don't
+    commute by construction). Within a run between notches, ONE table is
+    applied unchanged to every letter (constant sigma across the whole
+    stretch -- unlike make_rotorcycle's T^m). State advances (round-robin,
+    mod M_SLOW) only on a plaintext notch, so two chance-aligned
+    occurrences of a repeated phrase that start in the same state AND
+    don't themselves contain a notch letter reproduce an exact isomorph;
+    two diverged runs re-synchronize whenever their notch-counts happen to
+    coincide mod M_SLOW (~1/M_SLOW per opportunity, the resync mechanism)."""
+    rng = random.Random(seed + 5)
+    tables = [rng.sample(range(P), P) for _ in range(M_SLOW)]
+    B = list(range(P)); rng.shuffle(B)
+    def enc(s):
+        state = 0
+        seq = [tables[state][B[IDX[s[0]]]]]
+        for ch in s[1:]:
+            if ch in _SLOW_NOTCH_LETTERS:
+                state = (state + 1) % M_SLOW
+            seq.append(tables[state][B[IDX[ch]]])
+        return seq
+    return enc
+
+
+def make_period4_position(seed):
+    """Candidate 1 (deck-rebuild autokey) with an OUTER period-4 layer keyed
+    by ABSOLUTE character position: c_i = Q[i mod 4]( Table[state](p_i) ).
+    Tests the task's 'period-4 sub-key... composed with a small autokey
+    state' idea in its most literal, position-locked form. Predicted
+    failure mode (Step D, already in README): since Q's phase depends only
+    on absolute position, two occurrences of a shared phrase at relative
+    offset delta get sigma_i = Q[(i+delta) mod 4] . Q[i mod 4]^-1, which is
+    constant across the whole window ONLY when delta%4==0 -- at other
+    offsets sigma cycles through up to 4 different maps within one window,
+    which generally breaks the exact-isomorph match. Real isomorph offsets
+    span ALL residues mod 4 with non-identity sigma (Step D), so if this
+    candidate reproduces that pattern it would falsify the prediction;
+    if it instead only makes isomorphs at delta%4==0, that confirms
+    position-locked period-4 composition is the wrong shape and can be
+    retired without further testing."""
+    rng = random.Random(seed + 6)
+    tables = [rng.sample(range(P), P) for _ in range(M_SLOW)]
+    Q = [rng.sample(range(P), P) for _ in range(4)]
+    B = list(range(P)); rng.shuffle(B)
+    def enc(s):
+        state = 0
+        seq = [Q[0][tables[state][B[IDX[s[0]]]]]]
+        for i, ch in enumerate(s[1:], start=1):
+            if ch in _SLOW_NOTCH_LETTERS:
+                state = (state + 1) % M_SLOW
+            seq.append(Q[i % 4][tables[state][B[IDX[ch]]]])
+        return seq
+    return enc
+
+
+# A second, FAST, content-driven notch for the period-4 layer of candidate
+# 3 below -- deliberately common letters (~1/4 of total weight) so the fast
+# state advances roughly every 4 letters on average, the scale the real
+# distance-4 recurrence excess operates at. {i,o,a,t} sums to 7.0+7.5+8.2+
+# 9.1=31.8 of 118.3 total -> mean spacing 118.3/31.8 ~ 3.7 letters.
+_FAST_NOTCH_LETTERS = set('ioat')
+M_FAST = 4
+
+
+def make_period4_content(seed):
+    """Candidate 1 (deck-rebuild autokey) with a period-4 layer that is
+    CONTENT-driven rather than position-driven: c_i =
+    Q[fast mod 4]( Table[slow mod M_SLOW](p_i) ), where BOTH fast and slow
+    counters advance on their own plaintext-letter-identity notch (fast
+    ~every 4 letters, slow ~every 20). Because fast's value depends only on
+    how many fast-notch letters have occurred SO FAR IN THIS MESSAGE'S OWN
+    TEXT -- not on absolute position -- two occurrences of an identical
+    phrase advance fast IDENTICALLY step-for-step throughout the shared
+    span (their internal letters are the same), so if they merely START at
+    the same fast-phase (~1/4 chance) they STAY synchronized for the whole
+    window regardless of the window's absolute offset delta -- unlike
+    candidate 2, this predicts exact isomorphs CAN occur at any delta mod 4,
+    matching Step D's real observation instead of contradicting it. This
+    operationalizes the open idea in GUIDE.md Step A's writeup: 'an order-4
+    key STATE feeding the non-commuting substitution, not an order-4 offset
+    on a state walk.'"""
+    rng = random.Random(seed + 7)
+    tables = [rng.sample(range(P), P) for _ in range(M_SLOW)]
+    Q = [rng.sample(range(P), P) for _ in range(M_FAST)]
+    B = list(range(P)); rng.shuffle(B)
+    def enc(s):
+        slow = fast = 0
+        seq = [Q[fast][tables[slow][B[IDX[s[0]]]]]]
+        for ch in s[1:]:
+            if ch in _SLOW_NOTCH_LETTERS:
+                slow = (slow + 1) % M_SLOW
+            if ch in _FAST_NOTCH_LETTERS:
+                fast = (fast + 1) % M_FAST
+            seq.append(Q[fast][tables[slow][B[IDX[ch]]]])
+        return seq
+    return enc
+
+
 # --------------------------------------------------------- plaintext family
 
 def dense_under(enc, rng, L, tries=4000):
@@ -203,9 +347,18 @@ def corpus(enc, rng):
     def ins(nm, ph, pos):
         if ph:
             plain[nm][pos:pos + len(ph)] = list(ph)
-    ins('sim-0', phs[0], 30); ins('sim-1', phs[0], 62); ins('sim-5', phs[0], 34)
-    ins('sim-2', phs[1], 40); ins('sim-4', phs[1], 68); ins('sim-3', phs[1], 44)
-    ins('sim-6', phs[2], 46); ins('sim-8', phs[2], 62); ins('sim-7', phs[2], 30)
+    # NOTE: insertion offsets are deliberately a MIX of residues mod 4 (not
+    # all multiples of 4, as an earlier version of this harness had by
+    # coincidence -- 62-30=32, 34-30=4, 68-40=28, 44-40=4, 62-46=16, 30-46=16
+    # were ALL ≡0 mod 4). That coincidence silently made every position-
+    # locked period-4 candidate look identical to a content-locked one in
+    # this test, since the harness never sampled a cross-message offset
+    # that isn't a multiple of 4. Shifting one insertion per phrase group by
+    # 1-2 positions breaks that and lets the maxL signature actually
+    # discriminate the two designs (see make_period4_position's docstring).
+    ins('sim-0', phs[0], 30); ins('sim-1', phs[0], 61); ins('sim-5', phs[0], 34)
+    ins('sim-2', phs[1], 40); ins('sim-4', phs[1], 67); ins('sim-3', phs[1], 44)
+    ins('sim-6', phs[2], 46); ins('sim-8', phs[2], 60); ins('sim-7', phs[2], 30)
     return {nm: enc(plain[nm]) for nm in names}, names
 
 
@@ -219,7 +372,12 @@ def main():
     report, gates = {}, []
 
     cands = {'additive walk': make_additive, 'single-rotor enigma': make_enigma1,
-             '4-rotor progressive': make_rotorcycle}
+             '4-rotor progressive': make_rotorcycle,
+             'deck-rebuild autokey': make_deck_rebuild,
+             'period4-position+autokey': make_period4_position,
+             'period4-content+autokey': make_period4_content}
+    SPECTRUM_CANDS = {'deck-rebuild autokey', 'period4-position+autokey',
+                       'period4-content+autokey'}
     print('== candidate signature profiles (candidate-seeded plaintext) ==')
     profiles = {}
     for label, make in cands.items():
@@ -234,6 +392,11 @@ def main():
               f'd4_ratio {s["d4_ratio"]}  resync {s["resync"]}  IoC {s["ioc"]}')
         print('    ' + '  '.join(f'{k}={"Y" if v else "n"}' for k, v in sc.items()))
         report[label] = {'sig': s, 'score': sc, 'n_match': sum(sc.values())}
+        if label in SPECTRUM_CANDS:
+            spec = delta_mod4_spectrum(S, names)
+            report[label]['delta_mod4_spectrum'] = spec
+            print(f'    delta%4 spectrum (of {spec["n_pairs"]} raw isomorph '
+                  f'pairs, L>={MINLEN}): {spec["hist"]}')
 
     # gates validate the DETECTORS (so the real fingerprint is trustworthy);
     # the candidate scores are exploratory findings, not gated.
@@ -255,11 +418,16 @@ def main():
     S = load_msgs()
     real = signatures(S, N9, rng)
     rsc = score(real)
-    report['REAL'] = {'sig': real, 'score': rsc, 'n_match': sum(rsc.values())}
+    real_spec = delta_mod4_spectrum(S, N9)
+    report['REAL'] = {'sig': real, 'score': rsc, 'n_match': sum(rsc.values()),
+                      'delta_mod4_spectrum': real_spec}
     print(f'  maxL {real["maxL"]}  walk_dim {real["walk_dim"]}  commute {real["commute"]}'
           f'  same_web {real["same_web"]}  doubles {real["doubles"]}  '
           f'd4_ratio {real["d4_ratio"]}  resync {real["resync"]}  IoC {real["ioc"]}')
     print('  ' + '  '.join(f'{k}={"Y" if v else "n"}' for k, v in rsc.items()))
+    print(f'  delta%4 spectrum (of {real_spec["n_pairs"]} raw isomorph pairs, '
+          f'L>={MINLEN}): {real_spec["hist"]}  <- offsets at EVERY residue, '
+          f'the pattern a position-locked period-4 layer cannot produce')
 
     print('\n== signatures each candidate reproduces vs REAL (real=all Y) ==')
     best = None

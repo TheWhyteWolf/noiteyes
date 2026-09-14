@@ -1,0 +1,9 @@
+{
+  "gates": {
+    "positive": true,
+    "negative_noise": true,
+    "negative_eggs": true
+  },
+  "n_png_scanned": 9030,
+  "flagged": []
+}

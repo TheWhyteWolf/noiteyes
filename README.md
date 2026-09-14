@@ -392,7 +392,163 @@ not our cipher. This bounds the project: the shipped data files do not contain
 the answer, so the eye-message cipher is authored/externally-keyed and the
 ciphertext really is all we have to work from. (Caveat: bounded — the
 executable itself and a full text/pixel sweep of all 14,745 files remain
-unsearched.)
+unsearched.) **Superseded by the eleventh phase below, which removes the
+bound.**
+
+## Step E, made exhaustive (eleventh phase, `tools/wak_sweep.py` + `tools/eye_mural_scan.py`)
+
+Two instruments that remove the tenth phase's "bounded" caveat, run on a
+second machine (the WAK archive lives at a different, machine-specific Steam
+path here — `tools/wak_unpack.py`'s `find_wak()` now probes several known
+locations instead of one hardcoded path).
+
+1. **Byte-level keyword sweep, all 14,745 files** (`wak_sweep.py`). Gate: a
+   synthetic marker string planted at a random byte offset inside a real
+   entry's span (SEED=1) must be found and attributed to the right file —
+   PASS. Real sweep (English + Finnish cipher/eye terms — Nolla Games is a
+   Finnish studio): every hit traces to an unrelated engine or asset string
+   — `decode` in a Twitch-integration script, `glyph` in a *trailer* PSD's
+   layer name, `rune` in `Runestone` wand-item files, `pupil` in a boss
+   enemy's eye sprite, `orientation` as the ubiquitous XML sprite attribute
+   (859 hits, 432 files — a generic engine term), `translat` in unrelated
+   scripts (essence pickups, perks, the debug menu). No hit for `cipher`,
+   `decrypt`, `encrypt`, `alphabet`, `trigram`, `silmä`, `viesti`,
+   `salakirjoitus`, or any other cipher-specific term, in English or Finnish.
+
+2. **Pixel-level eye-outline GRID scan, all 9,046 raster files** (9,030 PNG
+   + 6 BMP + 6 PSD, `eye_mural_scan.py`). Reuses `transcribe.py`'s own exact
+   template (11×7 outline, ≥18/20 outline pixels lit at native resolution)
+   and looks for many matches mutually paired at the 12×7 pitch — a GRID,
+   not a lone eye sprite (the game has several of those, unrelated to our
+   cipher). Three gates: (a) the known source sheets must recover a huge,
+   >99%-paired grid (1,347–1,761 matches) — proves the detector works on
+   the real thing; (b) seeded random noise at several scales must register
+   no grid — calibrates that the raw 18/20 threshold isn't trivially
+   satisfied by chance; (c) the catalogued lone-eye Easter eggs
+   (`caves/eye_0*.png`, `eyespot.png`, boss eye sprites) must never
+   register as a grid. Gate (c) **initially failed**: `eyespot.png` (a
+   flat, solid-filled navy circle+triangle map icon) trivially satisfies an
+   outline-only template at every interior pixel, since a uniform fill
+   lights up any subset of points — and the mechanical de-overlap step
+   imposed an artificial 300+-match "grid" on top of that. Fix: the
+   detector now also requires the eye shape's always-background corner
+   pixels (28 positions per box, computed from `transcribe.py`'s own
+   OUTLINE/INSIDE convention) to stay clear, which a solid fill can't
+   satisfy but a real almond-shaped eye always does; all three gates pass
+   after the fix. Real scan: **zero** of the 9,046 images anywhere in the
+   archive register as an eye-outline grid, at native resolution, other
+   than the two already-catalogued Easter eggs (which now correctly score
+   0 raw matches).
+
+3. **Executable strings** (`strings` on both `noita.exe` and
+   `noita_dev.exe`, never searched before): no cipher/eye-message hits
+   beyond generic engine text — the `Message_*` entity-event system, a PNG
+   decoder's "invalid decoded scanline length", a `base16_decode` debug
+   utility, and the `ThreeEyesAreWatchingYou` perk name (an unrelated wand
+   perk).
+
+**Net: the exhaustive sweep changes nothing about the tenth phase's
+conclusion, but removes its caveat.** The eye-message cipher is not
+recoverable from any file in the shipped game or its executables' visible
+strings — it is authored/externally-keyed, and the ciphertext (plus, now,
+this fully-searched absence) is what the project has to work with.
+(Residual caveat: the executables' binary *logic* itself — code implementing
+a decoder with no giveaway string — is unsearched; that would need
+disassembly, out of scope here.)
+
+## Step B extended — three more candidates (twelfth phase, `tools/tournament.py`)
+
+With the shipped game ruled out as an external source (eleventh phase),
+effort returned to the substitution-schedule problem Step B (seventh phase)
+left open: no tested small-state generator simultaneously (i) makes
+abundant cross-offset EXACT isomorphs, (ii) is non-additive/non-commuting,
+and (iii) realigns at the observed rate. Three new `make_*` candidates,
+plus a new diagnostic (`delta_mod4_spectrum`, histogramming each raw
+isomorph pair's relative offset mod 4 — the same statistic Step D ran on
+the real corpus). Gates (existing detector-validation gates) still pass
+after adding the candidates and after a fix to the synthetic corpus itself
+(below).
+
+**Methodology fix first.** The tournament's shared synthetic-corpus builder
+(`corpus()`) inserts each candidate-seeded repeated phrase at hardcoded
+positions. Checking those positions: every pairwise gap between insertions
+of the *same* phrase (32, 4, 28, 4, 16, 16) was **coincidentally a multiple
+of 4** — meaning the harness could never tell a period-4 layer keyed to
+absolute position apart from one that isn't, since it never sampled a
+cross-message offset outside residue 0. Fixed by shifting one insertion per
+phrase group by 1-2 positions so the pairwise gaps span multiple residues
+mod 4; re-ran the existing candidates to confirm the detector-validation
+gates still pass (they do) before trusting any new candidate's result.
+
+**Candidate 1 — `make_deck_rebuild`: "deck rebuilt, not shifted."** A bank
+of 15 (~ Step C's S_eff upper bound) independently-random permutation
+tables; the encryptor applies ONE table unchanged across an entire
+plaintext-notch-delimited stretch (no progressive exponent, unlike
+`make_rotorcycle`'s T^m), and switches to the next table on a notch —
+tests the third-phase idea, previously downgraded only for row-locked
+timing, with a plaintext-driven trigger instead.
+
+Result: **first tested mechanism to produce abundant, offset-independent
+exact isomorphs** (maxL 39; raw-pair delta-mod-4 spectrum {0:34, 1:1, 2:3,
+3:4} — spread across residues, like real, because composing two
+INDEPENDENT fixed substitution tables is a single well-defined map
+regardless of position). The prior naive rotor-cycle produced zero. But it
+fails zero-doubles (70 ciphertext doubles — a bare table-swap has no
+collision-avoidance mechanism) and period-4 (d4-ratio 1.05 — it has no
+period-4 component at all). (Caveat: `walk_dim` and `commute` for this
+candidate read high, like the additive walk's — plausibly a small-n
+artifact of this harness's few seeded phrases mostly landing in the same
+one or two states, since the isomorph-count and delta-spectrum evidence,
+built on more direct counts, already shows the tables are NOT globally
+translation-equivalent the way the additive walk's deck is.)
+
+**Candidate 2 — `make_period4_position`.** Candidate 1 plus an outer
+period-4 layer keyed by ABSOLUTE character position (`Q[i mod 4]` composed
+outside the table lookup) — the literal reading of "a period-4 sub-key that
+selects among 4 fixed substitutions, composed with a small autokey state."
+
+Result: **isomorph yield collapses from dozens of pairs to 2**, and both of
+those 2 sit at delta≡0 mod 4 (spectrum `{0: 2}`) — exactly the predicted
+failure mode. Because the period-4 phase depends on absolute position, two
+occurrences of the same phrase at a relative offset not divisible by 4 pick
+up a DIFFERENT composed map at each position within the window instead of
+one constant map, so the window stops being an exact isomorph almost
+always. Real isomorph offsets span every residue mod 4 (0:6,1:2,2:5,3:5,
+Step D) with non-identity σ — a position-locked period-4 composition
+predicts the opposite of what's observed, now demonstrated concretely
+rather than just argued.
+
+**Candidate 3 — `make_period4_content`.** Candidate 1 plus a period-4 layer
+keyed by a SECOND, faster plaintext notch (mean spacing ~4 letters, tied to
+letter identity like the slow notch, not to position) instead of raw
+position — operationalizing the open idea from Step A's own writeup: "an
+order-4 key STATE feeding the non-commuting substitution, not an order-4
+offset on a state walk."
+
+Result: **keeps isomorphs at every residue mod 4** (spectrum `{0:12, 1:1,
+2:1, 3:3}` — matches the real pattern qualitatively, unlike candidate 2),
+because the fast state advances identically in both occurrences of an
+identical phrase (it depends on the phrase's own letters, not on where the
+phrase sits), so two occurrences that merely start in the same fast-phase
+(~1-in-4 chance) stay synchronized regardless of absolute offset. But its
+d4-ratio comes back **1.17 — not elevated** (target >1.5): a
+content-triggered state change is an irregular renewal process (mean
+interval ~4, not a strict clock), too loose to produce the real corpus's
+crisp, single-lag-4 recurrence excess.
+
+**Net — the two-way tension is now three-way, and demonstrated rather than
+argued.** Abundant offset-independent isomorphs (i), non-additive structure
+(ii), and a crisp period-4 recurrence (iii) have never been produced
+together by any construction tried in this project. Every candidate that
+gets two of the three loses the third: the rotor-cycle got (ii)+(iii) and
+lost (i); the additive walk gets (i) but is additive, failing (ii);
+deck-rebuild gets (i)+(ii) but has no (iii); position-locked period-4 adds
+(iii) but destroys (i); content-locked period-4 keeps (i) but the (iii) it
+adds doesn't reach the observed sharpness. Zero-doubles remains unexplained
+by every substitution-swap design tried (none has a collision-avoidance
+rule); whether one can be added without re-breaking the isomorph catalog —
+the reason collision-skip was refuted for the WALK family — is untested for
+the deck-rebuild family specifically and is the most concrete next step.
 
 ## Community cross-check (adversarial, re-derived before use)
 
@@ -468,13 +624,25 @@ worth remembering given the shared-prefix reasoning in Step D. See
   accumulating state, calibrated on ciphers of known state size
 - `data/resync_report.json` — Step C report (controls + real)
 - `tools/tournament.py` — Step B: small-state generator tournament scoring
-  candidate mechanisms against the consolidated real signature fingerprint
-- `data/tournament_report.json` — Step B report (candidates + real)
+  candidate mechanisms against the consolidated real signature fingerprint;
+  twelfth phase added `make_deck_rebuild`, `make_period4_position`,
+  `make_period4_content`, and the `delta_mod4_spectrum` diagnostic
+- `data/tournament_report.json` — Step B report (candidates + real,
+  including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
   general-rotor hypothesis, validated on rotor vs offset-independent controls
 - `data/rotorfit_report.json` — non-abelian-σ report (controls + real)
 - `tools/wak_unpack.py` — Step E: pure-Python `data.wak` archive reader
-  (list/cat/extract), format self-checked on every read
+  (list/cat/extract), format self-checked on every read; `find_wak()`
+  now probes several known Steam-library paths instead of one hardcoded one
+- `tools/wak_sweep.py` — eleventh phase: byte-level keyword sweep of every
+  one of `data.wak`'s 14,745 files, gated on a planted-marker control
+- `data/wak_sweep_report.json` — eleventh-phase keyword-sweep report
+- `tools/eye_mural_scan.py` — eleventh phase: pixel-level eye-outline GRID
+  scan of all 9,046 raster files (PNG/BMP/PSD) in `data.wak`, gated on the
+  known source sheets (positive), random noise (negative), and the
+  catalogued lone-eye Easter eggs (negative)
+- `data/eye_mural_scan_report.json` — eleventh-phase pixel-scan report
 - `data/sigma_diagnostics.json` — output of the superseded `sigma_diagnostics.py`
 - `GUIDE.md` — operator's userguide for every tool + the phased attack plan
 - `PLAN.md` — session handoff: full findings + prioritized next-phase plan

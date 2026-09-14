@@ -1,0 +1,5729 @@
+{
+  "gate_ok": true,
+  "keyword_hits": {
+    "decode": [
+      {
+        "file": "data/scripts/streaming_integration/event_utilities.lua",
+        "local_offset": 8836
+      }
+    ],
+    "glyph": [
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 9185
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 9782
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 10367
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 10952
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 13044
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 13798
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 13935
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 14165
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 14303
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 14533
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 14671
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 15239
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 15377
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 15619
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 15757
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 15987
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 16125
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 16695
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 16833
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 17085
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 17224
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 17455
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 17594
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 18437
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 18574
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 18813
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 18951
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 19181
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 19319
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 19887
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 20025
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 20264
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 20402
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 20632
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 20770
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 21339
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 21477
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 21717
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 21856
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 22087
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 22226
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 23068
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 23206
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 23436
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 23574
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 23804
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 23942
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 24512
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 24650
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 24901
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 25039
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 25270
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 25409
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 26893
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 27969
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall.psd",
+        "local_offset": 28303
+      }
+    ],
+    "rune": [
+      {
+        "file": "data/buildings_gfx/runes.xml",
+        "local_offset": 40
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx.xml",
+        "local_offset": 1164
+      },
+      {
+        "file": "data/entities/buildings/runes.xml",
+        "local_offset": 64
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 487
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 498
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 765
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 776
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 941
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 952
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 1500
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 1625
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 1676
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 1812
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 1895
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 2155
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 2912
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 2923
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 3132
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 3363
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_base.xml",
+        "local_offset": 3374
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 339
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 388
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 438
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 515
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 603
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 710
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 1514
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_disc.xml",
+        "local_offset": 1525
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 343
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 396
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 450
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 527
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 619
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 730
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 1515
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_fireball.xml",
+        "local_offset": 1526
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 339
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 389
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 440
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 517
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 606
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 714
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 1502
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_laser.xml",
+        "local_offset": 1513
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 338
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 387
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 437
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 514
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 602
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 709
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 1496
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_lava.xml",
+        "local_offset": 1507
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 339
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 389
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 440
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 517
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 606
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 714
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 1498
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_metal.xml",
+        "local_offset": 1509
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 340
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 389
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 439
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 516
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 604
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 711
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 1506
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_null.xml",
+        "local_offset": 1517
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 50
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 61
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 145
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 156
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 340
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 389
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 439
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 516
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 604
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 711
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 1478
+      },
+      {
+        "file": "data/entities/items/pickup/runestones/runestone_slow.xml",
+        "local_offset": 1489
+      },
+      {
+        "file": "data/entities/particles/image_emitters/safe_haven_buildup.xml",
+        "local_offset": 1196
+      },
+      {
+        "file": "data/scripts/biome_scripts.lua",
+        "local_offset": 45
+      },
+      {
+        "file": "data/scripts/biome_scripts.lua",
+        "local_offset": 170
+      },
+      {
+        "file": "data/scripts/biome_scripts.lua",
+        "local_offset": 6185
+      },
+      {
+        "file": "data/scripts/biome_scripts.lua",
+        "local_offset": 6240
+      },
+      {
+        "file": "data/scripts/item_spawnlists.lua",
+        "local_offset": 1664
+      },
+      {
+        "file": "data/scripts/item_spawnlists.lua",
+        "local_offset": 2025
+      },
+      {
+        "file": "data/scripts/item_spawnlists.lua",
+        "local_offset": 2036
+      },
+      {
+        "file": "data/scripts/item_spawnlists.lua",
+        "local_offset": 2148
+      },
+      {
+        "file": "data/scripts/items/chest_random.lua",
+        "local_offset": 6660
+      },
+      {
+        "file": "data/scripts/items/chest_random.lua",
+        "local_offset": 7214
+      },
+      {
+        "file": "data/scripts/items/chest_random.lua",
+        "local_offset": 7425
+      },
+      {
+        "file": "data/scripts/items/chest_random.lua",
+        "local_offset": 7436
+      },
+      {
+        "file": "data/scripts/items/utility_box.lua",
+        "local_offset": 3406
+      },
+      {
+        "file": "data/scripts/items/utility_box.lua",
+        "local_offset": 3960
+      },
+      {
+        "file": "data/scripts/items/utility_box.lua",
+        "local_offset": 4171
+      },
+      {
+        "file": "data/scripts/items/utility_box.lua",
+        "local_offset": 4182
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_activate.lua",
+        "local_offset": 58
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_activate.lua",
+        "local_offset": 909
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_activate.lua",
+        "local_offset": 1020
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_activate.lua",
+        "local_offset": 1099
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_lava.lua",
+        "local_offset": 169
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_metal.lua",
+        "local_offset": 169
+      },
+      {
+        "file": "data/scripts/items/runestones/runestone_null.lua",
+        "local_offset": 811
+      }
+    ],
+    "pupil": [
+      {
+        "file": "data/entities/animals/boss_ghost/boss_ghost.xml",
+        "local_offset": 862
+      },
+      {
+        "file": "data/entities/animals/boss_ghost/pupil.xml",
+        "local_offset": 52
+      }
+    ],
+    "orientation": [
+      {
+        "file": "data/biome_impl/biome_map.png",
+        "local_offset": 3031
+      },
+      {
+        "file": "data/biome_impl/biome_map.png",
+        "local_offset": 3051
+      },
+      {
+        "file": "data/biome_impl/biome_map_newgame_plus.png",
+        "local_offset": 3031
+      },
+      {
+        "file": "data/biome_impl/biome_map_newgame_plus.png",
+        "local_offset": 3051
+      },
+      {
+        "file": "data/biome_impl/blank.png",
+        "local_offset": 2893
+      },
+      {
+        "file": "data/biome_impl/blank.png",
+        "local_offset": 2913
+      },
+      {
+        "file": "data/biome_impl/biome_modifiers/water_ball.png",
+        "local_offset": 1995
+      },
+      {
+        "file": "data/biome_impl/biome_modifiers/water_ball.png",
+        "local_offset": 2015
+      },
+      {
+        "file": "data/biome_impl/coalmine/oiltank_2.png",
+        "local_offset": 1940
+      },
+      {
+        "file": "data/biome_impl/coalmine/oiltank_2.png",
+        "local_offset": 1960
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine01.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine01.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine01_alt.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine01_alt.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine02.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine02.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine02_alt.png",
+        "local_offset": 1940
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine02_alt.png",
+        "local_offset": 1960
+      },
+      {
+        "file": "data/biome_impl/coalmine/symbolroom.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/biome_impl/coalmine/symbolroom.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/biome_impl/coalmine/symbolroom_alt.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/biome_impl/coalmine/symbolroom_alt.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_01_background.png",
+        "local_offset": 4641
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_01_background.png",
+        "local_offset": 4661
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_02_background.png",
+        "local_offset": 4641
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_02_background.png",
+        "local_offset": 4661
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_03_background.png",
+        "local_offset": 4473
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_03_background.png",
+        "local_offset": 4493
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_04_background.png",
+        "local_offset": 4641
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_04_background.png",
+        "local_offset": 4661
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_05_background.png",
+        "local_offset": 4641
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_05_background.png",
+        "local_offset": 4661
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_06_background.png",
+        "local_offset": 4641
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_06_background.png",
+        "local_offset": 4661
+      },
+      {
+        "file": "data/biome_impl/crypt/room_gate_drop.png",
+        "local_offset": 6084
+      },
+      {
+        "file": "data/biome_impl/crypt/room_gate_drop.png",
+        "local_offset": 6104
+      },
+      {
+        "file": "data/biome_impl/crypt/room_gate_drop_b.png",
+        "local_offset": 6072
+      },
+      {
+        "file": "data/biome_impl/crypt/room_gate_drop_b.png",
+        "local_offset": 6092
+      },
+      {
+        "file": "data/biome_impl/crypt/room_gate_drop_visual.png",
+        "local_offset": 6079
+      },
+      {
+        "file": "data/biome_impl/crypt/room_gate_drop_visual.png",
+        "local_offset": 6099
+      },
+      {
+        "file": "data/biome_impl/crypt/room_liquid_funnel.png",
+        "local_offset": 6088
+      },
+      {
+        "file": "data/biome_impl/crypt/room_liquid_funnel.png",
+        "local_offset": 6108
+      },
+      {
+        "file": "data/biome_impl/crypt/room_liquid_funnel_b.png",
+        "local_offset": 6088
+      },
+      {
+        "file": "data/biome_impl/crypt/room_liquid_funnel_b.png",
+        "local_offset": 6108
+      },
+      {
+        "file": "data/biome_impl/crypt/room_liquid_funnel_visual.png",
+        "local_offset": 6088
+      },
+      {
+        "file": "data/biome_impl/crypt/room_liquid_funnel_visual.png",
+        "local_offset": 6108
+      },
+      {
+        "file": "data/biome_impl/crypt/shop.png",
+        "local_offset": 6165
+      },
+      {
+        "file": "data/biome_impl/crypt/shop.png",
+        "local_offset": 6185
+      },
+      {
+        "file": "data/biome_impl/crypt/shop_b.png",
+        "local_offset": 6165
+      },
+      {
+        "file": "data/biome_impl/crypt/shop_b.png",
+        "local_offset": 6185
+      },
+      {
+        "file": "data/biome_impl/crypt/shop_visual.png",
+        "local_offset": 6167
+      },
+      {
+        "file": "data/biome_impl/crypt/shop_visual.png",
+        "local_offset": 6187
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_01_background.png",
+        "local_offset": 4589
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_01_background.png",
+        "local_offset": 4609
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_02_background.png",
+        "local_offset": 4589
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_02_background.png",
+        "local_offset": 4609
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_03_background.png",
+        "local_offset": 4694
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_03_background.png",
+        "local_offset": 4714
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_04_background.png",
+        "local_offset": 4577
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_04_background.png",
+        "local_offset": 4597
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_05_background.png",
+        "local_offset": 4680
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_05_background.png",
+        "local_offset": 4700
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_06_background.png",
+        "local_offset": 4589
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_06_background.png",
+        "local_offset": 4609
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_07_background.png",
+        "local_offset": 4589
+      },
+      {
+        "file": "data/biome_impl/crypt/slab_07_background.png",
+        "local_offset": 4609
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_01.png",
+        "local_offset": 4812
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_01.png",
+        "local_offset": 4832
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_01_visual.png",
+        "local_offset": 4812
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_01_visual.png",
+        "local_offset": 4832
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_02.png",
+        "local_offset": 4834
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_02.png",
+        "local_offset": 4854
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_05.png",
+        "local_offset": 4800
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_05.png",
+        "local_offset": 4820
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_05_visual.png",
+        "local_offset": 4812
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_05_visual.png",
+        "local_offset": 4832
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_06.png",
+        "local_offset": 4903
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_06.png",
+        "local_offset": 4923
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_06_visual.png",
+        "local_offset": 4903
+      },
+      {
+        "file": "data/biome_impl/overworld/desert_ruins_block_06_visual.png",
+        "local_offset": 4923
+      },
+      {
+        "file": "data/biome_impl/pillars/pillar_part_minisky.png",
+        "local_offset": 3031
+      },
+      {
+        "file": "data/biome_impl/pillars/pillar_part_minisky.png",
+        "local_offset": 3051
+      },
+      {
+        "file": "data/biome_impl/pillars/pillar_part_mrain.png",
+        "local_offset": 5968
+      },
+      {
+        "file": "data/biome_impl/pillars/pillar_part_mrain.png",
+        "local_offset": 5988
+      },
+      {
+        "file": "data/biome_impl/pyramid/entrance_background.png",
+        "local_offset": 2004
+      },
+      {
+        "file": "data/biome_impl/pyramid/entrance_background.png",
+        "local_offset": 2024
+      },
+      {
+        "file": "data/biome_impl/rainforest/rainforest_statue_02.png",
+        "local_offset": 4345
+      },
+      {
+        "file": "data/biome_impl/rainforest/rainforest_statue_02.png",
+        "local_offset": 4365
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bar_background.png",
+        "local_offset": 4765
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bar_background.png",
+        "local_offset": 4785
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bar_visual.png",
+        "local_offset": 4765
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bar_visual.png",
+        "local_offset": 4785
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bedroom.png",
+        "local_offset": 4937
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bedroom.png",
+        "local_offset": 4957
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bedroom_background.png",
+        "local_offset": 5028
+      },
+      {
+        "file": "data/biome_impl/snowcastle/bedroom_background.png",
+        "local_offset": 5048
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_bottom_l.png",
+        "local_offset": 2982
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_bottom_l.png",
+        "local_offset": 3002
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_bottom_r.png",
+        "local_offset": 2982
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_bottom_r.png",
+        "local_offset": 3002
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_bottom_l.png",
+        "local_offset": 2985
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_bottom_l.png",
+        "local_offset": 3005
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_bottom_r.png",
+        "local_offset": 2988
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_bottom_r.png",
+        "local_offset": 3008
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_top_l.png",
+        "local_offset": 2985
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_top_l.png",
+        "local_offset": 3005
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_top_r.png",
+        "local_offset": 2896
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_inner_top_r.png",
+        "local_offset": 2916
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_top_l.png",
+        "local_offset": 2890
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_top_l.png",
+        "local_offset": 2910
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_top_r.png",
+        "local_offset": 2965
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_top_r.png",
+        "local_offset": 2985
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill.png",
+        "local_offset": 1183
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill_background.png",
+        "local_offset": 4767
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill_background.png",
+        "local_offset": 4787
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill_visual.png",
+        "local_offset": 1183
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_bunk.png",
+        "local_offset": 3188
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_bunk.png",
+        "local_offset": 3208
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_bunk_visual.png",
+        "local_offset": 3099
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_bunk_visual.png",
+        "local_offset": 3119
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_cryopod.png",
+        "local_offset": 3184
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_cryopod.png",
+        "local_offset": 3204
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_cryopod_visual.png",
+        "local_offset": 3093
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_cryopod_visual.png",
+        "local_offset": 3113
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_footlocker.png",
+        "local_offset": 3088
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_footlocker.png",
+        "local_offset": 3108
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_footlocker_visual.png",
+        "local_offset": 2645
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_footlocker_visual.png",
+        "local_offset": 2665
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_locker.png",
+        "local_offset": 3084
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_locker.png",
+        "local_offset": 3104
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_locker_visual.png",
+        "local_offset": 2645
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_locker_visual.png",
+        "local_offset": 2665
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_stool.png",
+        "local_offset": 3100
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_stool.png",
+        "local_offset": 3120
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_stool_visual.png",
+        "local_offset": 3100
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_stool_visual.png",
+        "local_offset": 3120
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_table.png",
+        "local_offset": 3074
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_table.png",
+        "local_offset": 3094
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_table_visual.png",
+        "local_offset": 2645
+      },
+      {
+        "file": "data/biome_impl/snowcastle/furniture_table_visual.png",
+        "local_offset": 2665
+      },
+      {
+        "file": "data/biome_impl/snowcastle/greenhouse.png",
+        "local_offset": 4877
+      },
+      {
+        "file": "data/biome_impl/snowcastle/greenhouse.png",
+        "local_offset": 4897
+      },
+      {
+        "file": "data/biome_impl/snowcastle/greenhouse_background.png",
+        "local_offset": 4877
+      },
+      {
+        "file": "data/biome_impl/snowcastle/greenhouse_background.png",
+        "local_offset": 4897
+      },
+      {
+        "file": "data/biome_impl/snowcastle/greenhouse_visual.png",
+        "local_offset": 4877
+      },
+      {
+        "file": "data/biome_impl/snowcastle/greenhouse_visual.png",
+        "local_offset": 4897
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pillar_filler_01.png",
+        "local_offset": 2968
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pillar_filler_01.png",
+        "local_offset": 2988
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pillar_filler_tall_01.png",
+        "local_offset": 2973
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pillar_filler_tall_01.png",
+        "local_offset": 2993
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01.png",
+        "local_offset": 4566
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01.png",
+        "local_offset": 4586
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01_background.png",
+        "local_offset": 4264
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01_background.png",
+        "local_offset": 4284
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01_background_b.png",
+        "local_offset": 4479
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01_background_b.png",
+        "local_offset": 4499
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01_background_c.png",
+        "local_offset": 4481
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_01_background_c.png",
+        "local_offset": 4501
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_blank_01.png",
+        "local_offset": 2970
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_large_blank_01.png",
+        "local_offset": 2990
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_01_background.png",
+        "local_offset": 4266
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_01_background.png",
+        "local_offset": 4286
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_01_background_b.png",
+        "local_offset": 4266
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_01_background_b.png",
+        "local_offset": 4286
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_blank_01.png",
+        "local_offset": 2986
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_blank_01.png",
+        "local_offset": 3006
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_r_01_background.png",
+        "local_offset": 4254
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_r_01_background.png",
+        "local_offset": 4274
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_r_01_background_b.png",
+        "local_offset": 4266
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_r_01_background_b.png",
+        "local_offset": 4286
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_r_blank_01.png",
+        "local_offset": 2897
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_r_blank_01.png",
+        "local_offset": 2917
+      },
+      {
+        "file": "data/biome_impl/snowcastle/sauna_background.png",
+        "local_offset": 1183
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule.png",
+        "local_offset": 4704
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule.png",
+        "local_offset": 4724
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b.png",
+        "local_offset": 4497
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b.png",
+        "local_offset": 4517
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_background.png",
+        "local_offset": 4715
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_background.png",
+        "local_offset": 4735
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b_background.png",
+        "local_offset": 4568
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b_background.png",
+        "local_offset": 4588
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b_visual.png",
+        "local_offset": 4568
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b_visual.png",
+        "local_offset": 4588
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_visual.png",
+        "local_offset": 4711
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_visual.png",
+        "local_offset": 4731
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/barren_hint_bg.png",
+        "local_offset": 6169
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/barren_hint_bg.png",
+        "local_offset": 6189
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/boss_hint_bg.png",
+        "local_offset": 6309
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/boss_hint_bg.png",
+        "local_offset": 6329
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/boss_phase2_bg.png",
+        "local_offset": 3059
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/boss_phase2_bg.png",
+        "local_offset": 3079
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/darkness_hint_bg.png",
+        "local_offset": 3094
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/darkness_hint_bg.png",
+        "local_offset": 3114
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/darkness_hint_bg_2.png",
+        "local_offset": 6554
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/darkness_hint_bg_2.png",
+        "local_offset": 6574
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/potion_mimics_hint_bg.png",
+        "local_offset": 6169
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/potion_mimics_hint_bg.png",
+        "local_offset": 6189
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/potion_mimic_icon.png",
+        "local_offset": 3045
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/potion_mimic_icon.png",
+        "local_offset": 3065
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_left.png",
+        "local_offset": 6065
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_left.png",
+        "local_offset": 6085
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_left_visual.png",
+        "local_offset": 5968
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_left_visual.png",
+        "local_offset": 5988
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_right.png",
+        "local_offset": 6065
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_right.png",
+        "local_offset": 6085
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_right_visual.png",
+        "local_offset": 5968
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/sign_right_visual.png",
+        "local_offset": 5988
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/watchtower_hint_bg.png",
+        "local_offset": 5905
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/watchtower_hint_bg.png",
+        "local_offset": 5925
+      },
+      {
+        "file": "data/biome_impl/temple/altar_right_visual.png",
+        "local_offset": 4862
+      },
+      {
+        "file": "data/biome_impl/temple/altar_right_visual.png",
+        "local_offset": 4882
+      },
+      {
+        "file": "data/biome_impl/trailer/logo_emitter.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/biome_impl/trailer/logo_emitter.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/biome_impl/vault/acidtank.png",
+        "local_offset": 5803
+      },
+      {
+        "file": "data/biome_impl/vault/acidtank.png",
+        "local_offset": 5823
+      },
+      {
+        "file": "data/biome_impl/vault/acidtank_background.png",
+        "local_offset": 3300
+      },
+      {
+        "file": "data/biome_impl/vault/acidtank_background.png",
+        "local_offset": 3320
+      },
+      {
+        "file": "data/biome_impl/vault/acidtank_visual.png",
+        "local_offset": 5803
+      },
+      {
+        "file": "data/biome_impl/vault/acidtank_visual.png",
+        "local_offset": 5823
+      },
+      {
+        "file": "data/biome_impl/vault/brain_room.png",
+        "local_offset": 6096
+      },
+      {
+        "file": "data/biome_impl/vault/brain_room.png",
+        "local_offset": 6116
+      },
+      {
+        "file": "data/biome_impl/vault/brain_room_background.png",
+        "local_offset": 6084
+      },
+      {
+        "file": "data/biome_impl/vault/brain_room_background.png",
+        "local_offset": 6104
+      },
+      {
+        "file": "data/biome_impl/vault/brain_room_visual.png",
+        "local_offset": 6096
+      },
+      {
+        "file": "data/biome_impl/vault/brain_room_visual.png",
+        "local_offset": 6116
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_01.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_01.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_01_background.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_01_background.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02b.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02b.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02b_background.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02b_background.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02_background.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_02_background.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_03.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_03.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_03_background.png",
+        "local_offset": 4273
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_03_background.png",
+        "local_offset": 4293
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_04.png",
+        "local_offset": 4488
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_04.png",
+        "local_offset": 4508
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_04_background.png",
+        "local_offset": 4488
+      },
+      {
+        "file": "data/biome_impl/vault/catwalk_04_background.png",
+        "local_offset": 4508
+      },
+      {
+        "file": "data/biome_impl/vault/electric_tunnel_room.png",
+        "local_offset": 5455
+      },
+      {
+        "file": "data/biome_impl/vault/electric_tunnel_room.png",
+        "local_offset": 5475
+      },
+      {
+        "file": "data/biome_impl/vault/electric_tunnel_room_background.png",
+        "local_offset": 5455
+      },
+      {
+        "file": "data/biome_impl/vault/electric_tunnel_room_background.png",
+        "local_offset": 5475
+      },
+      {
+        "file": "data/biome_impl/vault/lab.png",
+        "local_offset": 5028
+      },
+      {
+        "file": "data/biome_impl/vault/lab.png",
+        "local_offset": 5048
+      },
+      {
+        "file": "data/biome_impl/vault/lab2.png",
+        "local_offset": 5878
+      },
+      {
+        "file": "data/biome_impl/vault/lab2.png",
+        "local_offset": 5898
+      },
+      {
+        "file": "data/biome_impl/vault/lab3.png",
+        "local_offset": 5439
+      },
+      {
+        "file": "data/biome_impl/vault/lab3.png",
+        "local_offset": 5459
+      },
+      {
+        "file": "data/biome_impl/vault/lab_background.png",
+        "local_offset": 5028
+      },
+      {
+        "file": "data/biome_impl/vault/lab_background.png",
+        "local_offset": 5048
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_berserk_background.png",
+        "local_offset": 4350
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_berserk_background.png",
+        "local_offset": 4370
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_charm_background.png",
+        "local_offset": 4350
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_charm_background.png",
+        "local_offset": 4370
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_invis_background.png",
+        "local_offset": 4350
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_invis_background.png",
+        "local_offset": 4370
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_protect_background.png",
+        "local_offset": 4350
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_protect_background.png",
+        "local_offset": 4370
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_speed_background.png",
+        "local_offset": 4350
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_speed_background.png",
+        "local_offset": 4370
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_worm_background.png",
+        "local_offset": 4350
+      },
+      {
+        "file": "data/biome_impl/vault/lab_puzzle_worm_background.png",
+        "local_offset": 4370
+      },
+      {
+        "file": "data/biome_impl/vault/lab_visual.png",
+        "local_offset": 5028
+      },
+      {
+        "file": "data/biome_impl/vault/lab_visual.png",
+        "local_offset": 5048
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_01_background.png",
+        "local_offset": 4569
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_01_background.png",
+        "local_offset": 4589
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_02_background.png",
+        "local_offset": 4567
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_02_background.png",
+        "local_offset": 4587
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_03_background.png",
+        "local_offset": 4567
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_03_background.png",
+        "local_offset": 4587
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_04_background.png",
+        "local_offset": 4567
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_04_background.png",
+        "local_offset": 4587
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_05_background.png",
+        "local_offset": 4567
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_05_background.png",
+        "local_offset": 4587
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_base_01_background.png",
+        "local_offset": 4572
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_base_01_background.png",
+        "local_offset": 4592
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_base_02_background.png",
+        "local_offset": 4572
+      },
+      {
+        "file": "data/biome_impl/vault/pillar_base_02_background.png",
+        "local_offset": 4592
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_1.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_1.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_1_visual.png",
+        "local_offset": 3113
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_1_visual.png",
+        "local_offset": 3133
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_2.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_2.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_2_visual.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_hor_2_visual.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_left.png",
+        "local_offset": 3205
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_left.png",
+        "local_offset": 3225
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_left_visual.png",
+        "local_offset": 3205
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_left_visual.png",
+        "local_offset": 3225
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_right.png",
+        "local_offset": 3205
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_right.png",
+        "local_offset": 3225
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_right_visual.png",
+        "local_offset": 3296
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_turn_right_visual.png",
+        "local_offset": 3316
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_1.png",
+        "local_offset": 3113
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_1.png",
+        "local_offset": 3133
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_1_visual.png",
+        "local_offset": 3296
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_1_visual.png",
+        "local_offset": 3316
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_2.png",
+        "local_offset": 3205
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_2.png",
+        "local_offset": 3225
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_2_visual.png",
+        "local_offset": 3205
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_big_ver_2_visual.png",
+        "local_offset": 3225
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_hor_3.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_hor_3.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_hor_3_visual.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_hor_3_visual.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_3.png",
+        "local_offset": 2670
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_3.png",
+        "local_offset": 2690
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_3_visual.png",
+        "local_offset": 2670
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_3_visual.png",
+        "local_offset": 2690
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_4.png",
+        "local_offset": 2670
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_4.png",
+        "local_offset": 2690
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_4_visual.png",
+        "local_offset": 2670
+      },
+      {
+        "file": "data/biome_impl/vault/pipe_ver_4_visual.png",
+        "local_offset": 2690
+      },
+      {
+        "file": "data/biome_impl/vault/shop.png",
+        "local_offset": 6029
+      },
+      {
+        "file": "data/biome_impl/vault/shop.png",
+        "local_offset": 6049
+      },
+      {
+        "file": "data/biome_impl/vault/shop_visual.png",
+        "local_offset": 6029
+      },
+      {
+        "file": "data/biome_impl/vault/shop_visual.png",
+        "local_offset": 6049
+      },
+      {
+        "file": "data/biome_impl/vault/symbolroom.png",
+        "local_offset": 1995
+      },
+      {
+        "file": "data/biome_impl/vault/symbolroom.png",
+        "local_offset": 2015
+      },
+      {
+        "file": "data/biome_impl/vault/warningstrip_background.png",
+        "local_offset": 2008
+      },
+      {
+        "file": "data/biome_impl/vault/warningstrip_background.png",
+        "local_offset": 2028
+      },
+      {
+        "file": "data/biome_impl/wandcave/bottom_corner.png",
+        "local_offset": 2007
+      },
+      {
+        "file": "data/biome_impl/wandcave/bottom_corner.png",
+        "local_offset": 2027
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_dynamic_01.png",
+        "local_offset": 5610
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_dynamic_01.png",
+        "local_offset": 5630
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_dynamic_02.png",
+        "local_offset": 5610
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_dynamic_02.png",
+        "local_offset": 5630
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_dynamic_02_visual.png",
+        "local_offset": 5610
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_dynamic_02_visual.png",
+        "local_offset": 5630
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_01.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_01.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_01_visual.png",
+        "local_offset": 5397
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_01_visual.png",
+        "local_offset": 5417
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_02.png",
+        "local_offset": 6117
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_02.png",
+        "local_offset": 6137
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_02_visual.png",
+        "local_offset": 6118
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_l_02_visual.png",
+        "local_offset": 6138
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_01.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_01.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_01_visual.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_01_visual.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_02.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_02.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_02_visual.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_r_02_visual.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_01.png",
+        "local_offset": 5598
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_01.png",
+        "local_offset": 5618
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_01_visual.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_01_visual.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_02.png",
+        "local_offset": 5610
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_02.png",
+        "local_offset": 5630
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_02_visual.png",
+        "local_offset": 5610
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_02_visual.png",
+        "local_offset": 5630
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_03.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_03.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_03_visual.png",
+        "local_offset": 5596
+      },
+      {
+        "file": "data/biome_impl/wandcave/floor_rubble_small_03_visual.png",
+        "local_offset": 5616
+      },
+      {
+        "file": "data/biome_impl/wandcave/top_corner.png",
+        "local_offset": 2004
+      },
+      {
+        "file": "data/biome_impl/wandcave/top_corner.png",
+        "local_offset": 2024
+      },
+      {
+        "file": "data/buildings_gfx/drain_pipe.png",
+        "local_offset": 2444
+      },
+      {
+        "file": "data/buildings_gfx/drain_pipe.png",
+        "local_offset": 2464
+      },
+      {
+        "file": "data/enemies_gfx/drone_physics.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/enemies_gfx/drone_physics.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/enemies_gfx/mimic_potion.png",
+        "local_offset": 5111
+      },
+      {
+        "file": "data/enemies_gfx/mimic_potion.png",
+        "local_offset": 5131
+      },
+      {
+        "file": "data/enemies_gfx/mimic_potion_uv_src.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/enemies_gfx/mimic_potion_uv_src.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/enemies_gfx/player_arm.png",
+        "local_offset": 3940
+      },
+      {
+        "file": "data/enemies_gfx/player_arm.png",
+        "local_offset": 3960
+      },
+      {
+        "file": "data/enemies_gfx/player_arm_hotspots.png",
+        "local_offset": 3940
+      },
+      {
+        "file": "data/enemies_gfx/player_arm_hotspots.png",
+        "local_offset": 3960
+      },
+      {
+        "file": "data/enemies_gfx/tentacle_head.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/enemies_gfx/tentacle_head.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/enemies_gfx/wizard_swapper.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/enemies_gfx/wizard_swapper.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/body_chunk_01.png",
+        "local_offset": 2659
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/body_chunk_01.png",
+        "local_offset": 2679
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/body_chunk_02.png",
+        "local_offset": 2659
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/body_chunk_02.png",
+        "local_offset": 2679
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/bug_blue.png",
+        "local_offset": 2069
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/bug_blue.png",
+        "local_offset": 2089
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/entities/animals/boss_sky/boss_sky.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/entities/animals/boss_sky/boss_sky.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/entities/animals/lukki/lukki_feet/lukki_limb_tiny_dark.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/entities/animals/lukki/lukki_feet/lukki_limb_tiny_dark.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/entities/_debug/rope.png",
+        "local_offset": 3234
+      },
+      {
+        "file": "data/entities/_debug/rope.png",
+        "local_offset": 3254
+      },
+      {
+        "file": "data/entities/_debug/rope2.png",
+        "local_offset": 3234
+      },
+      {
+        "file": "data/entities/_debug/rope2.png",
+        "local_offset": 3254
+      },
+      {
+        "file": "data/items_gfx/bomb.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/items_gfx/bomb.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/items_gfx/erect_wand.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/items_gfx/erect_wand.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/items_gfx/evil_eye_iris.png",
+        "local_offset": 2659
+      },
+      {
+        "file": "data/items_gfx/evil_eye_iris.png",
+        "local_offset": 2679
+      },
+      {
+        "file": "data/items_gfx/goldnugget_01.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/items_gfx/goldnugget_01.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/items_gfx/goldnugget_12px.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/items_gfx/goldnugget_12px.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/items_gfx/goldnugget_20px.png",
+        "local_offset": 2821
+      },
+      {
+        "file": "data/items_gfx/goldnugget_20px.png",
+        "local_offset": 2841
+      },
+      {
+        "file": "data/items_gfx/goldnugget_6px.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/items_gfx/goldnugget_6px.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/items_gfx/goldnugget_9px.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/items_gfx/goldnugget_9px.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/items_gfx/jar_normals.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/items_gfx/jar_normals.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/items_gfx/spear.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/items_gfx/spear.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/items_gfx/orbs/orb_small_seen.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/items_gfx/orbs/orb_small_seen.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/items_gfx/perks/teleportitis_dodge.png",
+        "local_offset": 2450
+      },
+      {
+        "file": "data/items_gfx/perks/teleportitis_dodge.png",
+        "local_offset": 2470
+      },
+      {
+        "file": "data/materials_gfx/grass_dark.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/materials_gfx/grass_dark.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/materials_gfx/grass_dry.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/materials_gfx/grass_dry.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/materials_gfx/grass_frozen.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/materials_gfx/grass_frozen.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/materials_gfx/mimic_liquid.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/materials_gfx/mimic_liquid.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/materials_gfx/neon_tube_blood_red.png",
+        "local_offset": 2836
+      },
+      {
+        "file": "data/materials_gfx/neon_tube_blood_red.png",
+        "local_offset": 2856
+      },
+      {
+        "file": "data/materials_gfx/neon_tube_cyan.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/materials_gfx/neon_tube_cyan.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/materials_gfx/root_growth.png",
+        "local_offset": 2211
+      },
+      {
+        "file": "data/materials_gfx/root_growth.png",
+        "local_offset": 2231
+      },
+      {
+        "file": "data/materials_gfx/vomit.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/materials_gfx/vomit.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/particles/laser_blue.png",
+        "local_offset": 5125
+      },
+      {
+        "file": "data/particles/laser_blue.png",
+        "local_offset": 5145
+      },
+      {
+        "file": "data/particles/image_emitters/circle_reverse_128.png",
+        "local_offset": 2664
+      },
+      {
+        "file": "data/particles/image_emitters/circle_reverse_128.png",
+        "local_offset": 2684
+      },
+      {
+        "file": "data/particles/image_emitters/circle_reverse_64.png",
+        "local_offset": 3110
+      },
+      {
+        "file": "data/particles/image_emitters/circle_reverse_64.png",
+        "local_offset": 3130
+      },
+      {
+        "file": "data/particles/image_emitters/cloud.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/particles/image_emitters/cloud.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/particles/image_emitters/image_emitter_x.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/particles/image_emitters/image_emitter_x.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/particles/image_emitters/image_emitter_x_colors.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/particles/image_emitters/image_emitter_x_colors.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/particles/image_emitters/player_disappear_left.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/particles/image_emitters/player_disappear_left.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/particles/image_emitters/player_disappear_right.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/particles/image_emitters/player_disappear_right.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/0.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/0.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/1.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/1.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/10.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/10.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/11.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/11.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/12.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/12.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/13.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/13.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/14.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/14.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/2.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/2.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/3.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/3.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/4.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/4.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/5.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/5.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/6.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/6.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/7.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/7.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/8.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/8.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/9.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_big/9.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/0.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/0.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/10.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/10.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/11.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/11.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/12.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/12.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/13.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/13.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/14.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/14.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/3.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/3.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/4.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/4.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/8.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/8.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/9.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/procedural_gfx/collapse_huge/9.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/0.png",
+        "local_offset": 3065
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/0.png",
+        "local_offset": 3085
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/1.png",
+        "local_offset": 3065
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/1.png",
+        "local_offset": 3085
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/2.png",
+        "local_offset": 3167
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/2.png",
+        "local_offset": 3187
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/4.png",
+        "local_offset": 3065
+      },
+      {
+        "file": "data/procedural_gfx/collapse_lavabridge/4.png",
+        "local_offset": 3085
+      },
+      {
+        "file": "data/projectiles_gfx/bomb_cart.png",
+        "local_offset": 2447
+      },
+      {
+        "file": "data/projectiles_gfx/bomb_cart.png",
+        "local_offset": 2467
+      },
+      {
+        "file": "data/projectiles_gfx/bomb_cart_wheel_left.png",
+        "local_offset": 2966
+      },
+      {
+        "file": "data/projectiles_gfx/bomb_cart_wheel_left.png",
+        "local_offset": 2986
+      },
+      {
+        "file": "data/projectiles_gfx/bomb_cart_wheel_right.png",
+        "local_offset": 3168
+      },
+      {
+        "file": "data/projectiles_gfx/bomb_cart_wheel_right.png",
+        "local_offset": 3188
+      },
+      {
+        "file": "data/projectiles_gfx/dirt.png",
+        "local_offset": 2373
+      },
+      {
+        "file": "data/projectiles_gfx/dirt.png",
+        "local_offset": 2393
+      },
+      {
+        "file": "data/projectiles_gfx/oil.png",
+        "local_offset": 2810
+      },
+      {
+        "file": "data/projectiles_gfx/oil.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_breakable_gfx/log_vertical_10_00.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_breakable_gfx/log_vertical_10_00.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_breakable_gfx/long_plank_a_00.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/props_breakable_gfx/long_plank_a_00.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/props_breakable_gfx/metalrod_vertical_10_00.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_breakable_gfx/metalrod_vertical_10_00.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_horizontal_16_00.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_horizontal_16_00.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_horizontal_16_01.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_horizontal_16_01.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_horizontal_64_00.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_horizontal_64_00.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_vertical_10_00.png",
+        "local_offset": 2821
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_vertical_10_00.png",
+        "local_offset": 2841
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_vertical_64_00.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_breakable_gfx/plank_vertical_64_00.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_breakable_gfx/table_a_00.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/props_breakable_gfx/table_a_00.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/props_breakable_gfx/table_a_02.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/props_breakable_gfx/table_a_02.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/props_breakable_gfx/wire_horizontal_10_00.png",
+        "local_offset": 2909
+      },
+      {
+        "file": "data/props_breakable_gfx/wire_horizontal_10_00.png",
+        "local_offset": 2929
+      },
+      {
+        "file": "data/props_breakable_gfx/wire_vertical_10_00.png",
+        "local_offset": 2905
+      },
+      {
+        "file": "data/props_breakable_gfx/wire_vertical_10_00.png",
+        "local_offset": 2925
+      },
+      {
+        "file": "data/props_breakable_gfx/wire_vertical_5_00.png",
+        "local_offset": 2968
+      },
+      {
+        "file": "data/props_breakable_gfx/wire_vertical_5_00.png",
+        "local_offset": 2988
+      },
+      {
+        "file": "data/props_gfx/forcefield_generator.png",
+        "local_offset": 3189
+      },
+      {
+        "file": "data/props_gfx/forcefield_generator.png",
+        "local_offset": 3209
+      },
+      {
+        "file": "data/props_gfx/forcefield_generator_light.png",
+        "local_offset": 3286
+      },
+      {
+        "file": "data/props_gfx/forcefield_generator_light.png",
+        "local_offset": 3306
+      },
+      {
+        "file": "data/props_gfx/glass_shard_01.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_gfx/glass_shard_01.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_gfx/glass_shard_02.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_gfx/glass_shard_02.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_gfx/glass_shard_03.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_gfx/glass_shard_03.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_gfx/glass_shard_04.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/props_gfx/glass_shard_04.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/props_gfx/grass_stalk.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/props_gfx/grass_stalk.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/props_gfx/minecart.png",
+        "local_offset": 2070
+      },
+      {
+        "file": "data/props_gfx/minecart.png",
+        "local_offset": 2090
+      },
+      {
+        "file": "data/props_gfx/physics_fungus_cap_02.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/props_gfx/physics_fungus_cap_02.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/props_gfx/physics_fungus_cap_03.png",
+        "local_offset": 2456
+      },
+      {
+        "file": "data/props_gfx/physics_fungus_cap_03.png",
+        "local_offset": 2476
+      },
+      {
+        "file": "data/props_gfx/temple_lantern_01.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_lantern_01.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_01.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_01.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_02.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_02.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_03.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_03.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_04.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_04.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_05.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_05.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_06.png",
+        "local_offset": 2736
+      },
+      {
+        "file": "data/props_gfx/temple_rubble_06.png",
+        "local_offset": 2756
+      },
+      {
+        "file": "data/props_gfx/torch_hang_chain.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/props_gfx/torch_hang_chain.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/props_gfx/torch_hang_chain_ceiling.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/props_gfx/torch_hang_chain_ceiling.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/props_gfx/trap_laser_left.png",
+        "local_offset": 2454
+      },
+      {
+        "file": "data/props_gfx/trap_laser_left.png",
+        "local_offset": 2474
+      },
+      {
+        "file": "data/props_gfx/vault_apparatus_01.png",
+        "local_offset": 4264
+      },
+      {
+        "file": "data/props_gfx/vault_apparatus_01.png",
+        "local_offset": 4284
+      },
+      {
+        "file": "data/props_gfx/vault_apparatus_02.png",
+        "local_offset": 4278
+      },
+      {
+        "file": "data/props_gfx/vault_apparatus_02.png",
+        "local_offset": 4298
+      },
+      {
+        "file": "data/ragdolls/deer/torso.png",
+        "local_offset": 2373
+      },
+      {
+        "file": "data/ragdolls/deer/torso.png",
+        "local_offset": 2393
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/feet.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/feet.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/hand.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/hand.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/head.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/head.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/torso.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ragdolls/wizard_swapper/torso.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/scripts/buildings/racing_cart_move.lua",
+        "local_offset": 2160
+      },
+      {
+        "file": "data/scripts/items/evil_eye_beam.lua",
+        "local_offset": 986
+      },
+      {
+        "file": "data/shaders/noise_perlin16x16.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/shaders/noise_perlin16x16.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 2428
+      },
+      {
+        "file": "data/temp/fog_of_war_test0.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/fog_of_war_test0.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/landmine.png",
+        "local_offset": 5533
+      },
+      {
+        "file": "data/temp/landmine.png",
+        "local_offset": 5553
+      },
+      {
+        "file": "data/temp/light_mask.png",
+        "local_offset": 4659
+      },
+      {
+        "file": "data/temp/light_mask.png",
+        "local_offset": 4679
+      },
+      {
+        "file": "data/temp/light_mask_inv_pow22_smoothed_center.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/temp/light_mask_inv_pow22_smoothed_center.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/temp/mana_bar_border.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/mana_bar_border.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/mana_bar_mana.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/mana_bar_mana.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/mana_bar_mana_depleting.png",
+        "local_offset": 7342
+      },
+      {
+        "file": "data/temp/mana_bar_mana_depleting.png",
+        "local_offset": 7362
+      },
+      {
+        "file": "data/temp/particle_glow.png",
+        "local_offset": 5533
+      },
+      {
+        "file": "data/temp/particle_glow.png",
+        "local_offset": 5553
+      },
+      {
+        "file": "data/temp/scavenger_physics.png",
+        "local_offset": 2402
+      },
+      {
+        "file": "data/temp/scavenger_physics.png",
+        "local_offset": 2422
+      },
+      {
+        "file": "data/temp/sdltest.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/sdltest.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/some_machine_stage_01.png",
+        "local_offset": 6905
+      },
+      {
+        "file": "data/temp/some_machine_stage_01.png",
+        "local_offset": 6925
+      },
+      {
+        "file": "data/temp/some_machine_stage_02.png",
+        "local_offset": 6905
+      },
+      {
+        "file": "data/temp/some_machine_stage_02.png",
+        "local_offset": 6925
+      },
+      {
+        "file": "data/temp/some_machine_stage_03.png",
+        "local_offset": 6905
+      },
+      {
+        "file": "data/temp/some_machine_stage_03.png",
+        "local_offset": 6925
+      },
+      {
+        "file": "data/temp/some_machine_stage_04.png",
+        "local_offset": 6905
+      },
+      {
+        "file": "data/temp/some_machine_stage_04.png",
+        "local_offset": 6925
+      },
+      {
+        "file": "data/temp/some_machine_stage_05.png",
+        "local_offset": 6905
+      },
+      {
+        "file": "data/temp/some_machine_stage_05.png",
+        "local_offset": 6925
+      },
+      {
+        "file": "data/temp/some_machine_stage_06.png",
+        "local_offset": 6905
+      },
+      {
+        "file": "data/temp/some_machine_stage_06.png",
+        "local_offset": 6925
+      },
+      {
+        "file": "data/temp/tiled_rendering_test.png",
+        "local_offset": 2373
+      },
+      {
+        "file": "data/temp/tiled_rendering_test.png",
+        "local_offset": 2393
+      },
+      {
+        "file": "data/temp/tnt_stage_01.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/tnt_stage_01.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/tnt_stage_02.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/tnt_stage_02.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/tnt_stage_03.png",
+        "local_offset": 5096
+      },
+      {
+        "file": "data/temp/tnt_stage_03.png",
+        "local_offset": 5116
+      },
+      {
+        "file": "data/temp/building/back_wall16.png",
+        "local_offset": 3053
+      },
+      {
+        "file": "data/temp/building/back_wall16.png",
+        "local_offset": 3073
+      },
+      {
+        "file": "data/temp/building/cursor_16x16.png",
+        "local_offset": 2804
+      },
+      {
+        "file": "data/temp/building/cursor_16x16.png",
+        "local_offset": 2824
+      },
+      {
+        "file": "data/temp/building/wooden_board08.png",
+        "local_offset": 3226
+      },
+      {
+        "file": "data/temp/building/wooden_board08.png",
+        "local_offset": 3246
+      },
+      {
+        "file": "data/temp/building/wooden_board16.png",
+        "local_offset": 2784
+      },
+      {
+        "file": "data/temp/building/wooden_board16.png",
+        "local_offset": 2804
+      },
+      {
+        "file": "data/temp/building/wooden_board32.png",
+        "local_offset": 2784
+      },
+      {
+        "file": "data/temp/building/wooden_board32.png",
+        "local_offset": 2804
+      },
+      {
+        "file": "data/temp/building/wooden_board64.png",
+        "local_offset": 2342
+      },
+      {
+        "file": "data/temp/building/wooden_board64.png",
+        "local_offset": 2362
+      },
+      {
+        "file": "data/ui_gfx/1px_white.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/1px_white.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/button_fold_close.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/button_fold_close.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/button_fold_open.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/button_fold_open.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/button_steam_workshop.png",
+        "local_offset": 2838
+      },
+      {
+        "file": "data/ui_gfx/button_steam_workshop.png",
+        "local_offset": 2858
+      },
+      {
+        "file": "data/ui_gfx/cross_red.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/cross_red.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/debug_marker.png",
+        "local_offset": 7106
+      },
+      {
+        "file": "data/ui_gfx/debug_marker.png",
+        "local_offset": 7126
+      },
+      {
+        "file": "data/ui_gfx/health_slider_back_meat.png",
+        "local_offset": 5111
+      },
+      {
+        "file": "data/ui_gfx/health_slider_back_meat.png",
+        "local_offset": 5131
+      },
+      {
+        "file": "data/ui_gfx/health_slider_back_worm.png",
+        "local_offset": 5553
+      },
+      {
+        "file": "data/ui_gfx/health_slider_back_worm.png",
+        "local_offset": 5573
+      },
+      {
+        "file": "data/ui_gfx/health_slider_front.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/health_slider_front.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/icon_unkown.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/icon_unkown.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/icon_unkown_gunaction.png",
+        "local_offset": 5553
+      },
+      {
+        "file": "data/ui_gfx/icon_unkown_gunaction.png",
+        "local_offset": 5573
+      },
+      {
+        "file": "data/ui_gfx/keyboard_cursor.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/keyboard_cursor.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/keyboard_cursor_right.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/keyboard_cursor_right.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/mods_newer.png",
+        "local_offset": 2824
+      },
+      {
+        "file": "data/ui_gfx/mods_newer.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/ui_gfx/mods_older.png",
+        "local_offset": 2953
+      },
+      {
+        "file": "data/ui_gfx/mods_older.png",
+        "local_offset": 2973
+      },
+      {
+        "file": "data/ui_gfx/mouse_cursor_big_system.png",
+        "local_offset": 5553
+      },
+      {
+        "file": "data/ui_gfx/mouse_cursor_big_system.png",
+        "local_offset": 5573
+      },
+      {
+        "file": "data/ui_gfx/sale_indicator.png",
+        "local_offset": 1940
+      },
+      {
+        "file": "data/ui_gfx/sale_indicator.png",
+        "local_offset": 1960
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/boss_sky.png",
+        "local_offset": 2147
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/boss_sky.png",
+        "local_offset": 2167
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/lukki.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/lukki.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/mimic_potion.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/mimic_potion.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/wizard_swapper.png",
+        "local_offset": 1940
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/wizard_swapper.png",
+        "local_offset": 1960
+      },
+      {
+        "file": "data/ui_gfx/decorations/9piece0.png",
+        "local_offset": 3031
+      },
+      {
+        "file": "data/ui_gfx/decorations/9piece0.png",
+        "local_offset": 3051
+      },
+      {
+        "file": "data/ui_gfx/decorations/9piece0_gray.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/decorations/9piece0_gray.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/decorations/piece_small_left.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/decorations/piece_small_left.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/decorations/piece_small_right.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/decorations/piece_small_right.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/decorations/tab.png",
+        "local_offset": 3025
+      },
+      {
+        "file": "data/ui_gfx/decorations/tab.png",
+        "local_offset": 3045
+      },
+      {
+        "file": "data/ui_gfx/decorations/tab_hovered.png",
+        "local_offset": 3025
+      },
+      {
+        "file": "data/ui_gfx/decorations/tab_hovered.png",
+        "local_offset": 3045
+      },
+      {
+        "file": "data/ui_gfx/decorations/tab_selected.png",
+        "local_offset": 3025
+      },
+      {
+        "file": "data/ui_gfx/decorations/tab_selected.png",
+        "local_offset": 3045
+      },
+      {
+        "file": "data/ui_gfx/game_mode/banner_laboratory_overlay.png",
+        "local_offset": 4669
+      },
+      {
+        "file": "data/ui_gfx/game_mode/banner_laboratory_overlay.png",
+        "local_offset": 4689
+      },
+      {
+        "file": "data/ui_gfx/game_mode/banner_selected_overlay.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/game_mode/banner_selected_overlay.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/game_over_menu/record.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/game_over_menu/record.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_all.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_all.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_empty.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_empty.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_is.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_is.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_lava.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_lava.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_love.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_love.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_poop.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_poop.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_water.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/baab_water.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/bomb_cart.png",
+        "local_offset": 2444
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/bomb_cart.png",
+        "local_offset": 2464
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/buckshot.png",
+        "local_offset": 4669
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/buckshot.png",
+        "local_offset": 4689
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/building_back_wall_rock.png",
+        "local_offset": 1950
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/building_back_wall_rock.png",
+        "local_offset": 1970
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/cessation.png",
+        "local_offset": 2821
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/cessation.png",
+        "local_offset": 2841
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/material_blood.png",
+        "local_offset": 1950
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/material_blood.png",
+        "local_offset": 1970
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/nuke.png",
+        "local_offset": 2827
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/nuke.png",
+        "local_offset": 2847
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/sea_mimic.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/sea_mimic.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/swapper_projectile.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/swapper_projectile.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/tiny_ghost.png",
+        "local_offset": 2444
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/tiny_ghost.png",
+        "local_offset": 2464
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/touch_grass.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/touch_grass.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_bar_bg.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_bar_bg.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar_bg_low_hp.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar_bg_low_hp.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar_more.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar_more.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/hud/potion.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/hud/potion.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/highlight.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/inventory/highlight.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/inventory/hover_info_empty_slot.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/inventory/hover_info_empty_slot.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/inventory/inventory_box_highlight.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/inventory_box_highlight.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/inventory_colors_highlight.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/inventory_colors_highlight.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/inventory_editing_disabled_overlay_colors.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/ui_gfx/inventory/inventory_editing_disabled_overlay_colors.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_draw_many.png",
+        "local_offset": 2827
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_draw_many.png",
+        "local_offset": 2847
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_material.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_material.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_modifier.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_modifier.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_other.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_other.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_passive.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_passive.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_projectile.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_projectile.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_purchase_1.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_purchase_1.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_purchase_2.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_purchase_2.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_static_projectile.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_static_projectile.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_utility.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/inventory/item_bg_utility.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/inventory/quick_inventory_box_hovered.png",
+        "local_offset": 5125
+      },
+      {
+        "file": "data/ui_gfx/inventory/quick_inventory_box_hovered.png",
+        "local_offset": 5145
+      },
+      {
+        "file": "data/ui_gfx/inventory/quick_inventory_box_selected.png",
+        "local_offset": 5125
+      },
+      {
+        "file": "data/ui_gfx/inventory/quick_inventory_box_selected.png",
+        "local_offset": 5145
+      },
+      {
+        "file": "data/ui_gfx/pause_menu/noita_logo.png",
+        "local_offset": 5125
+      },
+      {
+        "file": "data/ui_gfx/pause_menu/noita_logo.png",
+        "local_offset": 5145
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/perks_hover_for_more.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/perks_hover_for_more.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/teleportitis_dodge.png",
+        "local_offset": 3004
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/teleportitis_dodge.png",
+        "local_offset": 3024
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/grid_box.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/grid_box.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/grid_box_unknown.png",
+        "local_offset": 3099
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/grid_box_unknown.png",
+        "local_offset": 3119
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/grid_highlight_new.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/grid_highlight_new.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/icon_unknown.png",
+        "local_offset": 3108
+      },
+      {
+        "file": "data/ui_gfx/progress_menu/icon_unknown.png",
+        "local_offset": 3128
+      },
+      {
+        "file": "data/ui_gfx/replay_edit/crop_box_colors.png",
+        "local_offset": 1946
+      },
+      {
+        "file": "data/ui_gfx/replay_edit/crop_box_colors.png",
+        "local_offset": 1966
+      },
+      {
+        "file": "data/ui_gfx/save_slot/button_delete_inactive.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/save_slot/button_delete_inactive.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/ui_gfx/status_indicators/fungal_shift.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/ui_gfx/status_indicators/fungal_shift.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/ui_gfx/status_indicators/satiation_choking.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/ui_gfx/status_indicators/satiation_choking.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/ui_gfx/status_indicators/satiation_damage.png",
+        "local_offset": 2388
+      },
+      {
+        "file": "data/ui_gfx/status_indicators/satiation_damage.png",
+        "local_offset": 2408
+      },
+      {
+        "file": "data/vegetation/grass_dark_patch_01.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/vegetation/grass_dark_patch_01.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/vegetation/grass_dark_patch_02.png",
+        "local_offset": 2844
+      },
+      {
+        "file": "data/vegetation/grass_dark_patch_02.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/vegetation/grass_dark_patch_03.png",
+        "local_offset": 2827
+      },
+      {
+        "file": "data/vegetation/grass_dark_patch_03.png",
+        "local_offset": 2847
+      },
+      {
+        "file": "data/wang_tiles/fungicave.png",
+        "local_offset": 2627
+      },
+      {
+        "file": "data/wang_tiles/fungicave.png",
+        "local_offset": 2647
+      },
+      {
+        "file": "data/wang_tiles/pyramid.png",
+        "local_offset": 1992
+      },
+      {
+        "file": "data/wang_tiles/pyramid.png",
+        "local_offset": 2012
+      },
+      {
+        "file": "data/wang_tiles/snowcave.png",
+        "local_offset": 3188
+      },
+      {
+        "file": "data/wang_tiles/snowcave.png",
+        "local_offset": 3208
+      },
+      {
+        "file": "data/wang_tiles/wand.png",
+        "local_offset": 5154
+      },
+      {
+        "file": "data/wang_tiles/wand.png",
+        "local_offset": 5174
+      },
+      {
+        "file": "data/weather_gfx/clut_dawn.png",
+        "local_offset": 5742
+      },
+      {
+        "file": "data/weather_gfx/clut_dawn.png",
+        "local_offset": 5762
+      },
+      {
+        "file": "data/weather_gfx/clut_day.png",
+        "local_offset": 5742
+      },
+      {
+        "file": "data/weather_gfx/clut_day.png",
+        "local_offset": 5762
+      },
+      {
+        "file": "data/weather_gfx/clut_default.png",
+        "local_offset": 5094
+      },
+      {
+        "file": "data/weather_gfx/clut_default.png",
+        "local_offset": 5114
+      },
+      {
+        "file": "data/weather_gfx/clut_dusk.png",
+        "local_offset": 5742
+      },
+      {
+        "file": "data/weather_gfx/clut_dusk.png",
+        "local_offset": 5762
+      },
+      {
+        "file": "data/weather_gfx/clut_night.png",
+        "local_offset": 5742
+      },
+      {
+        "file": "data/weather_gfx/clut_night.png",
+        "local_offset": 5762
+      },
+      {
+        "file": "data/weather_gfx/parallax_background.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/weather_gfx/parallax_background.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/weather_gfx/parallax_sunset_line.png",
+        "local_offset": 2830
+      },
+      {
+        "file": "data/weather_gfx/parallax_sunset_line.png",
+        "local_offset": 2850
+      },
+      {
+        "file": "data/weather_gfx/storm_clouds_01.png",
+        "local_offset": 2342
+      },
+      {
+        "file": "data/weather_gfx/storm_clouds_01.png",
+        "local_offset": 2362
+      },
+      {
+        "file": "data/weather_gfx/storm_clouds_02.png",
+        "local_offset": 2342
+      },
+      {
+        "file": "data/weather_gfx/storm_clouds_02.png",
+        "local_offset": 2362
+      },
+      {
+        "file": "data/weather_gfx/storm_clouds_03.png",
+        "local_offset": 2342
+      },
+      {
+        "file": "data/weather_gfx/storm_clouds_03.png",
+        "local_offset": 2362
+      }
+    ],
+    "translat": [
+      {
+        "file": "data/entities/_debug/debug_menu.lua",
+        "local_offset": 1124
+      },
+      {
+        "file": "data/scripts/newgame_plus.lua",
+        "local_offset": 4436
+      },
+      {
+        "file": "data/scripts/essences/essence_pickup.lua",
+        "local_offset": 3328
+      },
+      {
+        "file": "data/scripts/magic/fungal_shift.lua",
+        "local_offset": 7116
+      },
+      {
+        "file": "data/scripts/magic/fungal_shift.lua",
+        "local_offset": 7258
+      },
+      {
+        "file": "data/scripts/perks/perk.lua",
+        "local_offset": 9320
+      },
+      {
+        "file": "data/scripts/perks/perk.lua",
+        "local_offset": 9382
+      },
+      {
+        "file": "data/scripts/perks/perk.lua",
+        "local_offset": 10292
+      },
+      {
+        "file": "data/scripts/_examples/credits.lua",
+        "local_offset": 2444
+      }
+    ],
+    "b%": [
+      {
+        "file": "data/biome_impl/acidtank.png",
+        "local_offset": 822
+      },
+      {
+        "file": "data/biome_impl/acidtank_2_background.png",
+        "local_offset": 1023
+      },
+      {
+        "file": "data/biome_impl/altar.png",
+        "local_offset": 391
+      },
+      {
+        "file": "data/biome_impl/bunker_background.png",
+        "local_offset": 5830
+      },
+      {
+        "file": "data/biome_impl/bunker_visual.png",
+        "local_offset": 1505
+      },
+      {
+        "file": "data/biome_impl/demonic_altar.png",
+        "local_offset": 1464
+      },
+      {
+        "file": "data/biome_impl/essenceroom.png",
+        "local_offset": 1698
+      },
+      {
+        "file": "data/biome_impl/lavabridge_640.png",
+        "local_offset": 7463
+      },
+      {
+        "file": "data/biome_impl/orbroom_background.png",
+        "local_offset": 9560
+      },
+      {
+        "file": "data/biome_impl/orbroom_background.png",
+        "local_offset": 29327
+      },
+      {
+        "file": "data/biome_impl/orbroom_background.png",
+        "local_offset": 53630
+      },
+      {
+        "file": "data/biome_impl/orbroom_background.png",
+        "local_offset": 79978
+      },
+      {
+        "file": "data/biome_impl/orbroom_visual.png",
+        "local_offset": 35257
+      },
+      {
+        "file": "data/biome_impl/robot_egg_background.png",
+        "local_offset": 12776
+      },
+      {
+        "file": "data/biome_impl/robot_egg_background.png",
+        "local_offset": 44116
+      },
+      {
+        "file": "data/biome_impl/robot_egg_visual.png",
+        "local_offset": 47019
+      },
+      {
+        "file": "data/biome_impl/robot_egg_visual.png",
+        "local_offset": 247459
+      },
+      {
+        "file": "data/biome_impl/robot_egg_visual.png",
+        "local_offset": 257462
+      },
+      {
+        "file": "data/biome_impl/secret_lab_visual.png",
+        "local_offset": 3798
+      },
+      {
+        "file": "data/biome_impl/secret_lab_visual.png",
+        "local_offset": 36804
+      },
+      {
+        "file": "data/biome_impl/caves/generated/cave_682.png",
+        "local_offset": 616
+      },
+      {
+        "file": "data/biome_impl/coalmine/coalpit03.png",
+        "local_offset": 202
+      },
+      {
+        "file": "data/biome_impl/coalmine/coalpit05.png",
+        "local_offset": 2141
+      },
+      {
+        "file": "data/biome_impl/coalmine/oiltank_1_visual.png",
+        "local_offset": 103
+      },
+      {
+        "file": "data/biome_impl/coalmine/oiltank_puzzle.png",
+        "local_offset": 887
+      },
+      {
+        "file": "data/biome_impl/coalmine/shrine02_alt.png",
+        "local_offset": 14553
+      },
+      {
+        "file": "data/biome_impl/crypt/alcove_04_background.png",
+        "local_offset": 17644
+      },
+      {
+        "file": "data/biome_impl/crypt/mining.png",
+        "local_offset": 1984
+      },
+      {
+        "file": "data/biome_impl/crypt/mining.png",
+        "local_offset": 2130
+      },
+      {
+        "file": "data/biome_impl/excavationsite/cube_chamber_visual.png",
+        "local_offset": 31063
+      },
+      {
+        "file": "data/biome_impl/excavationsite/machine_1_visual.png",
+        "local_offset": 7772
+      },
+      {
+        "file": "data/biome_impl/excavationsite/machine_2.png",
+        "local_offset": 811
+      },
+      {
+        "file": "data/biome_impl/excavationsite/machine_4_visual.png",
+        "local_offset": 3714
+      },
+      {
+        "file": "data/biome_impl/liquidcave/background_panel_big_06.png",
+        "local_offset": 1884
+      },
+      {
+        "file": "data/biome_impl/liquidcave/liquidcave_corner.png",
+        "local_offset": 15679
+      },
+      {
+        "file": "data/biome_impl/mountain/hall_background_gamepad_updated.png",
+        "local_offset": 11109
+      },
+      {
+        "file": "data/biome_impl/mountain/hall_background_gamepad_updated.png",
+        "local_offset": 19602
+      },
+      {
+        "file": "data/biome_impl/mountain/right_stub_background.png",
+        "local_offset": 2510
+      },
+      {
+        "file": "data/biome_impl/mountain/right_stub_background.png",
+        "local_offset": 5823
+      },
+      {
+        "file": "data/biome_impl/mountain/right_stub_background.png",
+        "local_offset": 11393
+      },
+      {
+        "file": "data/biome_impl/mountain/right_stub_background.png",
+        "local_offset": 16701
+      },
+      {
+        "file": "data/biome_impl/mountain/right_stub_background.png",
+        "local_offset": 28596
+      },
+      {
+        "file": "data/biome_impl/mountain/right_stub_background.png",
+        "local_offset": 49418
+      },
+      {
+        "file": "data/biome_impl/overworld/snowy_ruins_base_02_visual.png",
+        "local_offset": 2033
+      },
+      {
+        "file": "data/biome_impl/overworld/snowy_ruins_pillar_03_visual.png",
+        "local_offset": 209
+      },
+      {
+        "file": "data/biome_impl/pillars/pillar_part_fish.png",
+        "local_offset": 109
+      },
+      {
+        "file": "data/biome_impl/pillars/pillar_part_pfungi.png",
+        "local_offset": 283
+      },
+      {
+        "file": "data/biome_impl/pyramid/hallway_background.png",
+        "local_offset": 28966
+      },
+      {
+        "file": "data/biome_impl/rainforest/hut01_background.png",
+        "local_offset": 2924
+      },
+      {
+        "file": "data/biome_impl/rainforest/pit03.png",
+        "local_offset": 2864
+      },
+      {
+        "file": "data/biome_impl/rainforest/pit03.png",
+        "local_offset": 2971
+      },
+      {
+        "file": "data/biome_impl/snowcastle/chamfer_bottom_l.png",
+        "local_offset": 15652
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill_background.png",
+        "local_offset": 21757
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill_visual.png",
+        "local_offset": 3652
+      },
+      {
+        "file": "data/biome_impl/snowcastle/drill_visual.png",
+        "local_offset": 6977
+      },
+      {
+        "file": "data/biome_impl/snowcastle/hourglass_chamber_background.png",
+        "local_offset": 15358
+      },
+      {
+        "file": "data/biome_impl/snowcastle/hourglass_chamber_background.png",
+        "local_offset": 35667
+      },
+      {
+        "file": "data/biome_impl/snowcastle/hourglass_chamber_background.png",
+        "local_offset": 36462
+      },
+      {
+        "file": "data/biome_impl/snowcastle/hourglass_chamber_background.png",
+        "local_offset": 41732
+      },
+      {
+        "file": "data/biome_impl/snowcastle/pod_small_l_01_background_b.png",
+        "local_offset": 17626
+      },
+      {
+        "file": "data/biome_impl/snowcastle/side_cavern_left_background.png",
+        "local_offset": 23896
+      },
+      {
+        "file": "data/biome_impl/snowcastle/side_cavern_left_background.png",
+        "local_offset": 41461
+      },
+      {
+        "file": "data/biome_impl/snowcave/altar.png",
+        "local_offset": 1336
+      },
+      {
+        "file": "data/biome_impl/snowcave/altar_background.png",
+        "local_offset": 3781
+      },
+      {
+        "file": "data/biome_impl/snowcave/horizontalobservatory2_visual.png",
+        "local_offset": 1788
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_b.png",
+        "local_offset": 18489
+      },
+      {
+        "file": "data/biome_impl/snowcave/puzzle_capsule_visual.png",
+        "local_offset": 18566
+      },
+      {
+        "file": "data/biome_impl/snowcave/tinyobservatory2_visual.png",
+        "local_offset": 1627
+      },
+      {
+        "file": "data/biome_impl/snowcave/verticalobservatory2_alt.png",
+        "local_offset": 6621
+      },
+      {
+        "file": "data/biome_impl/snowcave/verticalobservatory2_background.png",
+        "local_offset": 4525
+      },
+      {
+        "file": "data/biome_impl/snowcave/verticalobservatory2_visual.png",
+        "local_offset": 5452
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena.png",
+        "local_offset": 3502
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 21312
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 24231
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 31677
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 52545
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 154541
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 156838
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_background.png",
+        "local_offset": 211037
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_visual.png",
+        "local_offset": 145341
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_visual.png",
+        "local_offset": 201956
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena_visual.png",
+        "local_offset": 226358
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_background.png",
+        "local_offset": 18730
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_background.png",
+        "local_offset": 23569
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark.png",
+        "local_offset": 4716
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark_background.png",
+        "local_offset": 12118
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark_background.png",
+        "local_offset": 27423
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark_visual.png",
+        "local_offset": 13712
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark_visual.png",
+        "local_offset": 32344
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark_visual.png",
+        "local_offset": 46989
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_visual.png",
+        "local_offset": 30820
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_visual.png",
+        "local_offset": 34266
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_visual.png",
+        "local_offset": 40836
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_visual.png",
+        "local_offset": 111900
+      },
+      {
+        "file": "data/biome_impl/spliced/mountain_lake.png",
+        "local_offset": 16912
+      },
+      {
+        "file": "data/biome_impl/spliced/mountain_lake.png",
+        "local_offset": 18864
+      },
+      {
+        "file": "data/biome_impl/spliced/tree.png",
+        "local_offset": 24475
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 2806
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 46661
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 49373
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 65310
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 105020
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 130588
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 170153
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 233935
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 325711
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 337570
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 525410
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 549383
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 666428
+      },
+      {
+        "file": "data/biome_impl/spliced/tree_visual.png",
+        "local_offset": 693050
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena/1_visual.plz",
+        "local_offset": 35962
+      },
+      {
+        "file": "data/biome_impl/spliced/boss_arena/5_background.png",
+        "local_offset": 35974
+      },
+      {
+        "file": "data/biome_impl/spliced/gourd_room/1_background.png",
+        "local_offset": 7519
+      },
+      {
+        "file": "data/biome_impl/spliced/gourd_room/4_background.png",
+        "local_offset": 23411
+      },
+      {
+        "file": "data/biome_impl/spliced/gourd_room/5_background.png",
+        "local_offset": 2237
+      },
+      {
+        "file": "data/biome_impl/spliced/moon/0_background.png",
+        "local_offset": 58899
+      },
+      {
+        "file": "data/biome_impl/spliced/moon/0_background.png",
+        "local_offset": 91309
+      },
+      {
+        "file": "data/biome_impl/spliced/moon/1.png",
+        "local_offset": 107075
+      },
+      {
+        "file": "data/biome_impl/spliced/moon/1.png",
+        "local_offset": 121381
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark/0_background.png",
+        "local_offset": 57958
+      },
+      {
+        "file": "data/biome_impl/spliced/moon_dark/0_background.png",
+        "local_offset": 64513
+      },
+      {
+        "file": "data/biome_impl/spliced/skull/0_visual.plz",
+        "local_offset": 92792
+      },
+      {
+        "file": "data/biome_impl/spliced/skull_in_desert/1_visual.png",
+        "local_offset": 3379
+      },
+      {
+        "file": "data/biome_impl/spliced/skull_in_desert/1_visual.png",
+        "local_offset": 13725
+      },
+      {
+        "file": "data/biome_impl/spliced/skull_in_desert/1_visual.png",
+        "local_offset": 39464
+      },
+      {
+        "file": "data/biome_impl/spliced/skull_in_desert/1_visual.png",
+        "local_offset": 58050
+      },
+      {
+        "file": "data/biome_impl/spliced/skull_in_desert/1_visual.png",
+        "local_offset": 61308
+      },
+      {
+        "file": "data/biome_impl/static_tile/temples-assets/watchtower_bg.png",
+        "local_offset": 2035
+      },
+      {
+        "file": "data/biome_impl/temple/altar_background.png",
+        "local_offset": 53819
+      },
+      {
+        "file": "data/biome_impl/temple/altar_background.png",
+        "local_offset": 62155
+      },
+      {
+        "file": "data/biome_impl/temple/altar_left_background.png",
+        "local_offset": 22755
+      },
+      {
+        "file": "data/biome_impl/temple/altar_left_background.png",
+        "local_offset": 45970
+      },
+      {
+        "file": "data/biome_impl/temple/altar_left_visual.png",
+        "local_offset": 34763
+      },
+      {
+        "file": "data/biome_impl/temple/altar_right_background.png",
+        "local_offset": 21311
+      },
+      {
+        "file": "data/biome_impl/temple/altar_right_visual.png",
+        "local_offset": 19490
+      },
+      {
+        "file": "data/biome_impl/temple/altar_top_visual.png",
+        "local_offset": 24576
+      },
+      {
+        "file": "data/biome_impl/temple/altar_visual.png",
+        "local_offset": 34104
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall_background.png",
+        "local_offset": 3890
+      },
+      {
+        "file": "data/biome_impl/trailer/mountain_hall_background.png",
+        "local_offset": 9525
+      },
+      {
+        "file": "data/biome_impl/vault/entrance.png",
+        "local_offset": 14800
+      },
+      {
+        "file": "data/biome_impl/vault/entrance.png",
+        "local_offset": 39763
+      },
+      {
+        "file": "data/biome_impl/vault/lab3_visual.png",
+        "local_offset": 1067
+      },
+      {
+        "file": "data/biome_impl/_examples/niilo_testroom.png",
+        "local_offset": 6624
+      },
+      {
+        "file": "data/buildings_gfx/chest_random_super.png",
+        "local_offset": 78
+      },
+      {
+        "file": "data/buildings_gfx/temple_duplicator.png",
+        "local_offset": 186
+      },
+      {
+        "file": "data/enemies_gfx/barfer.png",
+        "local_offset": 3488
+      },
+      {
+        "file": "data/enemies_gfx/barfer_uv_src.png",
+        "local_offset": 816
+      },
+      {
+        "file": "data/enemies_gfx/body_old",
+        "local_offset": 18046
+      },
+      {
+        "file": "data/enemies_gfx/body_old",
+        "local_offset": 29091
+      },
+      {
+        "file": "data/enemies_gfx/deer.png",
+        "local_offset": 1941
+      },
+      {
+        "file": "data/enemies_gfx/ethereal_being.png",
+        "local_offset": 2449
+      },
+      {
+        "file": "data/enemies_gfx/failed_alchemist.png",
+        "local_offset": 5520
+      },
+      {
+        "file": "data/enemies_gfx/firemage_weak.png",
+        "local_offset": 486
+      },
+      {
+        "file": "data/enemies_gfx/friend.png",
+        "local_offset": 4177
+      },
+      {
+        "file": "data/enemies_gfx/maggot.png",
+        "local_offset": 3087
+      },
+      {
+        "file": "data/enemies_gfx/maggot_tiny_body.png",
+        "local_offset": 1939
+      },
+      {
+        "file": "data/enemies_gfx/miner_hell.png",
+        "local_offset": 4890
+      },
+      {
+        "file": "data/enemies_gfx/peasant.png",
+        "local_offset": 7842
+      },
+      {
+        "file": "data/enemies_gfx/peasant.png",
+        "local_offset": 12624
+      },
+      {
+        "file": "data/enemies_gfx/player_lukky.png",
+        "local_offset": 13914
+      },
+      {
+        "file": "data/enemies_gfx/player_old.png",
+        "local_offset": 3834
+      },
+      {
+        "file": "data/enemies_gfx/player_old.png",
+        "local_offset": 5941
+      },
+      {
+        "file": "data/enemies_gfx/player_old.png",
+        "local_offset": 6038
+      },
+      {
+        "file": "data/enemies_gfx/player_uv_src.png",
+        "local_offset": 8436
+      },
+      {
+        "file": "data/enemies_gfx/roboguard.png",
+        "local_offset": 1520
+      },
+      {
+        "file": "data/enemies_gfx/roboguard_big_uv_src.png",
+        "local_offset": 622
+      },
+      {
+        "file": "data/enemies_gfx/scavenger_poison.png",
+        "local_offset": 1348
+      },
+      {
+        "file": "data/enemies_gfx/sheep_bat.png",
+        "local_offset": 2148
+      },
+      {
+        "file": "data/enemies_gfx/skullrat.png",
+        "local_offset": 4536
+      },
+      {
+        "file": "data/enemies_gfx/thundermage_uv_src.png",
+        "local_offset": 2265
+      },
+      {
+        "file": "data/enemies_gfx/thundermage_uv_src.png",
+        "local_offset": 2534
+      },
+      {
+        "file": "data/enemies_gfx/worm_big_head_illusion_uv_src.png",
+        "local_offset": 252
+      },
+      {
+        "file": "data/entities/animals/boss_alchemist/boss_alchemist.png",
+        "local_offset": 5843
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/body_chunk_01.png",
+        "local_offset": 15816
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/bug_blue.png",
+        "local_offset": 15869
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/clear_materials_image_dim.png",
+        "local_offset": 5456
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/clear_materials_image_dim.png",
+        "local_offset": 30972
+      },
+      {
+        "file": "data/entities/animals/boss_centipede/minion_physics_particle.png",
+        "local_offset": 313
+      },
+      {
+        "file": "data/entities/animals/boss_limbs/body.png",
+        "local_offset": 137
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 64000
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 68293
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 73494
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 80386
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 84679
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 89880
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 96772
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 101065
+      },
+      {
+        "file": "data/entities/animals/boss_sky/apparition_spawn_fx_emitter.psd",
+        "local_offset": 106266
+      },
+      {
+        "file": "data/entities/animals/ending_placeholder/boss_limbs/body.png",
+        "local_offset": 137
+      },
+      {
+        "file": "data/entities/intro/01_06.png",
+        "local_offset": 2193
+      },
+      {
+        "file": "data/entities/intro/01_07.png",
+        "local_offset": 2193
+      },
+      {
+        "file": "data/entities/intro/02_02.png",
+        "local_offset": 1250
+      },
+      {
+        "file": "data/entities/intro/noita_logo_colours.png",
+        "local_offset": 24180
+      },
+      {
+        "file": "data/generated/material_icons/meat_worm.png",
+        "local_offset": 63
+      },
+      {
+        "file": "data/generated/material_icons/meat_worm.png",
+        "local_offset": 532
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.alchemist.png",
+        "local_offset": 813
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.failed_alchemist.png",
+        "local_offset": 9466
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.failed_alchemist.png",
+        "local_offset": 20239
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.lurker.png",
+        "local_offset": 272
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.miner_weak.png",
+        "local_offset": 5134
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.player.png",
+        "local_offset": 15596
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.player.png",
+        "local_offset": 30477
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.scavenger_mine.png",
+        "local_offset": 3844
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.shotgunner.png",
+        "local_offset": 5137
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.shotgunner_weak.png",
+        "local_offset": 5137
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.tentacler.png",
+        "local_offset": 925
+      },
+      {
+        "file": "data/generated/sprite_uv_maps/data.enemies_gfx.wizard_hearty.png",
+        "local_offset": 2441
+      },
+      {
+        "file": "data/items_gfx/normals_orb_128_noise.png",
+        "local_offset": 15619
+      },
+      {
+        "file": "data/items_gfx/normals_orb_128_noise.png",
+        "local_offset": 22163
+      },
+      {
+        "file": "data/items_gfx/normals_orb_64_noise.png",
+        "local_offset": 3055
+      },
+      {
+        "file": "data/items_gfx/orbs/orb_05.png",
+        "local_offset": 657
+      },
+      {
+        "file": "data/items_gfx/perks/extra_shop_item.png",
+        "local_offset": 156
+      },
+      {
+        "file": "data/items_gfx/perks/protection_electricity.png",
+        "local_offset": 322
+      },
+      {
+        "file": "data/materials_gfx/bone.png",
+        "local_offset": 144
+      },
+      {
+        "file": "data/materials_gfx/coal_static.png",
+        "local_offset": 44262
+      },
+      {
+        "file": "data/materials_gfx/coal_static.png",
+        "local_offset": 46828
+      },
+      {
+        "file": "data/materials_gfx/corruption.png",
+        "local_offset": 3098
+      },
+      {
+        "file": "data/materials_gfx/darkness.png",
+        "local_offset": 8323
+      },
+      {
+        "file": "data/materials_gfx/desert.png",
+        "local_offset": 13101
+      },
+      {
+        "file": "data/materials_gfx/earth_alt.png",
+        "local_offset": 51436
+      },
+      {
+        "file": "data/materials_gfx/fun.png",
+        "local_offset": 7561
+      },
+      {
+        "file": "data/materials_gfx/meat_static.png",
+        "local_offset": 755
+      },
+      {
+        "file": "data/materials_gfx/meat_warm.png",
+        "local_offset": 270
+      },
+      {
+        "file": "data/materials_gfx/rock_alt3.png",
+        "local_offset": 19097
+      },
+      {
+        "file": "data/materials_gfx/rock_alt3.png",
+        "local_offset": 66719
+      },
+      {
+        "file": "data/materials_gfx/rock_alt4.png",
+        "local_offset": 60529
+      },
+      {
+        "file": "data/materials_gfx/rock_grey.png",
+        "local_offset": 619
+      },
+      {
+        "file": "data/materials_gfx/rock_grey.png",
+        "local_offset": 35266
+      },
+      {
+        "file": "data/materials_gfx/sand.png",
+        "local_offset": 11951
+      },
+      {
+        "file": "data/materials_gfx/soil.png",
+        "local_offset": 168
+      },
+      {
+        "file": "data/materials_gfx/test_vine.png",
+        "local_offset": 83106
+      },
+      {
+        "file": "data/materials_gfx/test_vine.png",
+        "local_offset": 169243
+      },
+      {
+        "file": "data/materials_gfx/edge_files/edge_steelfrost_ver.png",
+        "local_offset": 334
+      },
+      {
+        "file": "data/materials_gfx/edge_files/edge_steelfrost_ver.png",
+        "local_offset": 387
+      },
+      {
+        "file": "data/materials_gfx/edge_files/edge_steelfrost_ver.png",
+        "local_offset": 487
+      },
+      {
+        "file": "data/materials_gfx/edge_files/edge_steel_rusted_ver.png",
+        "local_offset": 371
+      },
+      {
+        "file": "data/materials_gfx/edge_files/edge_steel_rusted_ver.png",
+        "local_offset": 2511
+      },
+      {
+        "file": "data/particles/explosion_032_pink.png",
+        "local_offset": 913
+      },
+      {
+        "file": "data/particles/explosion_emitter.png",
+        "local_offset": 9526
+      },
+      {
+        "file": "data/particles/explosion_emitter.png",
+        "local_offset": 12208
+      },
+      {
+        "file": "data/particles/explosion_emitter.png",
+        "local_offset": 16988
+      },
+      {
+        "file": "data/particles/fog_of_war_hole_128.png",
+        "local_offset": 3106
+      },
+      {
+        "file": "data/particles/fog_of_war_hole_128.png",
+        "local_offset": 4539
+      },
+      {
+        "file": "data/particles/bloodsplatters/bloodsplatter_directional_oil_3.png",
+        "local_offset": 157
+      },
+      {
+        "file": "data/particles/bloodsplatters/bloodsplatter_large_purple_3.png",
+        "local_offset": 512
+      },
+      {
+        "file": "data/particles/image_emitters/animated_emitter.png",
+        "local_offset": 80
+      },
+      {
+        "file": "data/particles/image_emitters/circle_256_dim.png",
+        "local_offset": 25305
+      },
+      {
+        "file": "data/particles/image_emitters/circle_256_dim.png",
+        "local_offset": 36196
+      },
+      {
+        "file": "data/particles/image_emitters/circle_256_dim3.png",
+        "local_offset": 36843
+      },
+      {
+        "file": "data/particles/image_emitters/circle_344_dim2.png",
+        "local_offset": 5456
+      },
+      {
+        "file": "data/particles/image_emitters/circle_344_dim2.png",
+        "local_offset": 30972
+      },
+      {
+        "file": "data/particles/image_emitters/circle_reverse_64.png",
+        "local_offset": 17982
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 18816
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 28708
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 38830
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 157772
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 183298
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 271824
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 286449
+      },
+      {
+        "file": "data/procedural_gfx/stain_frozen.png",
+        "local_offset": 294511
+      },
+      {
+        "file": "data/projectiles_gfx/disc_bullet_bigger.png",
+        "local_offset": 543
+      },
+      {
+        "file": "data/projectiles_gfx/white_hole.png",
+        "local_offset": 63
+      },
+      {
+        "file": "data/projectiles_gfx/white_hole_giga.png",
+        "local_offset": 820
+      },
+      {
+        "file": "data/props_gfx/crystal_pink.png",
+        "local_offset": 452
+      },
+      {
+        "file": "data/props_gfx/excavationsite_machine_3b.png",
+        "local_offset": 11616
+      },
+      {
+        "file": "data/props_gfx/temple_door_wheel.png",
+        "local_offset": 1578
+      },
+      {
+        "file": "data/props_gfx/trap_laser_b.png",
+        "local_offset": 254
+      },
+      {
+        "file": "data/props_gfx/wheel_stand_02.png",
+        "local_offset": 938
+      },
+      {
+        "file": "data/ragdolls/dragon/dragon_11.png",
+        "local_offset": 938
+      },
+      {
+        "file": "data/ragdolls/maggot_tiny/part4.png",
+        "local_offset": 2124
+      },
+      {
+        "file": "data/ragdolls/maggot_tiny/part6.png",
+        "local_offset": 1237
+      },
+      {
+        "file": "data/ragdolls/maggot_tiny/part6.png",
+        "local_offset": 1881
+      },
+      {
+        "file": "data/ragdolls/maggot_tiny/part7.png",
+        "local_offset": 1246
+      },
+      {
+        "file": "data/ragdolls/maggot_tiny/part8.png",
+        "local_offset": 2129
+      },
+      {
+        "file": "data/ragdolls/skygazer/torso.png",
+        "local_offset": 316
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 15095
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 183932
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 255425
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 267636
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 349004
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 495204
+      },
+      {
+        "file": "data/shaders/noise_triangular.png",
+        "local_offset": 506372
+      },
+      {
+        "file": "data/temp/biome_chunk_1.png",
+        "local_offset": 23197
+      },
+      {
+        "file": "data/temp/biome_chunk_1.png",
+        "local_offset": 23906
+      },
+      {
+        "file": "data/temp/biome_chunk_1.png",
+        "local_offset": 24117
+      },
+      {
+        "file": "data/temp/book_test.png",
+        "local_offset": 2851
+      },
+      {
+        "file": "data/temp/light_mask.png",
+        "local_offset": 19446
+      },
+      {
+        "file": "data/temp/noise_test.png",
+        "local_offset": 1684
+      },
+      {
+        "file": "data/temp/noise_test.png",
+        "local_offset": 24529
+      },
+      {
+        "file": "data/temp/noise_test.png",
+        "local_offset": 65767
+      },
+      {
+        "file": "data/temp/noise_test2.png",
+        "local_offset": 4244
+      },
+      {
+        "file": "data/temp/noise_test2.png",
+        "local_offset": 12809
+      },
+      {
+        "file": "data/temp/noise_test2.png",
+        "local_offset": 33088
+      },
+      {
+        "file": "data/temp/noise_test3.png",
+        "local_offset": 12930
+      },
+      {
+        "file": "data/temp/noise_test3.png",
+        "local_offset": 53687
+      },
+      {
+        "file": "data/temp/ritualist_b.png",
+        "local_offset": 422
+      },
+      {
+        "file": "data/temp/test_hut_stage_05.png",
+        "local_offset": 495
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/giantshooter.png",
+        "local_offset": 168
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/miner_fire.png",
+        "local_offset": 93
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/tank.png",
+        "local_offset": 125
+      },
+      {
+        "file": "data/ui_gfx/animal_icons/tank.png",
+        "local_offset": 138
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/black_hole_big_unidentified.png",
+        "local_offset": 158
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/bouncy_orb_timer_2.png",
+        "local_offset": 335
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/quantum_split.png",
+        "local_offset": 87
+      },
+      {
+        "file": "data/ui_gfx/gun_actions/teleportation_field_unidentified.png",
+        "local_offset": 119
+      },
+      {
+        "file": "data/ui_gfx/hud/colors_health_bar.png",
+        "local_offset": 14516
+      },
+      {
+        "file": "data/ui_gfx/loading_splash/game_hangs.png",
+        "local_offset": 6890
+      },
+      {
+        "file": "data/ui_gfx/loading_splash/noita_logo_anim_01.png",
+        "local_offset": 7609
+      },
+      {
+        "file": "data/ui_gfx/loading_splash/noita_logo_v2_anim_01.png",
+        "local_offset": 22639
+      },
+      {
+        "file": "data/ui_gfx/loading_splash/noita_logo_v3_anim_01.png",
+        "local_offset": 26666
+      },
+      {
+        "file": "data/ui_gfx/loading_splash/noita_logo_v3_anim_01.png",
+        "local_offset": 31710
+      },
+      {
+        "file": "data/ui_gfx/loading_splash/nollagames_logo.png",
+        "local_offset": 42295
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/peace_with_gods.png",
+        "local_offset": 293
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/protection_electricity.png",
+        "local_offset": 211
+      },
+      {
+        "file": "data/ui_gfx/perk_icons/speed_diver.png",
+        "local_offset": 328
+      },
+      {
+        "file": "data/vegetation/bush_07.png",
+        "local_offset": 111
+      },
+      {
+        "file": "data/vegetation/swamp_tree_06.png",
+        "local_offset": 806
+      },
+      {
+        "file": "data/wang_tiles/crypt.png",
+        "local_offset": 9308
+      },
+      {
+        "file": "data/wang_tiles/excavationsite.png",
+        "local_offset": 12142
+      },
+      {
+        "file": "data/wang_tiles/fungicave.png",
+        "local_offset": 16703
+      },
+      {
+        "file": "data/wang_tiles/meat.png",
+        "local_offset": 825
+      },
+      {
+        "file": "data/wang_tiles/rainforest_open.png",
+        "local_offset": 11522
+      },
+      {
+        "file": "data/wang_tiles/snowcave.png",
+        "local_offset": 28802
+      },
+      {
+        "file": "data/wang_tiles/snowcave.png",
+        "local_offset": 38509
+      },
+      {
+        "file": "data/wang_tiles/tutorial.png",
+        "local_offset": 763
+      },
+      {
+        "file": "data/wang_tiles/vault_frozen.png",
+        "local_offset": 9320
+      },
+      {
+        "file": "data/wang_tiles/vault_frozen.png",
+        "local_offset": 17258
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 33639
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 44849
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 60066
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 68343
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 99732
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 138262
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 140888
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 140909
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 143248
+      },
+      {
+        "file": "data/wang_tiles/winter_caves.png",
+        "local_offset": 176699
+      },
+      {
+        "file": "data/wang_tiles/winter_caves_2.png",
+        "local_offset": 26220
+      },
+      {
+        "file": "data/wang_tiles/winter_caves_2.png",
+        "local_offset": 33484
+      },
+      {
+        "file": "data/wang_tiles/winter_caves_2.png",
+        "local_offset": 97732
+      },
+      {
+        "file": "data/wang_tiles/wizardcave.png",
+        "local_offset": 14658
+      },
+      {
+        "file": "data/weather_gfx/background_cave_04_alt6.png",
+        "local_offset": 1082
+      },
+      {
+        "file": "data/weather_gfx/background_coalmine.png",
+        "local_offset": 49898
+      },
+      {
+        "file": "data/weather_gfx/background_excavationsite.png",
+        "local_offset": 16046
+      },
+      {
+        "file": "data/weather_gfx/background_excavationsite.png",
+        "local_offset": 36655
+      },
+      {
+        "file": "data/weather_gfx/background_fungicave_01.png",
+        "local_offset": 1572
+      },
+      {
+        "file": "data/weather_gfx/background_pyramid.png",
+        "local_offset": 16049
+      },
+      {
+        "file": "data/weather_gfx/background_rainforest.png",
+        "local_offset": 2520
+      },
+      {
+        "file": "data/weather_gfx/background_snowcastle.png",
+        "local_offset": 5788
+      },
+      {
+        "file": "data/weather_gfx/background_vault.png",
+        "local_offset": 5954
+      },
+      {
+        "file": "data/weather_gfx/background_vault_frozen.png",
+        "local_offset": 6792
+      },
+      {
+        "file": "data/weather_gfx/parallax_colors_offworld.png",
+        "local_offset": 7001
+      },
+      {
+        "file": "data/weather_gfx/parallax_sunset_line.png",
+        "local_offset": 16563
+      },
+      {
+        "file": "data/weather_gfx/edges/background_cave_04_alt3_left.png",
+        "local_offset": 5422
+      },
+      {
+        "file": "data/weather_gfx/edges/background_cave_04_alt4_left.png",
+        "local_offset": 981
+      },
+      {
+        "file": "data/weather_gfx/edges/background_cave_04_right.png",
+        "local_offset": 3140
+      },
+      {
+        "file": "data/weather_gfx/edges/background_cave_09_right.png",
+        "local_offset": 3140
+      },
+      {
+        "file": "data/weather_gfx/edges/background_excavationsite_left.png",
+        "local_offset": 4671
+      },
+      {
+        "file": "data/weather_gfx/edges/background_fungicave_01_bottom.png",
+        "local_offset": 7266
+      },
+      {
+        "file": "data/weather_gfx/edges/background_fungicave_01_bottom.png",
+        "local_offset": 9789
+      },
+      {
+        "file": "data/weather_gfx/edges/background_fungicave_01_left.png",
+        "local_offset": 11269
+      },
+      {
+        "file": "data/weather_gfx/edges/background_rainforest_dark_bottom.png",
+        "local_offset": 7721
+      },
+      {
+        "file": "data/weather_gfx/edges/background_rainforest_left.png",
+        "local_offset": 2852
+      },
+      {
+        "file": "data/weather_gfx/edges/background_rainforest_left.png",
+        "local_offset": 7659
+      },
+      {
+        "file": "data/weather_gfx/edges/background_rainforest_right.png",
+        "local_offset": 2311
+      },
+      {
+        "file": "data/weather_gfx/edges/background_robobase_left.png",
+        "local_offset": 1366
+      },
+      {
+        "file": "data/weather_gfx/edges/background_robobase_left.png",
+        "local_offset": 2209
+      },
+      {
+        "file": "data/weather_gfx/edges/background_snowcave_right.png",
+        "local_offset": 8247
+      },
+      {
+        "file": "data/weather_gfx/edges/background_the_end_right.png",
+        "local_offset": 5559
+      },
+      {
+        "file": "data/weather_gfx/limit_y/background_fungicave_01.png",
+        "local_offset": 8796
+      },
+      {
+        "file": "data/weather_gfx/limit_y/background_snowcave_right.png",
+        "local_offset": 2631
+      }
+    ]
+  },
+  "n_entries": 14745,
+  "n_png": 9030
+}

@@ -20,16 +20,49 @@ because a wrong format guess would surface as an out-of-range offset immediately
 Validated on the 2024 build: 14745 entries, first entry `data/credits.txt`
 (path_len 16), and `cat` of a known XML returns readable text.
 
-WAK path below is machine-specific (Steam library location); override as needed.
+WAK path is machine-specific (Steam library location varies per machine this
+project has run on); `find_wak()` tries known locations, then a bounded glob
+under common Steam install roots, before giving up. `read_index()` takes an
+explicit path if you have one; this script's own subcommands always call it
+with none (autodetect) -- edit CANDIDATES below if a new machine needs a new
+path (cheaper than plumbing a flag through every caller).
 Usage: wak_unpack.py list [substr] | cat <exact/path> | extract <substr> <dir>
 """
+import glob
+import os
 import struct
 import sys
 
-WAK = '/mnt/hdd1/SteamLibrary/steamapps/common/Noita/data/data.wak'
+CANDIDATES = [
+    '/mnt/hdd1/SteamLibrary/steamapps/common/Noita/data/data.wak',
+    os.path.expanduser(
+        '~/.local/share/Steam/steamapps/common/Noita/data/data.wak'),
+]
 
 
-def read_index(path=WAK):
+def find_wak():
+    for p in CANDIDATES:
+        if os.path.exists(p):
+            return p
+    for pattern in (
+        os.path.expanduser('~/.local/share/Steam/steamapps/*/common/Noita/data/data.wak'),
+        os.path.expanduser('~/.steam/**/steamapps/common/Noita/data/data.wak'),
+        '/mnt/**/steamapps/common/Noita/data/data.wak',
+    ):
+        hits = glob.glob(pattern, recursive=True)
+        if hits:
+            return hits[0]
+    raise SystemExit(
+        'data.wak not found in any known location; add its path to '
+        'CANDIDATES in tools/wak_unpack.py')
+
+
+WAK = None  # resolved lazily so importing this module never touches disk
+
+
+def read_index(path=None):
+    if path is None:
+        path = find_wak()
     with open(path, 'rb') as f:
         blob = f.read()
     fsz = len(blob)
