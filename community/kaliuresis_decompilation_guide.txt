@@ -1,0 +1,165 @@
+﻿Noita Decompilation Guide
+Introduction
+This is a guide on how to decompile noita in ghidra, and documentation of the secrets we have found in the engine. This was created with the March 25 2021 build of the noita beta branch, but I will try to make the instructions general enough to work in future versions. If you are just interested in a certain secret you can jump to that section and ignore everything else.
+- kaliuresis
+Table of Contents
+Introduction
+Table of Contents
+Decompiling
+Basics
+Windows
+Listing
+Program Trees
+Decompile
+Defined Strings
+Lua functions
+The 12th Orb
+The Eye Messages
+Finding the eye spawn function
+Background Spawn Check
+Decoding the Eye Strings
+Drawing the Eyes
+The Cauldron
+How the functions were found
+Finding the Spawn Function
+Decoding the images
+Liquid Spawn
+Weird Data at the End of the Exe
+Decompiling
+1. Download, install, and run ghidra (https://ghidra-sre.org/), by following the instructions here (https://ghidra-sre.org/InstallationGuide.html)
+2. Create a new project.
+3. Find the game directory. For the steam version on windows it will probably be C:\Program Files (x86)\Steam\steamapps\common\Noita
+4. (optional) Copy noita.exe to the project folder, and rename the file to include the version date. This is technically optional and you could directly decompile from the main game directory, but it’s nice to have all of the different executables saved.
+5. Drag the exe into the ghidra project window, which should bring up the import dialogue. Click ok.
+6. Double click the newly imported exe in the ghidra project window. Click Yes when it asks if you want to analyze.
+Details on Analysis continues below.
+________________
+7. Select Decompiler Parameter ID, and deselect PDB Universal, then click Analyze.
+  
+
+   8. It should then begin analyzing the exe. This will take a while (~40min on my computer), you can see the progress in the bottom right corner. Once this is complete you are ready to begin going through the code.
+Basics
+Windows
+Let’s look at some of the useful windows. Many of these are open by default, and you can find the rest by clicking on Window in the toolbar.
+Listing
+This is the main window which shows the raw hex data of the exe as well as the disassembled instructions. You can press S in this window to search through the memory, or G to go to a particular address.
+Program Trees
+This shows the different sections of the exe. The main important ones are the .text section, which has most of the code, and the .data section, which has most of the data stored directly in the executable.
+Decompile
+This window shows the decompiled C code for the function you currently have selected in the listing. Note that the decompiler will sometimes fail on certain parts of the code, and insert a warning in the comments of the decompiled code. You should make sure to check the assembly code in these sections since there might be important information missing from the decompiled code.
+Defined Strings
+This lists all of the strings used (that weren’t intentionally hidden). This is very useful since they are all mostly human readable. This is generally a good place to start if you are searching for something specific, and you know a string that might be involved (such as a certain xml file or material name).
+Lua functions
+The names of all the lua functions should be listed as strings. The documentation for each function is also there. If you click on one of the documentation strings, it will take you to the location where the string appears in the listing window. It will also show you where in the code the string is used, which is usually the implementation of that lua function. For example, if I wanted to see the code for EntityLoad, I can search for entityload in the strings window.
+  
+
+The first item here is the documentation for EntityLoad. Double clicking on this takes us to that string in the listing window.
+  
+
+On the right side there is the list of locations where this string is referenced. Double clicking on FUN_006e8a60:006e8a9b in green takes me to that function. If I look at the Decompile window, we see that FUN_006e8a60 is the implementation of a lua function, as evidenced by all of the uses of lua_getop. Now that we know FUN_006e8a60 is the C implementation of EntityLoad, we can rename it by right clicking on function name at the top of Decompile, and clicking rename. I will rename it to c_EntityLoad.
+  
+
+We can also see where this function is used with right click->References->Find References to c_LoadEntity. A list of everywhere this function is referenced will pop up. Double clicking on the only option brings me to FUN_007136b0, which is where all of the engine implementations of the lua functions are registered.
+  
+
+An alternative way to find the code for lua functions would be to go here and see which engine function is registered for a certain lua function.
+The 12th Orb
+The 12th orb is a relatively easy secret to find. Searching for “orb” in the strings window, we find this suspicious result.
+  
+
+The standard orbs are orb_<0-10>.xml, so this is a reference to one of the secret orbs. Double clicking on this to go to the location of the string in the listing window, and double clicking on the function where it’s used leads us to FUN_006e8d90. This function uses the documentation string for the lua function EntityLoadEndGameItem, so this must be the code for that. The decompiled code that uses orb_11.xml is this:
+  
+
+We see that it is checking two things before doing something with the orb filename. The first check is checking bVarl, which is set to something involving the sampo. From the context, it is probably checking that the entity being loaded by EntityLoadEndGameItem is the sampo. The second check calls FUN_0046f5b0(&DAT_00f1fac8,0,1000), and checks that the result is exactly 999. Double clicking on FUN_0046f5b0, we see that it looks like a pseudorandom number generator, with the first argument being the address of the seed. Checking other locations where FUN_0046f5b0 is used, we find that it is used in all of the variants of the Random lua function, so this is indeed the pseudorandom generator used in the rest of the game. Looking at places where DAT_00f1fac8 is used, we find that it’s also used in the other Random functions, as well as SetRandomSeed, so this is probably the normal seed used by the rest of the game. We can guess that FUN_0046f5b0(&DAT_00f1fac8,0,1000) will just give the same result as calling Random(0, 1000) from lua code. If we make a quick mod that calls EntityLoadEndgame item at a location where (Random(0, 100000) >= 100000 and Random(0, 1000)==999), and call EntityLoad( "data/entities/items/pickup/chest_random_super.xml", x, y), we do indeed get a chest that contains 12th orb. This is why we think that there is a 1/100M chance to get the 12th orb from a great chest.
+The Eye Messages
+Finding the eye spawn function
+I’m not sure how the function that spawn eyes was originally found. I think people originally found it by debugging the game while the eyes spawned. However, now that it has been found, we can find it by searching for a piece of the data it uses. If we press S while the listing window is selected, we get the search dialogue. Set the format to hex, select all loaded blocks for searching, and set the search value to 5634505c, which is part of the data used in the East 1 eye message.
+  
+
+Clicking Search All, we find one result in FUN_005b2d10, let’s rename it to SpawnSecretEyes. This is the function that spawns the eye messages. 
+Background Spawn Check
+If we check where SpawnSecretEyes gets used, we find this
+  
+
+Based on what we know of the eyes, we can guess that this is the code that checks if the background is background_cave_02.png, and spawns the eyes if it is.
+Decoding the Eye Strings[a]
+Going back into the SpawnSecretEyes function, we see a bunch of code that looks like this
+  
+
+There are cases for param_3 == 0 to 8, as well some code that jumps to LAB_005b3c9f if param_3 is not 0-8. Looking into FUN_007bfd90, it seems to be a function that pushes all the data into some list. Let’s go ahead to the code that actually uses this data
+  
+
+We see a loop that repeatedly performs a 64 bit unsigned integer division by 7 (using __aulldiv). It is finding  the remainder by multiplying the divided number by 7, taking the difference, then subtracting 1 (line 537 in the above screenshot). This is converting all that data we saw before in 64 bit pieces, finding their digits in base 7, subtracting 1, and finally pushing these numbers as a string to some member of the struct local_30. The first 64 bits of the first message are 0x5634505c, and 0xacf68674 (the decompiler converted this to a negative number for some reason but we can see the raw unsigned hex in the assembly listing). Putting these together into a single integer, we get 0xacf686745634505c. In base 7 this is 31212433441515224134320. After dropping the 0 and subtracting 1 from each digit, this becomes 2010132233040411302321 which matches the start of the east 1 message using the usual assignments (copied from Xkeepers eye doc):
+  
+
+	  
+
+	  
+
+	  
+
+	  
+
+	0
+	1
+	2
+	3
+	4
+	If we check later parts of the message there will be a 6’s in the raw base 7 digits which becomes a 5 after subtracting one and representing newlines. The reason base 7 is needed to represent 5 symbols and newlines instead of base 6 is because it needs a padding symbol (which is 0). Without a padding symbol there would be no way to tell if a 64 bit message chunk actually starts out with a bunch of symbol 0, or if this part of the message just didn’t fill up 64 bits.
+Drawing the Eyes
+Once the message data is in local_30, local_30 gets passed as the 3rd parameter to FUN_005b2c10, along with param_1 and param_2, which are the coordinates. The main stuff that happens in this function is here
+  
+
+The first function is what I think creates the sprites for the eyes in memory. The second function takes the message string (param_3) and the data from the first function (local_20). I think this function is creating the image for the eye message. The third function is what actually puts the image created by the second function into the game background. The following stuff just cleans up the memory used for the eye sprites, since they are no longer needed.
+The Cauldron
+How the functions were found
+The cauldron was added on the March 9th 2021 build of the game. On that update, the file size of noita.exe jumped from 11,388 kB to 11,925 kB, although the cauldron was not actually found until the March 10 patch. After doing a search for large blocks of data that were added to the .data section of the exe, I found three large blocks all starting with A3 7A 64 6D, the last three characters are “zdm” in ascii. These turned out to be lightly obscured png’s, which are the images for the cauldron.
+Finding the Spawn Function
+Doing a search for zdm in the current exe, we find the three blocks of data, which are all used in FUN_005c8160, which I will rename to LoadCauldron, and passed to FUN_005c7b10, which I will rename to LoadSecretImage.
+Decoding the images
+Let’s look at LoadSecretImage.
+  
+
+Inside LoadSecretImage, we see the data all getting xored with 0x2a2a2a2a, then passed on to FUN_00c1f7d0. FUN_00c1f7d0 has the string “unknown image type” at the end, and calls a bunch of functions that check for different image formats, so this is clearly the general image loading function. If we xor the zdm data with 0x2a2a2a we see that they are these png’s:
+      Liquid Spawn
+Going back to the main LoadCauldron function, we see that after loading the material and foreground images, it will do a check for red pixels in the material image. I won’t go into all of the details of what the code is doing, but if it finds a red pixel, it will spawn the material indicated by local_d0. local_d0 is set by this code:
+  
+
+Depending on the value of local_a9, it is either 0, in which case no material is spawned, or the value returned by FUN_005c8150., FUN_005c8150 just returns DAT_00f10400. The only place where DAT_00f10400 is written to is FUN_005c7810, which has a bunch of code that looks like this:
+  
+
+If you look at the last arguments of those function calls you can see that it is spelling out ‘v’, ‘o’, ‘i’, and so on spelling out “void_liquid”. It then calls CellFactory::GetType(), so this function is just getting the void liquid material in a way that makes it harder for data miners to search for.
+
+
+Going back to LoadCauldron, we want to see how local_a9, since this determines whether or not the cauldron will be filled with void liquid.
+  
+
+We find that it is set here. The first thing to look at here is DAT_00f0dfc8. Looking where this gets set, we find this code.
+  
+
+0x7c = 124, and 0x16d = 365, so DAT_00f0dfc8 is getting set to (date+124)%365.
+Now that we know DAT_00f0dfc8 is the date, we can look at how it is being used to determine if void liquid spawns. Renaming DAT_00f0dfc8 to DAY, let’s look at the code again
+  
+
+uVar3 is set to DAY bitwise &’ed with 0x80000007. DAY will almost always be positive, unless you set your system time before 1970, so we can ignore the entire if block and the 8 part of the &0x80000007. So for positive DAY, we just have DAY&0x7, which means uVar3 gets set to the lowest three bits of the day, which is day%8. We then have uVar7 = FUN_005c7c10(DAY >> 3). (note: the other code in the argument comes from a CDQ instruction, which just extends stuff to 64 bits). The argument is DAY>> 3, which is DAY/8. So DAY/8 determines the integer, and DAY%8 gets a bit of that integer, so TLDR: this basically boils down to checking the DAY’th bit of some large integer, and spawning void liquid if that bit is 1.
+Let’s look at FUN_005c7c10 to see what that integer is. We see some code like this:
+  
+
+This is almost certainly the data that eventually determines the cauldron date table, although it does not directly correspond to the sequence we see from checking the cauldron contents (The data by Marade is here: https://pastebin.com/jgmrAcuT). The function being called seems to just push the sequence of bytes into local_20. The full sequence is this:
+  
+
+The end of the function looks like this
+  
+
+Which seems to only use the last two bits of param_1 (which is the DAY/8), which would mean that the sequence repeats every 32 days. This is not the case so I don’t really know what’s going on here.[b]
+Weird Data at the End of the Exe
+Opening noita.exe in a hex editor, there is about 600 kB of data at the end that looks like this:
+  
+
+It has some stuff interleaved with 000011111112… going through “0123456789:;<=>”. The number of times each interleaving symbol is repeated before moving to the next one changes throughout the message. The symbols in even positions have some repeated sequences, but I don’t think it is quite periodic. There are some breaks in the sequence as seen near the middle of the image above. As far as I can tell, this data is not referred to anywhere else in the engine. This data also changes slightly each version. If anyone knows what this is, I would love to know.
+
+
+From codewarrior0:
+These are relocation entries in the PE file’s .reloc section. The program loader uses them in the event that the Noita exe cannot be loaded into memory at its preferred address, and they instruct the loader on how to “relocate” the exe to another address.
+[a]Wait, isn't that...Encoding the eye strings instead ? To Glyphs
+[b]Line 151, it's similar to %64, it's just to make sure param_1 does not get out of bounds on line 155

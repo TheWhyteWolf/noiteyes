@@ -1,0 +1,694 @@
+﻿Noita Eye Glyphs: Analytical Overview
+by codewarrior0
+
+
+This document continues from Noita Eye Glyph Messages(section Trigrams). Here, we assume that the messages take the form of ciphertext from an unknown classical-style cryptographic cipher. We will list each analysis described in LANAKI’s Classical Cryptography Course, provide the results of the analysis applied against the glyph messages, and attempt to interpret the results.
+
+
+Other required reading includes Friedman’s Military Cryptanalytics series:
+Mil-Crypt I         Mil-Crypt II         Mil-Crypt III         Mil-Crypt IV
+Mil-Crypt II Interim Edition        Mil-Crypt III 1977 (Redacted)
+
+
+For a more modern take on the above topics, find the book Decrypted Secrets by F. Bauer.
+
+
+The NSA has declassified thousands of documents written by Friedman, which might be worth sorting through for further insights. Reading Candela's essay on Cmdt. Bazeries may help to get into the mindset of the cryptanalyst.
+
+
+This document is mainly my own work, except where noted, and replicates some past analyses that have been shared in the Noita Discord. For a log of others’ investigations, see Noita Eye Glyphs "Progress". There is also a Wiki page dedicated to the eye messages: https://noita.wiki.gg/wiki/Eye_Messages        
+
+
+New! The analyses in this document are now available as a Google Colab notebook. Here you will also find the text of the messages in trigram form, in a machine-readable format. 
+Summary of Noita Eye Glyph Messages:
+
+
+The eye glyph messages appear in-game as rows of pixelated eyes, as seen here:
+
+
+  
+
+
+
+There are five distinct eyes. We assign a number to each eye as follows:
+
+
+  
+
+	  
+
+	  
+
+	  
+
+	  
+
+	0
+	1
+	2
+	3
+	4
+	This numbering was learned from data mining the game's executable. This is also the unique numbering that produces a complete range of 0-82 when the eyes are grouped into three and read as base-5. 
+
+
+Overlaying two of the messages in an image editor shows that they differ in length by one triangular group, and overlaying other pairs of messages shows that they have several triangular groups in common. Accordingly, we group the eyes into triangular groups and read each group in a clockwise direction:
+
+
+  
+
+
+
+Each triangular group is now read as a three-digit number in base-5. Converting these three-digit numbers to the usual base-10 gives us numbers in the range 0-82, with every number in the range appearing somewhere in the messages.
+
+
+There are other ways to order the eyes in each triangle. Out of 36 possible schemes, six of them give the best statistical fit between the upward and downward triangles. Out of those six, this scheme is the only one that produces every number in the range 0-82 when read as base-5.
+
+
+Lymm gives a hypothesis about why both the range of 83 values and the five distinct eyes were chosen in Why 83?
+
+
+First Look
+        
+We choose to represent the messages as strings of numbers in the range 0-82 as shown in the spreadsheet Noita Eye Data(page Trigrams Base 10). We will also try to consistently use the cryptanalytic terminology used by LANAKI.
+
+
+First, some immediate observations:
+
+
+* The ciphertext alphabet has 83 letters. 
+* The total number of letters in all messages is 1036. 
+* The number of letters in each message varies: 
+   * 99, 103, 118, 102, 137, 124, 119, 120, 114
+* The number of unique letters in each message varies:
+   * 57,  57,  62,  61,  67,  65,  62,  68,  63
+* The first letters of each message vary: 
+   * 50,  80,  36,  76,  63,  34,  27,  77,  33
+* No letter occurs twice in a row.
+* There are a number of ciphertext letters shared between messages within the first 50 positions:
+
+
+  
+
+
+
+These help to delimit the messages into groups of three, and also suggest that the cipher method is shared among all nine messages.
+A handy constant to remember is 0.012. This is approximately 1/83, which is the chance that two identical letters are drawn from a uniformly random sample of text in an 83-letter alphabet. This constant can also be expressed as 12 per thousand, which is doubly handy because our total message length is approximately a thousand. 
+        It is unlikely that the messages are in code, rather than an alphabetic cipher, since a thousand word message written using an 83-word codebook would be very, very redundant. We cannot discredit variable-length codes, except that we have nowhere near enough ciphertext to attempt anything with them, and we could only hope that a codebook will be discovered. Codes (and other simple substitutions) also fail to explain the isomorphs, described next.
+Isomorphs
+Lymm from the Noita Discord is credited with finding patterns of repeated letters that reappear across messages and even within the same message: Eye Message Alignments and Gap Patterns
+In the crypto literature, these are referred to as isomorphs, a term we will use as they become relevant.
+________________
+
+
+
+
+(E1, 40-) A1: 47 44 48 42 19 48 13 47 19 49 72
+(E1, 68-) A2: 71 11 74 56 04 74 19 71 04 51 41
+
+
+(W1, 40-) B1: 47 44 48 42 19 48 13 47 19 49 44 
+(W1, 70-) B2: 68 46 17 36 13 17 21 68 13 09 46
+(E2, 45-) B3: 06 13 64 29 49 64 63 06 49 31 13
+(E2, 80-) B4: 41 72 57 20 23 57 65 41 23 18 72
+
+
+(W2, 18-) C1: 55 61 47 12 21 12 49 54 34 25 36 15 56 55
+(E3, 24-) C2: 59 41 80 13 60 13 81 22 35 50 40 39 02 59
+(W3, 23-) C3: 32 11 18 19 43 19 81 42 04 62 09 46 49 32
+    
+(E4, 51-) D1: 47 45 58 68 69 79 25 38 45 73 47 68 50 34 45 78 26 79
+(W4, 53-) D2: 50 57 30 71 75 26 68 54 57 56 50 71 73 14 21 08 32 26    
+(E5, 52-) D3: 07 34 32 30 31 19 26 08 34 46 07 30 71 55 34 75 54 09
+
+
+     
+What is unusual about the D set is that the portion common to all three only extends for 12 letters. Going further reveals a letter only paired in D1 and D3, and then another letter only paired in D1 and D2. This is just unusual enough to suggest that all three ought to be isomorphs of each other, but some detail of the cipher is interfering. 
+
+
+Observing that the D set is partially disrupted, a more thorough search is done, and more partial isomorphs are found. Longer isomorphs enclosing the ones found earlier in messages 1 and 2 are also found, and the disrupted isomorphs in the D set can be extended further. The disrupting numbers are written in red text. These are numbers which are found paired in a different message, but are not paired themselves.
+
+
+
+
+Message 6, 7, 8
+E1/D1: 75 48 54 55 19 62 64 14 47 51 70 75  5 11 47 45 58 68 69 79 25 38 45 73 47 68 50 34 45 78 26 79
+E2/D2: 81 39 14 78  0 25 65 43 66 64 38 81 23 24 50 57 30 71 75 26 68 54 57 56 50 71 73 14 21  8 32 26
+E3/D3: 48 54 55 52 62 72 69 10 57 22 58 48 67 53  7 34 32 30 31 19 26  8 34 46  7 30 71 55 34 75 54  9
+
+
+Message 6, 7, 8
+F1: 79 57  4 56 22 60 18 75 43 60 59 67 63 42 49 33 40 65 79 77  7  3 26 62 31 78 26 57 69 40  4 23 26
+F2: 63  5 37 19 43 66 47 53 34 66 23 73 31 54 38 77 67 11 63 79  6 22 21 51 69 74 21  5 17 67 37 29 21
+F3:  9  6 60  5 23 25 45 42 80 25 12 22 76 20 51 62 21 40  9 41 10 44 73  8 33 70 73  6 31 21 72  5 40
+
+
+Message 1
+G1/B1: 26 54 20 14 21 70 47 44 48 42 19 48 13 47 19 49 44 26 59 77 64 43 79 28 72 64
+G2/B2: 67  6 33 25 64 81 68 46 17 36 13 17 21 68 13  9 46 67 57 34 62 82 15 10 73 62
+
+
+Message 2
+H1/B3: 16 56 19 47 40 80  6 13 64 29 49 64 63  6 49 31 13 16 10 45 24 26 77 10
+H2/B4: 42 37 30 22  0 11 41 72 57 20 23 57 65 41 23 18 72 42  5  3 26 78  8  5
+
+
+
+
+The search also finds a correlation when messages 1, 4, and 8 are superimposed. Relative to message 8, message 4 is shifted ten places right, and message 1 is shifted 41 places right.
+
+
+
+
+8:                                                    33 66 05 49 75 54 02 60 29 40
+
+
+4: 63 66 05 49 75 54 02 60 29 40 78 47 60 75 67 71 60 02 65 07 47 14 45 74 59 41 80 
+8: 02 55 09 15 59 18 68 03 36 05 47 33 21 59 44 18 28 76 59 34 60 63 79 27 12 54 05 
+
+
+1:             80 66 05 48 62 13 75 29 24 61 42 70 66 62 32 14 81 08 15 78 02 29 13 
+4: 13 60 13 81 22 35 50 40 39 02 59 48 31 76 02 80 75 01 56 67 11 21 08 40 65 45 75 
+8: 49 48 54 55 52 62 72 69 10 57 22 58 48 67 53 07 34 32 30 31 19 26 08 34 46 07 30 
+
+
+1: 49 01 29 11 30 52 81 21 19 00 25 26 54 20 14 21 70 47 44 48 42 19 48 13 47 19 49 
+4: 55 39 60 42 13 03 22 57 02 06 58 09 70 01 58 56 63 68 25 79 07 20 19 64 02 66 73 
+8: 71 55 34 75 54 09 06 60 05 23 25 45 42 80 25 12 22 76 20 51 62 21 40 09 41 10 44 
+
+
+1: 44 26 59 77 64 43 79 28 72 64 01 30 73 23 67 06 33 25 64 81 68 46 17 36 13 17 21
+4: 30 71 16 12 30 65 37 20 13 22 63 18 46 64 59 41 81 82 22 78 36 47 17 04 06 17 05 
+8: 73 08 33 70 73 06 31 21 72 05 40 61 51 42 66 64 74 61 25 63 42 24 41
+
+
+1: 68 13 09 46 67 57 34 62 82 15 10 73 62 02 11 65 72 37 44 10 43 68 62 09 34 18
+4: 36 79 63 01 64 69 15 43 04 58 56 31 14 64 58 18 44 78 69 01 00 46 20 71 73 25 35
+ 
+4: 08 24
+
+
+LANAKI writes about the importance of isomorphism in Lesson 13:
+
+
+Isomorphism is not restricted to cases where secondary
+alphabets are derived from a primary component sliding
+against the normal.  It is useful in all cases of
+interrelated alphabets no matter what the basis of their
+derivation may be. It is second only to the importance of the
+"Probable Word" method which has nearly universal
+applicability.
+
+
+Callimahos describes a method for locating isomorphs, which is to write below each letter the distance to the previous place that letter occurs in the message, and then search for patterns within the line of distances. Here is a spreadsheet where this has been done: Noita Eye Glyphs: Repetition Distances        
+
+
+
+
+Isomorphism in Classical Ciphers explains the conditions for a cipher to show isomorphism, gives several examples, and demonstrates the standard "Alphabet Chaining" method for exploiting them. Alphabet Chaining has not been completely successful when used on the glyph messages.
+
+
+Repeated Letters
+Only the second three messages contain cases of a letter repeating itself after a distance of 2; that is, a letter in the pattern A.A. We can plot the frequency of letters repeating by distance and message, and see that some other distances do not appear in some messages:
+
+
+  
+
+
+
+For instance, the pattern A.A (distance 2) only appears in messages 3-5, and the pattern A..A (distance 3) does not appear in message 6-8. The pattern AA does not appear in any message. Distance 16 only appears in messages 3-5, and distances 1 and 37 do not appear at all. More fun facts:
+* Messages 0-2 do not contain: 2, 15, 16, 18, 19, 22, 28, 29, 37
+* Messages 3-5 do not contain: 22, 27, 37
+* Messages 6-8 do not contain: 2, 3, 16, 37
+
+
+Monoalphabetic Ciphers
+Frequency Analysis
+
+
+Mil-Crypt I; Lesson 1 describes the most elementary analysis: simple frequency analysis of the ciphertext letters. This analysis helps to separate simple substitutions (monoalphabetic ciphers) from more complicated ciphers, and has a few uses when solving those other ciphers.
+
+
+Source Code
+  
+
+
+
+
+
+The letters appear evenly distributed, and there are no peaks or troughs corresponding to common or uncommon letters in written English (or any European language). 
+* The median frequency is 12, expected for random text.
+* The mean frequency is 12.48, expected for random text.
+* The five most common letters are 54, 13, 66, 60,  5, which all appear in the early shared segments.
+* The five least common letters are 27, 52,  0, 53,  7.
+* Every letter is used at least once. There are no “blanks”, in other words. (Though, there are 42 blanks with respect to the outer-level reading of eye glyphs as three-digit base-5 numbers.)
+Lesson 2 describes the Index of Coincidence, a mathematical method of scoring how monoalphabetic a text is, by performing a statistical test called the Phi Test on the text and dividing the test result by the expected result for uniformly random text. Thus, an IoC close to 1.0 indicates a similarity to random text, while an IoC close to 1.6 indicates a similarity to English text. (Most European languages score even higher.)
+* The IoC score for all messages, taken together is: 1.066
+* Scores for each individual message:
+   * 0.958, 1.04, 0.95, 0.918, 1.02, 0.99, 1.04, 0.872, 0.928
+
+
+We will interpret these results to mean that it is very unlikely to be a monoalphabetic (simple) substitution cipher. The large variance between the most and least common letters means it is unlikely to be a simple substitution with nulls, since most of the letters in every message would need to be nulls to fit the expected profile. The result also indicates this is not a simple transposition cipher (which is practically given by the alphabet size) but is inconclusive with respect to a multi-step cipher where one step is a transposition. Further, a relatively flat distribution is characteristic of a polyalphabetic cipher, but that is not the only class of cipher for which it is characteristic, so a polyalphabetic cipher is only weakly indicated.
+Another possibility indicated is that the cipher employs variant ciphertexts, where a single plaintext letter offers a choice of two or more ciphertext letters for the encryptor. This is an appealing quality for a candidate cipher to have, since our alphabet size is large enough to afford multiple equivalents for each of the 26 English letters. This has been called a homophonic alphabet elsewhere, and would be familiar to anyone interested in the Zodiac ciphers.
+The ciphers mentioned above are all uniliteral ciphers. That is, each ciphertext letter in the text represents a single plaintext letter, and vice versa. This is in contrast to multiliteral ciphers, where one or more ciphertexts represent a single plaintext. A handful of historical, multiliteral, ciphers have the requirement that a plaintext be represented by exactly two (or three) ciphertexts, and we can interpret the varying lengths of the messages to mean that these ciphers are unlikely candidates. Slidefair, Playfair, Polybius, and any kind of square-matrix cipher fall into this category. Fractionating ciphers such as Bifid and Trifid are similarly excluded, since the fractionation is performed on a fixed number of letters, and nulls must be used to pad the plaintext to a multiple of that number.
+Another characteristic of some multiliteral ciphers is the small size of the cipher alphabet. Since we have such a large alphabet, we can dismiss any cipher that only uses 5-10 letters, or only uses the digits 0-9: VIC, Nihilist, Straddling-Checkerboard (actually an encoding, not a cipher…), and similar. We can’t dismiss any unknown variation of these ciphers (or the ones in the preceding paragraph) that might have been adapted to use an 83-alphabet, but neither can we rely on established techniques to analyze such a hypothetical cipher. We should exhaust all known approaches and ciphers before inventing new ones.
+
+
+Polyalphabetic Ciphers
+
+
+Mil-Crypt II; Lesson 10: In a polyalphabetic substitution cipher, each letter in the ciphertext has been encrypted using a different monoalphabetic substitution, and some pre-arranged scheme is used to choose which of several substitutions is applied for each letter. These fall into two broad categories: Periodic and Aperiodic. Periodic ciphers afford some new kinds of analysis for identifying the length of the period, so we’ll jump right in.
+
+
+Kasiski Analysis
+
+
+Major Friedrich Wilhelm Kasiski was made famous for a simple, non-statistical method for discovering the period length of a periodic cipher: Identify all of the repeats, measure the distances between them, and then try the common factors of the distances. We’ll see a statistical method shortly, but finding the repeats in the ciphertexts may be useful in other ways.
+
+
+Source Code
+
+
+                                       0
+50 66 05 48 62  13 75 29 24 61  42 70 66 62 32  14 81 08 15 78  02 29 13 49 01 
+80 82 40 63 81  21 19 00 40 51  65 26 14 21 70  47 44 48 42 19  48 13 47 19 49 
+72 31 05 24 03  43 59 67 33 49  41 60 21 26 30  05 25 20 71 11  74 56 04 74 19 
+71 04 51 41 43  80 72 54 63 79  81 15 16 44 31  30 12 33 57 28  13 64 43 48 
+
+
+                                       1
+80 66 05 48 62  13 75 29 24 61  42 70 66 62 32  14 81 08 15 78  02 29 13 49 01 
+29 11 30 52 81  21 19 00 25 26  54 20 14 21 70  47 44 48 42 19  48 13 47 19 49 
+44 26 59 77 64  43 79 28 72 64  01 30 73 23 67  06 33 25 64 81  68 46 17 36 13 
+17 21 68 13 09  46 67 57 34 62  82 15 10 73 62  02 11 65 72 37  44 10 43 68 62 
+09 34 18 
+
+
+                                       2
+36 66 05 48 62  13 75 29 24 61  42 70 66 62 32  14 81 08 15 78  02 29 13 49 01 
+69 76 52 09 48  66 80 22 64 57  40 49 78 03 16  56 19 47 40 80  06 13 64 29 49 
+64 63 06 49 31  13 16 10 45 24  26 77 10 60 81  61 34 54 70 21  15 04 66 77 42 
+37 30 22 00 11  41 72 57 20 23  57 65 41 23 18  72 42 05 03 26  78 08 05 54 45 
+77 25 64 61 16  44 54 51 20 63  25 11 26 45 53  60 38 34 
+
+
+
+
+                                       3
+76 66 05 49 75  54 69 46 32 01  42 60 26 48 50  80 32 24 55 61  47 12 21 12 49 
+54 34 25 36 15  56 55 20 09 08  62 13 82 09 44  29 60 53 82 42  80 05 43 71 03 
+80 77 47 78 34  25 62 18 10 49  62 64 52 81 11  66 62 13 47 17  52 70 26 23 32 
+31 64 23 35 32  50 06 01 25 08  37 47 43 26 76  65 68 80 17 07  45 63 14 53 63 
+60 16 
+
+
+                                       4
+63 66 05 49 75  54 02 60 29 40  78 47 60 75 67  71 60 02 65 07  47 14 45 74 59 
+41 80 13 60 13  81 22 35 50 40  39 02 59 48 31  76 02 80 75 01  56 67 11 21 08 
+40 65 45 75 55  39 60 42 13 03  22 57 02 06 58  09 70 01 58 56  63 68 25 79 07 
+20 19 64 02 66  73 30 71 16 12  30 65 37 20 13  22 63 18 46 64  59 41 81 82 22 
+78 36 47 17 04  06 17 05 36 79  63 01 64 69 15  43 04 58 56 31  14 64 58 18 44 
+78 69 01 00 46  20 71 73 25 35  08 24 
+
+
+                                       5
+34 66 05 49 75  54 23 74 11 13  28 26 19 48 67  57 37 60 34 28  74 10 17 32 11 
+18 19 43 19 81  42 04 62 09 46  49 32 51 76 58  04 43 47 17 67  79 21 32 44 16 
+30 37 26 28 41  68 57 34 51 10  69 70 08 06 46  43 18 39 47 43  15 13 33 30 35 
+62 37 00 37 05  38 55 37 13 40  25 09 21 11 64  05 79 42 68 11  71 11 48 03 67 
+61 40 22 14 35  50 61 39 11 02  66 49 51 53 17  73 36 75 74 54  24 30 54 70 
+
+
+
+
+                                       6
+27 66 05 49 75  54 02 60 29 40  02 55 09 15 59  18 68 03 36 05  47 77 44 38 01 
+18 28 76 04 34  60 63 58 80 17  54 79 75 48 54  55 19 62 64 14  47 51 70 75 05 
+11 47 45 58 68  69 79 25 38 45  73 47 68 50 34  45 78 26 79 57  04 56 22 60 18 
+75 43 60 59 67  63 42 49 33 40  65 79 77 07 03  26 62 31 78 26  57 69 40 04 23 
+26 13 67 42 38  72 11 39 65 60  25 06 80 66 68  77 59 78 19 
+
+
+                                       7
+77 66 05 49 75  54 02 60 29 40  02 55 09 15 59  18 68 03 36 05  47 60 21 80 01 
+72 55 16 82 35  57 19 01 66 18  27 39 17 74 81  39 14 78 00 25  65 43 66 64 38 
+81 23 24 50 57  30 71 75 26 68  54 57 56 50 71  73 14 21 08 32  26 63 05 37 19 
+43 66 47 53 34  66 23 73 31 54  38 77 67 11 63  79 06 22 21 51  69 74 21 05 17 
+67 37 29 21 60  14 82 44 30 04  20 42 35 01 31  54 46 20 40 30  
+
+
+                                       8
+33 66 05 49 75  54 02 60 29 40  02 55 09 15 59  18 68 03 36 05  47 33 21 59 44 
+18 28 76 59 34  60 63 79 27 12  54 05 49 48 54  55 52 62 72 69  10 57 22 58 48 
+67 53 07 34 32  30 31 19 26 08  34 46 07 30 71  55 34 75 54 09  06 60 05 23 25 
+45 42 80 25 12  22 76 20 51 62  21 40 09 41 10  44 73 08 33 70  73 06 31 21 72 
+05 40 61 51 42  66 64 74 61 25  63 42 24 41 
+
+
+Because they are of no use for discovering the period, repeats which occur at the same position in a different message have been omitted. We can observe the following:
+* There are no repeats more than two letters long.
+* Of the two-letter repeats, only 4 are repeated three times. An additional 47 repeats each occur twice.
+   * 62 13: [4, 35, 66]
+   * 63 79: [31, 83, 89]
+   * 47 17: [42, 68, 102]
+   * 30 71: [55, 63, 81]
+* There are no common factors among all of the distances between repeats.
+
+
+The key to this analysis is being able to distinguish causal repeats, which are caused by a repetition in the plaintext aligning with the period length, from accidental repeats, which only happen by coincidence. If we hand-wave some of the math away, if the expected rate of monographic coincidence, per letter, in random text is ~12 per thousand, then the expected rate of digraphic coincidence, overall, is half the square of that, ~72 per thousand. (The message length of ~1000 is baked into this figure.)
+This analysis typically relies on finding a few four-letter repeats, which are expected to occur so rarely that we can assume them to be causal. We have no four-letter, or even three-letter repeats. We have so few digraphic repeats that we have no hope of distinguishing the causal repeats from the accidental. However, we can mark it as slightly significant that we actually have fewer digraphic repeats than we would expect by accident!
+We will remark that this analysis is inconclusive with regards to the period length, allow the possibility that not a single word in any message repeats at a distance which is a multiple of the period length, and remember the detail of the missing digraphic repeats for later.
+It is worth noting here that one angle of attack against homophonic alphabets, or substitutions with variants, is by counting the incidence of digraphs. In written English, some digraphs (the top five being TH ER ON AN RE) are more common than others (for example QQ JV PZ). The previous analysis shows that only four digraphs are more common than the rest, and the vast majority of digraphs (almost six thousand of them) do not appear at all. This is inconclusive with regards to variants.
+
+
+Kappa Test (Periodic)
+
+
+Lesson 15; Mil-Crypt III: Lacking the lengthy repeats needed for the Kasiski test, a statistical test called Kappa may be used to uncover the period. The principle of the test is that when the two ciphertexts are correctly aligned with respect to the period, the ciphertext letters will be the same at every position where the plaintexts are the same, and the incidence of identical ciphertexts should reflect the rate of coincidence for written language. The test proceeds by aligning a message against itself with a given offset, counting the number of tests and coincidences to derive the rate of coincidence, and repeating the process for each offset that is being examined.
+For reference, the rate of coincidence for written English is about 66 per thousand. This is several times greater than the 12 per thousand for random text in an 83-alphabet, adding weight to any significant result from this test. (The rate of coincidence for most European languages is similarly high.) Additionally, since we have nine messages that we presume were enciphered starting at the same position within the period (due to the shared segments), we should be able to test all nine messages against all nine shifted by the offset under examination, for a total of 81 tests per offset.
+
+
+Source Code
+
+
+We test each offset in the range of 4 to 90 and plot the result on a bar graph:
+  
+
+Not good. This test compared some hundred thousand pairs of ciphertext letters and found not much more than noise. The tiny spike at a period of 88 should be discounted, because no message has enough letters to span two full periods of 88. Combined with the result of the Kasiski test, I think it is fair to conclude that this cipher is not periodic. 
+This test was also used on sample ciphertexts provided by Toboter from the Noita Discord. The sample texts were known to be made with a periodic, polyalphabetic cipher which also employed variant plaintexts, and the test correctly identified the period of 83 with a significant coincidence rate of 26 per thousand, far above all other periods tested. We may also conclude that even if the eye message cipher employs variants, it is still unlikely that it is periodic.
+
+
+Progressive-Alphabet Ciphers
+        The progressive-alphabet cipher is a special case of the periodic polyalphabetic cipher. In this case, the substitutions at each position are derived from a plain and a cipher alphabet sliding against each other, but instead of using a repeating key to give the relative positions of the alphabets, their positions are instead offset by one letter for each letter enciphered. This is equivalent to a periodic cipher using a key that is identical to one of the alphabets. The period analyses above are necessarily inconclusive to a cipher with a period length of 83 due to our messages not being at least twice as long, and in fact their results for that period length give the same as the expected result for random data.
+        This kind of cipher is appealing because it is known to produce Isomorphs whenever the distance between plaintext letters in the message matches their distance in the alphabet.
+This is probably the right place to link a log of my previous experiments, which came to a sudden stop when I noticed that I wasn’t actually that confident in the period length I had initially assumed: Noita Eye Glyphs: Progressive-Alphabet Hypothesis
+
+
+Kappa Test (Positional)
+
+
+        Another application of the Kappa test is to determine whether the alphabets used in a polyalphabetic cipher are strictly positional (as with a repeating-key cipher where the key is shared among messages, or a running-key or one-time-pad where the key is shared) or relatively position-independent (as with a repeating-key cipher with distinct keys for each message, or distinct grouping schemes, or a cipher with auto-keyed behavior). If the alphabets are strictly positional and shared among all messages, then the same plaintext at the same position will always result in the same ciphertext. This means the coincidence rate between different messages will approach written language.
+By superimposing each message against each other message in flush depth (meaning without any horizontal shift) and counting the tests and coincidences (a total of 9*8/2 = 36 tests between messages), we will find the rate of coincidence between messages. Since the ciphertext is known from visual inspection to have a high rate of coincidence in the early parts of the messages, we can repeat the test three times: First, for the entire length of each message; second, starting at index 25 where the bulk of the early coincidence ends; and third, starting at index 50 where the remaining early coincidence ends.
+
+
+
+
+Source Code. Output:
+
+
+== Full messages ==
+Tests:            3887
+Matches:           338
+Coincidence rate:   86 per thousand
+== Messages[25:] ==
+Tests:            2987
+Matches:            76
+Coincidence rate:   25 per thousand
+== Messages[50:] ==
+Tests:            2087
+Matches:            31
+Coincidence rate:   14 per thousand
+
+
+        The test output counts individual comparisons between letters of different messages. For reference, the coincidence rate for random text is 12 per thousand, while the rate for written English is 66 per thousand. (Most European languages are even higher.) 
+Surprisingly, the test indicates that the cipher appears positional across the entire length of the text, but when only the part of each message after position 50 is considered, the cipher does not appear positional. This is a weak indication that the cipher's use of alphabets is not positional for most if not all of the length of the messages, and that it is not strictly positional in general.
+
+
+
+
+Aperiodic Polyalphabetic Ciphers
+
+
+Lesson 13; Mil-Crypt III: Historical aperiodic ciphers take a number of forms. In the cases of variable-length keying units or variable-length plaintext groupings, the first step is to identify Isomorphs, which will only be apparent when the varying length is typically long, or when they happen to align with the same boundary between units. Short keying units or plaintext groupings (<4) will typically disrupt isomorphs, so we would instead look for short ciphertext repetitions that would indicate the coincidence of the same plaintext with the same keying unit. We have already noted a severe shortage of ciphertext repetitions during the Kasiski Analysis.
+Given that the isomorphs we have identified are overlapping in every case, and that they would be disrupted differently if they happened to straddle the edge of a keying unit or plaintext grouping, we can infer that if the cipher in question belongs to one of those classes, it would need to have very large (>20) keying units or plaintext groupings.
+Other angles of attack rely on having a large volume of ciphertext (25-30 messages with a Latin-sized ciphertext alphabet; we might need closer to a hundred) encoded with the same key, or happening to find a few messages that are long enough to expose the period length of larger cycles in the keying scheme, where the scheme itself is only sufficient to hide the presence of small cycles. Neither of these are applicable.
+With the main methods of analysis against them being either inconclusive or not applicable, we will set these two classes of cipher aside for now.
+
+
+Standard and Mixed Alphabets
+
+
+Before we get into the next class of ciphers, it is convenient to remark on the nature of sliding-alphabet ciphers and of standard and mixed alphabets, which are relevant to both periodic and aperiodic ciphers.
+While solving a monoalphabetic cipher of the kind found in a newspaper cryptogram, the solver often notes down the substitution using two sets of alphabets, having the cipher alphabet in the standard order and then writing the individual plaintext letters above them as they are deduced. For example:
+
+
+    E             R           T         A       O
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+The solver has deduced the positions of five letters in the plain alphabet, and set them above the cipher alphabet. An alternative is to write the plain alphabet in standard order and fill in the cipher alphabet below it:
+
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+U       C                   Y     J   P
+
+
+The result is that the two substitutions are equivalent. In the first case, the cipher alphabet is standard while the plain alphabet is mixed, while in the second case the reverse is true. Simple substitutions can be rewritten in thousands of different ways, which are all cryptographically equivalent.
+To contrast, while solving a polyalphabetic cipher of the kind found in old military transmissions or issues of The Cryptogram, the solver would first identify the number of different substitutions in use, and then record each of them in the same manner. In the process, the solver might find that by recording the cipher alphabets below a single plain alphabet in standard order, the cipher alphabets are rotations of each other. 
+
+
+P0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+C1     E             R           T         A       O
+C2 A       O       E             R           T         
+C3       T         A       O      E             R     
+
+
+This tells the solver that the individual substitutions were created by sliding a single standard plaintext alphabet against a single mixed cipher alphabet, using a key to indicate the offset between the two at each position.
+Or, if the solver finds that the cipher alphabets appear to be jumbled with respect to each other, the plain alphabets might be rewritten below a single cipher alphabet, and the solver will discover that a mixed plaintext alphabet was slid against a standard cipher alphabet:
+
+
+C0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+P1 U       C                   Y     J   P            
+P2   P             U       C                   Y     J 
+P3       Y     J   P           U       C              
+
+
+If neither of these is the case, then there are two remaining outcomes. First, the substitutions were created by sliding two mixed alphabets against each other. Diagrams like the above will not show any alphabets being rotations of each other until at least two alphabets are put in the correct order with respect to each other. Friedman describes in Mil-Crypt II the indirect symmetries of position that are used to deduce a correct (relative) order of two or more alphabets. (The principle of indirect symmetry is very powerful, and can be used to deduce the relative order of alphabets using only a suspicion that two or more segments of ciphertext encode the same words. A periodic cipher can often be broken just by knowing many locations of the word THE.).
+The last remaining outcome is that the substitutions were not created by sliding alphabets at all. Rather, they could have been created by drawing lots, or by using a rotor cipher machine. In the case of lots, the solver has no means to correlate the alphabets at each position against each other and must solve each alphabet independently using only its own recurrences and the solver’s own understanding of language. Military ciphers such as the M-138 Strip Cipher Device used a series of unrelated alphabets, but its weakness was that the individual alphabet strips were reused over a period of time.
+In the case of a rotor cipher such as the Hebern code machine or the famous ENIGMA, each rotor performs a Caesar shift, followed by a substitution, followed by another Caesar shift by the opposite amount. Rotor machines do not produce any obvious isomorphs, but isomorphs can be revealed by reversing the final Caesar shift to get the result of the rotor substitution; later ENIGMA models were fitted with a plugboard to make reversing the final shift (and thus exposing the isomorphism) more difficult. 
+A large volume of ciphertext enables the solver to deduce the internal wiring of the rotors, with the amount of ciphertext needed increasing with the number of rotors in the machine. In Lesson 22, LANAKI describes a matrix diagonalization analysis for a single-rotor machine that would require at least ten times as much ciphertext as we have. Together with the obvious isomorphs, the rotor cipher machine is dismissed as both unlikely and unsolvable.
+Currently, no analysis has indicated whether we are dealing with a cipher that uses standard, mixed, or some combination of alphabets. However, we can talk about the circumstances around these combinations. Historical military ciphers typically used either one standard alphabet and one mixed, or two identical mixed alphabets, simply to reduce operator error and make communication more reliable. (Friedman remarked that if one alphabet is mixed, it makes little difference whether the other is mixed or standard, because solving one alphabet amounts to reducing the cryptogram to monoalphabetic form.) 
+Modern recreational ciphers that use two different mixed alphabets are classified as “difficult” because known approaches such as crib dragging, direct symmetry, and the superimposition of ciphertext distributions cannot be used when both alphabets are mixed. Solving such a cryptogram with computer assistance is frowned upon. Since the eye glyphs were found in a computer game, created by a computer programmer, to be played by a segment of the gamer population where computer programmers are overrepresented, and since the alphabets are apparently large enough to make hand-solution very difficult, the circumstance indicates that the glyphs were meant to be solved with computer assistance, and thus are predicted to use two or more different, mixed alphabets. (The hypothesis near the end of this document suggests as many as ten alphabets are in use!)
+To be fair, the ciphertext alphabet being made of numbers (partly a circumstance of being represented inside a computer) means that there is a standard order to it, and we should at least make a few attempts while assuming the cipher alphabet is standard, if only to solidly dismiss the possibility.
+
+
+Autokey Ciphers
+
+
+Lesson 13; Mil-Crypt III: The aperiodic nature of Auto-keying (a.k.a. Autoclave) ciphers is achieved by using the plaintext or ciphertext itself as the key. These ciphers are trivial to break if the pair of alphabets is known, but we cannot assume such a luxury. The ciphertext-keyed variant is known to produce Isomorphs, but for reasons different from repeating-key ciphers. We will consider the cases of ciphertext-keying and plaintext-keying separately. There also exist ciphers that have an autokeying element, such as advancing the key an additional time each time a word space (or a particular letter, or sequence of letters) appears in the plaintext.
+
+
+Ciphertext-keyed Autokey
+
+
+Friedman remarks that repetitions in the ciphertext are few in number but longer than ones in the plaintext by the length of the initial key, and states that these repetitions are only due to the chance coincidence of the ciphertext letters immediately before the plaintext repetition. The odds of this coincidence are given by the alphabet size (1/26 with the English alphabet, and 1/83 in our case) and shrink with a longer initial key. Plaintext repetitions that occur following a different ciphertext letter will instead produce Isomorphs of the earlier ciphertext. 
+We have already observed during the Kasiski Analysis a shortage of repetitions, and also see an abundance of isomorphs, both of which are characteristic of this cipher. 
+        Friedman also describes a method for discovering the size of the initial key when the alphabets are unknown: For each ciphertext letter C, the distribution of ciphertext letters following it at a distance of N (where N is the key offset) will be monoalphabetic. He goes on to solve a cryptogram by building distributions for each of the 26 key letters, an approach we cannot use for an 83-alphabet with a message size of fewer than six thousand letters. 
+Luckily, he describes another approach for shorter cryptograms which applies his indirect symmetries of position together with a handful of isomorphs. This technique is too intricate to explain in a couple of paragraphs, so the reader is invited to thoroughly read Mil-Crypt II and Mil-Crypt III to gain an understanding.
+        We previously discussed a statistical method for judging monoalphabeticity in Kappa Test (Periodic). This method can be applied in place of building distributions to find the key offset for a ciphertext-keyed cipher, except that we cannot test each message against every other, because each message in this case is encrypted with a different key. We will also need to test even the smallest offsets which we had previously skipped. The offset that gives a rate of coincidence closest to written language is probably the correct one, and gives us the length of the initial key.
+
+
+Kappa Test (Autocorrelation)
+
+
+The previous test is modified as described above.
+
+
+Source Code
+  
+
+
+
+The offset of 4 juts out above the rest with 26 coincidences per 1000. It turns out this is another way of stating the observation in Eye Message Alignments and Gap Patterns (originally noted in Noita Eye Glyphs "Progress") that there are 26 occurrences of cipher letters that repeat at a distance of 4. (The document says 3 because it is counting intervening letters, rather than measuring distances.) What is different about this analysis is that longer repeats are weighted more heavily due to occupying more of the ciphertext.
+        A coincidence rate of 26, even though it is well below the rate for English, was previously shown sufficient to identify the period length of a cipher that is both periodic and homophonic, so we will run with it. 
+        A cursory attempt at decoding the messages using a standard cipher alphabet (numbers in numerical order) and an initial key size of 4 yielded a plaintext which was then analyzed for repeats. No repeats of more than two letters were found, where we would have expected longer repeats as the cause of the isomorphs. Having eliminated the easy possibility of a standard cipher alphabet, we’ll keep going. (Source Code, Results)
+
+
+Funny-Looking Obstacle
+Before we look too closely at the isomorphs, there is another observation we need to address if we are to consider Ciphertext-Autokey as a candidate. Near the beginning of messages 0 and 1, we find alternating runs of shared and non-shared letters, with a run length coincidentally equal to the initial key size we’ve presumed.
+
+
+29 13 49 01 80 82 40 63 81 21 19 00 40 51 65 26 14 21 70 47
+29 13 49 01 29 11 30 52 81 21 19 00 25 26 54 20 14 21 70 47
+
+
+We need to have a good explanation about why an auto-keyed cipher would produce this, since our intuition tells us that it is very unlikely that two different plaintexts, encrypted with two different keys (80 82 40 63 and 29 11 30 52) would produce the same ciphertext (81 21 19 00). We’ve conveniently ignored the single letter at the beginning of the message, which we would expect to produce nine different letters in the fifth position. It’s also worth noting that if the first letter is removed from the message, then the highlighted runs of shared letters above are exactly aligned with a multiple of four letters.
+The complete absence of double letters in the ciphertext weakly suggests that the key offset may in fact be 1 instead of 4, if it is assumed that there is a blank (an unused letter or empty space in the alphabet) at the first position in the plain alphabet to cause the absence, and this obstacle would still need to be explained in that case. It will be slightly easier to explain because only two of the four divergent letters would need to be different, and in corresponding ways, to make the ciphertext converge.
+I describe it as “funny-looking” because it is one of two observations (the other being a varying first letter followed by a constant second letter) that would discourage analysts from considering auto-key ciphers at all. It may be a trap.
+
+
+Plaintext-keyed Autokey
+        A shortage of repeats in the ciphertext is characteristic of both kinds of autokey cipher, but for different reasons: The plaintext-keyed cipher produces ciphertext repeats that are shorter than the plaintext repeats that caused them, but reliably so, because the initial plaintext letters of the repeat are always used to encrypt the remainder. As noted before, we have practically no repeats to work with. Plaintext-keyed autokey is also known not to produce isomorphs.
+The plaintext-keyed variety with unknown alphabets is considered much harder to crack. The solution method described in Mil-Crypt III relies on finding long repetitions relative to the initial key size, which are not available to us; and on one of the alphabets being in standard order, which we have no guarantee of. It may be fair to dismiss this one as both unlikely and unsolvable.
+
+
+Long Non-Repeating Key Ciphers
+        This includes running-key and one-time-pad ciphers. Solutions to these are attempted as a last resort, after failing to identify the cipher as any kind of periodic, semi-periodic, or auto-keyed polyalphabetic cipher. Solving a running-key cipher where the key is intelligible text (such as from a book) is guided by identifying the alphabets specific to each letter in the ciphertext, and then identifying the most frequently used alphabets which correspond to the most frequent letters in the key text. (The distribution of ciphertext letters will show a characteristic shape caused by letters being more and less frequent in both the plaintext and keytext.) 
+Alternatively, the running-key cipher may be broken by dragging a crib that is expected to be found in either the keytext or the plaintext. Tobias Schrödel describes a method for breaking short Vigenere ciphers using a combination of word lists and N-gram frequency tables, which requires both a known alphabet and an intelligible key.
+A running-key may also be produced by writing a keyword-mixed alphabet several times into a transposition matrix and then reading it out in any number of different ways, causing numerous headaches for the cryptanalyst. I will decline to discuss this possibility, except to say that we don’t have enough ciphertext to address it.
+Breaking a one-time-pad is impossible, except when the pad is reused between messages. This allows us to combine the two messages and get a result equivalent to encrypting the first message's plaintext using the second message's plaintext as a key, which can be broken using the methods for intelligible running keys mentioned above. We will dismiss both the running-key and one-time-pad ciphers as unsolvable.
+
+
+Hypothetical Novel Ciphers
+        If the messages were not created with any known cipher, many of the known techniques will be useless or nearly so. General statistical techniques will be more applicable than ones derived from a specific cipher’s implementation. We will need to proceed by imagining a new type of cipher, and then inventing new techniques for either detecting the characteristics of that cipher or solving the cipher, ideally without exhaustive decryption. 
+        From all of the above analyses, we have learned several significant facts that a hypothetical cipher would need to explain:
+
+
+* The simple ciphertext frequency is flat, and not monoalphabetic.
+   * Any cipher that is either homophonic or polyalphabetic has this quality.
+* Period analysis shows the ciphertext is not periodic.
+   * Any cipher that is either homophonic, or polyalphabetic with a long or non-repeating key has this quality.
+* Positional analysis shows that the letters at the same position in different messages are likely to be enciphered by different alphabets.
+   * This is weak evidence against a polyalphabetic cipher which uses the same keying sequence (either repeating or running) or the same sequence of alphabets (either interrelated or independent) for all messages. This slightly favors an auto-keyed cipher, since different plaintexts will by definition use different keying sequences.
+* No ciphertext letter appears twice in a row.
+   * A ciphertext auto-keyed cipher with key offset of 1 and a blank at the position of the base letter (ordinal zero in the plain alphabet) will have this quality.
+   * A progressive-alphabet cipher where each letter in the plaintext alphabet is surrounded by blanks will have this quality.
+      * Such a cipher would also cause the same cipher letter to never appear in adjacent positions. There are several cases of a letter appearing in adjacent positions across the nine messages. This could be explained away using either a homophonic plaintext alphabet or a plaintext alphabet that varies per message according to an initial indicator letter.
+* Ciphertext letters appear twice at a distance of 4, at nearly double the expected rate.
+   * A ciphertext auto-keyed cipher with a key offset of 4 has this quality.
+   * In a ciphertext auto-keyed cipher with a key offset of 1, a frequently occurring four-letter word, which happens to have letters whose ordinals sum to a multiple of the alphabet size, will produce this phenomenon. See On repeats in Auto-keyed ciphers.
+      * These patterns could be treated as short isomorphs created by a recurring 4-letter plaintext word, which does not include the first letter of this 5-letter isomorph.
+   * A progressive-alphabet cipher where the first and last letters of a common word appear at the respective distance in the plain alphabet will produce this phenomenon. In other words, there is a common word fitting the pattern AxxxB, and the pattern BxxxA appears somewhere in the plain alphabet.
+* The same plaintext ought to encrypt to the same ciphertext, at least near the beginning of the message, to explain the shared segments.
+   * Too many ciphers to list share this quality, but they generally require that the same initial state be used for each message.
+* There are no repeats of three or more ciphertext letters.
+   * Ciphers with very long or non-repeating keys have this quality, among others.
+      * A progressive-alphabet cipher (which has an effective key length of 83) fits into this category.
+   * However, plaintext auto-keyed ciphers are expected to produce short repeats whenever the plaintext contains long repeats. 
+* There are fewer repeats of two ciphertext letters (digraphs) than expected by chance.
+   * The ideal non-repeating-key cipher (such as a one-time pad) will produce only the amount of digraphs allowed by chance. 
+   * This is also weak evidence against a simple homophonic substitution.
+   * This is somewhat suggestive of a system where each message is enciphered using a slightly different cipher (possibly chosen by an initial indicator letter), where each one can only produce a subset of all possible digraphs. 
+* Six (or conservatively, four and two) segments of the first three messages are Isomorphs of each other. There are triples of less convincing isomorphs in the second three and last three messages.
+   * Polyalphabetic auto-keyed ciphers (and some variable-grouping ciphers) share this quality, producing isomorphs by different methods, indicating different characteristics of the plaintext in each cipher.
+      * Isomorphs in ciphers with variable plaintext groupings manifest whenever some plaintext is repeated, and the repeats fall into a similar grouping size while also using a different key. This implies that the isomorphs are monoalphabetic, and are isomorphic to the original plaintext. 
+      * Isomorphs in progressive-alphabet ciphers manifest whenever some plaintext is repeated, and the distance between plaintext letters in the repeats matches the distance between them in the original plaintext alphabet. They are not isomorphic to the original plaintext.
+      * Isomorphs in auto-keyed ciphers manifest whenever some plaintext is repeated. The repeated letters in the isomorph are produced if the sum of the ordinals of a segment of the repeated plaintext is a multiple of the alphabet size.  Again, not isomorphic to the original plaintext.
+         * See On repeats in Auto-keyed ciphers
+   * As a general rule, isomorphs are caused by repetitions in a polyalphabetic system whenever there is some fixed relation between the substitutions used at the positions of those repetitions in the message.
+      * This is strong evidence against a completely aperiodic system with unrelated alphabets, such as a running-key or one-time-pad.
+      * This is also strong evidence against a progressive-alphabet or auto-key system using some large number of unrelated alphabets; or either of the two using secondary alphabets with a keying method that does not use an index letter.
+      * One such fixed relation is that the keying sequences at each repetition differ from each other by a constant value. Ciphertext autokey, progressive-alphabet, and clock device ciphers all have this relation. See Isomorphisms in select ciphers.
+
+
+Additional observations may help to form a hypothesis:
+
+
+* Funny-Looking Obstacle: If the initial letter is discarded, the shared sections in the first two messages are punctuated by non-shared segments whose boundary positions sit on a multiple of four. Some of the boundaries of shared segments in messages 6 and 8 also sit on a multiple of four. This sure looks like a trap.
+* There is no strong evidence for or against homophonic substitution, but it is at least allowed by the circumstance of a size 83 alphabet.
+
+
+Some wild speculations:
+
+
+* The initial letter is not part of the message, but is an indicator that serves to set the cipher’s initial state somehow. The large shared segments are evidence against this, so the change in state would need to be specific enough not to disrupt them.
+   * Perhaps it only alters part of one of the cipher’s alphabets? Just enough to alter only a chunk of four letters at the 24th position?
+
+
+
+
+Diverging and Converging
+
+
+A  B  C  D  E  F  G  H  I  J  K  L 
+29 13 49 01 80 82 40 63 81 21 19 00 40 51 65 26 14 21 70 47
+29 13 49 01 29 11 30 52 81 21 19 00 25 26 54 20 14 21 70 47
+A  B  C  D  M  F  G  H  N  J  K  L  M?          N?
+
+
+        The text above appears at positions 21-40 of messages 0 and 1. Supposing that each message was enciphered by a ciphertext autokey with a key offset of 1, the ciphertext could be made to converge if as few as two plaintext letters were changed. Those letters are highlighted.
+        The ciphertext autokey can be thought of as maintaining a running sum of the ordinals of the plaintext letters encoded, and producing a ciphertext letter that encodes that sum (keeping in mind the ciphertext alphabet is not in standard order) after each plaintext letter. The ciphertext 49 is the result of adding A+B+C, the ciphertext 01 is A+B+C+D, and so on. More accurately, the initial cipher letter is what participates in the sum, so it is just as true to say that 49 is equal to 29+B+C, and 01 is equal to 13+C+D.
+        Thus, we can state that: 
+
+
+81 = 01+E+F+G+H+I in the first message, and
+81 = 01+M+F+G+H+N in the second message. Removing common terms, we have:
+M+N = E+I
+
+
+We could also state it in terms of the differences between the plaintext letters at those positions:
+
+
+M-E = I-N
+
+
+We could also say that the letter M follows E in the plain alphabet by the same number of spaces that I follows N. This equality could trivially be satisfied by M=I, E=N.
+
+
+The pattern in the last three messages still needs to be addressed, though:
+
+
+3  36 5  47 77 44 38 1  18 28 76 4  34 60 63 58 80 17 54 79 75 48
+3  36 5  47 60 21 80 1  72 55 16 82 35 57 19 1  66 18 27 39 17 74
+3  36 5  47 33 21 59 44 18 28 76 59 34 60 63 79 27 12 54 5  49 48
+
+
+
+
+
+
+
+
+
+
+Misc
+Isomorphisms in select ciphers
+
+
+In ciphertext autokey, repetitions in the plaintext cause isomorphism in the ciphertext because the keying sequences at each repetition have a constant difference between them. Here, a word is enciphered twice with different initial keys to yield two ciphertexts c1 and c2. The keying sequences k1 and k2 are also shown, and the difference between them is computed. Straight alphabets are used for convenience.
+
+
+p:  CIPHERTEXTAUTOKEY        p:  CIPHERTEXTAUTOKEY         k1: EGODKOFYCZSSMFTDH
+k1: EGODKOFYCZSSMFTDH        k2: JLTIPTKDHEXXRKYIM        -k2: JLTIPTKDHEXXRKYIM
+c1: GODKOFYCZSSMFTDHF        c2: LTIPTKDHEXXRKYIMK          =  VVVVVVVVVVVVVVVVV
+s1:  OD OF   SS F D F        s2:  TI TK   XX K I K
+
+
+The same holds true for the progressive-alphabet cipher, where the keying sequence is effectively the same as one of the alphabets. This cipher was previously discussed in the Noita Discord, where it was described as a cipher disk advancing by one position per letter.
+
+
+p:  PROGRESSIVEALPHABET        p:  PROGRESSIVEALPHABET         k1: DEFGHIJKLMNOPQRSTUV
+k1: DEFGHIJKLMNOPQRSTUV        k2: MNOPQRSTUVWXYZABCDE        -k2: MNOPQRSTUVWXYZABCDE
+c1: SVTMYMBCTHROAFYSUYO        c2: BECVHVKLCQAXJOHBDHX          =  RRRRRRRRRRRRRRRRRRR
+s1: S TMYM  T  O  YS YO        s2: B CVHV  C  X  HB HX
+
+
+The same also holds true for a clock cipher device, in this case the Wadsworth device where the cipher alphabet is longer than the plain. The cipher alphabet here is equal to the plain alphabet with the digits 0-9 appended. This cipher has no overt keying sequence, but one can be computed by taking the difference between the plaintext and ciphertext. Effectively, the keying element stays the same whenever the next plaintext letter follows the previous one in the alphabet, and changes whenever the letter precedes the previous one.
+
+
+p:  WADSWORTHCIPHERDEVICE        p:  WADSWORTHCIPHERDEVICE         k1: A0000QQQG666WMMCCC2SS
+k1: A0000QQQG666WMMCCC2SS        k2: MCCCC222SIII8YYOOOE44        -k2: MCCCC222SIII8YYOOOE44
+c1: W03IM479N8EL3Q3FGXAUW        c2: 8CFUYGJLZKQXF2FRS9M68          =  YYYYYYYYYYYYYYYYYYYYY
+s1: W 3         3 3     W        s2: 8 F         F F     8
+
+
+For a longer list of ciphers known to produce isomorphs, see Isomorphism in Classical Ciphers.
+Repeats in Auto-keyed ciphers
+
+
+With regards to ciphertext auto-keyed ciphers, the ciphertext is composed of a set of one or more chains of encryptions, where each letter is the result of encrypting a plaintext with a previous letter, which itself results from another previous letter, and so on. A key offset of 1 means that every letter participates in the same chain of encryptions. Whenever a letter is repeated at a given distance, it indicates that all of the intervening plaintext letters participated in a partial chain that made one or more complete trips around the alphabet. In other words, the sum of the ordinals of those plaintext letters equals a multiple of the alphabet size.
+
+
+As a specific example, here is one of the isomorphs from Mil-Crypt III:
+
+
+Key       V V J L K Z E K U R 
+Plain     A R T I L L E R Y 
+Cipher  V V J L K Z E K U R
+
+
+The second repeat of the letter K occurs as a result of encrypting the first K against L, and then L again, and then E. The ordinals of those letters in the plain alphabet, which is a standard English alphabet, counting from zero:
+
+
+L      11
+L      11
+E       4
+---------
+Total  26
+
+
+This is the general case of Friedman’s observation that whenever a doubled ciphertext letter occurs (such as V V above), it is caused by a plaintext letter which he calls the “base letter”, against which the key letter in the ciphertext alphabet is aligned, and which I am calling the plaintext letter with ordinal zero.
+
+
+
+
+To be continued...

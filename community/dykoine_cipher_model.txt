@@ -1,0 +1,267 @@
+﻿Noita Eye Glyphs: Cipher model definition and Brute force guidelines
+by Dykoine
+(You can PM me in Discord, you will find my account in Noita’s server, or at vincent.salome.pro@gmail.com)
+TL;DR;
+Status of current candidates (detailed below):
+* Polynomial with modulo : Failure, Under tests for design improvement
+(You want to help ? We need to reverse the IoC[1] Formula with great efficiency)
+* N-time-pad : Failure
+* Alberti : Failure
+Contributing
+You want to help ? Good.
+
+
+Make Google Doc suggestions to this document : I look at all suggestions made to this document and integrate required additional explanation.
+
+
+Here is a list of things that can greatly help us, as it’s outside of my skills range:
+   * Reversing the Index of Coincidence Formula[a][b] (probably impossible and is cipher specifics)
+   * Current implementation : sources
+   * Skills that can help: Math, programing
+   * Comment this document: Anything which is unclear to you can be unclear to others, ping me parts that are unclear/incomplete and I will explain better.
+   * None of the above ? Read the intro, it may guide you.
+Intro
+
+
+This document is built from work done by the Noita discord community, in particular :
+   * @codewarrior0, especially “Hypothetical Novel Ciphers” from Noita Eye Glyphs: Analytical Overview
+
+
+You can contact the community that works on this project in the “silmä-huone” room of the Noita discord. You can have access to the room by asking one of the moderators.
+
+
+This document follow the line of work from Noita Eye Glyphs "Progress"
+
+
+If you are coding a similar program in Python, here is one of my libraries that I use to exploit the maximum of my hardware in such a case.
+
+
+My work (mostly programming) about this project can be found on this Github
+
+
+If you don’t get a word, you can seek the definition on this Lexicon.
+Objectives of this document
+Align our model of cipher
+        Build our hypothetical cipher for our enigma from hints we discover from output. In order to have intelligent and collective progress we need to be aligned on the cipher behavior.
+
+
+        If you see anything in this document that is wrong about our cipher, it’s important to comment on it and notify us (it’s minimizing work lost).
+
+
+        This model is the specifications of our Bruteforce model. A bruteforce is a software that checks every possibility to break something (password, or here a cipher).
+Build observable constraint on the solution
+We need to use every artifact in the cipher to allow us to greatly reduce the time needed to break it.
+
+
+Those constraints will help us to build discriminator functions that will say “This is impossible, you can pass to the next possibility without bothering to continue the calculation”.
+The theoretical cipher of Eyes Enigma
+Candidate 1 : Alberti
+Status: Failure
+Description
+Our candidate is an Alberti-like cipher with some unique properties. Alberti is two alphabets that are sliding each against the other, which define which letter is replaced by which one (like a Caesar cipher). By interval (regular or not) the cipher will rotate the cipher alphabet by N symbols.
+Example of a classic Alberti
+If you have the following text:  ABCD
+The following plaintext alphabet : DBCA (define the target of the replacement)
+The following cipher alphabet : CBAD (define the outcome of the replacement)
+and there is a rotation after the 2nd character by 2 (to the right)
+The output will be DBCB as:
+   * initial alphabet, A→D and B→B
+   * after rotation, C→C and D→B
+
+
+Here is an example of a variant of an Alberti, in the last 5 paragraphs.
+Specifics of our Eye Alberti
+   * The plaintext alphabet can have multiple times the same letters (like, multiple “e”);
+   * Plaintext alphabet nor cipher alphabet have a particular order;
+   * Obviously, cipher alphabet are composed of the 83 eyes trigrams;
+   * It can rotate at any point, randomly, multiple times across the message, but rotations positions and the number of characters rotated are sync across messages;
+   * [Optional] Cipher alphabet can be shuffle/replaced by brand new different one instead of rotate, in that case, it’s sync across messages;
+   * [Optional] Cipher can use a double cipher alphabet instead of one:
+   * One for upward symbols;
+   * One for downward symbols;
+Results
+        Failure : Our candidate can’t be an Alberti cipher, as there is no double following letters in the cryptogram[2], the way the cipher works can’t be a polyalphabetic cipher that only shifts or shuffles his alphabets.
+
+
+        Proof : if the cipher alphabets is an ensemble of 83 symbole, with our text of 1027 symbols, the probability of having no double letters is . So if over 1M messages of 1027 characters, on average, less than 4 of them won’t have double letters.
+Candidate 2 : polynomial with modulo 
+Status: Require more efficient reverse IoC.
+
+
+Can’t brute force it without a significant way to simplify it, requiring millenia of computation. (c.f. Contributing)
+
+
+Note that we use programming formatting in the formulas here. So  mean k is a list and we select the  item (from 0). And % stands for modulo.
+Description
+There is no real explanation for the 83 long cipher alphabet was choose, but we
+can note that's a prime number.
+
+
+We use here the first cryptography manual of Friedman as the main reference for terms and methodology.
+
+
+One explanation would be the cipher is , in
+that case :
+   * it's explaining why a prime number is chosen as modulo;
+   * as long  values are prime, not in , and , then they can't have double following letters on the cryptogram, which is a property of our cipher;[c][d]
+   * I don’t know if it can explain isomorphs;
+
+
+We don't know what is the size of , but as , we
+can only consider primes under 83.
+
+
+        It’s not a big deal to try this way, as the solution is simple, but it includes brute force.
+Anyway I decided to try it, and will develop parts that will be required for other brute force anyway.
+Progress
+        Some of possibles keys (k) mean a lot of possibilities, of the order to . So brute force it can’t be. I designed a reversed IoC[3] in order to exclude the maximum of them and from that explore by heuristics possible solutions of only english-level IoC values.
+
+
+        The reverse IoC is not efficient enough, as I don’t filter enough possible solutions in a precognitive way.
+
+
+        I’m working on a mathematical solution to solve it.
+        Sources
+Other significant result
+      * There is no solution that allows the first char to follow each other with that formula. (example: 32,33,34…)
+Candidate 3 : N-time-pad
+Status: Failure
+Description
+        Symbols are close to random distributed across messages, and, in their binary formulas, have a close to random 0 and 1 distribution, which is close to a pink noise.
+
+
+        As the key is shared across messages (from beginning isomorphs), the one-time-pad can be bypassed with successive XOR operations.
+        
+This simplification doesn’t break the cipher in one shot, but allows us to seek one of the message contents instead of the key itself. And messages are ruled by letter and word frequencies.
+
+
+I even found a way to rebuild the message without trying words. As letters are required to be compatible across all XOR to be valid.
+
+
+Results
+        Failure : This approach doesn’t allow non-exact-isomorph across messages. And there is a lot of structured repeated structure.
+
+
+        
+Constraint about the cipher
+Here we note everything we know about the cipher that can allow us to reduce possibilities in our brute force of values and reduce the time to do it (and we need it).
+
+
+        Those constraints will help us to build discriminator functions that will say “This is impossible, you can pass to the next possibility without bothering to continue the calculation”.
+
+
+        Currently a discriminator isn’t enough, as  is an order of possibilities that we encounter, and even 1 CPU cycle to discriminate a solution will take so long that humanity will extinguish before finishing the job.
+
+
+        We know that the cipher is currently respecting : an uniform distribution or crytogram’s symbols, can’t output double symbols following each other in the cryptogram (e.g. 45-65-65 isn’t possible), and output isomorph across messages.
+
+
+Note you can find isomorphs highlight here : Noita Eye Glyphs: Repetition Distances
+Isomorphic constraint
+Between isomorphs at West 3 index 24 and East 3 index 25
+Both 81 can’t be the same char AND there is a shift between both 81 if 13 and 19 isomorph are the same plaintext.
+W3: 59 41 80 13 60 13 81 22 35 50 40 39 02 59
+E3: xx 32 11 18 19 43 19 81 42 04 62 09 46 49 32
+Found by @isothiocyanate
+Isomorph with fixed offset
+For messages E5, E4, W4, at indexes 52, 53, and 54 respectively, where the isomorphs begin there is the following pattern:
+The starting values are 47, 7, and 50
+47-40=7, (7-40)mod 83=50
+Then again at indexes 62, 63, and 64 since the numbers repeat at that point, but then interestingly at indexes 72, 73, and 74 it ends up being 2 successive -51 steps.
+Found by @potato4dawin
+Isomorph with distance of 4
+There is too much of them, statistically speaking (twice the expected rate)
+
+
+“A progressive-alphabet cipher where the first and last letters of a common word appear at the respective distance in the plain alphabet will produce this phenomenon. In other words, there is a common word fitting the pattern AxxxB, and the pattern BxxxA appears somewhere in the plain alphabet.” ~@codewarrior0 “Hypothetical Novel Ciphers” from Noita Eye Glyphs: Analytical Overview
+Our brute force candidate
+Our brute force candidate is a heuristic program, that means at each step, the program must list all possible outcomes for the next step, define impossible ones, and from there, for each possible outcome, repeat.
+
+
+This is forced as most of possible cipher require to test  possibilities to validate or invalidate our point.
+
+
+At each step, the program must treat in priorities the one who is the most probable to lead to a success : if we’re building a sentence, we’re treating in priority sentence like, then we’re treating gibberish.
+
+
+        It’s critical that the brute force candidate needs to test all possibilities, the goal is not to filter out possibilities, but to order them in a way that we test the most likely positive outcome first.
+
+
+        Currently, we don’t know the way of working of the cipher yet, I’m working to find it first. We can find the plaintext without knowing it in some cases, but from what we know we don’t have a protocol that matches his behavior.
+Cipher specifications
+From @codewarrior0 work we can assume the following polyalphabetic cipher (Example an Alberti cipher) is compatible with Eye enigma property:
+      1. Non-repeating or very long key (0-82 alphabet is enough)
+      2. Possible multiples cipher symbols per plain symbol
+      3. The behavior is the same across all messages: if the cipher alphabet is shifted for one, it’s done for all.
+      4. The plaintext alphabet is surrounded by blanks [Require to be a progressive-alphabet] OR Having 2 alternating cipher alphabet (one for upward trigrams, one for downward trigrams)
+      5. Repeating key (I don’t understand the following, so I directly quote it):
+      1. Isomorphs in repeating-key ciphers (specifically, those with variable plaintext groupings) manifest whenever some plaintext is repeated, and the repeats fall into a similar grouping size while also using a different key. This implies that the isomorphs are monoalphabetic, and are isomorphic to the original plaintext. 
+      2. Isomorphs in progressive-alphabet ciphers manifest whenever some plaintext is repeated, and the distance between plaintext letters in the repeats matches the distance between them in the original plaintext alphabet. They are not isomorphic to the original plaintext.
+      6. The cipher may have a second step with a progressive impact following the position.
+
+
+Digits or not digits ?
+There's no way of knowing whether digits exist or whether the first characters are digits; but if we get to a point of being able to test things using guesses at plaintext, we should test the guess that these are digits.
+Prioritize
+Primitives roots
+We should test shift of ri where
+      * r is one of the primitives roots of 83: 2, 5, 6, 8, 13, 14, 15, 18, 19, 20, 22, 24, 32, 34, 35, 39, 42, 43, 45, 46, 47, 50, 52, 53, 54, 55, 56, 57, 58, 60, 62, 66, 67, 71, 72, 73, 74, 76, 79, 80;
+      * i is the position +1 of the characters in the encrypted message;
+
+
+As  is passing through all 1 to 82 values
+Sentence that make sense on a statistical way
+@Dykoine is building the frequencies of words by their position in the sentence, and by the previous words.
+Words that are the most know
+Here a source who have this information : http://crr.ugent.be/archives/2045
+First symbol dilemma
+It’s a difference of a single character across 9 beginning isomorphs.
+Which can be:
+      1. An order indicator (“a”, “b”...) it will be decrypted by deciphering the rest of the messages;
+      2. A keystone in the solution;
+      3. A decoy;
+      4. An hint for a second layer of enigma after the eyes message decrypted;
+
+
+It may allow us to remove 0-9 char from the plaintext alphabet. And we can work without solving this by removing the first symbol of each message.
+
+
+Any ideas are welcome.
+
+
+Example : May space between symbols' value be meaningful ? May it correspond to the sum of values shifted from an abstract beginning of the cipher alphabet ring ?
+
+
+References documents
+      * https://www.tandfonline.com/doi/abs/10.1080/01611194.2021.1974124
+      * https://www.tandfonline.com/doi/abs/10.1080/01611194.2021.1992686
+      * https://www.uni-kassel.de/upress/online/OpenAccess/978-3-7376-0458-1.OpenAccess.pdf
+________________
+[1] IoC is a formula that allows us to estimate repetitions of characters in a text. It’s our base value for separating english text (or monoalphabetic cryptogram) from garbage text.
+[2] The output of the cipher operation
+[3] IoC is a formula that allows us to estimate repetitions of characters in a text. It’s our base value for separating english text (or monoalphabetic cryptogram) from garbage text.
+[a]Can you explain what you mean by reversing?
+[b]It was a long time ago, but from what I remember : IoC is computing an index of similarity between a simple substitution and a cipher text.
+
+
+In our case it's not a simple substitution cipher, but I hypothesis that an algorithme that test multiple variant of cipher to identify cipher that are the closest to english permutation once converted to simple permutation cipher permutation.
+
+
+E.g. Rotary based cipher can represent multiple permutation cipher, and an algo could help us to identify what kind of rotary permutation it is and with which configuration. (You should check that your cadidate match code_warrior analysis first, as it's propably not trivial)
+
+
+I also hypothesis that, for some cipher, a message+ a target IoC range should be enough to solve the cipher. Which can be helped by the same start feature of most  of noita messages.
+
+
+But the number of combinations to compute seems large, which requier good planning and optimisation for the solution, if possible at all.
+
+
+Hoping that it's more clear.
+[c]I may be misunderstanding this, but I'm not sure this is true; consider k = [37, 47, 53, 61], p = [18, 23, 11, 15] -- we get c = [2, 2, 2, 2] (mod 83). Depending on your choice of range for p, it's not too difficult to find similar matching sets.
+[d]Hi,
+
+
+Indeed, I will reformulate:
+
+
+I indicate that if there is no case of k[i] == k[i+1] that imply there is no c[j] == c[j] (with other describe conditions)

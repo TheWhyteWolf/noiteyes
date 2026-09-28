@@ -68,6 +68,144 @@
   "n_match": 1,
   "agree_real": 1
  },
+ "quagA notch-pool": {
+  "sig": {
+   "maxL": 46,
+   "walk_dim": 42,
+   "commute": 1.0,
+   "same_web": 1.0,
+   "doubles": 46,
+   "d4_ratio": 0.32,
+   "resync": 0.1852,
+   "ioc": 0.01814
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": false,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": false,
+   "IoC .011-.015": false
+  },
+  "n_match": 1,
+  "agree_real": 1
+ },
+ "quagB p4-composed": {
+  "sig": {
+   "maxL": 31,
+   "walk_dim": 19,
+   "commute": 1.0,
+   "same_web": 1.0,
+   "doubles": 11,
+   "d4_ratio": 6.18,
+   "resync": 0.2672,
+   "ioc": 0.01537
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": false,
+   "period4 (d4>1.5)": true,
+   "resync .03-.12": false,
+   "IoC .011-.015": false
+  },
+  "n_match": 2,
+  "agree_real": 2
+ },
+ "quagC bumped": {
+  "sig": {
+   "maxL": 25,
+   "walk_dim": 11,
+   "commute": 0.6,
+   "same_web": 1.0,
+   "doubles": 0,
+   "d4_ratio": 0.43,
+   "resync": 0.0984,
+   "ioc": 0.0186
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": true,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": true,
+   "IoC .011-.015": false
+  },
+  "n_match": 3,
+  "agree_real": 3
+ },
+ "quagC + p4 plaintext": {
+  "sig": {
+   "maxL": 22,
+   "walk_dim": 15,
+   "commute": 0.5,
+   "same_web": null,
+   "doubles": 0,
+   "d4_ratio": 3.0,
+   "resync": 0.1667,
+   "ioc": 0.02242
+  },
+  "score": {
+   "iso L>=25": false,
+   "walk dim==1": false,
+   "noncommute<.6": true,
+   "zero doubles": true,
+   "period4 (d4>1.5)": true,
+   "resync .03-.12": false,
+   "IoC .011-.015": false
+  },
+  "n_match": 3,
+  "agree_real": 3
+ },
+ "gak41 affine autokey": {
+  "sig": {
+   "maxL": 36,
+   "walk_dim": 1,
+   "commute": 0.0,
+   "same_web": 0.0,
+   "doubles": 0,
+   "d4_ratio": 0.8,
+   "resync": 0.0,
+   "ioc": 0.01339
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": true,
+   "noncommute<.6": true,
+   "zero doubles": true,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": false,
+   "IoC .011-.015": true
+  },
+  "n_match": 5,
+  "agree_real": 5
+ },
+ "gak41 + p4 plaintext": {
+  "sig": {
+   "maxL": 33,
+   "walk_dim": 11,
+   "commute": null,
+   "same_web": null,
+   "doubles": 0,
+   "d4_ratio": 1.22,
+   "resync": 0.0,
+   "ioc": 0.01347
+  },
+  "score": {
+   "iso L>=25": true,
+   "walk dim==1": false,
+   "noncommute<.6": false,
+   "zero doubles": true,
+   "period4 (d4>1.5)": false,
+   "resync .03-.12": false,
+   "IoC .011-.015": true
+  },
+  "n_match": 3,
+  "agree_real": 3
+ },
  "REAL": {
   "sig": {
    "maxL": 33,
@@ -91,8 +229,8 @@
   "n_match": 7
  },
  "conclusion": {
-  "best": "additive walk",
-  "best_score": 3,
-  "tension": "abundant cross-offset exact isomorphs vs non-additive/non-commuting vs moderate resync"
+  "best": "gak41 affine autokey",
+  "best_score": 5,
+  "note": "gak41 5/7 incl walk_dim==1; misses only resync (param) and d4 (plaintext-layer per quagC+p4); next: affine-pi solver over subgroup-41"
  }
 }

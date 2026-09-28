@@ -1,0 +1,323 @@
+﻿Noita Eye Glyphs “Progress”
+Date: 28.12.2025
+By Toboter
+
+
+This document is intended to be a collection of all work that has been done on the Eye Glyphs by the Noita Discord Server. For some basic information about the eye messages, visit Noita Eye Glyph Messages.
+Any successful discovery should be able to discern the actual messages from random data. 
+Check the TL;DR section at the end to get a short summary of our current state of knowledge. 
+For a comprehensive cryptographic analysis by codewarrior0, check out Noita Eye Glyphs: Analytical Overview
+All additions need to be ordered into an appropriate category, and marked with (User: <Discord Username>; Result: <Result of the attempt>)
+
+
+Notable Observations
+        Cryptographic Analysis
+* There are sizable shared sections between messages. So the method of encryption is probably the same for each. (User: Capybar)
+* If the Trigrams are encoded via a repeated key, the size of the key might be 14 (User: Capybar, Work by RmVw, as well as the work by codewarrior, disputes this)
+
+
+* It probably isn’t a Vignère cipher, based on almost linear distribution of key length estimations to plaintext alphabet length (User: RmVw)
+
+
+* Some messages have (when read as trigrams) a prime number length. So any partitioning of the messages into sections of fixed length is impossible (User: Toboter)
+* If you look at how many trigrams only occur after other trigrams, never before, it’s much less than would be expected on average (on average only about 8 trigrams should have no trigram that only occur after them. The messages have 16) (User: Toboter)
+* If you look at how many different trigrams appear before certain points in the messages, it deviates little from randomness (User: Toboter)
+
+
+* If you look how many times a trigram is repeated after a small gap, you find there are way less occurrences of that than would be expected randomly with a gap of 0 (none) and a gap of 1 (only 5), and much more with a gap of 3 (26). (User: Toboter)
+* Mapping out how many different trigrams follow every trigram, up to a gap size of 50, shows little more than randomness. So trigrams a set distance apart can’t be influencing each other very strongly. (User: Toboter)
+* There is no possible reading order of  the trigrams that leads to either fewer trigrams or in general contiguous values of used trigrams (User: Toboter)
+
+
+* The trigram pattern a_b_cb_ac appears six times in the first three messages (e1,w1,e2).
+Of those, four can be extended to the pattern x_____ayb_cb_ac_yx.
+There is also another pattern in the last three messages, ab_c____b_ac.
+Since the patterns overlap, and share  some of the same trigrams at the same message position (but different positions relative to the pattern start), we can assume those trigrams have the same plain text counterpart. We can thus conclude that the same letter appears three times in a row. So it’s likely that spaces have been omitted from the plaintext. Also, another pattern seems to indicate that the same plaintext letter in the same position can result in different ciphertext letters (User: Lymm)
+* The distribution of different trigrams across upfacing and downfacing trigrams is basically random (User: Fryke)
+
+
+* The patterns found by Lymm are most likely the result of plain text repetitions. Since the patterns appear in different places, we can therefore assume that if two plain text chars a certain distance apart produce the same ciphertext chars in one position, they will do so if the same pattern appears anywhere else (User: Toboter)
+
+
+* A trigram never follows itself. This is extremely unlikely to happen randomly (User: Mz)
+
+
+* A trigram can still occur the position after itself in a different message, just not in the same one. This suggests that trigrams are dependent on previous trigrams, as well as their position. (User: Toboter)
+
+
+* Based on Lymm’s patterns, it can be assumed that the position of a plaintext phrase changes how it’s encoded, but not how the different parts of the phrase are encoded relatively to each other. It’s therefore likely that the cipher used uses a shifting key (for example two disks, on top of each other, one with trigrams, one with letters, with one staying stationary and one rotating (Alberti cipher)), that either shifts linearly or based on plaintext chars. (User: Pyry)
+
+
+* If you assume the repeated gap patterns have the same plaintexts, and the look what that means (assuming the Alberti cipher) for the offsets between the characters at different positions of these, relative to the trigrams they get translated into, multiple characters turn out to have the same difference in offsets, to different trigrams. This is promising evidence towards the Alberti cipher (User: Toboter)
+
+
+* One of the byte sequences the eye messages are stored in (inside the EXE), 0xacf68674, is the CRC-32b hash of the word “lumikki”, meaning “snow white”. None of the other byte sequences seem to have similar properties (Users: Stat_Quo, GrandpaGameHacker, https://discord.com/channels/453998283174576133/817530812454010910/956945218178007150)
+
+
+* Arvi said in an Interview that “the eye decorations do contain a message” 
+(User: FuryForged, https://discord.com/channels/453998283174576133/817530812454010910/899514286290898985)
+
+
+* Three Base 5 values (aka the way the trigrams work) is the most efficient way to write a number between 0 and 82 (as in, has the least unused values), of any base larger than 2 and smaller than 10. (User: Toboter)
+* The messages are unlikely to be encoded by a formula of the shape c(x) = (m * p(x) + s * x) % 83, with m and s being constant, p(x) being plaintext, c(x) being ciphertext, x being position. The only possibility is m=25, s = 51, with an alphabet size of 83 (User : Lymm)
+
+
+* The messages are unlikely to be encoded by a formula of the shape c(x) = (p(x) + f(x)) % 83 or c(x) = (p(x) * f(x)) % 83, p(x) being plaintext, c(x) being ciphertext, x being position, f(x) being a function of x; + requires an alphabet of at least 69, * of at least 61 (User: Toboter)
+
+
+* If you take the sums of adjacent trigrams, repeats of the same sums in the same positions of different messages are much rarer than randomly expected (User: Toboter)
+
+
+* There’s an electrical data encoding scheme, based on five states, called PAM-5, a certain signal pattern of which is called an “eye pattern” (User: Cipherpunk, https://discord.com/channels/453998283174576133/817530812454010910/1050826333829218366)
+
+
+* When using alphabet chaining, these isomorphs are never part of successful chaining attempts, while all other isomorphs can be chained together: AB......A.C.D.BD.CB (In messages 0,1 at position 30, 2 at 35), A...A......B.....C...C..B (4 at 64, 6 at 73, 7 at 76, 8 at 74), AB...C...C......D.A...E...EB.D (6 at 68, 7 at 71, 8 at 69). The chaining itself produces a few smaller chains  (User:Toboter)
+
+
+* All of the starting trigrams are >26 (User:Työskentely Juho)
+
+
+* An encoding of shape c(x) = c(x-1) + a * b^(p(x)) mod 83 is unlikely, since no choice of a or b reduces the amount of possible p’s (c(x) = ciphertext char at position x) (User: Toboter)
+
+
+* Given that all isomorphs have different text from each other, the “state” of the cipher must at least have 21 different values (10% chance it’s larger than 26) (User: Toboter)
+
+
+* No two isomorphs have the same value at the same, relative position. This is in line with a ciphertext dependant cipher (User: Toboter)
+
+
+* If you take the outer glyph ring of the earthquake circle (MK[MGICK]*6), and represent each letter in binary (A=1), the entire ring of 32 characters has 84 1s in total (User: Lymm)
+
+
+* If you sum all the trigrams in each message, three messages (E1, E3 and E5) have a sum of shape abab in base 10 (4040, 5656 and 4545) (User: SaltyOutcome)
+* None of the eye message trigram sums has a two digit prime factor. This only has a 0.4% chance of happening (User: Toboter)
+* For all messages except West 4, the first eye has a value one greater than the second eye of the following message (in internal order) (User: Dr Cats)
+* No first two trigrams of any message have a GCD of 1. This has only a 6.5% chance of happening (User: Naugam)
+* If it is assumed that the first trigram of a message can’t be prime, the above has a 60% chance of happening.
+
+
+        In-Game Analysis
+* Any In-Game information necessary to decode the eyes can’t have changed since the eyes were added in 1.0 (User: Toboter) 
+
+
+* The length of the eye message rows is 26, same as the maximum wand capacity (except in very rare cases)(User: finngamesoo)
+
+
+* There is some evidence there might be a hidden mod check, separate to the one that stops the eyes/cauldron from spawning, that disables their functionality. So the eyes functionality might only be available if you truly play without mods (User: Bamalam)
+
+
+* Kolmisilmä has 8 holes in his face, and 3 eyes. This could be a reason for the number 83 being used in the cipher. (User: hämähäkkitappaja)
+
+
+
+
+Cryptographic Analysis (Do the eyes represent a message?)
+* Interpreting the eyes as triangular trigrams (User: The_Duck1 (Reddit); Result: only 83 unique trigrams out of 125 are used, which is a significant deviation from a random set) 
+* Bruteforcing every possible reading order with any possible numbering; (User: Toboter, Result: only the reading order and numbering in the Noita Eye Glyph Messages doc produces contiguous trigram values)
+Trigram Reading (Do the 83 unique trigrams represent letters/words?)
+* Interpreting the trigrams as ASCII (offset 33,32)/Hex/Octal (User: WarFairy, Result: Failure)
+* Interpreting the trigrams (mod 26) as letters (User: WarFairy, Result: Failure)
+
+
+* Interpreting the trigrams as a diamond cipher (User: Capybar, Result: Failure)
+* Interpreting first glyph as line number, others a alphabet index (User: Capybar, Result: Failure)
+
+
+* Interpreting the trigrams as the result of a trifid cipher (User: Fryke, Result: Failure)
+
+
+* Homophonic Analysis in English using AZdecrypt (User: Toboter; Result: Failure)
+* Homophonic Analysis in Finnish using custom hillclimber (User: Toboter; Result: Failure)
+* Homophonic Analysis in English via manual guesses of letters (User: Toboter; Result: Failure)
+* Using the trigrams as offsets into a tablet/book texts, orb room messages and super secret messages from early-access (User: Toboter; Result: Failure)
+* Brute-Forcing Adding/Subtracting the values of different messages into a single message (User: Toboter; Result: Failure)
+* Comparing the statistical properties of the eyes with random messages that are encoded with a homophonic cipher and/or a transposition cipher (User: Toboter, Result: Some similarities, but some large differences as well)
+
+
+* Encodings of the type (char + N*pos) mod 83, with “char” being the index of a letter and “pos” being its position in the message, always have multiple gap sizes between identical trigrams that never appear. As the eye messages only have one “missing” gap size - 1 - they can’t be using this type of encoding. (User: Toboter)
+* Encodings of the type ( (char + N)*pos) mod 83 seem to be missing much less gaps, but never just the 1 gap (trigram directly next to itself). So it’s probably not this type of encoding either (User: Toboter)
+
+
+* Assuming the encoding is of type P^pos[S[char]], where P and S are permutations. (User: Pyry, dextercd, Toboter; Result: Maybe?)
+
+
+* Interpreting the desert ruins as a hint (User: Nemare, Result: Failure)
+
+
+* Interpreting the trigrams based on the word frequencies in the Emerald Tablets (User: Bambi, Result: Failure)
+
+
+* Using hill climbing to break the cipher, assuming it’s an Alberti cipher (linear shift) (User: Toboter, Result: Failure)
+* Trying to recover the wheels of the Alberti cipher based on assumed shared sections (Lymm’s patterns) (linear shift) (User: Toboter, Result: Failure)
+
+
+* Using alphabet chaining (a method that is able to break the vast majority of ciphers that produce isomorphs (including a bruteforce on which isomorphs contribute to the alphabet chain)) (User: codewarrior0, Result: A number of contradictions, no matter which isomorphs are ignored)
+
+
+* Using alphabet chaining on only the first three messages (User: Toboter, Result: Partial success, but not enough isomorphs to fully deduce the underlying alphabet)
+
+
+
+
+________________
+
+
+
+
+Graphical Analysis (Do the eyes encode a picture/path/map?)
+* Drawing lines in the directions of the eyes, read row-wise, column-wise and in trigram order, ignoring front-facing ones (User: Toboter; Result: Random patterns, tending up-right, small clustered areas with longer stretched of lines)
+* Drawing lines, having the line drawer turn in the direction the eyes are facing (relative to its current direction) (User: Toboter, Result: Failure)
+* Decoding the eyes using stereographic ciphers (User: Nemare, Result: Failure)
+* Colouring eyes depending on the direction they look (User: Arnaud les Biscotos, Einar A; Result: Failure)
+* Plotting eyes looking in the same direction after overlapping messages from all 9 worlds and graphically reading the output (User: whtwl, Result: Failure)
+
+
+
+
+In-Game Analysis (Do the Eyes have some in-game functionality?)
+* Submerging the Eyes in most common liquids (User: FuryForged, Result: Failure)
+
+
+Other
+* Interpreting the eyes as Kantele notes (either by In-Game order or pitch), and playing them as music (outside the game) (User: Fryke, Result: Random noises)
+* Interpreting the sum of the eye indices in each trigram as musical notes (User: Fryke, Result: Random noise)
+________________
+
+
+The Alphabet Chaining Mystery
+The isomorphs (Lymm’s patterns) are a very unusual pattern, exhibited only by a fairly slim amount of ciphers. The general approach to solving such cipher is a process called “Alphabet chaining” (described here Isomorphism in Classical Ciphers). 
+
+
+This process is based on the assumption that in any pair of isomorphs, all characters in that isomorph are the same distance apart on the cipher alphabet (since the isomorphs are created by the same movement pattern in the alphabet, only shifted by a fixed amount). But following that assumption (even assuming that some of the isomorphs might be erroneous) only leads to contradictions.
+
+
+There is currently no explanation for the failure of this method.
+
+
+Update: The isomorphs of the first three messages have been chained successfully (User: Toboter)
+
+
+Observations regarding the Group Theory of Isomorphs
+This section concerns work to create a classification of cipher methods which produce isomorphs. Specifically, the use of mathematical group theory to create an abstract mechanism that can account for all notable observations of the eyes, and to rule out certain mechanisms.
+
+
+Group theory is an area of mathematics that studies the basic concept of groups - collections of states, with an operation to switch between states. Since an isomorph is created when the same sequence of operations is performed on different starting states (for instance, a wheel is spun a certain way, or a deck of cards is shuffled), the relationships between isomorphs can shine light on the type of operation and state employed by the eye cipher.
+
+
+* A Ciphertext-Autokey cipher (CTAK) can be ruled out, because it doesn’t produce chaining conflicts. In a CTAK cipher, a ciphertext character depends solely on the plaintext character and the previous ciphertext character. (User: Lymm)
+
+
+* A non-commutative operation (where A + B isn’t necessarily B + A) can create isomorphs while causing chaining conflicts (User: Simplesmiler, Toboter)
+
+
+* As there are no non-commutative groups with 83 elements, a group-based generalization of the CTAK cipher couldn’t cause the chaining conflicts within the eyes (User: Lymm)
+
+
+* If you allow for additional hidden states within a group-CTAK cipher (subgroup), you can achieve 83 ciphertext symbols with a non-commutative operation (Group Autokey, GAK) (User: Lymm)
+
+
+* Due to the requirements of GAK ciphers to create a transitive action on the set of CT symbols (Proof), there are only 6 possible groups that can make 83 CT symbols using GAK - C83 (equivalent to CTAK, cyclic group), D166 (two hidden states, a dihedral group), C83:C41 (41 hidden states), C83:C82 (82 hidden states, an affine linear group (AGL)), A83 (alternating group, about 10122 hidden states) and S83 (symmetry group, about 10122 hidden states). A83 and S83 are quite similar. (Users: Lymm, Simplesmiler)
+
+
+* C83 can be ruled out by the same logic as CTAK, as they’re equivalent (User: Simplesmiler)
+
+
+* D166 can be ruled out, due to implied orders and non-commutativity between the isomorphs in the first three messages (Proof) (User: Simplesmiler)
+
+
+* C83:C82 can be tentatively ruled out based on isomorphs in the last three messages (TODO: Why?) (User: Simplesmiler)
+
+
+* C83:C82 can’t explain the start of the messages, unless every message starts in a different state (User: Lymm)
+
+
+* As all other possibilities have been ruled out, that leaves A83/S83. For example, these groups would be equivalent to shuffling a deck of cards, where every plaintext character corresponds to a certain shuffle, and the ciphertext character is the topmost card after each shuffle. (User: Lymm)
+
+
+* An A83/S83 cipher can reproduce the features at the start of the messages (TODO: Details), because the size of an 83 card deck allows for effects to only surface much later in the messages. (User: Lymm)
+
+
+* An A83/S83 cipher can reproduce the intermittent synchronizations and alphabet chaining issues previously observed (User: Lymm)
+
+
+* For an A83/S83 cipher to consistently produce shared sections of about 24 characters in length (as in the first three messages), all plaintext shuffles tentatively have to be within about 5 swaps of one another. (User: Lymm)
+
+
+* The chaining graph for a GAK is the same as its Schreier coset graph, since their methods of construction are the same (User: Naugam)
+
+
+
+
+TL;DR
+Any proposed solution at the moment has to explain the following main pieces of evidence:
+1. The random glyph distribution
+
+
+2. The continuous trigram values from 0-82
+
+
+3. The sections shared between messages
+
+
+4. The repeated patterns of gap sizes (called isomorphs) (see Eye Message Alignments and Gap Patterns)
+
+
+5. The existence of shared sections after differing sections
+
+
+6. The existence of isomorphs with slightly differing composition
+
+
+7. The first trigram which differs between all messages, but still allows the second and third trigram to be the same across all messages.
+
+
+8. The complete absence of double trigrams (the same trigram twice in a row). Notably the same trigrams can appear at adjacent positions in different messages.
+
+
+9. All isomorphs that aren’t part of shared sections have different trigram sequences, and also never share the same trigram value at the same relative position
+(User: Pyry, Toboter)
+
+
+These observations lead to multiple conclusions:
+1. The cipher is polyalphabetic - each ciphertext character dependant on something outside of a single plaintext character (based on 1 and 4)
+2. The cipher, key and such outside factors are the same across all messages (based on 3)
+3. Every ciphertext character is dependant on the previous ciphertext character in some way (based on 8 and 9)
+4. The plaintext messages share large sections (based on 3, 4 and 5)
+5. The cipher has at least 20 internal states, most likely around 88 (so quite likely 83, which is in line with ciphertext dependency) (based on 9) 
+
+
+Furthermore, multiple theories exist about these phenomena:
+1. The cipher is based on some form of modular arithmetic (based on 2)
+2. The plaintext messages contain some form of number or index as their first character (based on 7)
+
+
+No cipher has been conclusively proven to match all these properties, or resulted in some form of measurable deciphering of the messages.
+
+
+(User: Toboter)
+
+
+
+
+
+
+Sources
+Noita Eye Glyph Messages
+Capybar#6875: Noita eye room research - Capybar
+WarFairy_Eye_Data_Conversion_Sets.xls- WarFairy
+Eyes - Vigenere theory - RmVw
+Noita Eye Message Music- Fryke
+ Noita Eye Message Music Repository - Fryke
+desert diamond hint approach Noita Eye Data experimenter, copy to use- Nemare
+Noita Eye Data experimenter, copy to use - Nemare
+Eye Message Alignments and Gap Patterns- Lymm
+
+
+Relevant Documents
+Noita Eye Glyphs: Analytical Overview - codewarrior0
+Noita Eye Glyph Messages
+Noita Eye Data
+Noita Decompliation Guide - kaliuresis
+Noita Eye Glyphs: Cipher model definition and Brute force guidelines - Dykoine
+Isomorphism in Classical Ciphers - codewarrior0
+Noita Eye Glyphs: Repetition Distances -

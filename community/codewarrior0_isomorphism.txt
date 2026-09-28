@@ -1,0 +1,568 @@
+﻿Isomorphism in Classical Ciphers
+by codewarrior0
+
+
+        Isomorphism is an old technical term for a kind of pattern produced by some classical ciphers. Two ciphertexts are isomorphic if they share the same pattern of repeated letters. Equivalently, they are isomorphic if one can be transformed into the other using a simple substitution. The simplest example is the result of a Caesar cipher, which replaces each letter with the letter following it in the alphabet by a fixed shift amount:
+
+
+Plain:   ATTACK AT DAWN
+Cipher:  DWWDFN DW GDZQ
+
+
+        This cipher used a shift amount of 3, so the letter "D" repeats in the ciphertext at all of the same places where the letter "A" repeats in the plaintext. Likewise for "W" and "T", and for all of the remaining letters which do not repeat. Because the two texts share this same pattern, the two are considered isomorphic to each other. Another term for this phenomenon is pattern words, which is usually reserved for cases where the ciphertext is isomorphic to the plaintext. Later on, we will see examples where two ciphertexts are isomorphic to each other, but not to the plaintext.
+        The Caesar cipher is a kind of simple substitution. Any other simple substitution will also produce ciphertexts that are isomorphic to the plaintext. This is also one of the definitions of isomorphism: two texts are isomorphic if one can be transformed into the other using a simple substitution.
+
+
+Original:      ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Substitution:  RUBEDOACFGHIJKLMNPQSTVWXYZ
+
+
+Plain:   TRANSMUTATION OF ELEMENTS 
+Cipher:  SPRKQJTSRSFLK LO DIDJDKSQ
+
+
+        The next example is a Caesar cipher where the shift amount increases after each word enciphered. Note that the two times the word "substitution" appeared, it produced ciphertext words that are isomorphic to each other. This example shows why isomorphism is of interest to codebreakers: a repeated word in the plaintext has caused isomorphic words to appear in the ciphertext, giving the cryptanalyst a clue that a word in the plaintext has been repeated. To state it in crypto jargon, the isomorphism is causal.
+
+
+Shift:    3         4        5      6   7      8        9
+Plain:  EVERY SUBSTITUTION CIPHER NEEDS A SUBSTITUTION KEY
+Cipher: HYHUB WYFWXMXYXMSR HNUMJW TKKJY H ACJABQBCBQWV TNH
+
+
+SUBSTITUTION
+WYFWXMXYXMSR 
+ACJABQBCBQWV
+
+
+        In the previous examples, it was easy to see why the ciphertext was isomorphic to the plaintext: each letter in the ciphertext was found by counting a fixed number of letters in the alphabet, starting from the plaintext letter. Because all of the letters advanced by the same amount, the ciphertext still had the same letters in the same places, even though the specific letters were different.
+
+
+Progressive-Alphabet
+Here is the first example where the ciphertexts are isomorphic to each other, but not to the plaintext. In this cipher, the Caesar shift amount is increased by one after each letter, instead of after each word. This is the type of cipher that results from using a cipher disk while rotating the disk by a fixed amount after enciphering each letter. (Or equivalently, by advancing an alphabet slide or moving downward on a square enciphering table after each letter. Trithemius described the cipher as moving downward on a table.) 
+
+
+Plain:  PROGRESSIVE ENCIPHERMENT BY A SUCCESSION OF ALPHABETS? NOW THAT'S PROGRESSIVE
+Cipher: PSQJVJYZQEO PZPWEXVJFYIP YW Z SVEFIXYPWW YQ MYDWQSWMM? IKT RGAU'U SVTMYMBCTHR
+
+
+PROGRESSIVE
+PSQJVJYZQEO 
+DGEXJXMNESC
+
+
+        To explain how these two words produced isomorphic ciphertexts, we will describe Vigenere encipherment (sometimes called Vigenere addition). To encipher a plaintext using the Vigenere method, it is combined with another text called the key text. The ciphertext is produced by adding one letter from each of the plaintext and the keytext together, counting along the alphabet. For example: A+A=A, A+B=B, B+C=D, E+F=J, and so on. In the past, devices such as square enciphering tables, alphabet slides, and cipher disks were used to perform this addition. In modern times, we can use a computer (which performs array lookup and addition with a modulus) to carry out Vigenere encipherment. Several websites and tools are available for this purpose such as dcode.fr and CrypTool. Vigenere can also be implemented in a handful of lines of Python code. (Readers of Neal Stephenson's Cryptonomicon might recall a character who could carry out this process mentally.)
+        We can rewrite the previous example in terms of Vigenere encipherment. We will replace the series of Caesar shifts with a Vigenere key text, add the plaintext together with the key, and then examine the two encipherments of "progressive" alongside their keys:
+
+
+Key:    ABCDEFGHIJK LMNOPQRSTUVW XY Z ABCDEFGHIJ KL MNOPQRSTU  VWX YZAB C DEFGHIJKLMN
+Plain:  PROGRESSIVE ENCIPHERMENT BY A SUCCESSION OF ALPHABETS? NOW THAT'S PROGRESSIVE
+Cipher: PSQJVJYZQEO PZPWEXVJFYIP YW Z SVEFIXYPWW YQ MYDWQSWMM? IKT RGAU'U SVTMYMBCTHR
+
+
+   Cipher         Key
+PSQJVJYZQEO   ABCDEFGHIJK 
+SVTMYMBCTHR   DEFGHIJKLMN
+
+
+        We now see how the repeated plaintext word had caused the two ciphertext words to be isomorphic to each other: The two keys used to encipher them are a fixed distance from each other along the alphabet, just the same way that the ciphertext was a fixed distance from the plaintext when we examined the Caesar cipher. We can show this another way by performing a subtraction (or rather, Vigenere decipherment) using the two ciphertexts, and then using the two keys:
+
+
+      Cipher           Key
+   PSQJVJYZQEO     ABCDEFGHIJK 
+ - SVTMYMBCTHR   - DEFGHIJKLMN
+   DDDDDDDDDDD     DDDDDDDDDDD
+
+
+Progressive-word Autokey
+        Let us examine a few more types of cipher that are known to produce isomorphism whenever a plaintext is repeated. In this cipher, the key is progressive across each word, but the first letter of the previous word is used as the initial key for the next word. I believe this was one of Bellaso's ciphers. As before, the key texts for the isomorphic words show the same fixed distance. A similar cipher is Ragbaby, where the initial key for each word is progressive rather than autokeyed.
+
+
+Key:    ABC TUVWXYZABCD BE IJKLMNOPQ EF TUVW MNO TUVWX NO OPQ TUVWXYZAB EFGHIJKLMNO
+Plain:  THE BUREAUCRACY IS EXPANDING TO MEET THE NEEDS OF THE EXPANDING BUREAUCRACY
+Cipher: TIG UOMAXSBRBEB JW MGZLZQWCW XT FYZP FUS GYZZP BT HWU XRKWKBHNH FZXLIDMCMPM
+
+
+      Cipher         Key
+   UOMAXSBRBEB    TUVWXYZABCD 
+ - FZXLIDMCMPM  - EFGHIJKLMNO
+   PPPPPPPPPPP    PPPPPPPPPPP
+
+
+   MGZLZQWCW      IJKLMNOPQ 
+ - XRKWKBHNH    - TUVWXYZAB 
+   PPPPPPPPP      PPPPPPPPP
+
+
+Progressive-Key
+        This is a puzzle cipher described by the American Cryptogram Association. It is similar to a repeating-key Vigenere cipher, except that each repetition of the entire key will progress along the alphabet. It will uncommonly produce isomorphism whenever the underlying repeating-key cipher would otherwise produce a repetition (that is, whenever that cipher's repeating key aligns with a repetition in the plaintext). While rare, the occasion offers entry into the cipher just as a long repetition would in repeating-key Vigenere. 
+
+
+Key:    PRICEQSJDFR TKE GS ULFHT VMGI UW NHJVXOI KWYP JLX ZQK MY ARLN ZBSMOACTNPB
+Plain:  REPETITIONS MAY BE FOUND EVEN IN CIPHERS THAT MAY TRY TO HIDE REPETITIONS
+Cipher: GVXGXYLRRSJ FKC HW ZZZUW ZHKV CJ PPYCBFA DDYI VLV SHI FM HZOR QFHQHIVBBCT
+
+
+    Cipher            Key
+  GVXGXYLRRSJ     PRICEQSJDFR 
+- QFHQHIVBBCT   - ZBSMOACTNPB
+  QQQQQQQQQQQ     QQQQQQQQQQQ
+
+
+Leon Battista Alberti's Cipher
+        In his treatise De componendis cifris, Alberti describes a cipher disk inscribed with two concentric alphabets, rotating independently around a central pin. He also describes a cipher that makes use of the disk, one of the first true polyalphabetic ciphers. The cipher is similar to the ones just discussed, with two main differences: The key is changed explicitly when a particular letter appears in the text (rather than implicitly at the end of a word); and because one of the alphabets on the disk is in random order, none of the resulting ciphertext will be made of simple Caesar shifts of the plaintext.
+        The first alphabet on Alberti's cipher disk consisted of twenty letters (omitting HKY, with JUW not yet in use) followed by four digits, while the second alphabet consisted of twenty-three letters plus an ampersand (&) in random order.
+        In the first version of his cipher, the ciphertext is written in lowercase, and letters which indicate a change of key are written in uppercase; the new key is that letter. In the second version, enciphered digits indicate the change of key: whenever a digit appears in the plaintext, the corresponding letter in the ciphertext will be the new key. 
+        Both ciphers may produce isomorphism because each stretch of text between the changes of key will be monoalphabetic - a simple substitution. If some plaintext is repeated, and if each repetition is not interrupted by key changes, then the resulting ciphertexts will be isomorphic both to each other and to the original plaintext. Whether this actually happens will depend on where the cryptographer has chosen to insert changes of key.
+
+
+An example in the first version of the cipher. The key only changes near the edges of words, and the repeated text between the changes has caused isomorphs to appear. The isomorphs are subtracted, counting along the cipher alphabet, and the same fixed distance is found:
+
+
+Plain alphabet:  ABCDEFGILMNOPQRSTVXZ1234
+Cipher alphabet: gklnprtuz&xysomqihfdbace
+
+
+Key:         D        E              C        I        F    R        I    (S)
+Plaintext:   _REPETITI_ONREPETITIONRE_PETITION_REPETITI_ONRE_PETITION_
+Ciphertext:  Dyk&kopopEutxgzgsnsnutxgCxlmrmr&zIuara&g&gFtr&eRcmlhlhabI
+
+
+  k&kopop
+- gzgsnsn
+  kkkkkkk
+
+
+We can see that the distance along the cipher alphabet between the two isomorphs is one letter (k is one letter after g, & is one letter after z, and so on). The two texts were enciphered with key letters D and E, and the distance between those key letters along the plain alphabet is also one letter.
+
+
+Another example in the first version. The key changes more frequently, and the only detected isomorph was not even caused by a repetition in the plaintext.
+
+
+Key:        C     O   M     P    O     N    E    N   D     I     S    C   O
+Plaintext:  _REPET_ITI_ONREP_ETIT_IONRE_PETI_TION_REP_ETITI_ONREP_ETIT_ION_
+Ciphertext: CslxlmObrbMlkrdnPipdpObgenhNlftaEsnutNpflDkopopIpnuarSokikCr&zO
+
+
+Since the first version of the cipher makes the key letters obvious, the cipher can be solved simply by dividing the non-key letters into groups according to the preceding key, and then solving each group as a monoalphabetic substitution, without needing any awareness of isomorphs. The second version is slightly harder to approach, but still shows the same fixed distance when the texts are subtracted.
+
+
+Plaintext:  REPETITI4ONREPETITIONRE3PETITION2REPETITI1ONRE4PETITION
+Ciphertext: mpspiuiuex&onynqtqtx&ona&kopopzufzctcxkxkmkgpfokhrbrbge
+
+
+  pspiuiu
+- ctcxkxk
+  ttttttt
+
+
+In this example, the key changes are at the same position in each repetition. This lets us see what happens when two key changes are subtracted:
+
+
+Plaintext:  REPE4TITIONREPE3TITIONREPE2TITIONREPE1TITIONREPE4TITION
+Ciphertext: mpspeqtqtx&onynaopopzuyk&kfxkxkrpzctcmtatakgpflforbrbge
+
+
+
+
+
+
+  pspeqtqt            nynaopop            k&kfxkxk            pspeqtqt
+- nynaopop          - k&kfxkxk          - ctcmtata          - flforbrb
+  kkklllll            lllnnnnn            nnnppppp            xxxxxxxx
+
+
+
+
+The distance between the encipherments of the key change letters (bold) is the same as the distance between the following text letters. In the fourth subtraction, the two plaintexts used the same key change letter (the digit 4), which caused the key to change by the same amount, which in turn caused the distance between cipher letters to remain the same.
+
+
+
+
+Ciphertext Autokey
+        This next cipher can be trivially deciphered because it uses its own ciphertext as its key. Ciphertext-autokey enciphers the first few letters of the plaintext using an introductory key, and then recycles the earlier ciphertext as a key for the remainder of the text. In this example, the key is always equal to the previous ciphertext letter, except for the initial key which is "C".
+
+
+Key:    C CEVTIBPVMM YZDDUCP VDW OCY LVZ XF XK YARPEXLRII UU NNY
+Plain:  A CRYPTOGRAM BEARING ITS OWN KEY IS NO CRYPTOGRAM AT ALL
+Cipher: C EVTIBPVMMY ZDDUCPV DWO CYL VZX FX KY ARPEXLRIIU UN NYJ
+
+
+     Cipher          Key
+   EVTIBPVMMY     CEVTIBPVMM 
+ - ARPEXLRIIU   - YARPEXLRII 
+   EEEEEEEEEE     EEEEEEEEEE
+
+
+        Despite the apparent chaos of the key text, this cipher too shows the fixed distance between the key texts (and ciphertexts) of the isomorphic words. This is partly due to the key always being taken from the previous ciphertext letter; if the key were taken from two or more letters back, the isomorphism would not be apparent. A full explanation for this would be outside the scope of this article.
+The reason ciphertext autokey can be trivially deciphered is because the alphabet used for Vigenere encipherment is a known alphabet. Because we know the order of the letters in the alphabet, we can subtract the preceding letter from each letter in the ciphertext to recover the plaintext. The security of this cipher can be improved by using a different alphabet for the Vigenere addition.
+
+
+Alphabet: SUBLIMATECDFGHJKNOPQRVWXYZ
+
+
+Key:    C KYPNEKAPGP XZTHTFU HOY YKF UNY WS SN TNDESTYDID KV BEF
+Plain:  A CRYPTOGRAM BEARING ITS OWN KEY IS NO CRYPTOGRAM AT ALL
+Cipher: K YPNEKAPGPX ZTHTFUH OYY KFU NYW SS NT NDESTYDIDK VB EFJ
+
+
+  Cipher         Key
+YPNEKAPGPX   KYPNEKAPGP
+NDESTYDIDK   TNDESTYDID
+
+
+    Standard                     SUBLIMATE
+   KYPNEKAPGPX          KYPNEKAPGPX
+ - TNDESTYDIDK        - TNDESTYDIDK
+   RLMJMRCMYMN          EEEEEEEEEEE
+
+
+        If we attempt to subtract the two ciphertexts, or the two keytexts using standard Vigenere decipherment, the result is not a run of the same letter as it was before. Decryption with the standard alphabet will yield gibberish. But if we subtract them with modified Vigenere using our SUBLIMATE alphabet, we again find the same run of Es. The same is true for any other Vigenere-family cipher, including the ones discussed earlier: security can be improved by using a non-standard alphabet, but this security falls away after the non-standard alphabet becomes known.
+________________
+
+
+
+
+Clock Cipher Devices  
+        The next cipher was developed using the invention of the clock cipher device, which is somewhat different from the alphabet slide and cipher disk devices mentioned earlier. The Wheatstone Cipher (pictures here) makes use of a device with two alphabet rings on the front face, and two clock hands which can be manually moved across the alphabets. One alphabet is used to locate the plaintext letters while the ciphertext letters are read from the other. Each of the two alphabets has a different number of letters. The clock mechanism allows one hand to be moved across one alphabet. Doing so advances the other hand across the other alphabet by the same number of letters. Because of the difference in the number of letters, turning one of the hands by a full circle will turn the other hand by a larger or smaller amount, depending on the device's construction. This is the cause of the device's polyalphabetism.
+        When Friedman analyzed the family of clock cipher devices, he concluded that it is a kind of Vigenere-family cipher where the substitution alphabet is changed each time a plaintext letter is earlier in the alphabet than the one it follows, and where the alphabet remains the same otherwise. We will be able to observe this quality by enciphering some text, and then creating a synthetic key text by subtracting the plaintext from the ciphertext.
+        For this example, we will use a clock cipher where the ciphertext alphabet has one more letter than the plaintext alphabet. This removes the need to disguise double letters in the plaintext, as is required for the original Wheatstone cipher (where the ciphertext alphabet instead has one fewer letter) to remove ambiguity in decipherment. This cipher shows the same fixed distance between keytexts that we saw in the other ciphers.
+
+
+Plaintext Alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Ciphertext Alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ?
+
+
+
+
+Synthetic Key: A?Z ZYXWWVVUTS RRRQPP OOONMM MM L LLLKK JJJIHH GGGFEE
+Plain:         THE WHEATSTONE CIPHER DEVICE IS A CLOCK CIPHER DEVICE                
+Cipher:        TGC UEAWOMNHFW TZFXTF RSIVOQ UD L NWZMU LRYPLY JKANGI
+
+
+    Cipher     Key
+    TZFXTF    RRRQPP 
+    LRYPLY  - JJJIHH
+              IIIIII
+
+
+A modern attack on ciphers in this family is described in Thomas Kaeding's paper Automated cyphertext-only attack on the Wheatstone Cryptograph and related devices.
+Progressive Monome-Dinome
+        In Chapter XII of Military Cryptanalytics Part III (1977), the author describes an esoteric cipher, a monome-dinome cipher with sliding row and column coordinates. The cipher exhibits isomorphism caused by plaintext repetitions, and the isomorphism is shown to be due to the use of alphabets in a progressive manner.
+
+
+  
+
+page 426
+
+
+Other Ciphers
+        For contrast, we will now show a few ciphers where repetitions in the plaintext do not cause isomorphism in the ciphertext. This one is the repeating-key Vigenere cipher, which is the cipher simply called "Vigenere" by many sources including the American Cryptogram Association.  In the first example, the repeated words "repeating key" aligned with the repeating key "pin tumbler" and caused a repetition in the ciphertext. In the second example, the key no longer aligns with the plaintext repetition. Neither example shows any causal isomorphism, and it is generally not a useful clue when dealing with repeating-key ciphers.
+
+
+
+
+Key:      PIN TUMBLERPI NTU MBLERP INTUMBLE R PINTUMBLE RPI N TUMBLERPI NTU
+Plain:    THE REPEATING KEY CIPHER COMBINES A PLAINTEXT AND A REPEATING KEY
+Cipher:   IPR KYBFLXZCO XXS OJALVG KBFVUOPW R ETNBHFFIX RCL N KYBFLXZCO XXS
+
+
+
+Key:      BMA JORBMAJOR BMA JORBMA JORBMAJO R BMAJORBMA JOR B MAJORBMAJ ORB
+Plain:    THE REPEATING KEY CIPHER COMBINES A PLAINTEXT AND A REPEATING KEY
+Cipher:   UTE ASGFMTRBX LQY LWGIQR LCDCUNNG R QXARBKFJT JBU B DEYSRUUNP YVZ
+ 
+        
+
+
+        The plaintext-autokey cipher, which is in fact the cipher originally described by Vigenere, also does not exhibit causal isomorphism. In this cipher, repetitions in the plaintext always result in actual repetitions in the ciphertext. Note that they are one letter shorter than the plaintext repetitions, due to the one-letter initial key.
+
+
+Key:    CTH EBUREAUCRAC YI SEXPANDIN GT OMEE TTH ENEED SO FTH EEXPANDIN GBUREAUCRAC
+Plain:  THE BUREAUCRACY IS EXPANDING TO MEET THE NEEDS OF THE EXPANDING BUREAUCRACY
+Cipher: NRV DLVBJTDLSKT BI EMKYWSJRB QY WHNK JRV YYNPD OB PRV NMKYWSJRB JLVBJTDLSKT
+
+
+        Ciphers which are monoalphabetic in nature do not exhibit causal isomorphism. This includes simple substitutions (newspaper cryptograms, or cryptoquips), bipartite substitutions (Playfair, Polybius), fractionated substitutions (seriated Playfair, bifid, trifid, fractionated Morse, Morbit), variable-sized ciphers where the substitution itself is kept constant (monome-dinome, Morse code), and practically every type of transposition cipher. A special mention goes to Helen Gaines' Slidefair cipher: Because it is derived from a Vigenere-type alphabet slide which can be set according to a key, the choice of keying scheme will decide whether the cipher will show causal isomorphism, just as it does for the Vigenere-family ciphers discussed earlier.
+
+
+Alphabet Chaining
+        Of the Vigenere-family ciphers discussed above that showed isomorphism, all of them had the common feature that the letters in each isomorph were separated from each other in the cipher's alphabet by a fixed distance. All of them also allow for a non-standard alphabet to be used instead of the normal alphabet, to improve security, and the fixed distance can be counted along the non-standard alphabet. This suggests a special solution to these ciphers whenever isomorphism is found: using the fact that the distance between the letters is fixed, we can use a deductive technique using the isomorphs to recover the non-standard alphabet. Callimahos (1977) describes this technique as indirect symmetry, with a specific application called alphabet chaining, which we will now demonstrate.
+        Assume we have searched a ciphertext for isomorphs and found the following segments of text, all isomorphic to each other:
+
+
+USLLMMBEEFQWECSZTGAOMPGCATEUSEILFVKWJSAXGZS
+XVAAWWNRRTLCRSVHJUPZWEUSPJRXVRYATBFCOVPDUHV
+JGWWHHXVVQMIVYGELTCPHSTYCLVJGVKWQUNIAGCOTEG
+
+
+Take them in pairs. For each pair of isomorphs, look down each column to find a pair of letters. Those letter pairs will form the beginnings of the alphabet chains. If a letter pair is repeated, it only needs to be written once. Starting with the first pair:
+
+
+USLLMMBEEFQWECSZTGAOMPGCATEUSEILFVKWJSAXGZS
+XVAAWWNRRTLCRSVHJUPZWEUSPJRXVRYATBFCOVPDUHV
+
+
+UX SV LA MW BN ER FT QL WC CS ZH TJ
+GU AP OZ PE IY VB KF JO XD
+
+
+If two letter pairs have a letter in common, they can be joined end-to-end to form a longer chain. For example, UX and XD can be removed and replaced with UXD. This can be done concurrently with writing out the letter pairs.
+
+
+USLLMMBEEFQWECSZTGAOMPGCATEUSEILFVKWJSAXGZS
+XVAAWWNRRTLCRSVHJUPZWEUSPJRXVRYATBFCOVPDUHV
+
+
+GUXD QLAPER MWCSVBN KFTJOZH IY
+
+
+Repeat for the other two pairs of texts:
+
+
+XVAAWWNRRTLCRSVHJUPZWEUSPJRXVRYATBFCOVPDUHV
+JGWWHHXVVQMIVYGELTCPHSTYCLVJGVKWQUNIAGCOTEG
+
+
+FNXJLM RVG OAWHESYK BUTQ ZPCI
+
+
+
+
+USLLMMBEEFQWECSZTGAOMPGCATEUSEILFVKWJSAXGZS
+JGWWHHXVVQMIVYGELTCPHSTYCLVJGVKWQUNIAGCOTEG
+
+
+        ZEVUJACY PSGTLWIKN MH BX FQM XOP 
+
+
+With three sets of chains, the next step is to combine them into one set using a method of proportions. Each set of chains has a different, unknown factor, and we can search for proportions that allow refactoring any two sets into a single set with a common, unknown factor. 
+There are a few ways to do this. One way is to find chains from two different sets that share at least two letters. KFTJOZH from the first set shares F and J with FNXJLM from the second set. The distance between them is two in the first set, and three in the second, so we stretch both chains out by a different amount to make the distance six in both cases, which allows us to combine the chains:
+
+
+   0123456
+K..F..T..J..O..Z..H
+   F.N.X.J.L.M
+___________________
+K..F.NTX.J.LOM.Z..H
+
+
+We also have to stretch out every other chain in the corresponding sets by the same amount. By doing this, we have combined the two sets into a single set that has a single proportion. We can combine the chains within the new set further:
+
+
+G..U..X..D   Q..L..A..P..E..R   M..W..C..S..V..B..N   I..Y
+
+
+R.V.G   O.A.W.H.E.S.Y.K   B.U.T.Q   Z.P.C.I
+
+
+K..F.NTX.J.LOM.Z..H
+
+
+
+
+ M..W..C..S..V..B..N
+O.A.W.H.E.S.Y.K B.U.T.Q
+____________________
+OMA.W.HCE.S.YVK.B.UNT.Q
+   Z.P.C.I R.V.G
+_______________________ 
+OMAZWPHCEISRYVKGB.UNT.Q
+
+
+With two long chains, we can try to join them in a "loop" and form a complete 26-letter alphabet.
+
+
+01234567890123456789012345
+OMAZWPHCEISRYVKGB.UNT.Q...OMAZWPHCEISRYVKGB.UNT.Q...
+              K..F.NTX.J.LOM.Z..H
+               G..U..X..D
+__________________________
+OMAZWPHCEISRYVKGBFUNTXQJDL  
+
+
+Now that an alphabet has been recovered, we can investigate the ciphertext using techniques such as frequency matching, delta streams, and alphabet progressions. The first ciphertext is deciphered using each of the 25 possible alphabet progressions along this known alphabet, finding the plaintext on progression 17:
+
+
+ 1:  UIJQJQSMOEYNQTQKWDSCCSNSWXEFEPPTRHHXVLBEMKT
+ 2:  UEXNNFWTULAESCELKCUKVGJVHQEBHAMGPLDYZKWXVLW
+ 3:  UCNBGYDVSBUJDTTSDBOXNTMBEJEGWLJSLUBZNZUELSK
+ 4:  UHFVRCUHACEYYCHXELEALLPNSDEKAQNPNRETIUHXRXD
+ 5:  UPGSCAYLTDDMOTUHUEBIPWIQYLEVONGOVWORLCTEJHE
+ 6:  UWVCZJHUYGKBKCWFAFDBRIVLKOEYDBRXCJUAGQEXIFU
+ 7:  UZRWLUORWHWPATBAYOHJFKFABMERQVCBMBSNPRQEXAA
+ 8:  UAIMXVTWQJTTBCAVQIKWJNXPUAESTSZRXIASXOSXCVY
+ 9:  UMCDFEKJKKSIWTKDHUQRZDLETZEIUCLHGATMRGDENDQ
+10:  UOPXVZEBHPODUCOIBMWUIZZRQWEEBWXMIXYUMWYXPIH
+11:  ULZUIDAIDQBVHTYTOSYLGECKDPECKMFQZKWIFNOEFTB
+12:  UDMGPNQABVHATCDPSNTHXVRFOHEHYDVFJCQOCEKXZPO
+13:  UJLYMKBXEWQFETSBTAAVMUGTACEPSXIYFOKFJJAEGBS
+14:  UQJIJISKOXYHQCQMWRSTCJNJWEEWEUPCRNHEVYBXMMT
+15:  UXXHNWWCUYAXSTEYKTUMVAJOHIEZHGMAPYDLZMWEVYW
+16:  UTNZGLDOSZUSDCTJDZOENCMZESEAWYJJLPBBNBUXLJK
+17:  UNFORTUNATELYTHEEYEGLYPHSREMAINUNDECIPHERED
+18:  UUGJCGYYTRDKOCUNUXBQPFIIYYEOOHGVVFODLTTXJNE
+19:  UFVTZSHPYAKZKTWWAWDZRQVYKVELDZRECSUGGIEEIWU
+20:  UBRFLPODWNWUACBGYVHSFMFGBKEDQOCZMZSHPDQXXGA
+21:  UGIKXOTFQSTCBTAOQQKFJHXUUGEJTJZDXQAJXVSECOY
+22:  UKCRFXKSKMSQWCKRHPQDZRLXTBEQUTLNGGTKRADXNRQ
+23:  UVPEVBEZHUORUTOQBKWPIBZDQFEXBFXKIEYPMFYEPQH
+24:  UYZPIRAQDIBOHCYCOJYYGXCMDUETKKFIZMWQFHOXFCB
+25:  URMAPHQGBOHGTTDUSHTNXORWONENYRVWJTQVCXKEZUO
+
+
+The alphabet we recovered is not the original alphabet, but one of several equivalent alphabets. An equivalent alphabet is related to the original by a decimation (taking every Nth letter) and a shift (as in a Caesar shift). Taking the 17th decimation of the alphabet gives OFELBCDGHJKPQVWXYZTRANSMUI. This appears to be shifted from TRANSMUIOFELBCDGHJKPQVWXYZ which is derived from the key phrase TRANSMUTATION OF ELEMENTS.
+________________
+
+
+
+
+Puzzle 059
+
+
+        This is a challenge cipher that was submitted on the DECIPHER discord (https://deciphers.xyz/) by user @neinty as Puzzle #059. Isomorphs were found in this ciphertext.
+
+
+Hint: 
+Basically caesar innit
+
+
+Ciphertext:        
+CWNTQHURZEMDFXUKGOUCHAVQTHNALZHXSEEIXHOQXKXDVPUCBS
+RRWQKQYWJLGJVLSMFBIWXQRVEIWEATMWNTPPBXZMXTYMSXWRQC
+GAUOFZWKMYXQCXBUMCYGMUZSNWBKEZWEZKZJJDXMISGYPHAVED
+TEPKZQCIQSAHHEAFNQWFSXMXJBSMGLTABXTYRQNAJCYXQIAVNG
+VSNEKDTAZKZKLPUWUOTLMIHARSDLSZDISWWPUOAWUTSQRMUDMY
+YVGKHKQUQSFZEJDFBLRMJHVQQJZBMTBILRHSFBIBDACXTMIIFO
+ABASELCRTWRJUXWSIBKEBZGEQZSQECSXVAKJMLUNEYDHNRBXFP
+BAKWABDLNOVNFNDCKBRHQLQZUIFYGARKAMYUJEEHCTBHQGVILD
+ZTJEJCXGLUOJGOJUPTTNDBNVBWQDOVKPTPPRGAKJZCLPVXUUIP
+PMI
+
+
+
+
+Before attempting alphabet chaining, the two isomorphs were subtracted using Vigenere decipherment. The result was a single repeating letter, which suggested that the alphabet in use was the standard one and so there is no need to chain out the alphabet. This matches the hint that it is "basically caesar".
+
+
+  JCXGLUOJGOJU
+- ZSNWBKEZWEZK
+  KKKKKKKKKKKK
+
+
+With the alphabet known, the delta stream was computed by subtracting the text from itself, offset by one letter:
+
+
+  CWNTQHURZEMDFXUKGO...
+-  CWNTQHURZEMDFXUKG...
+   URGXRNXIFIRCSXQWI...
+
+
+The complete delta stream was searched for repetitions:
+
+
+URGXRNXIFIRCSXQWIGIFTVVDOGNLOIQVMAEPKHCHNNGSUFIZRZ
+AFUUGIYNCVDMQHUTWHOBTBEJEOIWTTKRGWAMWCNLWFOGFZVZME
+UUURUXOCMZTMVETSQWIGIFTVJFJUVXIVLPKAUUPWKOSRSTVJZQ
+LLVPRMGICIHAXWFIDGJNFPLMSRUUFIHBWWFTZXNJTWZTSSVSTP
+XVRGTQHZLPLBEFCYUFSBWZTRBLIHHEFKEATFUMWYZZYBVIJJMA
+XLEXDGEWCNUFFUCWKGVXYOVATQCLHIHDGQLNWHTCXCVWTWAXJM
+BZSMHRPCDVSLDZWQTJUXYHYMJTYOYQFYFKZDZJTRUFEGEKWIKM
+ZKMEBCICBHSSIQZIRQQJVFJVOXTIURTQMMWPVADVRIGJQPNDSW
+UQVFTVJFJUVXIVLVEAUQYMIGVUNLHPFEWACPUKZQDJEGCXAOHA
+XW
+
+
+The distances between repetitions in the delta stream were listed, and found to have a common factor of 6. The periodic index of coincidence for the ciphertext was computed across a range of periods, and a small spike was found for period 78, whose factors are 26 and 3. The factor of 26 is interesting because it suggests alphabet progression. 
+Several trials were made with various progression schemes with no luck. Weeks passed. When I came back to the puzzle, I looked at the common factor of 3 between both the periodic result and the repetition distances. This prompted me to take every third letter and apply a few progression schemes. 
+After using Vigenere to add the key ABCDE[...] to every third letter, the result had a larger overall IoC (1.23) than any other scheme. The same IoC resulted from applying the same method to the second of every three letters, and to the third of every three. This led to deciphering the text by adding the key AAABBBCCCDDD[...] to get an intermediate result.
+This result was rich with repetitions. The periodic IoC for the result showed regular spikes at every even number, suggesting a key length of 2. The result was divided into two columns, and the letter frequency of each column showed that it was shifted from the expected distribution. Matching the distributions gave the effective key JP (or RL if the key is added instead of subtracted) and revealed the plaintext:
+
+
+THEFITNESSGRAMPACERTESTISAMULTISTAGEAEROBICCAPACITYTESTTHATPROGRESSIVELYGETSMOREDIFFICULTASITCONTINUESTHETWENTYMETERPACERTESTWILLBEGININTHIRTYSECONDSLINEUPATTHESTARTTHERUNNINGSPEEDSTARTSSLOWLYBUTGETSFASTEREACHMINUTEAFTERYOUHEARTHISSIGNALASINGLELAPSHOULDBECOMPLETEDEACHTIMEYOUHEARTHISSOUNDREMEMBERTORUNINASTRAIGHTLINEANDRUNASLONGASPOSSIBLETHESECONDTIMEYOUFAILTOCOMPLETEALAPBEFORETHESOUNDYOURTESTISOVERTHETESTWILLBEGINONTHEWORDSTARTONYOURMARKGETREADYSTART
+
+
+        The effective key is the addition of the two-letter repeating key RL with the 78-letter alphabet progression:
+
+
+  AAABBBCCCDDDEEEFFFGGGHHHIIIJJJKKKLLLMMM...
++ RLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLR...
+  RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXD...
+
+
+We can now see the cause of the isomorphism found earlier:
+
+
+Cipher: ZSNWBKEZWEZK         JCXGLUOJGOJU
+Key:    FAGAHBHCICJD         VQWQXRXSYSZT
+Plain:  ESTWILLBEGIN         ESTWILLBEGIN
+
+
+The letters in the keying sequence at each repetition of "TEST WILL BEGIN" were separated from each other by a fixed distance along the alphabet.
+
+
+  FAGAHBHCICJD
+- VQWQXRXSYSZT 
+  KKKKKKKKKKKK    
+
+
+Because the keying sequence is formed by the addition of a 2-letter repeating key with another key that progresses along the alphabet after every three letters, repetitions will only cause isomorphs when the distance between the repetitions has a factor of 6. To demonstrate why this happens, we can subtract the key from itself at varying offsets and see that only at offsets with a factor of 6 does the key show a fixed distance:
+
+
+ 1 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+    RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXD
+    UGVGUHUGVGUHUGVGUHUGVGUHUGVGUHUGVGUHUGV
+
+
+ 2 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+     RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDX
+     ABBABBABBABBABBABBABBABBABBABBABBABBAB
+
+
+ 3 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+      RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWD
+      VHVHVHVHVHVHVHVHVHVHVHVHVHVHVHVHVHVHV
+
+
+ 4 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+       RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCW
+       BBCBBCBBCBBCBBCBBCBBCBBCBBCBBCBBCBBC
+
+
+ 5 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+        RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWC
+        VIWHWIVIWHWIVIWHWIVIWHWIVIWHWIVIWHW
+
+
+ 6 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+         RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBW
+         CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+
+ 7 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+          RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVB
+          WIXIWJWIXIWJWIXIWJWIXIWJWIXIWJWIX
+
+
+ 8 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+           RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBV
+           CDDCDDCDDCDDCDDCDDCDDCDDCDDCDDCD
+
+
+ 9 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+            RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUB
+            XJXJXJXJXJXJXJXJXJXJXJXJXJXJXJX
+
+
+10 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+             RLRMSMTNTOUOVPVQWQXRXSYSZTZUAU
+             DDEDDEDDEDDEDDEDDEDDEDDEDDEDDE
+
+
+11 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+              RLRMSMTNTOUOVPVQWQXRXSYSZTZUA
+              XKYJYKXKYJYKXKYJYKXKYJYKXKYJY
+
+
+12 RLRMSMTNTOUOVPVQWQXRXSYSZTZUAUBVBWCWDXDY
+               RLRMSMTNTOUOVPVQWQXRXSYSZTZU
+               EEEEEEEEEEEEEEEEEEEEEEEEEEEE
