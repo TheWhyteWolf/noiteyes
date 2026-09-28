@@ -366,6 +366,22 @@ is near-repeat depletion (d1=0, d2=5, d3=3). Writes
 `data/isomorphs.json` untouched. The tournament's period-4 test is moved to
 `RETIRED_TESTS` accordingly.
 
+### 1.13 `tools/tournament3.py` — tournament round 3
+
+`python3 tools/tournament3.py` (~10 s, deterministic, 12 seeds per config).
+Part 1 checks the real σ in `data/sigmas.json`: 18 σ fall into 14
+incompatible groups, all 5 compatible links share an occurrence, nothing
+recurs across webs or families, and no σ has a fixed point. Part 2 scores
+gak41, a K-state machine (K = 8–30, ± double-avoid) and a hybrid register
+(fast context N = 2–5, slow part with M = 5–30 states that 6 trigger letters
+advance, additively or by permutation) on 7
+tests. Period-4 is reported but not scored; it is replaced by d2/d3
+depletion (real r2 = 0.40, r3 = 0.72 against the d5–d10 mean). No config
+passes all 7. The state machine is dead (its isomorphs are plain repeats);
+the hybrid fails walk dim, resync and σ-recurrence; gak41 leads at 4.4/7 but
+fails resync (0.0) and d2 depletion (r2 ≈ 1.7). Writes
+`data/tournament3_report.json`; imports the harness from `tournament.py`.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -381,11 +397,11 @@ Confirmed (reproduced from primary data, controls passing):
   **the large-state deck-shuffle / S₈₃ group-autokey** (Step C — the resyncs
   need a small state, ~82! is impossible).
 - **Small effective state:** the accumulating state is order ~10-20 (Step C,
-  upper bound), the header (position 0) is off-chain, and there is a period-4
-  component.
+  upper bound), the header (position 0) is off-chain. ~~There is a period-4
+  component~~ (retracted: duplication artifact, §1.12).
 - **Confirmed structure:** non-commuting fixed substitutions constant over
-  18–33-letter stretches, occasionally identity (resyncs); a period-4 keystream
-  sub-cycle.
+  18–33-letter stretches, occasionally identity (resyncs); ~~a period-4 keystream
+  sub-cycle~~ (retracted, §1.12); near-repeat depletion d1–d3.
 - Community consensus (polyalphabetic, non-cyclic-group, deck/shuffle autokey,
   period-4, unsolved) agrees with all of the above; their S₈₃ Group-Autokey
   model is an unproven superset of our surviving family. See README

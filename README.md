@@ -793,6 +793,60 @@ non-identity mappings, the fraction of mappings preserving digit k
 (±.025), and same-digit coherence is .282/.204/.186 vs .282/.200/.199
 (±.016). σ carries no pupil geometry.
 
+## Tournament round 3 — small-state machine and hybrid register (sixteenth phase, `tools/tournament3.py`)
+
+Round 3 tests the two mechanisms that could reconcile the fast resync with the
+long non-identity isomorphs: a **K-state machine** c_t = T[s_t][p_t]
+(K = 8/12/15/20/30, with and without double-avoidance) and a **hybrid
+register**: a fast part keyed by the previous N−1 plaintext letters
+(N = 2–5), times a slow part with M = 5–30 states that only 6 trigger letters
+advance, either additively or by permutation. gak41 is the baseline.
+Scoring uses 7 tests over 12 seeds per config. Period-4 is reported but not
+scored. It is replaced by **near-repeat depletion**: real raw d2 = 5 and
+d3 = 9 against a d5–d10 mean of 12.5 (r2 = 0.40, r3 = 0.72); a candidate
+passes when each ratio is ≤ max(0.75, 1.5× real). Deterministic, ~10 s.
+
+**Distinct-σ check on real data (before any simulation).** The 18 σ in
+`data/sigmas.json` (2 occurrence webs) fall into **14 mutually incompatible
+groups** (compatible = ≥3 agreeing keys, no conflicts, either orientation).
+All 5 compatible links share an occurrence, so they are duplication or
+composition, not recurrence; one pair (e1[40:49]~e1[68:77]) is listed twice.
+**No σ recurs across webs or families** (null expectation 0.000), and **no
+real σ has a fixed point**, so no isomorph is a plain repeat. With only 2
+webs, the group count alone does not break a K² bound for K ≥ 4.
+
+| candidate | iso L≥25 | walk dim 1 | noncomm | 0 doubles | d2/d3 | resync | IoC | mean /7 |
+|---|---|---|---|---|---|---|---|---|
+| gak41 | 1.00 | 0.58 | 0.75 | 0.83 | 0.25 | 0.00 | 1.00 | 4.4 |
+| state machine K=8–30, no avoid | 0.42–1.00 | 0 | 0 | 0 | ≤0.17 | 0 | 0–0.17 | 0.5–1.1 |
+| state machine K=8–30, avoid doubles | 0.50–1.00 | 0 | 0 | 1.00 | ≤0.17 | ≤0.08 | 0–0.50 | 1.7–2.2 |
+| hybrid, additive slow part | 0.67–1.00 | 0–0.08 | 0–0.33 | 1.00 | 0–0.42 | 0–0.25 | 0.42–1.00 | 2.5–3.2 |
+| hybrid, permutation slow part | 0.67–1.00 | 0–0.08 | 0–0.17 | 1.00 | 0–0.42 | 0–0.08 | 0.17–1.00 | 2.5–3.0 |
+
+Pass rates; no config passes all 7 in any seed. Per-config rows are in
+`data/tournament3_report.json`.
+
+**Verdict.**
+- **Small-state machine: dead.** Its isomorphs are plain repeats (fixed-point
+  fraction ≈1.0, real 0.0). A random transition table moves the state on
+  every letter, and a non-identity σ needs the same state *pair* held for 25+
+  letters, which never happens. It also fails walk dim, non-commutation and
+  resync (0.43–0.57 against the real 0.065) at every K.
+- **Hybrid register: fails.** It gets isomorphs, zero doubles and IoC, but
+  walk dim is 5–45 instead of 1, resync runs 0.1–0.6, 26–74% of its σ are
+  plain repeats, and several configs recur σ across webs (real: never).
+  An off-report sweep of the trigger count (2/6/15/30) only traded
+  isomorph length against resync.
+- **gak41: still best, but fails two tests.** Resync is 0.0 in every seed,
+  and it lacks the d2 depletion (r2 ≈ 1.7 against 0.40). Its walk-dim pass is
+  7/12, so that test is noisy under this harness. Its round-2 "5/6" did not
+  include depletion.
+- **Refined constraint set:** rigid walk (dim 1); non-commuting, non-identity σ
+  that never recur across webs; a low but nonzero resync rate; d1–d3
+  depletion. None of the three families covers it. The core mismatch is
+  that σ look like near-fresh alphabets per occurrence (large state), while
+  resyncs need a key state that is occasionally held.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -878,6 +932,12 @@ worth remembering given the shared-prefix reasoning in Step D. See
 - `data/isomorphs_diag.json` — all evidence ≥3 isomorph windows, NEW-flagged
   against `data/isomorphs.json`
 - `data/dedup_recurrence.json` — raw vs deduplicated recurrence, d=1..15
+- `tools/tournament3.py` — sixteenth phase: tournament round 3 (K-state
+  machine, hybrid register, gak41 baseline) with the distinct-σ check on real
+  data and a d2/d3 depletion test replacing period-4
+- `tools/tournament3_NOTES.md` — short notes on round 3
+- `data/tournament3_report.json` — round-3 report (real σ stats + per-config
+  pass rates over 12 seeds)
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
