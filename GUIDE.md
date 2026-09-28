@@ -403,6 +403,30 @@ which gives soft d-repeat suppression). Results over 48 seeds:
 Writes `data/tournament4_report.json`. It imports the harness from
 `tournament.py` and `tournament3.py`.
 
+### 1.15 `tools/tournament5.py` — tournament round 5 (lossy updates)
+
+`python3 tools/tournament5.py [n_seeds] [n_procs]` (parallel; 23 configs ×
+200 seeds; ~20 s on enter). It tests four ways to vary the short-step gak41:
+- state-driven twists (`stw`), where b twists when a lies in an m-set;
+- plaintext overwrite of b (`bset`);
+- a coarse-step autokey (`coarse C`), updated by letter class;
+- fewer twist letters (`ptwist tw=t`).
+
+Two side tests run with each config: unaligned exact repeats ≥4 (real: 0),
+and resync under 1–4-letter plaintext edits, matching the real mismatch
+islands. Findings:
+- State-driven loss destroys the isomorphs (walk dim ≤ 0.16), so any loss
+  must be plaintext-driven.
+- bset kills non-commutation (0.04).
+- Resets predict unaligned repeats; resync band with no unaligned repeat
+  occurs in only 9% of seeds.
+- Under short edits, lossless gak41 with 2–3 twist letters realigns into the
+  band in 12–21% of seeds (resets: 5%). Resync therefore does not require a
+  lossy update.
+- Coarse-step autokeys fail zero doubles.
+
+Writes `data/tournament5_report.json`.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -494,6 +518,15 @@ and they cost walk dim and non-commutation. The best configs pass all 7
 tests in at most 8% of seeds. The open question is now narrow: what lossy
 state update yields resync ≈0.065 while keeping a dim-1 walk and
 non-commuting σ.
+
+Round 5 (§1.15) answers that question: nothing needs to lose information.
+State-driven loss breaks the isomorphs, and plaintext-driven loss breaks
+non-commutation or predicts unaligned repeats. Meanwhile the *lossless*
+short-step gak41 with 2–3 twist letters reaches the real resync rate by
+coincidence, as long as the diverging plaintext is short (1–4-letter edits,
+like the real islands). **Leading candidate: lossless gak41, short additive
+steps 1..27, 2–3 twist letters (5.5/7).** Resync now constrains the plaintext
+edits more than the cipher.
 
 ---
 

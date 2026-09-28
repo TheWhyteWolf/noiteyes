@@ -910,6 +910,71 @@ Per-config rows are in `data/tournament4_report.json`.
   lossy state update gives resync ≈0.065 while keeping walk dim 1 and
   non-commuting σ. A plaintext reset is too blunt.
 
+## Tournament round 5 — lossy state updates, and what the resync test measures (eighteenth phase, `tools/tournament5.py`)
+
+Round 4 left one gap: gak41's update is invertible, so it realigns only by
+coincidence, and plaintext resets were too blunt. Round 5 tries updates that
+lose information in other ways, all on the round-4 short-step gak41 (K = 27),
+with 200 seeds per config, run on enter:
+- **stw (state-driven twist)**: b is twisted when the current a falls in a set
+  of m values (m = 2–16). It multiplies b (`stw-mul`), with or without the
+  plaintext twists, or overwrites it (`stw-set`).
+- **bset**: plaintext twist letters overwrite b instead of multiplying it.
+- **coarse C**: a coarse-step autokey. The state is applied to a fixed letter
+  code, c = D[b·e(p) + a], and then updated by the letter's *class* (C
+  classes). A same-class substitution changes one ciphertext letter and
+  nothing after it.
+- **ptwist tw = 1–3**: the lossless baseline with fewer twist letters.
+
+Two side tests come with each config:
+- **Unaligned repeats**: exact ciphertext runs ≥4 at different positions. The
+  real corpus has none. A reset predicts them, because the text after a
+  trigger becomes a fixed function of the plaintext.
+- **Resync under a short-edit plaintext model**: 1–4-letter edits instead of
+  the harness's 7-letter blocks. The real mismatch islands are 1–4 letters:
+  east-1~west-1 at [25,29) and [33,37); east-4~east-5 at [21,25), 28,
+  [32,35) and [36,38).
+
+| candidate (200 seeds) | iso | walk | noncomm | doubles | mean /7 | no unaligned repeat | resync band, short edits |
+|---|---|---|---|---|---|---|---|
+| short K=27 (5 twists) | 1.00 | 0.64 | 0.92 | 1.00 | 5.43 | 0.91 | 0.05 |
+| short K=27, 3 twists | 1.00 | 0.69 | 0.84 | 1.00 | 5.53 | 0.85 | 0.12 |
+| short K=27, 2 twists | 1.00 | 0.66 | 0.84 | 1.00 | 5.51 | 0.79 | 0.21 |
+| short K=27, 1 twist | 1.00 | 0.55 | 0.67 | 1.00 | 5.32 | 0.59 | 0.39 |
+| + reset q z j x | 0.99 | 0.52 | 0.76 | 0.96 | 5.25 | 0.55 | 0.05 |
+| bset | 1.00 | 0.10 | 0.04 | 1.00 | 4.31 | 0.51 | 0.54 |
+| stw-mul m=2 | 0.96 | 0.13 | 0.47 | 1.00 | 4.65 | 0.69 | 0.21 |
+| stw (all 12 variants, m=2–16) | 0.02–0.97 | ≤0.16 | ≤0.62 | 1.00 | 2.7–4.6 | 0.69–0.94 | 0.01–0.21 |
+| coarse C=3–27 | 1.00 | 0.54–0.58 | 0.81–0.92 | 0.03–0.06 | 3.7 | 0.94–0.99 | 0.08–0.24 |
+| *real* | ✓ | ✓ | ✓ | ✓ | 7 | ✓ (0 runs) | 0.0645 |
+
+**Verdict.**
+- **State-driven loss is incompatible with exact isomorphs.** Two occurrences
+  of a phrase start in different states, so they twist at different letters
+  and σ stops being constant. iso L ≥ 25 falls from 0.97 to 0.02 as m grows,
+  and walk dim is at most 0.16. Any loss must be triggered by the plaintext
+  (or the position).
+- **Plaintext-driven loss fails in other ways.** Overwriting b (bset) makes σ
+  nearly commute (non-commutation passes in 0.04 of seeds). Resets stay
+  bimodal (56% of seeds show zero resync) and predict unaligned repeats that
+  the real corpus lacks. Only 9% of seeds are in the resync band with no
+  unaligned repeats.
+- **The resync test depends on the plaintext model, and round 4's premise was
+  too strong.** With short edits like the real islands, the *lossless*
+  short-step gak41 realigns by coincidence often enough. With 2–3 twist
+  letters it lands in the resync band in 12–21% of seeds (1 twist: 39%, at a
+  cost in non-commutation), against 5% for rare resets. So four realignments
+  do not show that the state update is lossy. They fit an invertible autokey
+  whose diverging plaintext is short and mostly untwisted. Step C's p ≈ 0.03
+  against an additive S = 83 walk is the same observation.
+- **Coarse-step autokeys keep isomorphs, walk dim and non-commutation but fail
+  zero doubles** (≤6%). The output is no longer a pure step of the state, so
+  nothing forbids c_t = c_(t+1).
+- **Current best: lossless gak41 with short additive steps (1..27) and 2–3
+  twist letters**, at 5.5/7 under the harness. Its remaining misses are
+  walk-dim noise (≈0.67) and a resync rate that depends on how the real
+  plaintexts differ, which is unknown.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -1006,6 +1071,11 @@ worth remembering given the shared-prefix reasoning in Step D. See
   confirmation of the leaders)
 - `data/tournament4_report.json` — round-4 report (53 configs × 12 seeds +
   `confirm_48`)
+- `tools/tournament5.py` — eighteenth phase: tournament round 5 (state-driven
+  twists, b-overwrite, coarse-step autokey, twist count; unaligned-repeat and
+  short-edit resync side tests; parallel, 200 seeds, run on enter)
+- `data/tournament5_report.json` — round-5 report (23 configs × 200 seeds +
+  real realign/unaligned-repeat stats)
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
