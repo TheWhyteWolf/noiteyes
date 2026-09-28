@@ -1,0 +1,112 @@
+{
+ "method": "union-find dedup (same-position identical + diagscan ev>=3 windows); Poisson(slots/83)",
+ "d4_ratio_raw": 2.6,
+ "d4_ratio_dedup": 1.57,
+ "by_distance": {
+  "1": {
+   "raw": 0,
+   "dedup": 0,
+   "slots": 621,
+   "expected": 7.48,
+   "p_ge": 1
+  },
+  "2": {
+   "raw": 5,
+   "dedup": 5,
+   "slots": 629,
+   "expected": 7.58,
+   "p_ge": 0.8735
+  },
+  "3": {
+   "raw": 9,
+   "dedup": 3,
+   "slots": 637,
+   "expected": 7.67,
+   "p_ge": 0.9823
+  },
+  "4": {
+   "raw": 26,
+   "dedup": 11,
+   "slots": 643,
+   "expected": 7.75,
+   "p_ge": 0.1598
+  },
+  "5": {
+   "raw": 11,
+   "dedup": 11,
+   "slots": 650,
+   "expected": 7.83,
+   "p_ge": 0.1677
+  },
+  "6": {
+   "raw": 12,
+   "dedup": 10,
+   "slots": 655,
+   "expected": 7.89,
+   "p_ge": 0.27
+  },
+  "7": {
+   "raw": 12,
+   "dedup": 4,
+   "slots": 658,
+   "expected": 7.93,
+   "p_ge": 0.9555
+  },
+  "8": {
+   "raw": 11,
+   "dedup": 7,
+   "slots": 660,
+   "expected": 7.95,
+   "p_ge": 0.6807
+  },
+  "9": {
+   "raw": 18,
+   "dedup": 12,
+   "slots": 661,
+   "expected": 7.96,
+   "p_ge": 0.1093
+  },
+  "10": {
+   "raw": 11,
+   "dedup": 7,
+   "slots": 668,
+   "expected": 8.05,
+   "p_ge": 0.6925
+  },
+  "11": {
+   "raw": 10,
+   "dedup": 7,
+   "slots": 668,
+   "expected": 8.05,
+   "p_ge": 0.6925
+  },
+  "12": {
+   "raw": 7,
+   "dedup": 7,
+   "slots": 671,
+   "expected": 8.08,
+   "p_ge": 0.6968
+  },
+  "13": {
+   "raw": 19,
+   "dedup": 12,
+   "slots": 677,
+   "expected": 8.16,
+   "p_ge": 0.1236
+  },
+  "14": {
+   "raw": 12,
+   "dedup": 10,
+   "slots": 679,
+   "expected": 8.18,
+   "p_ge": 0.306
+  },
+  "15": {
+   "raw": 4,
+   "dedup": 4,
+   "slots": 681,
+   "expected": 8.2,
+   "p_ge": 0.9631
+  }
+ }
+}

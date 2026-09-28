@@ -138,6 +138,10 @@ How to read the real-corpus block (current state):
 - Instrument 2: `d=4 z≈4.4` and zone `mod 4 z≈4.3` → **period-4 confirmed**
   from two independent observables. `d=1` (zero doubles) and `d=2` (depressed)
   recur. Single-observable mod-5/mod-7 blips = noise, not signal.
+  **CORRECTION (fifteenth phase):** the saved report has zone mod 4 z=0.97
+  (mod 5 z=3.64); the "z≈4.3" was a transcription of the d4 figure. And the
+  d4 excess itself is a duplication artifact — see §1.12. Period-4 is NOT
+  confirmed.
 
 ### 1.6 `tools/phase4.py` — Step A: period-4 as an additive key index
 
@@ -157,7 +161,8 @@ and crack whole; shuffled text cracks nothing. Writes `data/phase4_report.json`.
 Result (all gates pass): **refuted on all three signatures** — real pairs
 spread 6/5/5/2 over δ, δ≢0 alignment is at chance, and δ≡0 pins only 3 letters.
 The period-4 is real but not an additive key index; it must enter through the
-non-commuting substitution structure. Routes to Step B/C.
+non-commuting substitution structure. Routes to Step B/C. *(The premise
+has since dissolved: §1.12 shows period-4 is a duplication artifact.)*
 
 ### 1.7 `tools/resync.py` — Step C: resync algebra / effective state size
 
@@ -343,6 +348,24 @@ Result (gates pass): byte-for-byte match, all 9 messages, interleaved order
 E1 W1 E2 W2 E3 W3 E4 W4 E5; NO other decodable runs (no west-5 / tenth
 message); wak sweeps find only `data/particles/eye.png`. Provenance closed.
 
+### 1.12 `tools/diagscan.py` — exhaustive isomorph scan + deduplicated recurrence
+
+`python3 tools/diagscan.py [shuffled_trials=20]`. Walks every message pair
+at every relative offset, taking maximal consistent-bijection windows
+(evidence = repeats matched on both sides); this finds sparse isomorphs that
+`find_isomorph_pairs`' 12-letter seed misses. Nulls: shuffled corpora and a
+reversed message both give 0 windows at evidence ≥3, so every real window
+(28 at ≥3) is genuine; 16 are NEW, including a family-B tail isomorph
+(east-4[68:102]~west-4[71:105], ev 7) and east-3 linked to that tail and to
+west-1. Then union-find over (msg,pos) merges shared-prefix copies and
+isomorph-aligned positions, and counts each distance-d recurrence class once
+against Poisson(slots/83). Result: d4 26 raw → 11 dedup vs 7.8 (p=0.16),
+level with d5/d9/d13 — **period-4 is a duplication artifact**; what survives
+is near-repeat depletion (d1=0, d2=5, d3=3). Writes
+`data/isomorphs_diag.json` and `data/dedup_recurrence.json`; leaves
+`data/isomorphs.json` untouched. The tournament's period-4 test is moved to
+`RETIRED_TESTS` accordingly.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -370,7 +393,7 @@ Confirmed (reproduced from primary data, controls passing):
 
 - **Consolidated fingerprint** (Step B, all present): exact isomorphs to L=33,
   dim-1 additive solve, non-commuting σ (0.38; but same-stretch σ tend to
-  commute), zero doubles, period-4 (d4-ratio 2.6), resync ~0.065, IoC 0.0128.
+  commute), zero doubles, ~~period-4 (d4-ratio 2.6)~~ (duplication artifact, §1.12), resync ~0.065, IoC 0.0128.
 - **Alphabet count** (alphacount): the σ web forces exactly 3 + 5 distinct
   alphabets over its two components, with ONE provable reuse (e1~w1 resync
   region) — near-fresh alphabets, no small reused pool.
@@ -401,7 +424,11 @@ gets (3) only by keying it to absolute POSITION, which then destroys (1)
 (isomorphs collapse to delta≡0 mod 4 only, contradicting the real spectrum);
 keying it to plaintext CONTENT instead preserves (1) but is too irregular
 to reproduce (3)'s crisp lag-4 statistic. No tested construction gets all
-three at once. See §1.8 for the full readout.
+three at once. See §1.8 for the full readout. **Leg (3) is now retired:**
+§1.12 shows the d4 excess is duplicated material counted many times (11
+deduplicated vs 7.8 expected, p=0.16). The tension is two-way: large /
+group-structured state (long non-identity isomorphs) vs fast resync
+(S_eff ≲ 15, from only 4 realignments).
 
 Since then (parallel second-machine session, merged 2026-09-28): `alphacount`
 shows the alphabets are near-fresh per stretch (≥8 distinct across 9
@@ -411,13 +438,14 @@ nothing else, so the answer must come from the ciphertext.
 
 **Current leading candidate: the C83:C41 affine group-autokey (gak41).** From
 the community's GAK classification (every other group ruled out — theirs or
-ours), it scores 5/7 on the fingerprint including walk_dim==1, which nothing
+ours), it scored 5/7 on the fingerprint (**5/6 now that period-4 is retired —
+its only miss is resync**) including walk_dim==1, which nothing
 else has ever matched (robust: median 5/7 over 20 seeds). It holds legs (1)
 and (2) of the tension above; its misses are resync rate (a free parameter)
 and period-4 — leg (3) — which is still unexplained: the earlier
 "period-4 lives in the plaintext" reading did not survive the merged
 harness (quagC+p4 clears d4>1.5 in only 5/20 seeds, and p4 plaintext breaks
-gak41's walk_dim==1).
+gak41's walk_dim==1). Moot now: period-4 was never real (§1.12).
 
 ---
 
@@ -453,7 +481,8 @@ to three-way (see §1.8/§2)** — a plaintext-notched table-swap autokey
 ("deck rebuilt, not shifted") is the first mechanism to get abundant
 offset-independent isomorphs, but composing a period-4 layer on top gets the
 confirmed d4 statistic only by breaking those isomorphs (position-locked) or
-keeps the isomorphs but loses the d4 statistic (content-locked). Still open.
+keeps the isomorphs but loses the d4 statistic (content-locked). Resolved
+in the fifteenth phase: the d4 statistic was a duplication artifact (§1.12).
 
 **Non-abelian-σ step — general rotor? DONE (`tools/rotorfit.py`): NOT
 SUPPORTED.** σ ≠ T^δ (fits 0/4 on real vs 1.0 for a true rotor); σ is a
@@ -525,7 +554,8 @@ publishable either way.
   binary too — `exesearch` found no extra decodable runs); if a mechanism
   narrows to a small key space, the community's "need more messages" caveat
   applies — note it, don't fabricate around it.
-- **Period-4 as plaintext structure.** A single quagC+p4 run suggested the
+- ~~**Period-4 as plaintext structure.**~~ Dropped — period-4 is a
+  duplication artifact (§1.12). Original note: A single quagC+p4 run suggested the
   d4 excess could come from list-like plaintext, but it did not hold up over
   seeds (5/20). Still cheap to check: if Step F yields a π, look at the
   decrypted stream for a 4-periodic delimiter before hunting more key

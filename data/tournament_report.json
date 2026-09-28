@@ -15,7 +15,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": true,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": true
   },
@@ -38,12 +37,11 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": true,
    "resync .03-.12": false,
    "IoC .011-.015": false
   },
-  "n_match": 1,
-  "agree_real": 1
+  "n_match": 0,
+  "agree_real": 0
  },
  "4-rotor progressive": {
   "sig": {
@@ -61,7 +59,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": true,
    "IoC .011-.015": false
   },
@@ -84,7 +81,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": false
   },
@@ -116,18 +112,17 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": true,
    "resync .03-.12": false,
    "IoC .011-.015": false
   },
-  "n_match": 2,
+  "n_match": 1,
   "delta_mod4_spectrum": {
    "n_pairs": 2,
    "hist": {
     "0": 2
    }
   },
-  "agree_real": 2
+  "agree_real": 1
  },
  "period4-content+autokey": {
   "sig": {
@@ -145,7 +140,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": true,
    "IoC .011-.015": false
   },
@@ -177,7 +171,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": false
   },
@@ -200,12 +193,11 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": false,
-   "period4 (d4>1.5)": true,
    "resync .03-.12": false,
    "IoC .011-.015": true
   },
-  "n_match": 3,
-  "agree_real": 3
+  "n_match": 2,
+  "agree_real": 2
  },
  "quagC bumped": {
   "sig": {
@@ -223,7 +215,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": true,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": false
   },
@@ -246,7 +237,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": true,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": false
   },
@@ -269,7 +259,6 @@
    "walk dim==1": true,
    "noncommute<.6": true,
    "zero doubles": true,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": true
   },
@@ -292,7 +281,6 @@
    "walk dim==1": false,
    "noncommute<.6": false,
    "zero doubles": true,
-   "period4 (d4>1.5)": false,
    "resync .03-.12": false,
    "IoC .011-.015": true
   },
@@ -315,11 +303,10 @@
    "walk dim==1": true,
    "noncommute<.6": true,
    "zero doubles": true,
-   "period4 (d4>1.5)": true,
    "resync .03-.12": true,
    "IoC .011-.015": true
   },
-  "n_match": 7,
+  "n_match": 6,
   "delta_mod4_spectrum": {
    "n_pairs": 18,
    "hist": {
@@ -333,7 +320,7 @@
  "conclusion": {
   "best": "gak41 affine autokey",
   "best_score": 5,
-  "note": "gak41 5/7 incl walk_dim==1 (median 5/7, walk_dim==1 14/20 over 20 seeds); misses resync (param) and d4. p4-plaintext explanation of d4 NOT supported (quagC+p4 d4>1.5 in 5/20 seeds). next: affine-pi solver over subgroup-41",
+  "note": "gak41 5/6 incl walk_dim==1 (was 5/7; period-4 retired as a duplication artifact, diagscan.py); only miss is resync (param). next: affine-pi solver over subgroup-41 (done, inconclusive); reconcile resync with a large state",
   "tension": "abundant cross-offset exact isomorphs vs non-additive/non-commuting vs moderate resync"
  }
 }

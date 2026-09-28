@@ -118,9 +118,16 @@ REAL_TESTS = {
     'walk dim==1':    lambda s: s['walk_dim'] == 1,
     'noncommute<.6':  lambda s: s['commute'] is not None and s['commute'] < 0.6,
     'zero doubles':   lambda s: s['doubles'] == 0,
-    'period4 (d4>1.5)': lambda s: s['d4_ratio'] > 1.5,
     'resync .03-.12': lambda s: 0.03 <= s['resync'] <= 0.12,
     'IoC .011-.015':  lambda s: 0.011 <= s['ioc'] <= 0.015,
+}
+
+
+# 'period4 (d4>1.5)' was retired from scoring: tools/diagscan.py shows the
+# real d4 excess is a duplication artifact (26 raw -> 11 deduplicated vs 7.8
+# expected, p=0.16, level with d5/d9/d13). d4_ratio is still reported.
+RETIRED_TESTS = {
+    'period4 (d4>1.5)': lambda s: s['d4_ratio'] > 1.5,
 }
 
 
@@ -560,21 +567,21 @@ def main():
     print('  community GAK classification) is the FIRST candidate to reproduce')
     print('  walk_dim==1 together with non-commuting sigma, exact cross-offset')
     print('  isomorphs, structural zero doubles and the IoC band (robust: median')
-    print('  5/7 and walk_dim==1 in 14/20 over a 20-seed sweep). Its misses are')
-    print('  resync rate (its twist elements are a free choice) and period-4.')
-    print('  Period-4 is NOT shown to be plaintext-explainable: an earlier run had')
-    print('  quagC+p4 at d4 3.0, but under the mixed-residue harness it is 1.44,')
-    print('  and over 20 seeds quagC+p4 clears d4>1.5 in only 5/20; adding p4')
-    print('  plaintext to gak41 also breaks its walk_dim==1 (2/20). Next tests:')
+    print('  5/7 and walk_dim==1 in 14/20 over a 20-seed sweep; 5/6 now that')
+    print('  period-4 is retired as a duplication artifact, see diagscan.py).')
+    print('  Its remaining miss is resync rate (twist elements are a free choice).')
+    print('  (Historical: quagC+p4 cleared d4>1.5 in only 5/20 seeds and p4')
+    print('  plaintext broke gak41 walk_dim==1 -- moot now that d4 is retired.)')
+    print('  Next tests:')
     print('  fit sigma_k = pi^-1(beta_k*pi + alpha_k) with beta in the order-41')
     print('  subgroup (the affine generalization no prior phase has tested), and')
-    print('  find where period-4 enters without breaking the affine structure.')
+    print('  explain fast resync (S_eff<=15) alongside the large affine state.')
     report['conclusion'] = {'best': best[1], 'best_score': best[0],
-                            'note': 'gak41 5/7 incl walk_dim==1 (median 5/7, '
-                            'walk_dim==1 14/20 over 20 seeds); misses resync '
-                            '(param) and d4. p4-plaintext explanation of d4 NOT '
-                            'supported (quagC+p4 d4>1.5 in 5/20 seeds). next: '
-                            'affine-pi solver over subgroup-41',
+                            'note': 'gak41 5/6 incl walk_dim==1 (was 5/7; period-4 '
+                            'retired as a duplication artifact, diagscan.py); '
+                            'only miss is resync (param). next: affine-pi '
+                            'solver over subgroup-41 (done, inconclusive); '
+                            'reconcile resync with a large state',
                             'tension': 'abundant cross-offset exact isomorphs vs '
                             'non-additive/non-commuting vs moderate resync'}
 

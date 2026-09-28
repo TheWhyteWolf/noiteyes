@@ -196,8 +196,12 @@ must be flagged). All gates pass.
   therefore impossible; the row-distance effect is a weak, diffuse residue,
   not a re-key point. (The natural candidate "deck rebuilt at row-ish
   boundaries" from the third phase is thus downgraded.)
-- **A period-4 keystream cycle is confirmed, from two independent
-  observables.** Distance-4 equal-letter recurrence is elevated (obs 26 vs
+- **[RETRACTED 2026-09-28 — see "Period-4 is a duplication artifact"
+  below.** The d4 excess vanishes once duplicated material is counted once,
+  and the "mod 4 z≈4.3" zone figure was a transcription error: the saved
+  `data/rowphase_report.json` has zone mod 4 z=0.97 (mod 5 z=3.64). Original
+  text kept for the record:] A period-4 keystream cycle is confirmed, from two independent
+  observables. Distance-4 equal-letter recurrence is elevated (obs 26 vs
   11.6, z≈4.4) against an exact within-message shuffle null, and closure-zone
   break positions concentrate at a fixed residue mod 4 (z≈4.3). Zero doubles
   (distance-1) and depressed distance-2 recur as before. Because the corpus
@@ -607,7 +611,8 @@ new construction gate: the collision-bump variants must yield zero doubles):
   missed it) together with non-commuting σ, exact isomorphs, zero doubles and
   the IoC band. Its two misses are resync rate (parameterization-sensitive —
   the twist elements are a free choice) and period-4 (d4), which is still
-  unexplained.
+  unexplained. *(Update: period-4 is a duplication artifact and is no longer
+  scored; gak41 is 5/6, missing only resync.)*
 
 **Merge note (2026-09-28).** This round was run on a second machine
 (`enter`, 2026-07-16) on top of the ninth-phase harness, in parallel with the
@@ -620,7 +625,9 @@ walk_dim==1; robust over a 20-seed sweep — median 5/7, walk_dim==1 in
 to d4 1.44 (1/7), and over 20 seeds clears d4 > 1.5 in only 5/20 (median
 1.14); adding p4 plaintext to gak41 also breaks its walk_dim==1 (2/20).
 Period-4 therefore remains the open third leg of the twelfth phase's
-three-way tension, now with gak41 holding the other two.
+three-way tension, now with gak41 holding the other two. *(Superseded:
+the fifteenth phase shows period-4 is a duplication artifact, so the
+tension is two-way and gak41 misses only resync.)*
 
 **Killer next test:** every solve so far was translation-only (σ = π+δ). The
 gak41 model predicts σ_k = π⁻¹(β_k·π + α_k) with β_k in the order-41
@@ -721,6 +728,71 @@ the corpus resyncs four times (Step C: S_eff ≲ 15).
 A written status report of the whole project to date is in
 `reports/noiteyes-status-report-2026-09-28.pdf`.
 
+## Period-4 is a duplication artifact (fifteenth phase, `tools/diagscan.py`)
+
+The d4 "period-4" signature (distance-4 equal-letter recurrence 26 vs ~11.6
+expected; d4-ratio 2.6) drove Step A, the period-4 tournament candidates and
+one leg of the three-way tension. It does not survive counting each plaintext
+event once.
+
+**Exhaustive isomorph scan.** `find_isomorph_pairs` seeds only on 12-letter
+windows with ≥3 repeats, so sparse isomorphs were never seeded. `diagscan`
+walks every message pair at every relative offset and takes maximal
+consistent-bijection windows; evidence = repeats matched on both sides.
+Nulls: 20 shuffled corpora give **0** windows even at evidence ≥3; reversing
+any one message gives **0**. Real: 28 windows at ≥3, 9 at ≥5, 2 at ≥7 — all
+genuine. 16 of the 28 are NEW (not in `data/isomorphs.json`), notably:
+
+| pair | len | evidence |
+|---|---|---|
+| east-4[68:102] ~ west-4[71:105] | 34 | 7 |
+| east-4[68:98] ~ east-5[69:99] | 30 | 5 |
+| east-5[66:99] ~ west-4[68:101] | 33 | 5 |
+| east-3[63:91] ~ east-4/east-5/west-4 (72/73/75…) | 28 | 3 each |
+| east-3[86:109] ~ west-1[55:78] | 23 | 3 |
+
+So family B's tail (after the shared prefix) is one more isomorphic stretch
+across all three messages, and **east-3 — previously unlinked — is tied to
+that tail and to west-1**. Output: `data/isomorphs_diag.json`
+(`data/isomorphs.json` is left untouched for the other tools).
+
+**Deduplicated recurrence.** Union-find over (message, position) merges
+same-position identical letters (the family prefixes) and every aligned
+position of every evidence ≥3 window; each (class(i−d), class(i)) recurrence
+is counted once, against Poisson(slots/83):
+
+| d | 1 | 2 | 3 | **4** | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| raw | 0 | 5 | 9 | **26** | 11 | 12 | 12 | 11 | 18 | 11 | 10 | 7 | 19 | 12 | 4 |
+| dedup | 0 | 5 | 3 | **11** | 11 | 10 | 4 | 7 | 12 | 7 | 7 | 7 | 12 | 10 | 4 |
+| expected | 7.5 | 7.6 | 7.7 | **7.8** | 7.8 | 7.9 | 7.9 | 8.0 | 8.0 | 8.1 | 8.1 | 8.1 | 8.2 | 8.2 | 8.2 |
+| p(≥) | 1 | .87 | .98 | **.16** | .17 | .27 | .96 | .68 | .11 | .69 | .69 | .70 | .12 | .31 | .96 |
+
+d4 is level with d5, d9, d13 — no period. 15 of the 26 raw d4 hits were
+copies of the same event across family members and isomorph partners. What
+DOES survive is **near-repeat depletion**: d1=0 (p≈5e-4) and d2–d3 low — the
+zero-doubles signature, perhaps extending two steps further.
+
+**Transcription error found.** The fourth-phase bullet cited closure-zone
+breaks at "mod 4 z≈4.3" as a second, independent period-4 observable. The
+saved `data/rowphase_report.json` has `real_mod_zone` mod 4 z=0.97 and mod 5
+z=3.64; 4.3–4.4 is instrument 2's d4 count z. There was only ever one
+period-4 observable, and it is the duplication artifact above.
+
+**Consequences.** `tools/tournament.py` no longer scores period-4 (moved to
+`RETIRED_TESTS`, d4_ratio still reported); **gak41 is now 5/6, missing only
+resync**. The three-way tension collapses to two: long cross-offset
+isomorphs with non-identity σ (a large or group-structured state) vs fast
+resync (S_eff ≲ 15, resting on four structural realignments). Step A's
+refutation stands but its motivation is gone.
+
+**Pupil-geometry test (null).** Community avenue: σ maps preserve eye-digit
+structure (letter = 25·msd+5·mid+lsd). Over the 18 catalog isomorph pairs with ≥5
+non-identity mappings, the fraction of mappings preserving digit k
+(k = msd/mid/lsd) is .268/.174/.192 vs a shuffled null of .288/.202/.204
+(±.025), and same-digit coherence is .282/.204/.186 vs .282/.200/.199
+(±.016). σ carries no pupil geometry.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -800,6 +872,12 @@ worth remembering given the shared-prefix reasoning in Step D. See
   `make_period4_content`, and the `delta_mod4_spectrum` diagnostic;
   round 2 added the quagmire family (`make_quagA/B/C`), `make_gak41` and
   the `p4ify` plaintext option
+- `tools/diagscan.py` — fifteenth phase: exhaustive diagonal isomorph scan
+  (shuffled + reversed nulls) and union-find deduplicated recurrence by
+  distance; shows period-4 is a duplication artifact
+- `data/isomorphs_diag.json` — all evidence ≥3 isomorph windows, NEW-flagged
+  against `data/isomorphs.json`
+- `data/dedup_recurrence.json` — raw vs deduplicated recurrence, d=1..15
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
