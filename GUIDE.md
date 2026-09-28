@@ -427,6 +427,20 @@ islands. Findings:
 
 Writes `data/tournament5_report.json`.
 
+### 1.16 `tools/stepfit.py` + `tools/stepfit.c` — Step G key fit
+
+`python3 tools/stepfit.py [iters] [restarts]` (needs gcc; ~52 min on enter
+at 3M × 16). Anneals the hidden order π, plus the twist pairs, for the
+lossless short-step gak41: consecutive π-differences must be b·(1..27), and
+b may change only at a twist letter's step. On the synthetic model the true
+π costs 0, a random π 583, and one swap from the truth already 24–47. The
+search's best is 305 given the true twists and 311 annealing them, with only
+5–8 of 83 letters agreeing with the truth. **Gate FAIL**: identifiable, but
+the basin (about 5 swaps wide) cannot be found. The real corpus (0.332 per
+position) is not separated from its reverse (0.349) or a full-step null
+(0.298). Key recovery needs an external seed for π. Writes
+`data/stepfit_report.json`.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -527,6 +541,12 @@ coincidence, as long as the diverging plaintext is short (1–4-letter edits,
 like the real islands). **Leading candidate: lossless gak41, short additive
 steps 1..27, 2–3 twist letters (5.5/7).** Resync now constrains the plaintext
 edits more than the cipher.
+
+Step G (§1.16) tried to recover that model's key from the ciphertext alone.
+The model pins π in principle, since the truth scores 0 and every reachable
+optimum ≥305, but annealing cannot find the narrow basin even on synthetic
+data, and the real fit carries no signal. Recovery needs an external
+constraint, such as a crib, to seed π.
 
 ---
 

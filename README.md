@@ -975,6 +975,51 @@ Two side tests come with each config:
   walk-dim noise (≈0.67) and a resync rate that depends on how the real
   plaintexts differ, which is unknown.
 
+## Step G — key fit for the lossless short-step gak41 (nineteenth phase, `tools/stepfit.py` + `tools/stepfit.c`)
+
+The round-5 leader makes a sharp prediction about the hidden order π = D⁻¹.
+Every consecutive difference π(c_t) − π(c_(t−1)) must be b·(a step in 1..27),
+and b can change only at the 2–3 twist letters, each by its own fixed
+multiplier. If π and the twists were found, each position's step would name
+its plaintext letter, giving a monoalphabetic readout. `stepfit.c` anneals π,
+and optionally the twist (step, multiplier) pairs, against a Viterbi cost over
+b: 1 per position whose step falls outside 1..27, and μ = 4 per b-jump the
+twists cannot explain. The run used 16 restarts × 3M steps per corpus, took
+3,135 s on enter, and is deterministic.
+
+| corpus | positions | true π | best fit (16 restarts) | per position | letters matching truth |
+|---|---|---|---|---|---|
+| synthetic model, twists given | 1062 | 0 | 305 | 0.287 | 5–8 of 83 |
+| synthetic model, twists annealed | 1062 | 0 | 311 | 0.293 | 6–8 of 83 |
+| real | 1018 | — | 338 | 0.332 | — |
+| real, reversed | 1018 | — | 355 | 0.349 | — |
+| full-step gak41 (null) | 1062 | — | 317 | 0.298 | — |
+
+**Landscape around the truth** (synthetic, 5 draws each): the true π costs 0
+and a random π 583. Random transpositions away from the truth cost:
+- 1 swap: 24–47
+- 2 swaps: 81–109
+- 5 swaps: 179–290
+- 10 swaps: 230–430
+- 40 swaps: 565–606
+
+**Verdict: gate FAILS, so the real run carries no information.**
+- **Identifiable in principle, not findable.** The truth scores 0 against
+  ≥305 for every optimum the search reaches, so the model does pin π. But the
+  basin is only about 5 transpositions wide. Annealing ends in decoys that
+  share only a chance-level 5–8 letters with the truth, even when it is given
+  the true twists.
+- **Real vs controls:** real 0.332 per position against 0.349 reversed and
+  0.298 for the full-step null, which is not supposed to fit at all. Reachable
+  cost does not separate these corpora.
+- **Constructive search is also out.** Growing π along the text branches
+  about 27 ways per new symbol and prunes only about 3 ways per repeat. Around
+  position 40 (~33 new symbols, ~7 repeats) that leaves ~10⁴⁷ partial orders.
+- **Ciphertext alone does not yield the key for this model with these
+  methods.** A key recovery needs an external constraint, such as a crib or
+  structure known from the game, to seed π. That agrees with Step F, where
+  the isomorph web left a null space of dimension 8.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -1076,6 +1121,11 @@ worth remembering given the shared-prefix reasoning in Step D. See
   short-edit resync side tests; parallel, 200 seeds, run on enter)
 - `data/tournament5_report.json` — round-5 report (23 configs × 200 seeds +
   real realign/unaligned-repeat stats)
+- `tools/stepfit.c` — Step G annealer: hidden order π (+ twist pairs) under the
+  short-step model, Viterbi cost over b; score-only mode for a given π
+- `tools/stepfit.py` — Step G driver: landscape, synthetic gate, real /
+  reversed / full-step null (builds stepfit.c with gcc; ~1 h, run on enter)
+- `data/stepfit_report.json` — Step G report (gate FAIL; costs, agreement)
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
