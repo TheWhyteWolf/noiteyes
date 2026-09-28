@@ -382,6 +382,27 @@ the hybrid fails walk dim, resync and σ-recurrence; gak41 leads at 4.4/7 but
 fails resync (0.0) and d2 depletion (r2 ≈ 1.7). Writes
 `data/tournament3_report.json`; imports the harness from `tournament.py`.
 
+### 1.14 `tools/tournament4.py` — tournament round 4 (repairing gak41)
+
+`python3 tools/tournament4.py` (deterministic; 53 configs × 12 seeds, then
+the leaders re-scored over 48 seeds as `confirm_48`). Adds three
+modifications to gak41, with the same key material per seed: **reset**
+(a trigger plaintext letter returns the state to (1, 17)), **avoid w** (bump
+a until the output misses the last w outputs; 'state' keeps the bump,
+'out' does not), and **short steps K** (additive steps are distinct values
+in 1..K, so on untwisted stretches no d-step sum is 0 mod 83 while dK < 83,
+which gives soft d-repeat suppression). Results over 48 seeds:
+- **short K=27** scores 5.42/7, with r2/r3 = 0.20/0.44 against the real
+  0.40/0.72, and doubles pass in every seed.
+- **short K=27 + reset q z j x** gives a mean resync of 0.061 against the real
+  0.065. Only 15% of seeds fall inside the resync band, though, and walk dim
+  and non-commutation both drop.
+- **Avoidance** zeroes d2/d3 entirely instead of depleting them.
+- **No config passes all 7 in more than 8% of seeds.**
+
+Writes `data/tournament4_report.json`. It imports the harness from
+`tournament.py` and `tournament3.py`.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -462,6 +483,17 @@ and period-4 — leg (3) — which is still unexplained: the earlier
 "period-4 lives in the plaintext" reading did not survive the merged
 harness (quagC+p4 clears d4>1.5 in only 5/20 seeds, and p4 plaintext breaks
 gak41's walk_dim==1). Moot now: period-4 was never real (§1.12).
+
+Rounds 3–4 (§1.13–1.14) re-scored gak41 on 7 tests, with period-4 replaced
+by d2/d3 depletion. It fails resync (0 by construction, since its state
+update is invertible) and depletion (r2 ≈ 1.7 against the real 0.40).
+**Short additive steps (1..27) repair depletion** softly, bringing r2/r3 to
+0.20/0.44, and lift the mean to 5.4/7. **Rare plaintext resets** (≈0.5% of
+letters) reach the real resync rate on average but not reliably per seed,
+and they cost walk dim and non-commutation. The best configs pass all 7
+tests in at most 8% of seeds. The open question is now narrow: what lossy
+state update yields resync ≈0.065 while keeping a dim-1 walk and
+non-commuting σ.
 
 ---
 

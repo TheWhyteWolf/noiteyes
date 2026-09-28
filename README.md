@@ -847,6 +847,69 @@ Pass rates; no config passes all 7 in any seed. Per-config rows are in
   that σ look like near-fresh alphabets per occurrence (large state), while
   resyncs need a key state that is occasionally held.
 
+## Tournament round 4 — repairing gak41: resets, avoidance, short steps (seventeenth phase, `tools/tournament4.py`)
+
+Round 3 left gak41 in the lead but failing two tests for structural reasons.
+**Resync is 0 by construction**: a group autokey's state update is
+invertible, so two diverged messages can never re-agree. The real update must
+therefore lose information somewhere. **d2 is not depleted** either (r2 ≈ 1.7
+against the real 0.40). Round 4 adds three minimal modifications to gak41,
+which keeps the same key material per seed, and scores them with the same 7
+tests and 12 seeds as round 3 (53 configs):
+- **reset**: a trigger plaintext letter returns the state to the identity
+  (b, a) = (1, 17). Trigger sets span 0.17% (q z) to 15% (space) of
+  plaintext mass.
+- **avoid w**: if the output repeats one of the last w outputs, a is bumped
+  by a fixed step until it doesn't. In 'state' mode the bump is kept; in
+  'out' mode only the emitted letter changes.
+- **short steps K**: the additive steps are distinct values in 1..K. On
+  untwisted stretches a d-step sum lies in [d, dK], so it cannot be 0 mod 83
+  while dK < 83. d-repeats are then structurally suppressed except through
+  the 5 twist letters, which gives *soft* depletion rather than zero.
+
+The leading configs are then re-scored over 48 seeds (`confirm_48` in the
+report), because 2 all-7 passes in 12 seeds is within noise. The run is
+deterministic and takes about 15 s.
+
+| candidate (48 seeds) | iso | walk | noncomm | doubles | d2/d3 | resync | IoC | mean /7 | all 7 | resync mean | r2 / r3 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| gak41 | 1.00 | 0.62 | 0.92 | 0.85 | 0.27 | 0.00 | 1.00 | 4.67 | 0 | 0.001 | 1.30 / 1.11 |
+| short K=27 | 1.00 | 0.62 | 0.92 | 1.00 | 0.88 | 0.00 | 1.00 | 5.42 | 0 | 0.001 | 0.20 / 0.44 |
+| short K=27 + reset q z | 0.98 | 0.60 | 0.83 | 0.96 | 0.88 | 0.02 | 1.00 | 5.27 | 0.02 | 0.033 | 0.21 / 0.45 |
+| short K=27 + reset q z j x | 0.98 | 0.50 | 0.71 | 0.98 | 0.88 | 0.15 | 1.00 | 5.19 | 0.08 | 0.061 | 0.20 / 0.46 |
+| reset q z j x + avoid w=3 out | 1.00 | 0.38 | 0.73 | 1.00 | 1.00 | 0.15 | 1.00 | 5.25 | 0.08 | 0.062 | 0 / 0 |
+| reset m + avoid w=3 state | 0.98 | 0.15 | 0.44 | 1.00 | 1.00 | 0.33 | 0.88 | 4.77 | 0.06 | 0.182 | 0 / 0 |
+| *real* | | | | | | | | 7 | | 0.065 | 0.40 / 0.72 |
+
+The 12-seed sweep behind the choice of leaders:
+- **Resets need rare triggers.** q z (mass 0.17%) gives resync 0.053 at no
+  cost (4.33 vs 4.42). Common triggers destroy the isomorphs: e (10.7%)
+  scores 0.83, and space scores 1.17.
+- **Avoidance zeroes d2/d3.** avoid w=3 out scores 5.5, but gives r2 = r3 = 0,
+  whereas real depletion is partial.
+- **Short steps work best at K = 27.** Mean scores are 5.5 at K = 27, 5.0 at
+  K = 41 and 5.0 at K = 55. At K = 41 r3 is already 1.11, because 3K > 83.
+
+Per-config rows are in `data/tournament4_report.json`.
+
+**Verdict.**
+- **Short additive steps are the best single repair.** They give soft d2/d3
+  depletion near the real ratios (0.20 / 0.44 against 0.40 / 0.72), fix
+  doubles (1.00), and cost nothing on the other tests. That fits the real
+  profile better than avoidance, which removes near-repeats entirely.
+  Mechanistic reading: the per-letter key increments are *small* relative
+  to the alphabet.
+- **Rare resets reach real-like resync on average but not per seed.** With
+  4 trigger letters (≈0.5% of plaintext) mean resync is 0.061 against the
+  real 0.065, yet only 15% of seeds land in the 0.03–0.12 band. A reset is
+  also costly: walk dim falls from 0.62 to 0.50 and non-commutation from
+  0.92 to 0.71.
+- **Passing all 7 stays rare: at most 8% of seeds for any config.** No
+  modification of gak41 reproduces the full fingerprint robustly. Resync is
+  the bottleneck, followed by walk-dim noise. The remaining question is what
+  lossy state update gives resync ≈0.065 while keeping walk dim 1 and
+  non-commuting σ. A plaintext reset is too blunt.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -938,6 +1001,11 @@ worth remembering given the shared-prefix reasoning in Step D. See
 - `tools/tournament3_NOTES.md` — short notes on round 3
 - `data/tournament3_report.json` — round-3 report (real σ stats + per-config
   pass rates over 12 seeds)
+- `tools/tournament4.py` — seventeenth phase: tournament round 4 (gak41 +
+  plaintext resets, output avoidance, short additive steps; 48-seed
+  confirmation of the leaders)
+- `data/tournament4_report.json` — round-4 report (53 configs × 12 seeds +
+  `confirm_48`)
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
