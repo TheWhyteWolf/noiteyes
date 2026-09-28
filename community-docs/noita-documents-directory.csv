@@ -1,0 +1,85 @@
+The Emerald Tablet,,,
+Noita Documents Directory,,,
+Name,Description,User,Updated
+Eye Messages - Detailed Analysis,,,
+Eye Messages wiki page,A quick summary of objective details about the eye glyphs,Various,1/2/2023
+Noita Eye Glyph Messages,FAQs and resources regarding the eye glyphs,xkeeper,3/25/2021
+Noita Eye Glyphs: Analytical Overview,The most comprehensive dive into cryptography in the community. Read this.,codewarrior0,11/23/2021
+Isomorphism in Classical Ciphers,A list of ciphers that feature isomorphism,codewarrior0,3/31/2022
+"Noita Eye Glyphs ""Progress""",A collection of all work done on the eye glyphs by the Noita discord community,Toboter,8/13/2022
+Eye Message Alignments and Gap Patterns,A study into gaps between like trigrams displayed in ASCII+32,Lymm,9/17/2021
+Why 83?,An analysis of what's makes the number 83 special and why it probably was chosen,Lymm,9/19/2022
+Brute force guidelines,A deep dive into cryptography and how you can help,Dykoine,8/9/2022
+Noita Eye Room Research,Capybar's research notes into the eyes,Capybar,7/1/2021
+Eyes - Vigenere Theory,Research into deciphering the eye glyphs via Vigenere cipher theory,RmVw,3/14/2021
+Frequent Trigram Sequences,A data visualization and frequency table,Doomke,3/25/2021
+Mathematical Model of the Eye Glyphs,An attempt at variety in math models for the eye glyphs,Chris Mzz.,1/19/2023
+Eye Glyph TImeline,A detailed timeline of events surrounding the Eye Messages mystery,GLoWhNo,7/7/2024
+Frequency analysis of individual messages,Frequency analysis of individual messages & analysis of their randomness,7Soldier,4/6/2025
+,,,
+,,,
+Name,Description,User,Date
+"Eye Messages - Code, Data Sets, Tools",,,
+Eye Analysis Webtool,A tool where you can input your own data and see any patterns that emerge,tomster12,4/18/2024
+Lumikki tool for eyes,A tool where you can edit variables and convert eyes into an ASCII+32 data set,Phnx,11/8/2024
+,,,
+The datamined function in C++,A version of the function in cpp,Unknown,12/11/2022
+The datamined function in JS,A simplified version of the function in javascript for non-coders to look at,Unknown,12/11/2022
+Raw Eye Messages Data,Interleaved Trigrams tab represents the accepted reading order,Unknown,2/6/2021
+Kopie von Eye Values,Each message displayed in decimal and highlighted for easy viewing of isomorphs,Nemare,11/9/2021
+,,,
+Noita Decrypting Tools,A compilation of decryption tools and also scripts made by the community,defektu,12/1/2022
+,,,
+Toboter's Github Repo,The collection of work done by Toboter for Noita mysteries -- Highlights below,Toboter,05/02/2023
+Reading Order Bruteforce Script,The script Toboter used to test ~86000 unique reading orders for significance,Toboter,05/02/2023
+Pixel Scene Trigger Association List,A list of triggers found in pixel scenes and their associated trigger,Toboter,05/02/2023
+,,,
+Noita Eye Data Experimenter,A tool to test different permutations of trigrams featuring various data displays,Nemare,7/10/2021
+Lymm's Binoculars web tool,A Handy web tool to find the messages in your seed,Chillie,1/18/2024
+Lymm's Eye Message Finder Script,The code for Lymm's Binoculars,Lymm,1/12/2024
+,,,
+Name,Description,User,Date
+Eye Messages - Hypotheses and Fun,,,
+Eye Messages Bingo,For fun,Lymm,8/19/2022
+Kantele Eyes,An underdeveloped theory mapping eye glyphs to musical notes,finngamesoo,3/31/2021
+Noita Eye Message Music,A continuation of finngamesoo's Kantele Eyes doc,Fryke,7/29/2021
+Path of the Diamond,A visual analysis of the essence diamonds,GONZALO,9/18/2022
+Diamond Readings,An interpretation into the diamond clue ◆,defektu,9/19/2022
+The Trailer Altar Mystery,Notes about the translation of the trailer altar and the magick bagel,.gonzo.,9/12/2022
+Methods Tried on the First Message,Various attempted decoding methods and in various permutations,Doomke,3/25/2021
+Investigation: Eye Puzzle and Holy Mountain,Various ways Jodorowsky's The Holy Mountain could be reviewed for clues,Tuska,4/22/2025
+,,,
+,,,
+Cauldron Room,,,
+Cauldron Room - Origin Theories,Theories concerning the cauldron's origin and use,carver,4/17/2021
+Cauldron Room - Test Log,A collection of theories that have been tested,carver,11/4/2021
+Cauldron Contents,All the void liquid days using 2021 as an example,Liusad,3/15/2021
+Cauldron Room Miro Board,Miro Board concerning cauldron room theories,Unknown,8/25/2022
+,,,
+Name,Description,User,Date
+Mr. Olli's Wild Ride (Cessation Cipher),,,
+March Quest and Puzzle,Information about the puzzle and quest introduced in 3/2024 ,Tomster12,3/26/2024
+,,,
+,,,
+Name,Description,User,Date
+General Noita Info,,,
+Noita Wiki,New and improved Noita wiki,Various,9/20/2022
+Game Lore,A compilation of game lore on the Fandom wiki. Includes runes and translations,Various,9/20/2022
+Grand Glyph Documentation,A compilation of glyphs and their translations,GrahamBurger,8/31/22
+Engine materials and reactions dump,"An infodump of all materials, their properties, and their reactions",Dextercd,8/29/24
+,,,
+Noita Decompilation Guide,Kaliuresis's guide for decompiling Noita using Ghidra,kaliuresis,3/25/2021
+Noita Relations Miro Board,"A huge collection of research about assets, secrets, and more",Nemare,8/31/22
+Noita Data,A version of the data.wak contents from 5/5/21 (Epilogue update),Rain (vexx32),5/5/21
+Noita Early Access Data,For those who want to dig into the early access data.wak,defektu,12/11/22
+100% Completion Run,"Pudy's 100% run guide, accidentally created by Letaali",pudy248,5/15/24
+,,,
+Notable Maps,,,
+NG+,An ordinary map of NG+ for finding orbs and staring at ◆ (outdated),Letaali,5/3/2021
+Noita Orb Atlas,Orb map for NG+,kaliuresis,5/8/21
+Noita Orb (+ Great Chest Sampo) Atlas,Orb map specifically for the Great Chest Sampo,kylixr,1/13/23
+,,,
+,,,
+Created by: .gonzo.,,,
+Please contact me if there are any,,,
+changes you would like to make,,,

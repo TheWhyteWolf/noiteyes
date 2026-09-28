@@ -194,13 +194,22 @@ dense under its *own* encryption (a fair shot at isomorphs). Gates validate the
 detectors (additive → crackable + commuting; single-rotor → no long isomorphs).
 Writes `data/tournament_report.json`.
 
-Result (gates pass): **no simple small-state generator matches all seven** —
-best is the additive walk at 3/7, and the rotor-cycle candidate is rejected
-(it produces no isomorphs, because occurrences land in different rotor phases).
-The tool prints the binding tension for the next iteration: a mechanism that
-makes abundant cross-offset EXACT isomorphs (additive-like) yet is
-non-additive, non-commuting, and realigns at ~0.065. Use it as the scaffold
-for testing new candidate generators — add a `make_*` encryptor and re-run.
+Result round 1 (gates pass): **no simple small-state generator matches all
+seven** — best was the additive walk at 3/7, and the rotor-cycle candidate is
+rejected (it produces no isomorphs, because occurrences land in different
+rotor phases).
+
+Round 2 added the quagmire family and the community-derived gak41 (see
+README): `quagC bumped` (notch pool + collision bump) ties the additive walk
+at 3/7 with structural zero doubles (2/7 in the merged harness); and
+**`gak41 affine autokey` (C83:C41 group autokey) scores 5/7 — the only
+candidate ever to reproduce walk_dim==1** (robust over 20 seeds) — missing
+resync rate (a parameter choice) and d4. A new construction gate (bump
+variants must give zero doubles) also passes. `quagC + p4 plaintext`
+originally suggested the d4 excess could come from period-4 PLAINTEXT
+structure, but that was a single run under the pre-fix harness; merged and
+seed-swept it clears d4>1.5 in only 5/20 (see README's merge note). Use the tool as the scaffold for candidates —
+add a `make_*` encryptor and re-run.
 
 **Three more candidates (eleventh phase)**, targeting that exact tension:
 `make_deck_rebuild` ("deck rebuilt, not shifted" — a bank of `M=15`
@@ -294,6 +303,46 @@ offset-INDEPENDENT σ. Caveat: only 4 discriminating comparisons. Read it as:
 σ is a per-occurrence substitution difference (Pⱼ∘Pᵢ⁻¹), not a positional
 rotor, and 18 isomorphs under-constrain the Pᵢ.
 
+### 1.10 `tools/alphacount.py` — minimum-alphabet factorization
+
+```
+python3 tools/alphacount.py
+```
+
+How many distinct alphabets do the σ maps force? Occurrences are partitioned
+into shared-alphabet classes; a partition is consistent iff the class
+relations, closed under inverse+composition, stay functional, injective and
+identity-on-diagonal. Exact branch-and-bound gives m_min; every pair is also
+classified DISTINCT / SUPPORTED-EQUAL / FREE from the all-singleton closure.
+σ entries come from each pair's LARGEST witness-span block only (overrun
+repair — full-trim σ fails the controls). Gates: quag4 recovered exactly
+(accept truth + m_min + unique partition), fresh and translate controls show
+no false merges. Writes `data/alphacount_report.json`.
+
+Result (gates pass): the real web is FULLY constrained — web 0 needs exactly
+3 alphabets, web 1 exactly 5 of 6 with ONE provable reuse
+(west-1[30:52] ~ east-1[30:49], in the known resync region). No small
+reused pool; per-stretch alphabets are near-fresh.
+
+### 1.11 `tools/exesearch.py` — EXE re-derivation + wak sweeps
+
+```
+python3 tools/exesearch.py
+```
+
+Extracts the eye data embedded in `noita.exe` (mov-immediate u64 chunks,
+base-7 digits −1, '5' = row/message separator; see README for the encoding)
+and compares with the transcription; also sweeps every data.wak text file for
+eye-related keywords and every wak PNG for the exact eye template. Gates: the
+documented 2021 anchor u64 decodes to our east-1 prefix; a planted synthetic
+stream is recovered exactly; the extracted stream equals the transcription.
+Needs the Noita install (path constant at the top). Writes
+`data/exesearch_report.json`.
+
+Result (gates pass): byte-for-byte match, all 9 messages, interleaved order
+E1 W1 E2 W2 E3 W3 E4 W4 E5; NO other decodable runs (no west-5 / tenth
+message); wak sweeps find only `data/particles/eye.png`. Provenance closed.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -322,6 +371,12 @@ Confirmed (reproduced from primary data, controls passing):
 - **Consolidated fingerprint** (Step B, all present): exact isomorphs to L=33,
   dim-1 additive solve, non-commuting σ (0.38; but same-stretch σ tend to
   commute), zero doubles, period-4 (d4-ratio 2.6), resync ~0.065, IoC 0.0128.
+- **Alphabet count** (alphacount): the σ web forces exactly 3 + 5 distinct
+  alphabets over its two components, with ONE provable reuse (e1~w1 resync
+  region) — near-fresh alphabets, no small reused pool.
+- **Provenance closed** (exesearch): the eye stream extracted from noita.exe
+  equals the transcription byte-for-byte; no extra messages exist in the
+  binary; the wak contains nothing eye-related beyond one particle sprite.
 
 Open: the exact surviving mechanism. Step B isolated the crux; the non-abelian-σ
 test (`rotorfit`) then ruled out the cleanest resolution (a general progressive
@@ -347,6 +402,22 @@ gets (3) only by keying it to absolute POSITION, which then destroys (1)
 keying it to plaintext CONTENT instead preserves (1) but is too irregular
 to reproduce (3)'s crisp lag-4 statistic. No tested construction gets all
 three at once. See §1.8 for the full readout.
+
+Since then (parallel second-machine session, merged 2026-09-28): `alphacount`
+shows the alphabets are near-fresh per stretch (≥8 distinct across 9
+occurrences, ONE provable reuse in the e1~w1 resync region), and `exesearch`
+closes provenance — the shipped binary contains exactly our ciphertext and
+nothing else, so the answer must come from the ciphertext.
+
+**Current leading candidate: the C83:C41 affine group-autokey (gak41).** From
+the community's GAK classification (every other group ruled out — theirs or
+ours), it scores 5/7 on the fingerprint including walk_dim==1, which nothing
+else has ever matched (robust: median 5/7 over 20 seeds). It holds legs (1)
+and (2) of the tension above; its misses are resync rate (a free parameter)
+and period-4 — leg (3) — which is still unexplained: the earlier
+"period-4 lives in the plaintext" reading did not survive the merged
+harness (quagC+p4 clears d4>1.5 in only 5/20 seeds, and p4 plaintext breaks
+gak41's walk_dim==1).
 
 ---
 
@@ -433,10 +504,29 @@ non-string binary logic itself — e.g. a decoder implemented as code with no
 giveaway string — which would need disassembly, a much larger undertaking
 not attempted here.)
 
+**Step F — affine-π solver (NEXT, the sharpest open test).** Every solve so
+far was translation-only: σ modeled as π(B) = π(A) + δ. The gak41 candidate
+(5/7) predicts σ_k = π⁻¹(β_k·π + α_k) with β_k in the order-41 subgroup of
+Z83* — never tested. Build it with the usual gates (a synthetic gak41 corpus
+must be cracked end-to-end; translate and shuffle controls must behave):
+unknowns π (83 values) + (β_k, α_k) per pair; eliminate α by differencing
+entries within a pair; search β over the 41 subgroup values per web with the
+linear π-system as the consistency oracle. STOP-and-decrypt rule applies: an
+affine-consistent π must survive the gauge-invariant IoC test and produce
+readable plaintext across all nine messages before belief. A negative result
+exhausts the community's GAK classification for pure group-autokeys —
+publishable either way.
+
 **Parked / opportunistic:**
-- **More ciphertext.** West-5 is absent; if a mechanism narrows to a small key
-  space, the community's "need more messages" caveat applies — note it, don't
-  fabricate around it.
+- **More ciphertext.** West-5 is absent (now proven absent from the shipped
+  binary too — `exesearch` found no extra decodable runs); if a mechanism
+  narrows to a small key space, the community's "need more messages" caveat
+  applies — note it, don't fabricate around it.
+- **Period-4 as plaintext structure.** A single quagC+p4 run suggested the
+  d4 excess could come from list-like plaintext, but it did not hold up over
+  seeds (5/20). Still cheap to check: if Step F yields a π, look at the
+  decrypted stream for a 4-periodic delimiter before hunting more key
+  structure.
 
 Ground rule for all steps (unchanged): **trust nothing we haven't reproduced
 from primary data**, and believe no breakthrough until it survives a

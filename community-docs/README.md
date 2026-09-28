@@ -36,7 +36,26 @@ independently re-derive from `data/messages.json`, not as a fact.
   claimed to survive is A83 or S83 — i.e. a "shuffled deck of 83 cards"
   where each plaintext character selects a (possibly arbitrary,
   non-commuting) permutation, and the ciphertext is a fixed function of
-  the resulting state ("Group Autokey", GAK).
+  the resulting state ("Group Autokey", GAK). `toboter-progress.html` is
+  the raw export the `.txt` was extracted from.
+
+Fetched 2026-07-16 on a second machine (merged in later; the four documents
+above were fetched there too, byte-identical, and deduplicated):
+
+- `kaliuresis-decompilation-guide.txt` — kaliuresis, "Noita Decompilation
+  Guide" (Ghidra walkthrough, March 2021 beta). Documents that the eye data
+  is embedded in `noita.exe` and gives the first east-1 u64
+  (`0xacf686745634505c`) — independently re-derived and extended by
+  `tools/exesearch.py`.
+- `eye-messages-main.txt` — the main community reverse-engineering document
+  (last substantial update 2021-03-25; Ninji's RE work): message placement
+  (internally alternating East/West) and the in-game display mechanics.
+- `dykoine-cipher-model.txt` — Dykoine, "Cipher model definition and Brute
+  force guidelines". Brute-force candidates (polynomial-with-modulo,
+  N-time-pad, Alberti), all marked Failure by the author.
+- `noita-documents-directory.csv` — the community's index of Noita
+  documents (name, description, author, last-updated), used to find the
+  others.
 
 ## How this reframes our own work
 

@@ -1,0 +1,395 @@
+{
+ "controls": {
+  "quag4": {
+   "mode": "quag4",
+   "n_occs": 11,
+   "webs": [
+    {
+     "nodes": [
+      0,
+      1,
+      8
+     ],
+     "m_true": 2,
+     "m_min": 2,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    },
+    {
+     "nodes": [
+      2,
+      3,
+      4,
+      10
+     ],
+     "m_true": 3,
+     "m_min": 3,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    },
+    {
+     "nodes": [
+      5,
+      6,
+      7,
+      9
+     ],
+     "m_true": 3,
+     "m_min": 3,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    }
+   ],
+   "ok": true,
+   "n_straddling": 0,
+   "checks": {
+    "accept": true,
+    "m_min": true,
+    "exact": true
+   }
+  },
+  "fresh": {
+   "mode": "fresh",
+   "n_occs": 11,
+   "webs": [
+    {
+     "nodes": [
+      0,
+      1,
+      2,
+      8
+     ],
+     "m_true": 4,
+     "m_min": 4,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    },
+    {
+     "nodes": [
+      3,
+      4,
+      10
+     ],
+     "m_true": 3,
+     "m_min": 3,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    },
+    {
+     "nodes": [
+      5,
+      6,
+      7,
+      9
+     ],
+     "m_true": 4,
+     "m_min": 4,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    }
+   ],
+   "ok": true,
+   "n_straddling": 0,
+   "checks": {
+    "accept": true,
+    "m_min": true,
+    "exact": true
+   }
+  },
+  "transl": {
+   "mode": "transl",
+   "n_occs": 11,
+   "webs": [
+    {
+     "nodes": [
+      0,
+      1,
+      5,
+      7
+     ],
+     "m_true": 4,
+     "m_min": 4,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    },
+    {
+     "nodes": [
+      2,
+      4,
+      6
+     ],
+     "m_true": 3,
+     "m_min": 3,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    },
+    {
+     "nodes": [
+      8,
+      9,
+      10
+     ],
+     "m_true": 3,
+     "m_min": 3,
+     "n_minimal": 1,
+     "accepts_truth": true,
+     "exact": true
+    }
+   ],
+   "ok": true,
+   "n_straddling": 1,
+   "checks": {
+    "accept": true,
+    "m_min": true,
+    "exact": true
+   }
+  }
+ },
+ "real": {
+  "occurrences": [
+   {
+    "id": 0,
+    "msg": "east-5",
+    "lo": 35,
+    "hi": 67,
+    "family": 49,
+    "start_mod4": 3
+   },
+   {
+    "id": 1,
+    "msg": "west-4",
+    "lo": 36,
+    "hi": 67,
+    "family": 49,
+    "start_mod4": 0
+   },
+   {
+    "id": 2,
+    "msg": "east-2",
+    "lo": 35,
+    "hi": 57,
+    "family": 48,
+    "start_mod4": 3
+   },
+   {
+    "id": 3,
+    "msg": "west-1",
+    "lo": 30,
+    "hi": 52,
+    "family": 48,
+    "start_mod4": 2
+   },
+   {
+    "id": 4,
+    "msg": "east-2",
+    "lo": 74,
+    "hi": 92,
+    "family": 48,
+    "start_mod4": 2
+   },
+   {
+    "id": 5,
+    "msg": "west-1",
+    "lo": 64,
+    "hi": 82,
+    "family": 48,
+    "start_mod4": 0
+   },
+   {
+    "id": 6,
+    "msg": "east-1",
+    "lo": 30,
+    "hi": 49,
+    "family": 48,
+    "start_mod4": 2
+   },
+   {
+    "id": 7,
+    "msg": "east-1",
+    "lo": 68,
+    "hi": 77,
+    "family": 48,
+    "start_mod4": 0
+   },
+   {
+    "id": 8,
+    "msg": "east-4",
+    "lo": 51,
+    "hi": 66,
+    "family": 49,
+    "start_mod4": 3
+   }
+  ],
+  "webs": [
+   {
+    "web": 0,
+    "nodes": [
+     0,
+     1,
+     8
+    ],
+    "node_info": [
+     "east-5[35:67]",
+     "west-4[36:67]",
+     "east-4[51:66]"
+    ],
+    "base_violations": 0,
+    "m_min": 3,
+    "n_occs": 3,
+    "n_minimal_partitions": 1,
+    "minimal_partitions": [
+     [
+      [
+       0
+      ],
+      [
+       1
+      ],
+      [
+       8
+      ]
+     ]
+    ],
+    "pairs": {
+     "0-1": [
+      "DISTINCT",
+      6
+     ],
+     "0-8": [
+      "DISTINCT",
+      3
+     ],
+     "1-8": [
+      "DISTINCT",
+      3
+     ]
+    },
+    "merged_class_families": [],
+    "merged_class_mod4": []
+   },
+   {
+    "web": 1,
+    "nodes": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "node_info": [
+     "east-2[35:57]",
+     "west-1[30:52]",
+     "east-2[74:92]",
+     "west-1[64:82]",
+     "east-1[30:49]",
+     "east-1[68:77]"
+    ],
+    "base_violations": 0,
+    "m_min": 5,
+    "n_occs": 6,
+    "n_minimal_partitions": 1,
+    "minimal_partitions": [
+     [
+      [
+       2
+      ],
+      [
+       3,
+       6
+      ],
+      [
+       4
+      ],
+      [
+       5
+      ],
+      [
+       7
+      ]
+     ]
+    ],
+    "pairs": {
+     "2-3": [
+      "DISTINCT",
+      6
+     ],
+     "2-4": [
+      "DISTINCT",
+      5
+     ],
+     "2-5": [
+      "DISTINCT",
+      5
+     ],
+     "2-6": [
+      "DISTINCT",
+      4
+     ],
+     "2-7": [
+      "DISTINCT",
+      3
+     ],
+     "3-4": [
+      "DISTINCT",
+      5
+     ],
+     "3-5": [
+      "DISTINCT",
+      5
+     ],
+     "3-6": [
+      "SUPPORTED-EQUAL",
+      4
+     ],
+     "3-7": [
+      "DISTINCT",
+      3
+     ],
+     "4-5": [
+      "DISTINCT",
+      5
+     ],
+     "4-6": [
+      "DISTINCT",
+      3
+     ],
+     "4-7": [
+      "DISTINCT",
+      3
+     ],
+     "5-6": [
+      "DISTINCT",
+      3
+     ],
+     "5-7": [
+      "DISTINCT",
+      3
+     ],
+     "6-7": [
+      "DISTINCT",
+      3
+     ]
+    },
+    "merged_class_families": [
+     [
+      48
+     ]
+    ],
+    "merged_class_mod4": [
+     [
+      2
+     ]
+    ]
+   }
+  ]
+ }
+}

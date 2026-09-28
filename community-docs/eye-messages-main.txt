@@ -1,0 +1,335 @@
+﻿Noita Eye Messages   
+Last substantial update to this document: 2021-03-25
+(Reverse engineering work done by @Ninji, useful save file from FuryForged, other work by countless others)
+
+
+There are nine messages that can be displayed via “eye” glyphs. Four of these are in West parallel worlds, five in East worlds. Internally, the messages are placed in East, West, East, West, etc. in alternating order.
+
+
+Note that the code that spawns the eyes is not a Lua script and cannot be extracted from the archive. It is built into the engine itself. The graphics are also not in the archive but are generated on the fly.
+
+
+________________
+
+
+Frequently Asked Questions
+Q: Does this tell me how to find the eyes?
+A: No. The only known way to find the eyes right now involves pure luck, or using something like CheatEngine.
+
+
+Q: Are the eyes always in the same place? Can I follow the map to them?
+A: No. However, a given seed will always spawn them in the same locations. If you know where the eyes are in seed 12345678, they will always be in the same place if you make a world with that seed via save editing, tools, or mods.
+
+
+Q: Do we know what the eyes mean?
+A: No.
+
+
+Q: How long have the eyes been in-game?
+A: The general consensus is that these showed up with the release of Noita 1.0.
+
+
+Q: Have you tried ________________?
+A: Most likely anything you can think of doing in-game has been done, with no obvious result.
+* Interpreting the eyes as directions, button presses, or interpretive dance moves
+* Looking at the eyes while tripping, or with other status effects
+* Bringing various objects to the eyes, including evil eyes, Kuu, monsters, etc...
+You’re always welcome to try them yourself, though.
+  
+
+Q: This document was editable before! What gives?
+A: It turns out that giving edit access to literally anybody on the internet is a terrible idea and most of the edits were vandalism. I disabled them after getting 99+ comments where maybe one or two were constructive. Sorry.
+
+
+Q: I want to update information here.
+A: That’s not really a question… in any case, ping me (@Xkeeper#5439 on Discord) with the information you want added and I will try to get around to it. Generally speaking, this document is intended to cover the basic information, with anything beyond basic theories and observations left to other documents. 
+
+
+Q: What’s this about Cheat Engine? Was Noita disassembled?
+A: There is a script you can run in Cheat Engine’s Lua Engine that will trigger when visiting an East or West biome and will print out the generated coordinates of the eyes. Unfortunately, when Noita updates, the script needs to be updated for the new version. The game was also partially disassembled; details on how the messages are generated will be explained later.
+
+
+[todo: name here] has occasionally posted versions of the Lua script for new builds.
+
+
+Ninji (linked at the top of the document) did some reverse-engineering. If you’re familiar with Ghidra, you can download the Ghidra project (60 MB). You may also view the decompiled function that generates the messages. There is also another document about reverse-engineering Noita.
+
+
+
+
+________________
+
+
+
+
+Spawning details
+The eye messages will be visible even if the game is saved and reloaded. A save with the eyes visible can be transferred to different computers, copied, and reloaded without issue.
+
+
+* The eyes are only spawned once you cross over into an East or West biome area. They will not appear until the “Entered East/West” message is triggered, even if they would otherwise be visible.
+* The game will only spawn the eye messages in locations with the background “background_cave_02.png”. This includes some areas that do not have visible backgrounds, like some above-ground areas (notably EDR walls and the Lake area).
+* Every eye message, except the last one in East, has a corresponding message in the opposing parallel world. For example, if you find an eye message above East Lake, there will be one in the same place in West Lake. Note that they are not the same message, they’re just in the same locations across parallel worlds.
+* The eyes can spawn above or below ground. The reason they are often seen above the Lake or in the sky is simply because they’re more visible -- underground, they blend into the background.
+* The actual spawning coordinate generation is unknown but appears to be based on the world seed.
+
+
+For the eyes to appear, the “mods_have_been_active_during_this_run” flag must not be set. This doesn’t mean that you can’t use mods, the game just can’t know about it. Using mods, saving and quitting, and manually editing world_state.xml will accomplish this (assuming you turned the mods off, of course). The eye messages will not be visible as long as the game thinks you have used mods during the run.
+
+
+Visual example of parallel world placement
+  
+
+Full size image
+
+
+Notice how W1/E1, W2/E2 etc. correspond with one another in their own words.
+Note that this is an example, and the messages will not be in this spot in your world.
+
+
+Getting around the mod check
+You can either patch the executable to remove the mod check, or use mods to get set up, and then disable mods and change the flag in world_state.xml.
+
+Patching the executable
+Open noita.exe in a hex editor and go to offset 1af745. You'll see 0f 85 9d 01 00 00. replace that with 90 90 90 90 90 90.
+
+
+These instructions are for the Feb 3, 2021 build of Noita and will not work with other versions.
+
+
+Changing the flag
+Open the world_state.xml file in C:\Users\(username)\AppData\LocalLow\Nolla_Games_Noita\save00\world_state.xml and change the line containing “mods_have_been_active_during_this_run="1"” to have a “0” instead.
+
+
+Note that this will not allow you to have mods enabled -- it will only make the game “forget” that you had mods on at all.
+
+
+Messages
+  
+  
+
+Each message is displayed as a series of eye glyphs, with every other line offset slightly to mesh together. The “5” character creates a new line of eyes and is not actually displayed otherwise.
+
+
+The game converts these strings of numbers into eye glyphs using the following table:
+
+
+  
+
+	  
+
+	  
+
+	  
+
+	  
+
+	0
+	1
+	2
+	3
+	4
+	
+
+These messages are also available in a few different formats in a spreadsheet.
+Message 0 (East 1)
+2010132233040411302321143130330040240005
+0320412200014222421222201100032013411135
+3102210440002001040401441420330220342415
+2313131300311321201422313314413414412115
+0140032121141300411101002412410040310015
+0403314323411221010100401204124424424025
+133312203301031131112112103223145
+13104242241303041102031232043135
+
+
+Message 1 (West 1)
+3110132233040411302321143130330040240045
+0320412200014222421222201100032013411015
+0202010440001040440401441420330220341315
+1112131300011020201422313314413414414015
+2122233032440002432311102212310310220435
+4034314012221113402103014133412213301325
+024142214222030242001232124023232014035
+31013221121302032222004223103132241135
+
+
+Message 2 (East 2)
+1210132233040411302321143130330040240045
+1320412200014222421222201100032013411325
+3020132300442101430012141403110241042235
+1024411132222314033301302310103224414225
+0141130301441020203111142410342321321125
+1411201200401030221224020400001032210405
+0011322100422310432420131030102003002215
+0201422403120313302310001033104412014225
+0342010431011002001245
+1314020220201413223115
+
+
+Message 3 (West 2)
+3010143042311111301032001142111420421445
+1320410024412002221410132400222201204025
+1101202100440120220141002021300132433125
+4011301120103223134314223132130311000035
+1431102230242242010212231422001031112235
+2034012300412222131322202302421402114405
+1222010000121431012333120102242032215
+0110101013212311030320302413203220305
+Message 4 (East 3)
+2210143040001003022202312222321441442115
+3320410022224313410032420000102200424315
+3132233121201340041413023100012310431305
+0200201400020212123111000031122201100325
+1402142220230420012142412112231040100345
+0030210313002122103100003123320032404225
+0012402410202320430430312241313123011425
+2323111302110210202223414121132403212305
+0010301242212240330032110242131332310015
+4102101033004320314121114223304034000415
+041240123045
+04230101045
+
+
+Message 5 (West 3)
+1110143040440231010332321201132400320235
+4320410023421203014412122224014202111305
+0330311342241441113030031422340421311125
+4314132002101412021124312302031114300215
+1031332142002300111430341430331101221205
+1011322111204423101313212310203110222005
+1201201231300110240141330210230022200445
+2103122200014401220032321421413321312205
+1202240222342030331202440402005
+0021211001411022421034024114425
+Message 6 (East 4)
+1010143040001000000102132331201421330035
+2320410022224312124304303001102034211305
+1010042232100343001442142240222003000225
+3034110223132024033020302224411420101415
+1432343001202422301103013020010400301305
+0123324013413413024413014124122223033225
+2122221431303020131021131022300031032325
+4323314110324032001221031124314401202315
+122024230101311232213035
+34212102201003230340345
+
+
+Message 7 (West 4)
+3010143040001000000102132331201400400025
+2320410022224312124304303001102221131425
+2113102140010321222411243001001312233135
+0302212301323014304134203000323324211405
+0402102401032022102430210121030120332325
+4022111031324121021424403111220214311415
+2042332412033020233010412042410122321015
+3111403114212321224102401324400302214405
+2243141140421211141401305
+0202310000310001021400115
+Message 8 (East 5)
+1110143040001000000102132331201430441335
+3320410022224312124304303001102111124305
+1012142233020240141442122222302122132335
+3034110224012020413020022424202403412025
+0141101141031110102401102040100131001305
+2112111301104412111124034101220400412135
+1020410412211341301330132430110420102215
+0202030022400101204423110421111420311025
+1312242202220415
+2324421013314315
+
+
+Message 8 is the only one that does not have a corresponding message in West. One theory is that the place in West where one would be is a trigger, but until the messages are read there’s no way of knowing if this is true. It’s all speculation.
+
+
+
+
+Possible decoding methods
+Trigrams
+  
+
+All of the messages have an eye count divisible by three.  Reddit user The_Duck1 suggested that the eyes should be combined into trigrams in the way shown above, wrapping around as needed.  
+
+
+Doing this produces trigrams that span all possible values from 000 to 312, or 83 unique results (out of a possible 125). This may be the correct way to read them -- other orderings produce gaps in the sequence and more unique combinations.
+
+
+This spreadsheet contains the resulting trigrams, as well as their conversion from base-5 into base-10.
+
+
+Translating the base-10 codes into ASCII via simple addition (c + 32) results in the following strings, which are more or less meaningless but may be useful to anyone attempting cryptanalysis:
+
+
+0
+	Rb%P^-k=8]Jfb^@.q(/n"=-Q!prH_q53 HSa:.5fOLPJ3P-O3Qh?%8#K[cAQI\5:>%94g+jX$j3g$SIKphV_oq/0L?>,AY<-`KP
+	1
+	pb%P^-k=8]Jfb^@.q(/n"=-Q!=+>Tq53 9:V4.5fOLPJ3P-O3QL:[m`Ko<h`!>i7c&A9`qdN1D-15d-)NcYB^r/*i^"+ahEL*Kd^)B2
+	2
+	Db%P^-k=8]Jfb^@.q(/n"=-Q!elT)Pbp6`YHQn#0X3OHp&-`=Q`_&Q?-0*M8:m*\q]BVf5/$bmJE>6 +IhY47YaI72hJ%#:n(%VMm9`]0LVS4_9+:MU\FB
+	3
+	lb%QkVeN@!J\:PRp@8W]O,5,QVB9D/XW4)(^-r)L=\UrJp%Kg#pmOnB9^2*Q^`Tq+b^-O1Tf:7@?`7C@R&!9(EOK:ladp1'M_.U_\0
+	4
+	_b%QkV"\=HnO\kcg\"a'O.Mj[Ip-\-q6CRHG"[P?l"pk!Xc+5(HaMkWG\J-#6Y"&Z)f!ZX_d9o'43`"bi>g0,>aE4-6_2N`[Iqr6nDO1$&1%Do_!`e/K$ZX?.`Z2Lne! N4gi9C(8
+	5
+	Bb%QkV7j+-<:3PcYE\B<j*1@+23K3qJ$^)NQ@SlZ$KO1co5@L0>E:<IdYBS*ef(&NK2GOK/-A>C^E E%FWE-H9)5+`%oJd+g+P#c]H6.CR]G+"bQSU1iDkjV8>Vf
+	6
+	;b%QkV"\=H"W)/[2d#D%OmLF!2<l$B\_Zp1VokPVW3^`.OSfk%+OMZdeo9FMiOdRBMn:oY$X6\2kK\[c_JQAHaom'#:^?n:YeH$7:-cJFh+Ga\9&pbdm[n3
+	7
+	mb%QkV"\=H"W)/[2d#D%O\5p!hW0rCY3!b2;G1jqG.n 9aKb`Fq78RY>gk:dVYXRgi.5(@:_%E3KbOUBb7i?VFmc+_o&65Sej5%1cE=5\.rL>$4JC!?VN4H>
+	8
+	Ab%QkV"\=H"W)/[2d#D%OA5[L2<l[B\_o;,V%QPVWT^he*Y6ZPcU'B@>?3:(BN'>gWBkV)&\%79MJp9,6l4S^5H)I*Li(Afi&?5h%H]SJb`j]9_J8I
+	
+
+
+
+Trigrams
+Given the cipher space, combining three cipher characters would give a 5×5×5 = 125 character space, which happens to be slightly less than pure ASCII at 127. However, a lot of the ASCII range is also useless (00-1F: control characters, etc). It’s also possible that the character set used is custom or otherwise expanded to allow for usage of the Finnish language.
+
+
+Frequency analysis
+This largely depends on how the ciphertext is combined, but could be useful depending on what it results in.
+
+
+  
+
+Frequency analysis based on position of digit. These stats are in line with that there are no glyphs used above 83. Otherwise this suggests nothing new.
+  
+
+Frequency of glyphs. Some of these are skewed because several of the messages share large portions
+  
+
+Adjusted for the first line being common between messages.
+
+
+  
+
+The 1st and 4th symbol in a 6-graph seems to have more or less the same distribution, implying that the way we have interpreted the orientation of the trigraphs are correct.
+
+
+
+
+
+
+________________
+
+
+
+
+Stuff below here is probably old and not really useful
+My interpretation is that the trigram format above is the correct way to “read” these, or at least close to the correct method. The below suggestions worked on creating digrams of two characters, which doesn’t work well when some messages have an odd number of characters.
+Polybius square
+Given that the messages are composed of 5 unique characters, one possibility is a Polybius square cipher. However, some messages have an odd number of characters, which might imply this is the wrong path (or that some other condition applies).
+
+
+Polybius squares typically combine I and J to give 25 letters, but some have been known to combine different characters (U/V, Q/Z, etc)
+
+
+Initial thoughts:
+* Given the layout in-game, it was originally thought characters were paired vertically (e.g. the first character from line 1 and 2 would be paired). However, at least one message has an odd number of lines, which throws a wrench in that.
+* As said, some messages have an odd number of characters, so that also throws a minor wrench into things.
+
+
+Playfair cipher
+The Playfair cipher is related to the Polybius square but somewhat more complicated. It’s also slightly harder to brute force and requires keytext to go with the ciphertext, which we don’t have (yet).
+
+
+* The playfair cipher works on pairs of digrams. In this case, some of the messages have an odd number of digrams, which isn’t compatible with this. More wrenches.

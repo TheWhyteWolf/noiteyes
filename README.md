@@ -550,6 +550,136 @@ rule); whether one can be added without re-breaking the isomorph catalog —
 the reason collision-skip was refuted for the WALK family — is untested for
 the deck-rebuild family specifically and is the most concrete next step.
 
+## σ-web minimum-alphabet factorization (thirteenth phase, `tools/alphacount.py`)
+
+The four sections from here to the community cross-check were done in a
+parallel session on a second machine (2026-07-16, branched from the ninth
+phase) and merged on 2026-09-28; they post-date nothing above in logic, only
+in merge order.
+
+The one question the ciphertext could still answer alone after rotorfit: how
+many distinct substitution alphabets do the 18 σ maps force? Each occurrence
+carries an unknown bijection P_i; σ = Pⱼ∘Pᵢ⁻¹ on its support; candidate
+partitions of occurrences into shared-alphabet classes are checked by closing
+the class relations under inverse+composition (functional, injective,
+identity-on-diagonal). Exact branch-and-bound gives the minimum class count.
+Methodology repair the controls forced: σ entries are restricted to each
+pair's LARGEST strictly-overlapping witness-span block — mirrored carrier
+repeats in the overrun form disconnected spans that poison full-trim σ.
+Gates (all pass): a pool-of-4 quagmire must be recovered exactly (accepts
+truth, m_min == true count, unique minimal partition); fresh-alphabet and
+deck-translate controls must show no false merges.
+
+Real corpus — the web is FULLY constrained (no FREE pairs at all), and the
+per-occurrence-alphabet model holds exactly (zero base violations):
+
+- **Web 0** (family-49: east-5, west-4, east-4): all 3 pairwise DISTINCT →
+  exactly **3 alphabets**.
+- **Web 1** (family-48, 6 occurrences): 14 pairs DISTINCT, exactly one
+  SUPPORTED-EQUAL — **west-1[30:52] ~ east-1[30:49] provably share an
+  alphabet** (4 identity letters, derived through the web) → exactly
+  **5 alphabets**, unique minimal partition. The one confirmed reuse sits
+  precisely in the known east-1~west-1 resync region [29,50).
+
+So 9 occurrences force ≥8 distinct alphabets with exactly one reuse: any
+reused-pool schedule needs a pool well above 4 (birthday logic pushes it to
+the S_eff≈15–41 scale), and per-stretch alphabets are near-fresh.
+
+## Tournament round 2 — quagmire family and the C83:C41 affine autokey
+
+Six new candidates added to `tools/tournament.py` (gates still pass, plus a
+new construction gate: the collision-bump variants must yield zero doubles):
+
+- **quagC (notch-pool quagmire + collision bump)** — advance the pool index
+  when the output would repeat — gives structural zero doubles in a
+  non-additive mechanism with realistic resync (3/7, tying the additive walk).
+- **quagC + period-4 plaintext** (a soft list-delimiter every 4th unit)
+  reproduced the d4 excess in the original run (3.0 vs real 2.6), which
+  suggested **the period-4 signature could live in the PLAINTEXT layer**.
+  *Not supported after the merge re-run* (see the merge note below).
+- **gak41 — Group Autokey over C83:C41** (from the community intake: the ONE
+  group in their GAK classification nobody ruled out; 41 hidden states, right
+  in our small-state window): affine maps x→bx+a mod 83, b in the order-41
+  subgroup, state composed per letter, c = D[a]. a≠0 gives structural zero
+  doubles; shared running products give offset-invariant exact isomorphs with
+  constant AFFINE (non-translation, non-commuting) σ. **Scores 5/7 — the
+  first candidate ever to reproduce walk_dim==1** (every prior candidate
+  missed it) together with non-commuting σ, exact isomorphs, zero doubles and
+  the IoC band. Its two misses are resync rate (parameterization-sensitive —
+  the twist elements are a free choice) and period-4 (d4), which is still
+  unexplained.
+
+**Merge note (2026-09-28).** This round was run on a second machine
+(`enter`, 2026-07-16) on top of the ninth-phase harness, in parallel with the
+eleventh/twelfth phases here, and merged afterwards. Its original numbers
+were produced BEFORE the twelfth phase's mixed-residue `corpus()` fix, and
+the tournament shares one RNG stream across candidates, so every round-2
+score was re-run in the merged harness. Results: gak41 is unchanged (5/7,
+walk_dim==1; robust over a 20-seed sweep — median 5/7, walk_dim==1 in
+14/20). The period-4-in-plaintext claim did NOT survive: quagC + p4 drops
+to d4 1.44 (1/7), and over 20 seeds clears d4 > 1.5 in only 5/20 (median
+1.14); adding p4 plaintext to gak41 also breaks its walk_dim==1 (2/20).
+Period-4 therefore remains the open third leg of the twelfth phase's
+three-way tension, now with gak41 holding the other two.
+
+**Killer next test:** every solve so far was translation-only (σ = π+δ). The
+gak41 model predicts σ_k = π⁻¹(β_k·π + α_k) with β_k in the order-41
+subgroup — an affine-conjugate fit no phase has attempted. If the real σ web
+is affine-consistent, that is the break; if not, the community's GAK
+classification is exhausted for pure group-autokeys.
+
+## Community deep-doc intake (`community-docs/`, adversarial)
+
+Fetched the deep documents linked from the wiki (Lymm's alignments, Toboter's
+Progress 2025-12-28, codewarrior0's Analytical Overview + Isomorphism doc,
+Dykoine's cipher-model doc, kaliuresis's decompilation guide, the main
+reverse-engineering doc). Reconciliation:
+
+- **New to us, adopted after verification:** the eye data is embedded in
+  `noita.exe` (kaliuresis documents the 2021-beta encoding and the first
+  east-1 u64, `0xacf686745634505c`) — verified and extended by
+  `tools/exesearch.py` below. The GAK classification over transitive groups
+  {C83, D166, C83:C41, C83:C82, A83, S83} with all but **C83:C41** ruled out
+  (their A83/S83 survivor is refuted by our Step C resync bound) — directly
+  produced the gak41 tournament candidate above. Toboter's independent state
+  lower bound (≥21 states, 10% chance >26) complements our S_eff≈15 scale
+  from the other side; 41 sits in the joint window.
+- **Superseded by our phases:** their "P^pos[S[char]] → Maybe?" is the
+  progressive rotor rotorfit refuted (0/4); their Alberti/Vigenère/affine-
+  positional failures are all inside our refuted families; Dykoine's
+  brute-force candidates (polynomial, N-time-pad, Alberti) are all marked
+  Failure by the community itself.
+- **Colour:** Arvi (the developer) confirmed in an interview that "the eye
+  decorations do contain a message"; the 0xacf68674 dword happens to be the
+  CRC-32b of "lumikki" (Snow White) — a curiosity, unverified as intentional.
+
+## EXE re-derivation — provenance closed (`tools/exesearch.py`)
+
+The eye data was located and fully decoded in the CURRENT build (Jan 2025) of
+`noita.exe`: the spawn function materializes u64 constants as mov-immediates
+(lo dword at ebp-0x4c, hi at ebp-0x48, hi omitted when zero); each u64 packs
+≤22 stream characters as base-7 digits (char+1, digits 1..6, '5' = row/message
+separator) with a final ×7 shift. Gates (all pass): the documented 2021 u64
+must appear and decode to our east-1 prefix (two fully independent
+derivations agreeing); a planted synthetic stream must be recovered exactly;
+and the headline —
+
+- **The extracted stream (3,194 chars, one contiguous run in interleaved
+  order E1 W1 E2 W2 E3 W3 E4 W4 E5) is byte-for-byte identical to our
+  pixel transcription.** The provenance chain pixels → transcription →
+  shipped binary is closed at zero mismatches.
+- **No other decodable runs exist in the binary** — no hidden tenth message,
+  no west-5, in this encoding.
+- Completing Step E's bounded caveat: a keyword sweep over all data.wak text
+  files finds nothing eye-related, and an exact eye-template pixel sweep over
+  all 9,030 wak PNGs finds exactly one match — `data/particles/eye.png`, a
+  mundane single-eye particle sprite (which doubles as a detector sanity
+  check). The shipped game contains the ciphertext and nothing else.
+  (This independently agrees with the eleventh phase's `wak_sweep` /
+  `eye_mural_scan` sweep above, and goes past its residual caveat: the
+  eye data inside the executable's code is decoded here, not just its
+  strings searched.)
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -604,7 +734,7 @@ worth remembering given the shared-prefix reasoning in Step D. See
 - `tools/isomorphs.py` — dumps the isomorph catalog to data/
 - `tools/sigma_diagnostics.py` — same-day predecessor to `sigma_web.py` below;
   kept for provenance only, see the note under finding 5
-- `community-docs/` — the four fetched community documents (secondary,
+- `community-docs/` — the fetched community documents (secondary,
   unverified — see `community-docs/README.md`)
 - `tools/sigma_web.py` — σ-diagnostics battery (jump-safe cores, consensus
   prune, modulus sweep) with five synthetic control gates that must pass
@@ -626,7 +756,9 @@ worth remembering given the shared-prefix reasoning in Step D. See
 - `tools/tournament.py` — Step B: small-state generator tournament scoring
   candidate mechanisms against the consolidated real signature fingerprint;
   twelfth phase added `make_deck_rebuild`, `make_period4_position`,
-  `make_period4_content`, and the `delta_mod4_spectrum` diagnostic
+  `make_period4_content`, and the `delta_mod4_spectrum` diagnostic;
+  round 2 added the quagmire family (`make_quagA/B/C`), `make_gak41` and
+  the `p4ify` plaintext option
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
@@ -644,5 +776,11 @@ worth remembering given the shared-prefix reasoning in Step D. See
   catalogued lone-eye Easter eggs (negative)
 - `data/eye_mural_scan_report.json` — eleventh-phase pixel-scan report
 - `data/sigma_diagnostics.json` — output of the superseded `sigma_diagnostics.py`
+- `tools/alphacount.py` — minimum-alphabet factorization of the σ web
+  (relation-closure consistency + exact branch-and-bound), gate-validated
+- `data/alphacount_report.json` — factorization report (controls + real)
+- `tools/exesearch.py` — EXE eye-data extractor + wak keyword/pixel sweeps;
+  re-derives all 9 messages from noita.exe byte-for-byte
+- `data/exesearch_report.json` — EXE re-derivation report
 - `GUIDE.md` — operator's userguide for every tool + the phased attack plan
 - `PLAN.md` — session handoff: full findings + prioritized next-phase plan
