@@ -680,6 +680,47 @@ and the headline —
   eye data inside the executable's code is decoded here, not just its
   strings searched.)
 
+## Step F — affine-π solver for gak41 (fourteenth phase, `tools/affinefit.py`)
+
+gak41 predicts every isomorph σ is affine in the hidden order π:
+π(b) = β·π(a) + α with β in the order-41 subgroup of Z83* (= the nonzero
+quadratic residues). Every earlier solve was translation-only (β = 1). The
+solver branches over β per evidence block (41 choices), keeps an incremental
+GF(83) echelon system in (π, α), and prunes on inconsistency or any forced
+letter merge (identical null-basis rows). Split over 41 processes; run on the
+16-core machine.
+
+Two method repairs the controls forced:
+
+- **Witness depth 2.** The isomorph finder extends windows until a repeat
+  MISmatches, so windows reach into the region where the plaintexts have not
+  yet converged whenever one repeat there matches by chance. On synthetic gak41
+  with known π, depth-1 witness spans leave 9/377 blocks non-affine under the
+  TRUE π; requiring two distinct witness spans leaves 0/420.
+- **Excursions.** Where two messages are identical on both sides of a short
+  differing patch (east-1/west-1 at 25–28 and 33–36), the state left and came
+  back; no witness can see that, so those positions are cut from every block
+  (detector false-positive rate: 1 in 30 synthetic corpora).
+
+Gates (all pass): synthetic gak41 (274 aligned pairs) → exactly one
+assignment, the true one, π recovered exactly up to affine gauge; the additive
+walk's all-β=1 assignment is accepted; fresh random alphabets (319 pairs) give
+no fit within budget (an exhaustive proof takes hours, so a REFUTED real
+verdict would additionally require it).
+
+**Real corpus: INCONCLUSIVE.** Uncut, no assignment fits — but leave-one-out
+shows the conflict comes only from the two blocks crossing the east-1/west-1
+excursions (an affine map fixing 19, 0, 14, 21 cannot send 40→25). With the
+excursions cut, the web fits with 2,050+ assignments, null-space dimension 8,
+and only the 2 gauge letters pinned (122 aligned pairs over 60 letters vs the
+274 that pinned the synthetic truth). gak41 is neither refuted nor recoverable
+from the isomorphs alone. Its standing tension is resync: a 3,403-element
+group re-collides after differing snippets only on equal group products, yet
+the corpus resyncs four times (Step C: S_eff ≲ 15).
+
+A written status report of the whole project to date is in
+`reports/noiteyes-status-report-2026-09-28.pdf`.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -782,5 +823,10 @@ worth remembering given the shared-prefix reasoning in Step D. See
 - `tools/exesearch.py` — EXE eye-data extractor + wak keyword/pixel sweeps;
   re-derives all 9 messages from noita.exe byte-for-byte
 - `data/exesearch_report.json` — EXE re-derivation report
+- `tools/affinefit.py` — Step F: affine-π (β in the order-41 subgroup)
+  solver with depth-2 witness blocks, excursion cut, and gak41/translation/
+  fresh gates; parallel search
+- `data/affinefit_report.json` — Step F report (controls + real, cut/uncut)
+- `reports/` — written status reports (PDF)
 - `GUIDE.md` — operator's userguide for every tool + the phased attack plan
 - `PLAN.md` — session handoff: full findings + prioritized next-phase plan

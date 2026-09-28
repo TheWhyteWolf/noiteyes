@@ -1,0 +1,403 @@
+{
+ "qr": [
+  1,
+  3,
+  4,
+  7,
+  9,
+  10,
+  11,
+  12,
+  16,
+  17,
+  21,
+  23,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  33,
+  36,
+  37,
+  38,
+  40,
+  41,
+  44,
+  48,
+  49,
+  51,
+  59,
+  61,
+  63,
+  64,
+  65,
+  68,
+  69,
+  70,
+  75,
+  77,
+  78,
+  81
+ ],
+ "witness_depth": 2,
+ "gak41": {
+  "n_sols": 1,
+  "nodes": 1186663,
+  "capped": false,
+  "truth_clean": true,
+  "truth_found": true,
+  "gauge_match": 1.0
+ },
+ "transl": {
+  "n_blocks": 9,
+  "beta1_accepted": true
+ },
+ "fresh": {
+  "n_sols": 0,
+  "nodes": 4127019,
+  "capped": true,
+  "n_blocks": 84,
+  "n_pairs": 319,
+  "rejection_proven": false
+ },
+ "real": {
+  "excursions": [
+   [
+    "east-1",
+    "west-1",
+    0,
+    25,
+    29
+   ],
+   [
+    "east-1",
+    "west-1",
+    0,
+    33,
+    37
+   ]
+  ],
+  "uncut": {
+   "n_blocks": 20,
+   "n_letters": 63,
+   "n_pairs": 130,
+   "blocks": [
+    [
+     "east-1",
+     31,
+     "east-2",
+     36,
+     8
+    ],
+    [
+     "east-1",
+     40,
+     "east-2",
+     45,
+     8
+    ],
+    [
+     "east-1",
+     42,
+     "east-1",
+     70,
+     6
+    ],
+    [
+     "east-1",
+     42,
+     "east-2",
+     82,
+     6
+    ],
+    [
+     "east-1",
+     42,
+     "west-1",
+     72,
+     6
+    ],
+    [
+     "east-1",
+     42,
+     "east-1",
+     70,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "east-2",
+     82,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "west-1",
+     72,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "east-2",
+     47,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "west-1",
+     42,
+     6
+    ],
+    [
+     "east-2",
+     36,
+     "west-1",
+     31,
+     20
+    ],
+    [
+     "east-2",
+     45,
+     "west-1",
+     70,
+     11
+    ],
+    [
+     "east-2",
+     45,
+     "east-2",
+     80,
+     11
+    ],
+    [
+     "east-2",
+     80,
+     "west-1",
+     70,
+     11
+    ],
+    [
+     "east-2",
+     80,
+     "west-1",
+     40,
+     11
+    ],
+    [
+     "east-4",
+     52,
+     "west-4",
+     54,
+     10
+    ],
+    [
+     "east-4",
+     52,
+     "east-5",
+     53,
+     11
+    ],
+    [
+     "east-5",
+     38,
+     "west-4",
+     39,
+     12
+    ],
+    [
+     "east-5",
+     52,
+     "west-4",
+     53,
+     12
+    ],
+    [
+     "west-1",
+     40,
+     "west-1",
+     70,
+     11
+    ]
+   ],
+   "n_sols": 0,
+   "nodes": 1722,
+   "capped": false,
+   "null_dim": null,
+   "n_pinned": 0
+  },
+  "cut": {
+   "n_blocks": 22,
+   "n_letters": 60,
+   "n_pairs": 122,
+   "blocks": [
+    [
+     "east-1",
+     31,
+     "east-2",
+     36,
+     2
+    ],
+    [
+     "east-1",
+     37,
+     "east-2",
+     42,
+     2
+    ],
+    [
+     "east-1",
+     40,
+     "east-2",
+     45,
+     8
+    ],
+    [
+     "east-1",
+     42,
+     "east-1",
+     70,
+     6
+    ],
+    [
+     "east-1",
+     42,
+     "east-2",
+     82,
+     6
+    ],
+    [
+     "east-1",
+     42,
+     "west-1",
+     72,
+     6
+    ],
+    [
+     "east-1",
+     42,
+     "east-1",
+     70,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "east-2",
+     82,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "west-1",
+     72,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "east-2",
+     47,
+     6
+    ],
+    [
+     "east-1",
+     70,
+     "west-1",
+     42,
+     6
+    ],
+    [
+     "east-2",
+     36,
+     "west-1",
+     31,
+     2
+    ],
+    [
+     "east-2",
+     42,
+     "west-1",
+     37,
+     14
+    ],
+    [
+     "east-2",
+     45,
+     "west-1",
+     70,
+     11
+    ],
+    [
+     "east-2",
+     45,
+     "east-2",
+     80,
+     11
+    ],
+    [
+     "east-2",
+     80,
+     "west-1",
+     70,
+     11
+    ],
+    [
+     "east-2",
+     80,
+     "west-1",
+     40,
+     11
+    ],
+    [
+     "east-4",
+     52,
+     "west-4",
+     54,
+     10
+    ],
+    [
+     "east-4",
+     52,
+     "east-5",
+     53,
+     11
+    ],
+    [
+     "east-5",
+     38,
+     "west-4",
+     39,
+     12
+    ],
+    [
+     "east-5",
+     52,
+     "west-4",
+     53,
+     12
+    ],
+    [
+     "west-1",
+     40,
+     "west-1",
+     70,
+     11
+    ]
+   ],
+   "n_sols": 2050,
+   "nodes": 210166,
+   "capped": false,
+   "null_dim": 8,
+   "n_pinned": 2
+  },
+  "verdict": "INCONCLUSIVE: the real web fits the affine model but is far too sparse to pin it (2050+ assignments, null dim 8, 2/60 letters pinned). The uncut web conflicts ONLY through the east-1/west-1 excursions, which break the witness-span assumption. gak41 is neither refuted nor recoverable from the isomorphs alone."
+ }
+}

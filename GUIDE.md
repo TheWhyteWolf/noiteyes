@@ -504,7 +504,10 @@ non-string binary logic itself — e.g. a decoder implemented as code with no
 giveaway string — which would need disassembly, a much larger undertaking
 not attempted here.)
 
-**Step F — affine-π solver (NEXT, the sharpest open test).** Every solve so
+**Step F — affine-π solver. DONE (`tools/affinefit.py`): INCONCLUSIVE.** The
+real web fits the affine-QR model only once the east-1/west-1 excursions are
+cut, and then with 2,050+ assignments and nothing pinned beyond the gauge —
+too sparse to decide (see README). Original plan, kept for reference: Every solve so
 far was translation-only: σ modeled as π(B) = π(A) + δ. The gak41 candidate
 (5/7) predicts σ_k = π⁻¹(β_k·π + α_k) with β_k in the order-41 subgroup of
 Z83* — never tested. Build it with the usual gates (a synthetic gak41 corpus
