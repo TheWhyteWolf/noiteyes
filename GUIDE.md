@@ -441,6 +441,23 @@ position) is not separated from its reverse (0.349) or a full-step null
 (0.298). Key recovery needs an external seed for π. Writes
 `data/stepfit_report.json`.
 
+### 1.17 `tools/cribfit.py` — Step H crib tester
+
+`python3 tools/cribfit.py gate | real A "TEXT" | file cribs.txt` (heavy: run
+on enter). It turns a guessed opening (family A = east-1/east-2/west-1
+[1,25); B = east-4/east-5/west-4 [1,21)) into exact GF(83) equations. These
+are solved together with the Step F isomorph blocks, allowing at most one
+twist letter. A crib is accepted only if a point with steps in 1..27
+(distinct) and an injective π exists.
+
+Gate over 12 synthetic seeds:
+- true cribs: 3 accepted, 1 undetermined, 8 capped, 0 rejected;
+- wrong cribs: 0 of 72 accepted, 4 rejected, 5 undetermined, 63 capped.
+
+Accepted true cribs return π almost exactly (70/71, 73/73, 67/69). The test
+is sound but low-powered, because the block search usually caps. Writes
+`data/cribfit_gate.json` / `data/cribfit_real.json`.
+
 ---
 
 ## 2. Current state of knowledge (one-screen summary)
@@ -547,6 +564,11 @@ The model pins π in principle, since the truth scores 0 and every reachable
 optimum ≥305, but annealing cannot find the narrow basin even on synthetic
 data, and the real fit carries no signal. Recovery needs an external
 constraint, such as a crib, to seed π.
+
+Step H (§1.17) builds that crib tester. An accepted crib yields the key: on
+synthetic data π was recovered on 67–73 symbols, and no wrong crib was ever
+accepted. Most runs cap, though, so a crib list will mainly produce rejects
+and non-answers, with the occasional decisive accept.
 
 ---
 

@@ -1,0 +1,885 @@
+{
+ "summary": {
+  "true": {
+   "accept": 3,
+   "undetermined": 1,
+   "capped": 8,
+   "reject": 0
+  },
+  "shuffled": {
+   "accept": 0,
+   "undetermined": 3,
+   "capped": 20,
+   "reject": 1
+  },
+  "shifted": {
+   "accept": 0,
+   "undetermined": 1,
+   "capped": 20,
+   "reject": 3
+  },
+  "random": {
+   "accept": 0,
+   "undetermined": 1,
+   "capped": 23,
+   "reject": 0
+  }
+ },
+ "rows": [
+  {
+   "seed": 1,
+   "kind": "random",
+   "len": 20,
+   "text": "_ielaemneeenhayore__",
+   "status": "capped",
+   "hyps_tried": 441,
+   "hyps_kept": 441,
+   "s": 7955.1
+  },
+  {
+   "seed": 1,
+   "kind": "random",
+   "len": 20,
+   "text": "i_ttcsdeyitnh_roseea",
+   "status": "capped",
+   "hyps_tried": 521,
+   "hyps_kept": 521,
+   "s": 9661.3
+  },
+  {
+   "seed": 1,
+   "kind": "shifted",
+   "len": 20,
+   "text": "iskoratt_tsten__a_rl",
+   "status": "reject",
+   "hyps_tried": 441,
+   "hyps_kept": 0,
+   "s": 803.9
+  },
+  {
+   "seed": 1,
+   "kind": "shifted",
+   "len": 20,
+   "text": "_uliskoratt_tsten__a",
+   "status": "reject",
+   "hyps_tried": 481,
+   "hyps_kept": 0,
+   "s": 1164.5
+  },
+  {
+   "seed": 1,
+   "kind": "shuffled",
+   "len": 20,
+   "text": "osttur_tt_itskeaa_cl",
+   "status": "reject",
+   "hyps_tried": 481,
+   "hyps_kept": 0,
+   "s": 965.0
+  },
+  {
+   "seed": 1,
+   "kind": "shuffled",
+   "len": 20,
+   "text": "at_seutra_sikt_lttoc",
+   "status": "capped",
+   "hyps_tried": 481,
+   "hyps_kept": 481,
+   "s": 8860.4
+  },
+  {
+   "seed": 1,
+   "kind": "true",
+   "len": 20,
+   "text": "at_c_uliskoratt_tste",
+   "status": "accept",
+   "hyps_tried": 150,
+   "hyps_kept": 1,
+   "s": 329.5,
+   "accepted_as": {
+    "tau": "s",
+    "m": 59
+   },
+   "pi_agree": "70/71"
+  },
+  {
+   "seed": 2,
+   "kind": "random",
+   "len": 17,
+   "text": "__l_eeeeenino_mlo",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 4989.9
+  },
+  {
+   "seed": 2,
+   "kind": "random",
+   "len": 17,
+   "text": "_no_tnehte_g_h_tn",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 5103.7
+  },
+  {
+   "seed": 2,
+   "kind": "shifted",
+   "len": 17,
+   "text": "laeulostens_g__op",
+   "status": "capped",
+   "hyps_tried": 441,
+   "hyps_kept": 441,
+   "s": 4794.8
+  },
+  {
+   "seed": 2,
+   "kind": "shifted",
+   "len": 17,
+   "text": "rrtlaeulostens_g_",
+   "status": "reject",
+   "hyps_tried": 441,
+   "hyps_kept": 0,
+   "s": 30485.5
+  },
+  {
+   "seed": 2,
+   "kind": "shuffled",
+   "len": 17,
+   "text": "nenoldrlsealtutre",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 4218.5
+  },
+  {
+   "seed": 2,
+   "kind": "shuffled",
+   "len": 17,
+   "text": "lertueenaotdlsrnl",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 301,
+   "s": 11990.2
+  },
+  {
+   "seed": 2,
+   "kind": "true",
+   "len": 17,
+   "text": "lednrrtlaeulosten",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 41,
+   "s": 28766.1
+  },
+  {
+   "seed": 3,
+   "kind": "random",
+   "len": 12,
+   "text": "_otsatpha_nt",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 160,
+   "s": 2746.5
+  },
+  {
+   "seed": 3,
+   "kind": "random",
+   "len": 12,
+   "text": "fsu_lyoolei_",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 200,
+   "s": 3868.8
+  },
+  {
+   "seed": 3,
+   "kind": "shifted",
+   "len": 12,
+   "text": "ahnmchi_t_ae",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 200,
+   "s": 3675.9
+  },
+  {
+   "seed": 3,
+   "kind": "shifted",
+   "len": 12,
+   "text": "mchi_t_aeoaw",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 160,
+   "s": 3108.1
+  },
+  {
+   "seed": 3,
+   "kind": "shuffled",
+   "len": 12,
+   "text": "hamthicmmi_n",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 121,
+   "s": 2242.5
+  },
+  {
+   "seed": 3,
+   "kind": "shuffled",
+   "len": 12,
+   "text": "nimath_ihcmm",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 200,
+   "s": 3521.2
+  },
+  {
+   "seed": 3,
+   "kind": "true",
+   "len": 12,
+   "text": "itmmahnmchi_",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 161,
+   "s": 3171.6
+  },
+  {
+   "seed": 4,
+   "kind": "random",
+   "len": 13,
+   "text": "wf_arfgeh___i",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 6149.7
+  },
+  {
+   "seed": 4,
+   "kind": "random",
+   "len": 13,
+   "text": "ahthtelhmefub",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 6403.1
+  },
+  {
+   "seed": 4,
+   "kind": "shifted",
+   "len": 13,
+   "text": "eyyesttwynhso",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 317,
+   "s": 5329.5
+  },
+  {
+   "seed": 4,
+   "kind": "shifted",
+   "len": 13,
+   "text": "esttwynhsonto",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 5640.4
+  },
+  {
+   "seed": 4,
+   "kind": "shuffled",
+   "len": 13,
+   "text": "ew_seyrnsytyt",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 3437.6
+  },
+  {
+   "seed": 4,
+   "kind": "shuffled",
+   "len": 13,
+   "text": "netsytywesy_r",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 5699.7
+  },
+  {
+   "seed": 4,
+   "kind": "true",
+   "len": 13,
+   "text": "_rsneyyesttwy",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 3409.8
+  },
+  {
+   "seed": 5,
+   "kind": "random",
+   "len": 11,
+   "text": "__hieeahras",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 3935.5
+  },
+  {
+   "seed": 5,
+   "kind": "random",
+   "len": 11,
+   "text": "le_itbrmd_a",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 5732.4
+  },
+  {
+   "seed": 5,
+   "kind": "shifted",
+   "len": 11,
+   "text": "_isnohvibah",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 240,
+   "s": 3493.2
+  },
+  {
+   "seed": 5,
+   "kind": "shifted",
+   "len": 11,
+   "text": "nohvibahnmr",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 5029.9
+  },
+  {
+   "seed": 5,
+   "kind": "shuffled",
+   "len": 11,
+   "text": "o_voh__soni",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 3743.1
+  },
+  {
+   "seed": 5,
+   "kind": "shuffled",
+   "len": 11,
+   "text": "vs_inoo_h_o",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 3871.2
+  },
+  {
+   "seed": 5,
+   "kind": "true",
+   "len": 11,
+   "text": "_o_o_isnohv",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 3715.4
+  },
+  {
+   "seed": 6,
+   "kind": "random",
+   "len": 20,
+   "text": "ttuca_w_nyeo__n_reli",
+   "status": "capped",
+   "hyps_tried": 521,
+   "hyps_kept": 521,
+   "s": 7237.6
+  },
+  {
+   "seed": 6,
+   "kind": "random",
+   "len": 20,
+   "text": "eesosriohsnep_cmvcr_",
+   "status": "capped",
+   "hyps_tried": 481,
+   "hyps_kept": 481,
+   "s": 6482.3
+  },
+  {
+   "seed": 6,
+   "kind": "shifted",
+   "len": 20,
+   "text": "aeotheb_hg_tttau__ch",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 4943.0
+  },
+  {
+   "seed": 6,
+   "kind": "shifted",
+   "len": 20,
+   "text": "theb_hg_tttau__che_e",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 6148.3
+  },
+  {
+   "seed": 6,
+   "kind": "shuffled",
+   "len": 20,
+   "text": "geaehh_ttu_abeaott_h",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 5469.8
+  },
+  {
+   "seed": 6,
+   "kind": "shuffled",
+   "len": 20,
+   "text": "teatga__eta_ehbhohut",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 6307.0
+  },
+  {
+   "seed": 6,
+   "kind": "true",
+   "len": 20,
+   "text": "ea_haeotheb_hg_tttau",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 6242.8
+  },
+  {
+   "seed": 7,
+   "kind": "random",
+   "len": 12,
+   "text": "ao_rpapaeodl",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 3085.8
+  },
+  {
+   "seed": 7,
+   "kind": "random",
+   "len": 12,
+   "text": "oaaeslhpmhus",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3323.3
+  },
+  {
+   "seed": 7,
+   "kind": "shifted",
+   "len": 12,
+   "text": "we_romg_ea_i",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3985.8
+  },
+  {
+   "seed": 7,
+   "kind": "shifted",
+   "len": 12,
+   "text": "romg_ea_idau",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 3643.6
+  },
+  {
+   "seed": 7,
+   "kind": "shuffled",
+   "len": 12,
+   "text": "rw_e_mg_pvto",
+   "status": "undetermined",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 4367.1
+  },
+  {
+   "seed": 7,
+   "kind": "shuffled",
+   "len": 12,
+   "text": "r_tge_v_wmpo",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 3954.5
+  },
+  {
+   "seed": 7,
+   "kind": "true",
+   "len": 12,
+   "text": "vp_twe_romg_",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 3497.4
+  },
+  {
+   "seed": 8,
+   "kind": "random",
+   "len": 13,
+   "text": "_kntton_tscwi",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3851.4
+  },
+  {
+   "seed": 8,
+   "kind": "random",
+   "len": 13,
+   "text": "roate_mpmo_le",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3698.4
+  },
+  {
+   "seed": 8,
+   "kind": "shifted",
+   "len": 13,
+   "text": "_pdiauheeaece",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3782.4
+  },
+  {
+   "seed": 8,
+   "kind": "shifted",
+   "len": 13,
+   "text": "asw_pdiauheea",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 4194.0
+  },
+  {
+   "seed": 8,
+   "kind": "shuffled",
+   "len": 13,
+   "text": "iatasdi__w_pu",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3447.6
+  },
+  {
+   "seed": 8,
+   "kind": "shuffled",
+   "len": 13,
+   "text": "auta_dp_s_iiw",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3505.3
+  },
+  {
+   "seed": 8,
+   "kind": "true",
+   "len": 13,
+   "text": "_it_asw_pdiau",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3790.2
+  },
+  {
+   "seed": 9,
+   "kind": "random",
+   "len": 14,
+   "text": "det__ate_h_d_n",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 240,
+   "s": 2998.8
+  },
+  {
+   "seed": 9,
+   "kind": "random",
+   "len": 14,
+   "text": "edn_ptitchstlc",
+   "status": "capped",
+   "hyps_tried": 441,
+   "hyps_kept": 441,
+   "s": 5422.5
+  },
+  {
+   "seed": 9,
+   "kind": "shifted",
+   "len": 14,
+   "text": "_nwvecepsegsyn",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 5082.1
+  },
+  {
+   "seed": 9,
+   "kind": "shifted",
+   "len": 14,
+   "text": "vecepsegsyngae",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 4839.1
+  },
+  {
+   "seed": 9,
+   "kind": "shuffled",
+   "len": 14,
+   "text": "voe__pswneenbc",
+   "status": "undetermined",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 4364.1
+  },
+  {
+   "seed": 9,
+   "kind": "shuffled",
+   "len": 14,
+   "text": "eobpvecsnnew__",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 5571.7
+  },
+  {
+   "seed": 9,
+   "kind": "true",
+   "len": 14,
+   "text": "nbo__nwvecepse",
+   "status": "undetermined",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 2966.2
+  },
+  {
+   "seed": 10,
+   "kind": "random",
+   "len": 12,
+   "text": "gsmssdt__raa",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 5514.3
+  },
+  {
+   "seed": 10,
+   "kind": "random",
+   "len": 12,
+   "text": "apyeelanwso_",
+   "status": "capped",
+   "hyps_tried": 401,
+   "hyps_kept": 401,
+   "s": 7031.4
+  },
+  {
+   "seed": 10,
+   "kind": "shifted",
+   "len": 12,
+   "text": "elteynn_oent",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 5040.2
+  },
+  {
+   "seed": 10,
+   "kind": "shifted",
+   "len": 12,
+   "text": "eynn_oentibo",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 5565.1
+  },
+  {
+   "seed": 10,
+   "kind": "shuffled",
+   "len": 12,
+   "text": "etycenn__lel",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 5009.2
+  },
+  {
+   "seed": 10,
+   "kind": "shuffled",
+   "len": 12,
+   "text": "_nen_etlyelc",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 4977.0
+  },
+  {
+   "seed": 10,
+   "kind": "true",
+   "len": 12,
+   "text": "_eclelteynn_",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 4671.9
+  },
+  {
+   "seed": 11,
+   "kind": "random",
+   "len": 20,
+   "text": "loesihal_dtannsen_tl",
+   "status": "capped",
+   "hyps_tried": 441,
+   "hyps_kept": 441,
+   "s": 6069.7
+  },
+  {
+   "seed": 11,
+   "kind": "random",
+   "len": 20,
+   "text": "yaa_ruhpeehacslo_cft",
+   "status": "undetermined",
+   "hyps_tried": 561,
+   "hyps_kept": 561,
+   "s": 7551.8
+  },
+  {
+   "seed": 11,
+   "kind": "shifted",
+   "len": 20,
+   "text": "nhuirdelonaywosoetc_",
+   "status": "undetermined",
+   "hyps_tried": 641,
+   "hyps_kept": 641,
+   "s": 5842.4
+  },
+  {
+   "seed": 11,
+   "kind": "shifted",
+   "len": 20,
+   "text": "mnenhuirdelonaywosoe",
+   "status": "capped",
+   "hyps_tried": 561,
+   "hyps_kept": 561,
+   "s": 8200.8
+  },
+  {
+   "seed": 11,
+   "kind": "shuffled",
+   "len": 20,
+   "text": "aonemdyneairhemulunw",
+   "status": "undetermined",
+   "hyps_tried": 521,
+   "hyps_kept": 521,
+   "s": 7857.9
+  },
+  {
+   "seed": 11,
+   "kind": "shuffled",
+   "len": 20,
+   "text": "nrwdnhioyaelmeeumaun",
+   "status": "capped",
+   "hyps_tried": 521,
+   "hyps_kept": 521,
+   "s": 6956.9
+  },
+  {
+   "seed": 11,
+   "kind": "true",
+   "len": 20,
+   "text": "aemumnenhuirdelonayw",
+   "status": "accept",
+   "hyps_tried": 1,
+   "hyps_kept": 1,
+   "s": 11.9,
+   "accepted_as": {
+    "tau": null,
+    "m": 1
+   },
+   "pi_agree": "73/73"
+  },
+  {
+   "seed": 12,
+   "kind": "random",
+   "len": 13,
+   "text": "oenwsuc_wse_l",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 4038.5
+  },
+  {
+   "seed": 12,
+   "kind": "random",
+   "len": 13,
+   "text": "ncrsnrorceuf_",
+   "status": "capped",
+   "hyps_tried": 361,
+   "hyps_kept": 361,
+   "s": 3801.3
+  },
+  {
+   "seed": 12,
+   "kind": "shifted",
+   "len": 13,
+   "text": "_oeelk_n__nie",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 3552.3
+  },
+  {
+   "seed": 12,
+   "kind": "shifted",
+   "len": 13,
+   "text": "elk_n__nieu_e",
+   "status": "capped",
+   "hyps_tried": 281,
+   "hyps_kept": 281,
+   "s": 3237.8
+  },
+  {
+   "seed": 12,
+   "kind": "shuffled",
+   "len": 13,
+   "text": "_e_oee_aelfkn",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 4148.9
+  },
+  {
+   "seed": 12,
+   "kind": "shuffled",
+   "len": 13,
+   "text": "_flenk_oae_ee",
+   "status": "capped",
+   "hyps_tried": 321,
+   "hyps_kept": 321,
+   "s": 3713.7
+  },
+  {
+   "seed": 12,
+   "kind": "true",
+   "len": 13,
+   "text": "eeaf_oeelk_n_",
+   "status": "accept",
+   "hyps_tried": 125,
+   "hyps_kept": 125,
+   "s": 1671.4,
+   "accepted_as": {
+    "tau": "f",
+    "m": 9
+   },
+   "pi_agree": "67/69"
+  }
+ ]
+}

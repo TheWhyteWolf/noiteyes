@@ -104,6 +104,7 @@ def make_lossy(seed, mode='ptwist', m=0, K=27, trig=(), ntw=5):
         return seq
     enc.D = D                                 # hidden order pi = D^-1 (stepfit gates)
     enc.twist = [(a_of[c], b_of[c]) for c in sorted(twist)]
+    enc.twist_letters = {c: b_of[c] for c in sorted(twist)}
     return enc
 
 

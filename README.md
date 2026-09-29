@@ -1020,6 +1020,60 @@ and a random π 583. Random transpositions away from the truth cost:
   structure known from the game, to seed π. That agrees with Step F, where
   the isomorph web left a null space of dimension 8.
 
+## Step H — crib tester (twentieth phase, `tools/cribfit.py`)
+
+Step G showed that the lossless short-step gak41 pins π in principle, but
+blind search cannot find it. A crib supplies the missing seed: a guessed
+plaintext for a shared opening turns into exact GF(83) equations,
+π(c_t) − π(c_(t−1)) = b_(t−1)·k(p_t). Here k is the unknown step per letter,
+π(c_0) is the common start state, and b stays 1 until a twist letter τ
+(τ = none, or one crib letter × 40 multipliers). These equations are solved
+jointly with Step F's isomorph equations, with β searched per block. A
+hypothesis survives only if the solution keeps π injective and the crib
+letters' steps distinct. At a leaf, the remaining freedom (at most 3
+dimensions) is enumerated. A crib is **accepted** only if some point has
+every step in 1..27, all steps distinct, and π injective.
+
+**The real openings:**
+- All 9 messages share positions 1–2.
+- Six messages share [1,5).
+- east-1, east-2 and west-1 share a 24-symbol opening, [1,25). It repeats
+  4 symbols internally, and each repeat is an exact equation on the crib's
+  steps.
+- east-4, east-5 and west-4 share [1,21).
+
+**Gate** (synthetic model, 12 seeds, blocks thinned to the real corpus's 122
+aligned pairs). Each seed had its true opening as a crib (11–20 letters)
+plus 6 wrong cribs (shuffled, shifted, random), with every τ hypothesis
+tried and 20,000 nodes allowed per hypothesis:
+
+| crib | accept | undetermined | capped | reject |
+|---|---|---|---|---|
+| true (12) | 3 | 1 | 8 | 0 |
+| wrong (72) | **0** | 5 | 63 | 4 |
+
+- **Sound but weak.** No wrong crib was ever accepted, and no true crib was
+  ever rejected.
+- **When a true crib is accepted, the key comes out.** π was recovered on
+  70/71, 73/73 and 67/69 of the touched symbols. This is the first method in
+  the project that reaches the key.
+- **Most runs end capped.** The β search over the isomorph blocks blows up
+  before the crib constraints bite. Short cribs (11–14 letters) almost always
+  cap; two of the three accepts were 20-letter cribs, as long as the real
+  openings.
+- **A crib whose opening holds two twist letters is out of scope,** since
+  the tester allows at most one.
+- **Cost:** a single crib took a median of 72 min on enter (4,291 s), and up
+  to 8.5 h (30,486 s).
+
+On real data, an **accept** would be decisive (π recovered, then decrypt), a
+**reject** rules the crib out, and **capped** means nothing. A cheaper first
+pass exists: the crib's own contradictions with the opening's repeats reject
+some wrong cribs in 0 s. After this gate ran, the local version gained two
+additions, pruning of branches that are infeasible in range and a vectorised
+leaf check. They give the same verdicts at the same node counts on seeds 1
+and 3.
+
 ## Community cross-check (adversarial, re-derived before use)
 
 Fetched the public write-ups (Noita wiki, the "Unsolved Puzzles" page, the
@@ -1126,6 +1180,10 @@ worth remembering given the shared-prefix reasoning in Step D. See
 - `tools/stepfit.py` — Step G driver: landscape, synthetic gate, real /
   reversed / full-step null (builds stepfit.c with gcc; ~1 h, run on enter)
 - `data/stepfit_report.json` — Step G report (gate FAIL; costs, agreement)
+- `tools/cribfit.py` — Step H crib tester: crib equations + Step F isomorph
+  equations over GF(83), twist hypotheses, range-checked leaves; `gate`,
+  `real A "TEXT"`, `file cribs.txt` (lines `A|B<TAB>phrase`); run on enter
+- `data/cribfit_gate.json` — Step H gate (12 seeds × 7 cribs: sound, low power)
 - `data/tournament_report.json` — Step B report (candidates + real,
   including the twelfth-phase additions)
 - `tools/rotorfit.py` — non-abelian-σ test: fits σ = T^δ per web to test the
